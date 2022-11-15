@@ -19,7 +19,7 @@ body{
 }
 .form-box{
     width: 300px;
-    height: 400px;
+    height: 380px;
     position: relative;
     margin: 20% auto;
     background: rgba(201, 200, 200, 0.7);
@@ -32,7 +32,7 @@ body{
     size: 10%;
     position: absolute;
     margin-top: 40px;
-    margin-left: 10px;
+    margin-left: 13px;
     opacity: 0.4;
 }
 .button-box{
@@ -68,7 +68,7 @@ body{
     transition: .5s;
 }
 .input-field{
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
