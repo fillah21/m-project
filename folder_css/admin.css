@@ -1,0 +1,20 @@
+body {
+  background-color: #d23939;
+}
+.navbar {
+  background-color: #711a1a;
+}
+.navbar-brand {
+  font-family: 'Finger Paint', cursive;
+}
+#jumbotron h1 {
+  font-family: 'Finger Paint', cursive;
+  margin-top: 10rem;
+}
+#footnote {
+  background-color: #711a1a;
+}
+#footnote .container {
+  font-size: 12px;
+  font-weight: 120;
+}

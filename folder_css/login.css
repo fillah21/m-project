@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Monserrat', sans-serif;
+}
+body {
+  line-height: 1;
+  background: var(--red);
+}
+:root {
+  --red: #d23939;
+}
+.content {
+  height: 100%;
+  width: 100%;
+}
+.form-box {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  margin: 20% auto;
+  background: rgba(201, 200, 200, 0.7);
+  padding: auto;
+  border-radius: 3%;
+  align-items: center;
+}
+.logo {
+  size: 10%;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 15px;
+  opacity: 0.4;
+}
+.toggle-button {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: 'Finger Paint', cursive;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 20px;
+  background: transparent;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  position: absolute;
+  display: block;
+  width: 100%;
+}
+.input-group {
+  top: 110px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+.input-field {
+  color: rgb(0, 0, 0);
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  outline: none;
+  background: transparent;
+}
+.submit-button {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 700;
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 20px;
+  background: linear-gradient(to right, #d49898, #d44242);
+  border: 1px solid whitesmoke;
+  outline: 0;
+  border-radius: 30px;
+}
+.check-box {
+  margin: 30px 10px 30px 0;
+}
+.check-box span {
+  color: rgb(27, 27, 27);
+  font-size: 14px;
+  left: 20px;
+  position: absolute;
+}
+#login {
+  left: 10px;
+}
+/* Desktop */
+@media screen and (max-width: 1280px) {
+  .form-box {
+    margin: 10% auto;
+    align-items: center;
+  }
+}
