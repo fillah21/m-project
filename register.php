@@ -53,17 +53,17 @@
   <form action="" method="POST" class="container mt-5">
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username">
+            <input type="text" class="form-control" id="username" name="username" required>
         </div>
 
         <div class="mb-3">
             <label for="pwd" class="form-label">Password</label>
-            <input type="password" class="form-control" id="pwd" name="pwd">
+            <input type="password" class="form-control" id="pwd" name="pwd" required>
         </div>
         
         <div class="mb-3">
             <label for="pwd2" class="form-label">Password 2</label>
-            <input type="password" class="form-control" id="pwd2" name="pwd2">
+            <input type="password" class="form-control" id="pwd2" name="pwd2" required>
         </div>
         
         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
