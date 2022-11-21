@@ -19,13 +19,22 @@
           //password_verify() untuk mengecek apakah sebuah password itu sama atau tidak dengan hash nya
           //parameternya yaitu string yang belum diacak dan string yang sudah diacak
           if (password_verify($password, $row["pwd"])) {
-            // setcookie('id', $row['iduser'], time()+10800);
+            setcookie('id', $row['id_user'], time()+10800);
             // setcookie('role', hash('ripemd160', $row['rolename']), time()+10800);
-            echo "<script>
+            if($row["level"] === "Admin") {
+              echo "<script>
                     alert('Selamat Datang $username');
                     document.location.href='home-admin.php';
                   </script>";
-            exit;
+              exit;
+            } elseif ($row["level"] === "User") {
+              echo "<script>
+                    alert('Selamat Datang $username');
+                    document.location.href='mahasiswa.php';
+                  </script>";
+              exit;
+            }
+            
           }
       }
       $error = true;
