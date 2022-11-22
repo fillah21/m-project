@@ -7,7 +7,7 @@
   <title>M Project</title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="folder_css/admin.css" />
 </head>
@@ -26,22 +26,22 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Data Mahasiswa</a>
+            <a class="nav-link active bi bi-journals" href="#"><span class="ms-2">Data Mahasiswa</span> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Data Mata Kuliah</a>
+            <a class="nav-link bi bi-journals" href="#"><span class="ms-2">Data Mata Kuliah</span> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Data KRS</a>
+            <a class="nav-link bi bi-journals" href="#"><span class="ms-2">Data KRS</span> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Data Admin</a>
+            <a class="nav-link bi bi-journals" href="#"><span class="ms-2">Data Admin</span> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Data About</a>
+            <a class="nav-link bi bi-gear" href="#"><span class="ms-2">About</span> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Data Logout</a>
+            <a class="nav-link bi bi-box-arrow-left" href="#"><span class="ms-2">Logout</span> </a>
           </li>
         </ul>
       </div>
