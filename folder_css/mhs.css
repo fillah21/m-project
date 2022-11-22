@@ -7,8 +7,7 @@ body{
 }
 
 @media screen and (max-width:365px) {
-.text .sidebar{
-    display: none;
+.sidebar{
     width: 93px;
 }}
 
@@ -45,26 +44,46 @@ body{
     text-decoration: none;
 }
 
+.sidebar.hide a .img{
+    display: none;
+}
+
 .content{
     flex-grow: 1;
     background: #D23939;
+    margin-left: 15px;
 }
 
 .sidebar ul li .text{
     font-size: 15px;
 }
 
+.sidebar .nav:hover{
+    border: none;
+}
+
 .sidebar.hide ul li .text{
     display: none;
 }
 
-.sidebar li.active{
-    background: #D23939;
+.sidebar li.nav-link.active{
+    background-color: #D23939;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
     padding: 5px 10px;
     box-sizing: border-box;
+    width: 300px;
+}
+
+.sidebar li.nav-link:hover, .nav-link:focus{
+    border: none;
+}
+
+.sidebar li.nav-link{
+    border: none;
+    color: none;
+    transition: none;
 }
 
 .sidebar li.active a, .sidebar li.active a:hover{
@@ -82,10 +101,11 @@ body{
 
 /*TOGGLE MENU*/
 #menu-button{
-    top: 5px;
+    top: 34px;
     width: 32px;
     position: absolute;
     overflow: hidden;
+    margin-left: 5px;
 }
 
 #m-label{
@@ -195,3 +215,12 @@ body{
     }
 }
 /*TOGGLE MENU SELESAI*/
+
+/*MAHASISWA-BUAT KRS*/
+.box{
+    background-color: #EA7A7A;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
