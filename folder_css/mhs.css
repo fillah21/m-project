@@ -1,23 +1,19 @@
-* {
+body{
     margin: 0;
     padding: 0;
     border: 0;
-    vertical-align: baseline;
-    font-family: 'Monserrat', sans-serif;
-}
-
-body {
-    display: flex;
+    font-family: 'Monserrat', sans-serif;  
     background-color: #D23939;
 }
 
-/*SIDEBAR*/
-.container {
-    display: flex;
-    min-height: 100vh;
-}
+@media screen and (max-width:365px) {
+.text .sidebar{
+    display: none;
+    width: 93px;
+}}
 
-.sidebar {
+/*SIDEBAR*/
+.sidebar{
     background-color: #711A1A;
     width: 270px;
     padding: 24px;
@@ -28,12 +24,12 @@ body {
     transition: all ease-in 0.3s;
 }
 
-.sidebar.hide {
+.sidebar.hide{
     width: 93px;
     transition: all ease-out 0.3s;
 }
 
-.sidebar .text {
+.sidebar .text{
     font-size: 23px;
     font-weight: bold;
     text-align: center;
@@ -41,28 +37,28 @@ body {
     margin: 7px;
 }
 
-.sidebar.hide .text {
+.sidebar.hide .text{
     display: none;
 }
 
-.sidebar a {
+.sidebar a{
     text-decoration: none;
 }
 
-.content {
+.content{
     flex-grow: 1;
     background: #D23939;
 }
 
-.sidebar ul li .text {
+.sidebar ul li .text{
     font-size: 15px;
 }
 
-.sidebar.hide ul li .text {
+.sidebar.hide ul li .text{
     display: none;
 }
 
-.sidebar li.active {
+.sidebar li.active{
     background: #D23939;
     border-radius: 8px;
     display: flex;
@@ -71,69 +67,64 @@ body {
     box-sizing: border-box;
 }
 
-.sidebar li.active a,
-.sidebar li.active a:hover {
+.sidebar li.active a, .sidebar li.active a:hover{
     color: #c7acac;
 }
 
-.sidebar li i {
+.sidebar li i{
     margin-right: 7px;
 }
 
-.sidebar li a {
+.sidebar li a{
     color: #FFFF;
 }
-
 /*SIDEBAR SELESAI*/
 
 /*TOGGLE MENU*/
-#menu-button {
+#menu-button{
     top: 5px;
     width: 32px;
     position: absolute;
     overflow: hidden;
 }
 
-#m-label {
+#m-label{
     position: relative;
     display: block;
     height: 20px;
     cursor: pointer;
 }
 
-#menu-checkbox {
+#menu-checkbox{
     display: none;
 }
 
-#hamburger,
-#m-label:after,
-#m-label:before {
-    position: absolute;
+#hamburger, #m-label:after, #m-label:before{
+    position:absolute;
     left: 0;
     width: 100%;
     height: 4px;
     background-color: #FFFF;
 }
 
-#m-label:after,
-#m-label:before {
+#m-label:after, #m-label:before{
     content: "";
     transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) left;
 }
 
-#m-label:before {
+#m-label:before{
     top: 0;
 }
 
-#m-label:after {
+#m-label:after{
     top: 8px;
 }
 
-#hamburger {
+#hamburger{
     top: 16px;
 }
 
-#hamburger:before {
+#hamburger:before{
     content: "MENU";
     position: absolute;
     top: 5px;
@@ -145,72 +136,62 @@ body {
     text-align: center;
 }
 
-#menu-checkbox:checked+#m-label:before {
+#menu-checkbox:checked + #m-label:before{
     left: -39px;
 }
 
-#menu-checkbox:checked+#m-label:after {
+#menu-checkbox:checked + #m-label:after{
     left: 39px;
 }
 
-#menu-checkbox:checked+#m-label #hamburger:before {
+#menu-checkbox:checked + #m-label #hamburger:before{
     animation: moveUpThenDown 0.8s ease 0.2s forwards,
-        shakeUp 0.8s ease 0.2s forwards,
-        shakeDown 0.2s ease 0.8s forwards;
+    shakeUp 0.8s ease 0.2s forwards,
+    shakeDown 0.2s ease 0.8s forwards;
 }
 
-@keyframes moveUpThenDown {
-    0% {
+@keyframes moveUpThenDown{
+    0%{
         top: 0;
     }
-
-    50% {
+    50%{
         top: -27px;
     }
-
-    100% {
+    100%{
         top: -14px;
     }
 }
 
-@keyframes shakeUp {
-    0% {
+@keyframes shakeUp{
+    0%{
         transform: rotateZ(0);
     }
-
-    25% {
+    25%{
         transform: rotateZ(-10deg);
     }
-
-    50% {
+    50%{
         transform: rotateZ(0);
     }
-
-    75% {
+    75%{
         transform: rotateZ(10deg);
     }
-
-    100% {
+    100%{
         transform: rotateZ(0);
     }
 }
 
-@keyframes shakeDown {
-    0% {
+@keyframes shakeDown{
+    0%{
         transform: rotateZ(0);
     }
-
-    80% {
+    80%{
         transform: rotateZ(3deg);
     }
-
-    90% {
+    90%{
         transform: rotateZ(-3deg);
     }
-
-    100% {
+    100%{
         transform: rotateZ(0);
     }
 }
-
 /*TOGGLE MENU SELESAI*/

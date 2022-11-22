@@ -13,7 +13,7 @@
 </head>
 <body>
     <!--SIDEBAR MAHASISWA-->
-    <div class="container d-flex">
+    <div class="container-fluid d-flex" style="min-height: 100vh; background-color: #D23939;">
         <div class="sidebar" id="side-nav">
             <div class="header justify-content-between">
                 <a href="#">
