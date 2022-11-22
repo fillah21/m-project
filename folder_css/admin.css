@@ -1,20 +1,128 @@
 body {
   background-color: #d23939;
+  font-family: 'Monserrat', sans-serif;
+  display: inline;
+  overflow-x: hidden;
 }
+
 .navbar {
   background-color: #711a1a;
 }
+
 .navbar-brand {
   font-family: 'Finger Paint', cursive;
 }
-#jumbotron h1 {
+
+#home h1 {
   font-family: 'Finger Paint', cursive;
   margin-top: 10rem;
+  position: absolute;
+  left: 0;
 }
+
 #footnote {
   background-color: #711a1a;
 }
+
 #footnote .container {
   font-size: 12px;
   font-weight: 120;
+}
+
+#dataMhs {
+  margin-top: 5rem;
+  position: absolute;
+  display: inline-block;
+  left: 400px;
+}
+
+#dataMhs a {
+  text-decoration: none;
+  color: white;
+}
+
+#dataMhs table {
+  font-size: 8px;
+}
+
+.header th {
+  border-right: 0.1px solid #711A1A
+}
+
+.header th:last-child {
+  border: 0;
+}
+
+#list-mhs {
+  border-bottom: 2px solid #711A1A;
+}
+
+.content tr {
+  border-bottom: 0.1px solid #711A1A;
+}
+
+.content td {
+  border-right: 0.1px solid #711A1A
+}
+
+.content th {
+  border-right: 0.1px solid #711A1A
+}
+
+.content td:last-child {
+  border: 0;
+}
+
+#insert-mhs .container {
+  font-family: 'Montserrat';
+  font-style: normal;
+}
+
+#insert-mhs .container h2 {
+  margin-top: 6rem;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+#insert-mhs .container form input {
+  font-weight: 400;
+  font-size: 14px;
+  color: #711A1A;
+  background-color: #EA7A7A;
+  border: 0;
+}
+
+#insert-mhs .container form #status-mhs {
+  font-weight: 400;
+  font-size: 14px;
+  color: #711A1A;
+  background-color: #EA7A7A;
+  border: 0;
+}
+
+#insert-mhs .container form .save {
+  margin-left: 55%;
+  margin-right: 2%;
+  border: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 10%;
+  background-color: white;
+  color: #711A1A;
+  font-weight: 500;
+}
+
+#insert-mhs .container form .clear {
+  border: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 10%;
+  background-color: white;
+  color: #711A1A;
+  font-weight: 500;
 }

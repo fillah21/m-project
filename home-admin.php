@@ -5,10 +5,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>M Project</title>
-  <!-- Bootstrap -->
+
+  <!-- CSS Bootstrap -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+
+  <!-- Icon Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+  <!-- Font Google -->
   <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
+  <!-- Css lokal -->
   <link rel="stylesheet" href="folder_css/admin.css" />
 </head>
 
@@ -26,7 +35,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active bi bi-journals" href="#"><span class="ms-2">Data Mahasiswa</span> </a>
+            <a class="nav-link active bi bi-journals" href="#dataMhs"><span class="ms-2">Data
+                Mahasiswa</span> </a>
           </li>
           <li class="nav-item">
             <a class="nav-link bi bi-journals" href="#"><span class="ms-2">Data Mata Kuliah</span> </a>
@@ -38,6 +48,9 @@
             <a class="nav-link bi bi-journals" href="#"><span class="ms-2">Data Admin</span> </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link bi bi-person-add" href="#"><span class="ms-2">Register</span> </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link bi bi-gear" href="#"><span class="ms-2">About</span> </a>
           </li>
           <li class="nav-item">
@@ -47,12 +60,15 @@
       </div>
     </div>
   </nav>
-  <!-- Akhir Navbar -->
+  <!-- Close Navbar -->
   <!-- Home -->
-  <section id="jumbotron">
+  <section id="home">
     <h1 class="display-4 text-center text-white ms-2 me-2">Selamat Datang Di M Project</h1>
   </section>
-  <!-- Akhir Home -->
+  <!-- Close Home -->
+
+
+
   <!-- Footnote -->
   <footer id="footnote" class="text-white pt-2 pb-2 fixed-bottom">
     <div class="container">
@@ -65,14 +81,10 @@
       </ul>
     </div>
   </footer>
-  <!-- Akhir Footnote -->
-  <!-- Dashboard Home -->
+  <!-- Close Footnote -->
+  <!-- Close Home -->
 
-  <!-- Dashboard Data Mahasiswa -->
-
-  <!-- Dashboard Data Mahasiswa -->
-
-  <!-- Bootstrap -->
+  <!-- Js Bootstrap -->
   <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
