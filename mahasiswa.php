@@ -1,3 +1,22 @@
+<?php 
+    include ("function.php");
+
+    if(!isset($_COOKIE['id'])) {
+        echo "<script>
+                alert('Silahkan Login terlebih dahulu');
+                document.location.href='login.php';
+              </script>";
+        exit;
+    }
+
+    $id = $_COOKIE['id'];
+    $nama_dashboard = query("SELECT username FROM user WHERE id_user = $id") [0];
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +70,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#" class="font py-2 d-block" data-bs-toggle="tab"><i class="bi bi-door-open-fill"></i>
+                    <a href="logout.php" class="font py-2 d-block" ><i class="bi bi-door-open-fill"></i>
                         <span class="text"> Logout</span>
                     </a>
                 </li>
@@ -62,7 +81,7 @@
         <div class="content tab-content">
             <!--DASHBOARD-->
             <div id="home" class="container tab-pane active" style="text-align: center;">
-                <span style="font-size:65px; color: #FFFF;">Selamat Datang <br> <i class="fw-bold">Eka Nurseva Saniyah</i> <br> di</span>
+                <span style="font-size:65px; color: #FFFF;">Selamat Datang <br> <i class="fw-bold"><?php echo $nama_dashboard['username'];?></i> <br> di</span>
                 <br>
                 <img class="img" src="image/Logo2.png" alt="" style="width: 400px;">
             </div>

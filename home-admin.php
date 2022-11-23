@@ -54,7 +54,7 @@
             <a class="nav-link bi bi-gear" href="#"><span class="ms-2">About</span> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bi bi-box-arrow-left" href="#"><span class="ms-2">Logout</span> </a>
+            <a class="nav-link bi bi-box-arrow-left" href="logout.php"><span class="ms-2">Logout</span> </a>
           </li>
         </ul>
       </div>

@@ -5,6 +5,12 @@
         $username = strtolower(stripslashes ($_POST["username"]));
         $password = mysqli_real_escape_string($conn, $_POST["pwd"]);
         $password2 = mysqli_real_escape_string($conn, $_POST["pwd2"]);
+        $nama = $_POST['nama'];
+        $email = $_POST['email'];
+        $no_induk = $_POST['no_induk'];
+        $semester = $_POST['semester'];
+        $jumlah_sks = $_POST['jumlah_sks'];
+        $sudah_krs = "Belum";
         $level = "User";
 
         //cek username sudah ada atau belum
@@ -30,7 +36,7 @@
         $password = password_hash($password2, PASSWORD_DEFAULT);
         
         //jika password sama, masukkan data ke database
-        mysqli_query($conn, "INSERT INTO user VALUES ('', '$username', '$password', '$level')");
+        mysqli_query($conn, "INSERT INTO user VALUES ('', '$username', '$password', '$nama', '$email', '$no_induk', '$semester', '$jumlah_sks', '$sudah_krs', '$level')");
         echo "<script>
                 alert('Data Berhasil Disimpan, dan Silahkan Login');
                 document.location.href='login.php';
@@ -64,6 +70,31 @@
         <div class="mb-3">
             <label for="pwd2" class="form-label">Password 2</label>
             <input type="password" class="form-control" id="pwd2" name="pwd2" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama" name="nama" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="no_induk" class="form-label">Nomer Induk</label>
+            <input type="number" class="form-control" id="no_induk" name="no_induk" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="semester" class="form-label">Semester</label>
+            <input type="text" class="form-control" id="semester" name="semester" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="jumlah_sks" class="form-label">Jumlah SKS</label>
+            <input type="number" class="form-control" id="jumlah_sks" name="jumlah_sks" required>
         </div>
         
         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
