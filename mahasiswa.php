@@ -10,7 +10,9 @@
     }
 
     $id = $_COOKIE['id'];
-    $nama_dashboard = query("SELECT username FROM user WHERE id_user = $id") [0];
+    $nama_dashboard = query("SELECT nama FROM user WHERE id_user = $id") [0];
+
+    $data_krs = query("SELECT * FROM user WHERE id_user = $id") [0];
 ?>
 
 
@@ -81,7 +83,7 @@
         <div class="content tab-content">
             <!--DASHBOARD-->
             <div id="home" class="container tab-pane active" style="text-align: center;">
-                <span style="font-size:65px; color: #FFFF;">Selamat Datang <br> <i class="fw-bold"><?php echo $nama_dashboard['username'];?></i> <br> di</span>
+                <span style="font-size:65px; color: #FFFF;">Selamat Datang <br> <i class="fw-bold"><?php echo $nama_dashboard['nama'];?></i> <br> di</span>
                 <br>
                 <img class="img" src="image/Logo2.png" alt="" style="width: 400px;">
             </div>
@@ -95,13 +97,13 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="nim" class="col-sm-4 col-form-label">NIM</label>
-                                    <span>: 190511012</span>
+                                    <span>: <?php echo $data_krs['no_induk'];?></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="smt" class="col-sm-4 col-form-label">Semester</label>
-                                    <span>: 2022/2023 Ganjil</span>
+                                    <span>: <?php echo $data_krs['semester'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -109,13 +111,13 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="nama" class="col-sm-4 col-form-label">Nama Mahasiswa</label>
-                                    <span>: Eka Nurseva Saniyah</span>
+                                    <span>: <?php echo $data_krs['nama'];?></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="ipk" class="col-sm-4 col-form-label">IPK</label>
-                                    <span>: 4.00</span>
+                                    <span>: <?php echo $data_krs['ipk'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +131,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="sks" class="col-sm-4 col-form-label">Jumlah SKS</label>
-                                    <span>: 24</span>
+                                    <span>: <?php echo $data_krs['jumlah_sks'];?></span>
                                 </div>
                             </div>
                         </div>

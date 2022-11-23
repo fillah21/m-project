@@ -6,7 +6,8 @@ CREATE TABLE `user` (
     `email` varchar(255) NOT NULL,
     `no_induk` int(100) NOT NULL, 
     `semester` varchar(100) NOT NULL,
-    `jumlah_krs` int(11) NOT NULL,
+    `ipk` varchar(11) NOT NULL,
+    `jumlah_sks` int(11) NOT NULL,
     `sudah_krs` varchar(100) NOT NULL,
     `level` varchar(25) NOT NULL
 );
