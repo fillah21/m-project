@@ -9,10 +9,20 @@
         exit;
     }
 
-    $id = $_COOKIE['id'];
-    $nama_dashboard = query("SELECT nama FROM user WHERE id_user = $id") [0];
+    $text = $_COOKIE['id'];
+    $kunci = 'm-project';
+    $key = hash('sha256', $kunci);
+    $pkey = "123";
+        
+    $method = "aes-192-cfb1";
+    $iv = substr(hash('sha256', $pkey), 0, 16);
 
-    $data_krs = query("SELECT * FROM user WHERE id_user = $id") [0];
+    $deskripsi = base64_decode($text);
+    $deskripsi = openssl_decrypt($deskripsi, $method, $key, 0, $iv);
+
+    $nama_dashboard = query("SELECT nama FROM user WHERE id_user = $deskripsi") [0];
+
+    $data_krs = query("SELECT * FROM user WHERE id_user = $deskripsi") [0];
 ?>
 
 
