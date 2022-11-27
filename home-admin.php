@@ -1,3 +1,20 @@
+<?php 
+    include ("function.php");
+
+    if(!isset($_COOKIE['project'])) {
+        echo "<script>
+                alert('Silahkan Login terlebih dahulu');
+                document.location.href='login.php';
+              </script>";
+        exit;
+    }
+
+    $deskripsi = deskripsi($_COOKIE['project']);
+
+    $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi") [0];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +98,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#" class="font py-2 d-block" data-bs-toggle="tab"><i class="bi bi-door-open-fill"></i>
+                    <a href="logout.php" class="font py-2 d-block"><i class="bi bi-door-open-fill"></i>
                         <span class="text"> Logout</span>
                     </a>
                 </li>
@@ -93,8 +110,7 @@
         <div class="content tab-content">
             <!-- Tab Dashboard -->
             <div id="home" class="container tab-pane active" style="text-align: center;">
-                <span style="font-size:65px; color: #FFFF;">Selamat Datang <br> <i class="fw-bold">Eka Nurseva
-                        Saniyah</i> <br>
+                <span style="font-size:65px; color: #FFFF;">Selamat Datang <br> <i class="fw-bold"><?php echo $data_diri['nama'];?></i> <br>
                     di</span>
                 <br>
                 <img class="img" src="image/Logo2.png" alt="" style="width: 400px;">
@@ -300,7 +316,7 @@
                         <div class="col-md-6">
                             <div class="">
                                 <label for="nim" class="col-sm-4 col-form-label">NIM</label>
-                                <span>: 190511012</span>
+                                <span>: <?php echo $data_diri['no_induk'];?></span>
                             </div>
                         </div>
                     </div>
@@ -308,7 +324,7 @@
                         <div class="col-md-6">
                             <div class="">
                                 <label for="nama" class="col-sm-4 col-form-label">Nama Mahasiswa</label>
-                                <span>: Eka Nurseva Saniyah</span>
+                                <span>: <?php echo $data_diri['nama'];?></span>
                             </div>
                         </div>
                     </div>
@@ -316,7 +332,7 @@
                         <div class="col-md-6">
                             <div class="">
                                 <label for="email" class="col-sm-4 col-form-label">Email</label>
-                                <span>: ekanursevas@gmail.com</span>
+                                <span>: <?php echo $data_diri['email'];?></span>
                             </div>
                         </div>
                     </div>
@@ -332,7 +348,7 @@
                         <div class="col-md-6">
                             <div class="">
                                 <label for="smt" class="col-sm-4 col-form-label">Semester</label>
-                                <span>: 2022/2023 Ganjil</span>
+                                <span>: <?php echo $data_diri['semester'];?></span>
                             </div>
                         </div>
                     </div>
@@ -340,7 +356,7 @@
                         <div class="col-md-6">
                             <div class="">
                                 <label for="ipk" class="col-sm-4 col-form-label">IPK</label>
-                                <span>: 4.00</span>
+                                <span>: <?php echo $data_diri['ipk'];?></span>
                             </div>
                         </div>
                     </div>

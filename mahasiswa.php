@@ -1,7 +1,7 @@
 <?php 
     include ("function.php");
 
-    if(!isset($_COOKIE['id'])) {
+    if(!isset($_COOKIE['project'])) {
         echo "<script>
                 alert('Silahkan Login terlebih dahulu');
                 document.location.href='login.php';
@@ -9,20 +9,9 @@
         exit;
     }
 
-    $text = $_COOKIE['id'];
-    $kunci = 'm-project';
-    $key = hash('sha256', $kunci);
-    $pkey = "123";
-        
-    $method = "aes-192-cfb1";
-    $iv = substr(hash('sha256', $pkey), 0, 16);
+    $deskripsi = deskripsi($_COOKIE['project']);
 
-    $deskripsi = base64_decode($text);
-    $deskripsi = openssl_decrypt($deskripsi, $method, $key, 0, $iv);
-
-    $nama_dashboard = query("SELECT nama FROM user WHERE id_user = $deskripsi") [0];
-
-    $data_krs = query("SELECT * FROM user WHERE id_user = $deskripsi") [0];
+    $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi") [0];
 ?>
 
 
@@ -93,7 +82,7 @@
         <div class="content tab-content">
             <!--DASHBOARD-->
             <div id="home" class="container tab-pane active" style="text-align: center;">
-                <span style="font-size:65px; color: #FFFF;">Selamat Datang <br> <i class="fw-bold"><?php echo $nama_dashboard['nama'];?></i> <br> di</span>
+                <span style="font-size:65px; color: #FFFF;">Selamat Datang <br> <i class="fw-bold"><?php echo $data_diri['nama'];?></i> <br> di</span>
                 <br>
                 <img class="img" src="image/Logo2.png" alt="" style="width: 400px;">
             </div>
@@ -107,13 +96,13 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="nim" class="col-sm-4 col-form-label">NIM</label>
-                                    <span>: <?php echo $data_krs['no_induk'];?></span>
+                                    <span>: <?php echo $data_diri['no_induk'];?></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="smt" class="col-sm-4 col-form-label">Semester</label>
-                                    <span>: <?php echo $data_krs['semester'];?></span>
+                                    <span>: <?php echo $data_diri['semester'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -121,13 +110,13 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="nama" class="col-sm-4 col-form-label">Nama Mahasiswa</label>
-                                    <span>: <?php echo $data_krs['nama'];?></span>
+                                    <span>: <?php echo $data_diri['nama'];?></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="ipk" class="col-sm-4 col-form-label">IPK</label>
-                                    <span>: <?php echo $data_krs['ipk'];?></span>
+                                    <span>: <?php echo $data_diri['ipk'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +130,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="sks" class="col-sm-4 col-form-label">Jumlah SKS</label>
-                                    <span>: <?php echo $data_krs['jumlah_sks'];?></span>
+                                    <span>: <?php echo $data_diri['jumlah_sks'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +180,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="nim" class="col-sm-4 col-form-label">NIM</label>
-                                    <span>: 190511012</span>
+                                    <span>: <?php echo $data_diri['no_induk'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +188,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="nama" class="col-sm-4 col-form-label">Nama Mahasiswa</label>
-                                    <span>: Eka Nurseva Saniyah</span>
+                                    <span>: <?php echo $data_diri['nama'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -207,7 +196,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="email" class="col-sm-4 col-form-label">Email</label>
-                                    <span>: ekanursevas@gmail.com</span>
+                                    <span>: <?php echo $data_diri['email'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +212,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="smt" class="col-sm-4 col-form-label">Semester</label>
-                                    <span>: 2022/2023 Ganjil</span>
+                                    <span>: <?php echo $data_diri['semester'];?></span>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +220,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="ipk" class="col-sm-4 col-form-label">IPK</label>
-                                    <span>: 4.00</span>
+                                    <span>: <?php echo $data_diri['ipk'];?></span>
                                 </div>
                             </div>
                         </div>

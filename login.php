@@ -19,18 +19,9 @@
           //password_verify() untuk mengecek apakah sebuah password itu sama atau tidak dengan hash nya
           //parameternya yaitu string yang belum diacak dan string yang sudah diacak
           if (password_verify($password, $row["pwd"])) {
-            $text = $row['id_user'];
-            $kunci = 'm-project';
-            $key = hash('sha256', $kunci);
-            $pkey = "123";
-        
-            $method = "aes-192-cfb1";
-            $iv = substr(hash('sha256', $pkey), 0, 16);
+            $enkripsi = enkripsi($row['id_user']);
 
-            $enkripsi = openssl_encrypt($text, $method, $key, 0, $iv);
-            $enkripsi = base64_encode($enkripsi);
-
-            setcookie('id', $enkripsi, time()+10800);
+            setcookie('project', $enkripsi, time()+10800);
             // setcookie('role', hash('ripemd160', $row['rolename']), time()+10800);
             if($row["level"] === "Admin") {
               echo "<script>
