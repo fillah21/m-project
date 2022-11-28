@@ -7,7 +7,9 @@ CREATE TABLE `user` (
     `no_induk` int(100) NOT NULL, 
     `semester` varchar(100) NOT NULL,
     `ipk` varchar(11) NOT NULL,
-    `jumlah_sks` int(11) NOT NULL,
+    `alamat` text NOT NULL,
+    `no_hp` varchar(50) NOT NULL,
+    `gambar` varchar(255) NOT NULL,
     `sudah_krs` varchar(100) NOT NULL,
     `level` varchar(25) NOT NULL
 );

@@ -12,6 +12,8 @@
     $deskripsi = deskripsi($_COOKIE['project']);
 
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi") [0];
+
+    $jumlah_sks = cek_sks($data_diri['ipk']);
 ?>
 
 
@@ -130,7 +132,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="sks" class="col-sm-4 col-form-label">Jumlah SKS</label>
-                                    <span>: <?php echo $data_diri['jumlah_sks'];?></span>
+                                    <span>: <?php echo $jumlah_sks;?></span>
                                 </div>
                             </div>
                         </div>

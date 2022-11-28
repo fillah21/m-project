@@ -56,4 +56,24 @@
         return $deskripsi;
     }
     // Fungsi Deskripsi Selesai
+
+
+
+    // Fungsi Cek SKS
+    function cek_sks($ipk) {
+        if($ipk >= 3.3) {
+            $sks = 24;
+        } elseif($ipk >= 3.0 && $ipk < 3.3) {
+            $sks = 22;
+        } elseif($ipk >= 2.5 && $ipk < 3.0) {
+            $sks = 20;
+        } elseif($ipk >= 2.0 && $ipk < 2.5) {
+            $sks = 18;
+        } elseif($ipk < 2.0) {
+            $sks = 16;
+        }
+
+        return $sks;
+    }
+    // Fungsi Cek SKS selesai
 ?>
