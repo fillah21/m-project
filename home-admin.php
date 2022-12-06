@@ -12,6 +12,14 @@
     $deskripsi = deskripsi($_COOKIE['project']);
 
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi") [0];
+
+    if($data_diri['level'] !== "Admin") {
+        echo "<script>
+                alert('Hak akses tidak diizinkan');
+                document.location.href='logout.php';
+              </script>";
+        exit;
+    }
 ?>
 
 

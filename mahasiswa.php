@@ -14,6 +14,14 @@
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi") [0];
 
     $jumlah_sks = cek_sks($data_diri['ipk']);
+
+    if($data_diri['level'] !== "User") {
+        echo "<script>
+                alert('Hak akses tidak diizinkan');
+                document.location.href='logout.php';
+              </script>";
+        exit;
+    }
 ?>
 
 

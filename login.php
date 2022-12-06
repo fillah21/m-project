@@ -25,13 +25,11 @@
             // setcookie('role', hash('ripemd160', $row['rolename']), time()+10800);
             if($row["level"] === "Admin") {
               echo "<script>
-                    alert('Selamat Datang $username');
                     document.location.href='home-admin.php';
                   </script>";
               exit;
             } elseif ($row["level"] === "User") {
               echo "<script>
-                    alert('Selamat Datang $username');
                     document.location.href='mahasiswa.php';
                   </script>";
               exit;
