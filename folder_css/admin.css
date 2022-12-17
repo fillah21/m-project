@@ -3,6 +3,7 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -12,9 +13,11 @@ body {
 
 /*SIDEBAR*/
 .sidebar {
+  position: absolute;
   background-color: #711A1A;
-  width: 270px;
-  padding: 24px;
+  width: 192px;
+  min-height: 100vh;
+  padding: 10px;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
@@ -27,12 +30,45 @@ body {
   transition: all ease-out 0.3s;
 }
 
+.sidebar .profil img {
+  width: 100px;
+  margin-left: 32px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  transition: ease-in 0.3s;
+}
+
+.sidebar .profil h1 {
+  font-weight: 700;
+  font-size: 15px;
+  color: #FFFFFF;
+  margin-left: 13px;
+}
+
+.sidebar.hide .profil img {
+  width: 45px;
+  margin-left: 12px;
+  margin-top: 80px;
+}
+
+.sidebar.hide .profil h1 {
+  display: none;
+}
+
+.sidebar.hide #menu-button {
+  top: 34px;
+  width: 35px;
+  position: absolute;
+  overflow: hidden;
+  margin-left: 15px;
+  transition: ease-in 0.4s;
+}
+
 .sidebar .text {
-  font-size: 23px;
-  font-weight: bold;
-  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
   color: #FFFF;
-  margin: 7px;
 }
 
 .sidebar.hide .text {
@@ -72,7 +108,7 @@ body {
   flex-direction: row;
   padding: 5px 10px;
   box-sizing: border-box;
-  width: 300px;
+  width: 250px;
 }
 
 .sidebar li.nav-link:hover,
@@ -92,19 +128,19 @@ body {
 }
 
 .sidebar li i {
-  margin-right: 7px;
+  margin-right: 5px;
 }
 
 .sidebar li a {
   color: #FFFF;
 }
 
-/*SIDEBAR SELESAI*/
+/*SIDEBAR End*/
 
 /*TOGGLE MENU*/
 #menu-button {
   top: 34px;
-  width: 32px;
+  width: 25px;
   position: absolute;
   overflow: hidden;
   margin-left: 5px;
@@ -156,7 +192,7 @@ body {
   right: 0;
   left: 0;
   color: #FFFF;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: bold;
   text-align: center;
 }
@@ -229,27 +265,42 @@ body {
   }
 }
 
-/*TOGGLE MENU SELESAI*/
+/*TOGGLE MENU End*/
 
-/* Dashboard */
-#home {
-  font-family: 'Finger Paint', cursive;
-  margin-top: 7rem;
+/* Dsb Home */
+#home header {
+  color: #FFFFFF;
+  font-family: 'Acme', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  text-align: center;
+  margin-left: 85px;
+  margin-top: 86px;
 }
 
-/* Dashboard selesai*/
-
-.box {
-  background-color: #EA7A7A;
-  border-radius: 8px;
-  padding: 10px;
-  box-sizing: border-box;
-  margin: 10px 0;
+#home img {
+  width: 170px;
+  margin-left: 85px;
+  margin-top: 420px;
 }
 
-/* Dashboard mhs */
+/* Dsb Home End */
+
+/* Dsb Mahasiswa */
+/* List Mahasiswa */
 #mhs {
-  margin-top: 5rem;
+  width: auto;
+  margin-top: 90px;
+  margin-left: 85px;
+}
+
+#mhs header {
+  color: #FFFFFF;
+  font-family: 'Acme', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 32px;
 }
 
 #mhs a {
@@ -289,222 +340,17 @@ body {
   border: 0;
 }
 
-#insertMhs .container {
-  font-family: 'Montserrat';
-  font-style: normal;
+#mhs footer img {
+  width: 170px;
+  margin-left: 40px;
+  margin-top: 50px;
 }
 
-#insertMhs .container h2 {
-  margin-top: 6rem;
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 1rem;
-}
+/* List Mahasiswa End */
 
-#insertMhs .container form input {
-  font-weight: 400;
-  font-size: 14px;
-  color: #711A1A;
-  background-color: #EA7A7A;
-  border: 0;
-}
+/* Registrasi */
 
-#insertMhs .container form #status-mhs {
-  font-weight: 400;
-  font-size: 14px;
-  color: #711A1A;
-  background-color: #EA7A7A;
-  border: 0;
-}
 
-#insertMhs .container form .save {
-  margin-left: 55%;
-  margin-right: 2%;
-  border: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 14px;
-  padding-right: 14px;
-  border-radius: 10%;
-  background-color: white;
-  color: #711A1A;
-  font-weight: 500;
-}
+/* Registrasi End */
 
-#insertMhs .container form .clear {
-  border: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 14px;
-  padding-right: 14px;
-  border-radius: 10%;
-  background-color: white;
-  color: #711A1A;
-  font-weight: 500;
-}
-
-/* Dashboard mhs selesai */
-
-/* Dashboard matkul */
-#matkul {
-  margin-top: 5rem;
-}
-
-#matkul a {
-  text-decoration: none;
-  color: white;
-}
-
-#matkul table {
-  font-size: 8px;
-}
-
-.header th {
-  border-right: 0.1px solid #711A1A;
-}
-
-.topTable {
-  border-bottom: 1.5px solid #711A1A;
-}
-
-.header th:last-child {
-  border: 0;
-}
-
-/* Dashboard krs */
-#krs {
-  margin-top: 5rem;
-}
-
-#krs a {
-  text-decoration: none;
-  color: white;
-}
-
-#krs table {
-  font-size: 8px;
-}
-
-.header th {
-  border-right: 0.1px solid #711A1A;
-}
-
-.topTable {
-  border-bottom: 1.5px solid #711A1A;
-}
-
-.header th:last-child {
-  border: 0;
-}
-
-/* registrasi */
-#registrasi {
-  margin-left: 10px;
-  height: 100%;
-  width: 100%;
-}
-
-.form-box {
-  width: 300px;
-  height: 400px;
-  position: relative;
-  margin: 20% auto;
-  background: rgba(201, 200, 200, 0.7);
-  padding: auto;
-  border-radius: 3%;
-  align-items: center;
-}
-
-.logo {
-  size: 10%;
-  position: absolute;
-  margin-top: 60px;
-  margin-left: 15px;
-  opacity: 0.4;
-}
-
-.toggle-button {
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  font-family: 'Finger Paint', cursive;
-  justify-content: space-between;
-  padding: 10px;
-  margin-top: 20px;
-  background: transparent;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  position: absolute;
-  display: block;
-  width: 100%;
-}
-
-.input-group {
-  top: 110px;
-  position: absolute;
-  width: 280px;
-  transition: 0.5s;
-}
-
-.input-field {
-  color: rgb(0, 0, 0);
-  width: 100%;
-  padding: 10px 0;
-  margin: 5px 0;
-  border-left: 0;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 1px solid rgb(219, 219, 219);
-  outline: none;
-  background: transparent;
-}
-
-.submit-button {
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  font-weight: 700;
-  width: 85%;
-  padding: 10px 30px;
-  cursor: pointer;
-  display: block;
-  margin-top: 70px;
-  margin-left: 20px;
-  background: linear-gradient(to right, #d49898, #d44242);
-  border: 0;
-  outline: 0;
-}
-
-.check-box {
-  margin: 30px 10px 30px 0;
-}
-
-.check-box span {
-  color: rgb(27, 27, 27);
-  font-size: 14px;
-  left: 20px;
-  position: absolute;
-}
-
-#login {
-  left: 10px;
-}
-
-/* Desktop */
-@media screen and (max-width: 1280px) {
-  .form-box {
-    margin: 5% auto;
-    align-items: center;
-  }
-}
-
-/* Mobile */
-@media screen and (max-width: 395px) {
-  .content {
-    margin-left: 0;
-  }
-
-  .form-box {
-    margin: 2% auto;
-    align-items: center;
-  }
-}
+/* Dsb Mahasiswa End */
