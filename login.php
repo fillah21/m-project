@@ -1,9 +1,5 @@
 <?php
-include("function.php");
-
-if (isset($_POST["login"])) {
-  $username = $_POST["username"];
-  $password = $_POST["pwd"];
+  include("function.php");
 
   if (isset($_POST["login"])) {
     $username = $_POST["username"];
@@ -25,20 +21,19 @@ if (isset($_POST["login"])) {
         // setcookie('role', hash('ripemd160', $row['rolename']), time()+10800);
         if ($row["level"] === "Admin") {
           echo "<script>
-                    document.location.href='home-admin.php';
-                  </script>";
+                    document.location.href='admin.php';
+                </script>";
           exit;
         } elseif ($row["level"] === "User") {
           echo "<script>
                     document.location.href='mahasiswa.php';
-                  </script>";
+                </script>";
           exit;
         }
       }
     }
     $error = true;
   }
-}
 ?>
 
 <!DOCTYPE html>

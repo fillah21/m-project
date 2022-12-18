@@ -10,7 +10,9 @@
         $no_induk = $_POST['no_induk'];
         $semester = $_POST['semester'];
         $ipk = $_POST['ipk'];
-        $jumlah_sks = $_POST['jumlah_sks'];
+        $alamat = "Kuningan";
+        $no_hp = "085826389656";
+        $gambar = "foto.png";
         $sudah_krs = "Belum";
         $level = "User";
 
@@ -37,7 +39,7 @@
         $password = password_hash($password2, PASSWORD_DEFAULT);
         
         //jika password sama, masukkan data ke database
-        mysqli_query($conn, "INSERT INTO user VALUES ('', '$username', '$password', '$nama', '$email', '$no_induk', '$semester', '$ipk', '$jumlah_sks', '$sudah_krs', '$level')");
+        mysqli_query($conn, "INSERT INTO user VALUES ('', '$username', '$password', '$nama', '$email', '$no_induk', '$semester', '$ipk', '$alamat', '$no_hp', '$gambar', '$sudah_krs', '$level')");
         echo "<script>
                 alert('Data Berhasil Disimpan, dan Silahkan Login');
                 document.location.href='login.php';
