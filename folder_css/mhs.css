@@ -6,30 +6,52 @@ body{
     background-color: #D23939;
 }
 
-@media screen and (max-width:365px) {
-.sidebar{
-    width: 93px;
-}}
-
 /*SIDEBAR*/
 .sidebar{
     background-color: #711A1A;
-    width: 270px;
-    padding: 24px;
+    width: 192px;
+    padding: 25px;
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
     border-radius: 0 9px 9px 0;
     transition: all ease-in 0.3s;
+    position: absolute;
+    min-height: 100vh;
 }
 
 .sidebar.hide{
-    width: 93px;
+    width: 90px;
     transition: all ease-out 0.3s;
 }
 
+.sidebar .profil img{
+    width: 100px;
+    margin-left: 21px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: all ease-in 0.3s;
+}
+
+.sidebar .profil h1{
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFF;
+    text-align: center;
+}
+
+.sidebar.hide .profil img{
+    width: 45px;
+    margin-left: 1px;
+    margin-top: 70px;
+}
+
+.sidebar.hide .profil h1{
+    display: none;
+}
+
 .sidebar .text{
-    font-size: 23px;
     font-weight: bold;
     text-align: center;
     color: #FFFF;
@@ -62,18 +84,15 @@ body{
     border: none;
 }
 
-.sidebar.hide ul li .text{
-    display: none;
-}
-
 .sidebar li.nav-link.active{
     background-color: #D23939;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
-    padding: 5px 10px;
+    padding: 3px 15px;
     box-sizing: border-box;
-    width: 300px;
+    width: 200px;
+    line-height: 1.5;
 }
 
 .sidebar li.nav-link:hover, .nav-link:focus{
@@ -86,12 +105,29 @@ body{
     transition: none;
 }
 
-.sidebar li.active a, .sidebar li.active a:hover{
-    color: #c7acac;
+.sidebar ul.nav-tabs li ul.dropdown-menu{
+    border-radius: 4px;
+    background-color: #711A1A;
+    border: 2px solid #D23939;
+    min-width: 0rem;
+}
+
+.sidebar.hide ul.nav-tabs li ul.dropdown-menu{
+    position: absolute;
+
+}
+
+.sidebar ul.nav-tabs li ul.dropdown-menu li.dropdown-item a:hover{
+    color: #D23939;   
+}
+
+.sidebar.hide ul.nav{
+    margin-top: 1px;
 }
 
 .sidebar li i{
     margin-right: 7px;
+    width: 192px;
 }
 
 .sidebar li a{
@@ -102,10 +138,10 @@ body{
 /*TOGGLE MENU*/
 #menu-button{
     top: 34px;
-    width: 32px;
+    width: 25px;
     position: absolute;
     overflow: hidden;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 #m-label{
@@ -151,17 +187,17 @@ body{
     right: 0;
     left: 0;
     color: #FFFF;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: bold;
     text-align: center;
 }
 
 #menu-checkbox:checked + #m-label:before{
-    left: -39px;
+    left: -25px;
 }
 
 #menu-checkbox:checked + #m-label:after{
-    left: 39px;
+    left: 25px;
 }
 
 #menu-checkbox:checked + #m-label #hamburger:before{
@@ -216,11 +252,55 @@ body{
 }
 /*TOGGLE MENU SELESAI*/
 
-/*MAHASISWA-BUAT KRS*/
+/*MAHASISWA-HOME*/
+#home header {
+    color: #FFFFFF;
+    font-family: 'Acme', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+    text-align: center;
+    margin-top: 86px;
+    margin-left: 80px;
+}
+
+#home img {
+    width: 170px;
+    margin-top: 380px;
+    margin-left: 80px;
+}
+
+/*MAHASISWA-KRS*/
 .box{
     background-color: #EA7A7A;
     border-radius: 8px;
     padding: 10px;
     box-sizing: border-box;
     margin: 10px 0;
+}
+
+/*MAHASISWA-BIODATA*/
+#biodata{
+    margin-left: 80px;
+}
+
+#biodata img {
+    width: 170px;
+    margin-top: 120px;
+}
+
+/*MAHASISWA-ABOUT*/
+#about{
+    margin-left: 80px;
+}
+
+#about .email span{
+    text-align: center;
+    text-decoration: none;
+    color: #0000;
+}
+
+#about img {
+    width: 170px;
+    margin-top: 150px;
 }
