@@ -270,19 +270,25 @@ body {
 /* Dsb Home */
 #home header {
   color: #FFFFFF;
-  font-family: 'Acme', sans-serif;
   font-weight: 400;
-  font-size: 25px;
-  line-height: 32px;
+  font-size: 45px;
+  line-height: 50px;
+  width: 500px;
+  margin-left: 35%;
+  margin-top: 7%;
+  padding: 10px;
+}
+
+#home header p {
+  font-family: 'Acme', sans-serif;
+  width: 100%;
   text-align: center;
-  margin-left: 85px;
-  margin-top: 86px;
 }
 
 #home img {
-  width: 170px;
-  margin-left: 85px;
-  margin-top: 420px;
+  width: 300px;
+  margin-left: 44%;
+  margin-top: 33%;
 }
 
 /* Dsb Home End */
@@ -291,66 +297,1350 @@ body {
 /* List Mahasiswa */
 #mhs {
   width: auto;
-  margin-top: 90px;
-  margin-left: 85px;
+  margin-top: 5%;
+  margin-left: 15%;
 }
 
 #mhs header {
   color: #FFFFFF;
   font-family: 'Acme', sans-serif;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 45px;
   line-height: 32px;
 }
 
-#mhs a {
-  text-decoration: none;
-  color: white;
+#btnRegis {
+  padding-left: 0;
+  font-size: 20px;
 }
 
 #mhs table {
-  font-size: 8px;
+  font-size: 12px;
 }
 
-.header th {
-  border-right: 0.1px solid #711A1A;
+#listItem {
+  height: 425px;
+  overflow-y: scroll;
 }
 
-.topTable {
-  border-bottom: 1.5px solid #711A1A;
+#listItem .headerMhs th {
+  border-bottom: 3px solid #711A1A;
+  border-right: 1px solid #711A1A;
 }
 
-.header th:last-child {
-  border: 0;
+#listItem .headerMhs th:last-child {
+  border-right: 0;
+  padding: 4px 20px 8px 20px;
 }
 
-.content tr {
-  border-bottom: 0.1px solid #711A1A;
+#listItem .headerMhs th:nth-child(2) {
+  padding: 4px 50px 8px 50px;
 }
 
-.content td {
-  border-right: 0.1px solid #711A1A
+#listItem .headerMhs th:nth-child(6) {
+  padding: 4px 50px 8px 50px;
 }
 
-.content th {
-  border-right: 0.1px solid #711A1A
+.contentTable tr {
+  border-bottom: 1px solid #711A1A;
 }
 
-.content td:last-child {
-  border: 0;
+.contentTable tr th {
+  border-right: 1px solid #711A1A;
+  border-bottom: 1px solid #711A1A;
+}
+
+.contentTable tr td {
+  border-right: 1px solid #711A1A;
+}
+
+.contentTable tr td:last-child {
+  border-right: 0;
 }
 
 #mhs footer img {
-  width: 170px;
-  margin-left: 40px;
-  margin-top: 50px;
+  width: 250px;
+  margin-left: 35%;
+  margin-top: 3%;
 }
 
 /* List Mahasiswa End */
 
 /* Registrasi */
+#regis {
+  position: absolute;
+  width: 290px;
+  padding: 10px;
+  left: 50%;
+  top: 0;
+  background: #EA7A7A;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #FFFFFF;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.4s;
+}
 
+#regis.open {
+  top: 50%;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 50;
+}
+
+#regis h3 {
+  font-family: 'Acme';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#regis .username {
+  display: flex;
+}
+
+#regis .usePass {
+  background: #D23939;
+  border-radius: 8px;
+  width: 129px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  padding: 5px;
+
+}
+
+#regis .username label {
+  padding: 4px;
+  margin-left: 10px;
+  width: 150px;
+}
+
+#regis .username .checkbox {
+  margin: 2px;
+  width: 25px;
+  margin-top: 10px;
+}
+
+#regis .password {
+  display: flex;
+}
+
+#regis .password label {
+  padding: 4px;
+  margin-left: 10px;
+  width: 150px;
+}
+
+#regis .password .checkbox {
+  margin: 2px;
+  width: 25px;
+  margin-top: 10px;
+}
+
+#regis form input {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+#regis form textarea {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+}
+
+#regis form button {
+  width: 100px;
+  background: #D23939;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+}
+
+#regis form button a {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
 
 /* Registrasi End */
 
+/* Edit Data */
+#edit {
+  position: absolute;
+  width: 290px;
+  padding: 10px;
+  left: 50%;
+  top: 0;
+  background: #EA7A7A;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #FFFFFF;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.4s;
+}
+
+#edit.open {
+  top: 50%;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 50;
+}
+
+#edit h3 {
+  font-family: 'Acme';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#edit .username {
+  display: flex;
+}
+
+#edit .usePass {
+  background: #D23939;
+  border-radius: 8px;
+  width: 129px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  padding: 5px;
+
+}
+
+#edit .username label {
+  padding: 4px;
+  margin-left: 10px;
+  width: 150px;
+}
+
+#edit .username .checkbox {
+  margin: 2px;
+  width: 25px;
+  margin-top: 10px;
+}
+
+#edit .password {
+  display: flex;
+}
+
+#edit .password label {
+  padding: 4px;
+  margin-left: 10px;
+  width: 150px;
+}
+
+#edit .password .checkbox {
+  margin: 2px;
+  width: 25px;
+  margin-top: 10px;
+}
+
+#edit form input {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+#edit form textarea {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+}
+
+#edit form button {
+  width: 100px;
+  background: #D23939;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+}
+
+#edit form button a {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Edit Data End */
+
+/* Delete Data */
+#delete {
+  position: absolute;
+  width: 270px;
+  height: 150px;
+  left: 50%;
+  top: 0;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.3s;
+}
+
+#delete.open {
+  top: 20%;
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
+  z-index: 50;
+}
+
+#delete h3 {
+  font-family: 'Acme';
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+#delete span {
+  width: 100%;
+  height: 3px;
+  background-color: #711A1A;
+  border-radius: 3px;
+  border: 0;
+  margin-bottom: 10px;
+}
+
+#delete p {
+  width: 100%;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 12px;
+  color: #000000;
+}
+
+#delete button {
+  width: 65px;
+  margin: 0;
+  padding: 4px;
+  font-weight: 800;
+}
+
+#delete button a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Delete Data End */
 /* Dsb Mahasiswa End */
+
+/* Dsb Matkul */
+/* list Matkul */
+#matkul {
+  width: auto;
+  margin-top: 5%;
+  margin-left: 15%;
+}
+
+#matkul header {
+  color: #FFFFFF;
+  font-family: 'Acme', sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 32px;
+}
+
+#btnMatkul {
+  padding-left: 0;
+  font-size: 20px;
+}
+
+#matkul table {
+  font-size: 12px;
+}
+
+#listMatkul {
+  height: 425px;
+  overflow-y: scroll;
+}
+
+#listMatkul .headerMatkul th {
+  border-bottom: 3px solid #711A1A;
+  border-right: 1px solid #711A1A;
+}
+
+#listMatkul .headerMatkul th:last-child {
+  border-right: 0;
+  padding: 4px 20px 8px 20px;
+}
+
+#listMatkul .headerMatkul th:nth-child(2) {
+  padding: 4px 5px 8px 5px;
+}
+
+#listMatkul .headerMatkul th:nth-child(6) {
+  padding: 4px 50px 8px 50px;
+}
+
+.contentTable tr {
+  border-bottom: 1px solid #711A1A;
+}
+
+.contentTable tr th {
+  border-right: 1px solid #711A1A;
+  border-bottom: 1px solid #711A1A;
+}
+
+.contentTable tr td {
+  border-right: 1px solid #711A1A;
+}
+
+.contentTable tr td:last-child {
+  border-right: 0;
+}
+
+#matkul footer img {
+  width: 250px;
+  margin-left: 35%;
+  margin-top: 3%;
+}
+
+/* List Matkul End */
+
+/* Input Matkul */
+#inputMk {
+  position: absolute;
+  width: 290px;
+  padding: 10px;
+  left: 50%;
+  top: 0;
+  background: #EA7A7A;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #FFFFFF;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.4s;
+}
+
+#inputMk.open {
+  top: 50%;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 50;
+}
+
+#inputMk h3 {
+  font-family: 'Acme';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#inputMk form input {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+#inputMk form button {
+  margin-top: 10px;
+  width: 100px;
+  background: #D23939;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+}
+
+#inputMk form button a {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Input Matkul End */
+
+/* Edit Matkul */
+#editMk {
+  position: absolute;
+  width: 290px;
+  padding: 10px;
+  left: 50%;
+  top: 0;
+  background: #EA7A7A;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #FFFFFF;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.4s;
+}
+
+#editMk.open {
+  top: 50%;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 50;
+}
+
+#editMk h3 {
+  font-family: 'Acme';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#editMk form input {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+#editMk form button {
+  margin-top: 10px;
+  width: 100px;
+  background: #D23939;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+}
+
+#editMk form button a {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Edit Matkul End */
+
+/* Delete Matkul */
+#deleteMk {
+  position: absolute;
+  width: 270px;
+  height: 150px;
+  left: 50%;
+  top: 0;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.3s;
+}
+
+#deleteMk.open {
+  top: 20%;
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
+  z-index: 50;
+}
+
+#deleteMk h3 {
+  font-family: 'Acme';
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+#deleteMk span {
+  width: 100%;
+  height: 3px;
+  background-color: #711A1A;
+  border-radius: 3px;
+  border: 0;
+  margin-bottom: 10px;
+}
+
+#deleteMk p {
+  width: 100%;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 12px;
+  color: #000000;
+}
+
+#deleteMk button {
+  width: 65px;
+  margin: 0;
+  padding: 4px;
+  font-weight: 800;
+}
+
+#deleteMk button a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Delete Matkul End */
+/* dsb Mk End */
+
+/* dsb Krs */
+/* List Krs */
+#krs {
+  width: auto;
+  margin-top: 5%;
+  margin-left: 15%;
+  visibility: visible;
+  transform: scale(1);
+}
+
+#krs.open {
+  visibility: hidden;
+  transform: scale(0.1);
+}
+
+#krs header {
+  color: #FFFFFF;
+  font-family: 'Acme', sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 32px;
+}
+
+#krs table {
+  font-size: 12px;
+}
+
+#listKrs {
+  height: 425px;
+  overflow-y: scroll;
+}
+
+#listKrs .headerKrs th {
+  border-bottom: 3px solid #711A1A;
+  border-right: 1px solid #711A1A;
+}
+
+#listKrs .headerKrs th:last-child {
+  border-right: 0;
+  padding: 4px 20px 8px 20px;
+}
+
+#listKrs .headerKrs th:nth-child(2) {
+  padding: 4px 50px 8px 50px;
+}
+
+#listKrs .headerKrs th:nth-child(6) {
+  padding: 4px 50px 8px 50px;
+}
+
+.contentTable tr {
+  border-bottom: 1px solid #711A1A;
+}
+
+.contentTable tr th {
+  border-right: 1px solid #711A1A;
+  border-bottom: 1px solid #711A1A;
+}
+
+.contentTable tr td {
+  border-right: 1px solid #711A1A;
+}
+
+.contentTable tr td:last-child {
+  border-right: 0;
+}
+
+#btnDetail {
+  border: 1px solid #FFFFFF;
+  width: auto;
+  padding: 2px 10px 2px 10px;
+  margin: 0;
+}
+
+#btnDetail a {
+  text-decoration: none;
+  font-size: 11px;
+  color: #FFFFFF;
+}
+
+#krs footer img {
+  width: 250px;
+  margin-left: 35%;
+  margin-top: 3%;
+}
+
+/* List Krs End */
+
+/* Detail Krs */
+#detailKrs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.3s;
+}
+
+#detailKrs.open {
+  left: 50%;
+  top: 50%;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#detailKrs h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Acme', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+
+#detailMenu {
+  top: 10%;
+  left: 50%;
+  width: 250px;
+  height: 420px;
+  border-radius: 10px;
+  background-color: #EA7A7A;
+  padding: 10px;
+}
+
+#detailMenu p {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  color: #000000;
+}
+
+#detailMenu span {
+  width: 50px;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  color: #000000;
+}
+
+#detailMenu input {
+  margin-left: 20px;
+  width: 140px;
+  height: 20px;
+  background: #D23939;
+  border-radius: 6px;
+  font-size: 11px;
+  padding: 4px;
+  color: #FFFFFF;
+}
+
+#detailMenu form div {
+  display: flex;
+  justify-content: center;
+}
+
+#krsMhs {
+  width: auto;
+  overflow-y: scroll;
+}
+
+#krsMhs table {
+  font-size: 10px;
+}
+
+#krsMhs table thead {
+  border-bottom: 2px solid #711A1A;
+  padding: 4px;
+  text-align: center;
+}
+
+#krsMhs table tbody tr th {
+  padding: 8px 2px 4px 4px;
+}
+
+#toggleKrs {
+  display: flex;
+  justify-content: end;
+}
+
+#toggleKrs button a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+}
+
+#detailKrs footer {
+  text-align: center;
+  margin-top: 3%;
+}
+
+#detailKrs footer img {
+  width: 170px;
+}
+
+/* Detail Krs End */
+/* dsb Krs End*/
+
+/* dsb About */
+#about {
+  width: auto;
+  margin-top: 5%;
+  margin-left: 15%;
+}
+
+#about h2 {
+  font-family: 'Acme', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+
+#about article {
+  width: 250px;
+  height: auto;
+  background: #EA7A7A;
+  border-radius: 8px;
+  padding: 15px;
+  font-weight: 550;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  color: #000000;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#medsos {
+  width: 250px;
+  height: auto;
+  background: #EA7A7A;
+  border-radius: 8px;
+  padding: 15px;
+  color: #000000;
+}
+
+#medsos p {
+  font-weight: 550;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#medsos #icon {
+  position: relative;
+  left: 40%;
+  font-size: 23px;
+}
+
+#medsos .email {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#medsos .email a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #000000;
+}
+
+#medsos .insta ul {
+  list-style: none;
+  font-weight: 400;
+  font-size: 12px;
+  color: #000000;
+  display: flex;
+  padding: 4px;
+  margin: 0;
+}
+
+#medsos .insta ul li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+#about footer {
+  text-align: left;
+  margin-top: 3%;
+}
+
+#about footer img {
+  margin-left: 4%;
+  width: 170px;
+}
+
+/* dsb About End */
+
+/* Responsive */
+@media screen and (max-width: 375px) {
+  #home header {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+    width: 300px;
+    margin-left: 17%;
+    margin-top: 30%;
+    padding: 10px;
+  }
+
+  #home header p {
+    width: 100%;
+    text-align: center;
+  }
+
+  #home img {
+    width: 170px;
+    margin-left: 35%;
+    margin-top: 90%;
+  }
+
+  #mhs {
+    width: auto;
+    margin-top: 40px;
+    margin-left: 85px;
+  }
+
+  #mhs header {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #btnRegis {
+    padding-left: 0;
+    font-size: 17px;
+  }
+
+  #mhs table {
+    font-size: 11px;
+  }
+
+  #listItem {
+    height: 425px;
+    overflow-y: scroll;
+  }
+
+  #mhs footer img {
+    width: 170px;
+    margin-left: 40px;
+    margin-top: 25px;
+  }
+
+  #regis {
+    position: absolute;
+    width: 290px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+  }
+
+  #regis.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+  }
+
+  #edit {
+    position: absolute;
+    width: 290px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+  }
+
+  #edit.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+  }
+
+  #delete {
+    position: absolute;
+    width: 270px;
+    height: 150px;
+    left: 50%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  }
+
+  #delete.open {
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    z-index: 50;
+  }
+
+  #matkul {
+    width: auto;
+    margin-top: 40px;
+    margin-left: 85px;
+  }
+
+  #matkul header {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #btnMatkul {
+    padding-left: 0;
+    font-size: 17px;
+  }
+
+  #matkul table {
+    font-size: 11px;
+  }
+
+  #listMatkul {
+    height: 425px;
+    overflow-y: scroll;
+  }
+
+  #matkul footer img {
+    width: 170px;
+    margin-left: 40px;
+    margin-top: 25px;
+  }
+
+  #inputMk {
+    position: absolute;
+    width: 290px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+  }
+
+  #inputMk.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+  }
+
+  #editMk {
+    position: absolute;
+    width: 290px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+  }
+
+  #editMk.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+  }
+
+  #deleteMk {
+    position: absolute;
+    width: 270px;
+    height: 150px;
+    left: 50%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  }
+
+  #deleteMk.open {
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    z-index: 50;
+  }
+
+  #krs {
+    width: auto;
+    margin-top: 40px;
+    margin-left: 85px;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  #krs.open {
+    visibility: hidden;
+    transform: scale(0.1);
+  }
+
+  #krs header {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #krs table {
+    font-size: 11px;
+  }
+
+  #listKrs {
+    height: 425px;
+    overflow-y: scroll;
+  }
+
+  #krs footer img {
+    width: 170px;
+    margin-left: 40px;
+    margin-top: 25px;
+  }
+
+  #detailKrs {
+    position: absolute;
+    left: 0;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  }
+
+  #detailKrs.open {
+    left: 62%;
+    top: 30%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  #detailKrs h2 {
+    text-align: left;
+    margin-top: 60%;
+    margin-left: 17%;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #detailMenu {
+    width: 250px;
+    height: 420px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  #detailMenu p {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  #detailMenu span {
+    width: 50px;
+    margin-right: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  #detailMenu input {
+    margin-left: 20px;
+    width: 140px;
+    height: 20px;
+    border-radius: 6px;
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  #detailMenu form div {
+    display: flex;
+    justify-content: center;
+  }
+
+  #krsMhs {
+    width: auto;
+    overflow-y: scroll;
+  }
+
+  #krsMhs table {
+    font-size: 10px;
+  }
+
+  #krsMhs table thead {
+    padding: 4px;
+    text-align: center;
+  }
+
+  #krsMhs table tbody tr th {
+    padding: 8px 2px 4px 4px;
+  }
+
+  #toggleKrs {
+    display: flex;
+    justify-content: end;
+  }
+
+  #toggleKrs button a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  #detailKrs footer {
+    text-align: center;
+    margin-top: 3%;
+  }
+
+  #detailKrs footer img {
+    width: 170px;
+  }
+
+  #about {
+    width: auto;
+    margin-top: 40px;
+    margin-left: 85px;
+  }
+
+  #about h2 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #about article {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    padding: 15px;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  #medsos {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    padding: 15px;
+  }
+
+  #medsos p {
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  #medsos #icon {
+    position: relative;
+    left: 40%;
+    font-size: 23px;
+  }
+
+  #medsos .email {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #medsos .email a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  #medsos .insta ul {
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    padding: 4px;
+    margin: 0;
+  }
+
+  #about footer img {
+    width: 170px;
+    margin-left: 15%;
+    margin-top: 13%;
+  }
+}

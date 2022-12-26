@@ -113,11 +113,13 @@ if ($data_diri['level'] !== "Admin") {
     <!-- CONTENT -->
     <div class="content tab-content">
         <!-- Tab Dashboard -->
-        <div id="home" class="container-md tab-pane active" style="text-align: center;">
+        <div id="home" class="container-md tab-pane active">
             <header>
-                Selamat Datang
-                <br>
-                Ahmad Nur Cahyadi
+                <p>
+                    Selamat Datang
+                    <br>
+                    Ahmad Nur Cahyadi
+                </p>
             </header>
             <footer>
                 <img src="image/Logo2.png" alt="logo">
@@ -128,33 +130,29 @@ if ($data_diri['level'] !== "Admin") {
         <!-- Tab Mahasiswa -->
         <!-- List Mahasiswa -->
         <div id="mhs" class="container-md tab-pane fade">
-            <header>Data Mahasiswa</header>
-            <div class="row-md mb-4">
-                <div class="col-md">
-                    <a href="#insertMhs" class="nav-link">
-                        <i class="bi bi-plus-square-fill me-3"></i>
-                        <span>Registrasi</span>
-                    </a>
-                </div>
-            </div>
+            <header class="mb-2">Data Mahasiswa</header>
+            <button id="btnRegis" type="button" class="btn text-white mb-2">
+                <i class="bi bi-plus-square-fill me-1"></i>
+                Registrasi
+            </button>
             <div class="row-sm">
-                <div class="col-sm table-responsive">
+                <div class="col-sm table-responsive" id="listItem">
                     <table class="table text-white">
-                        <thead class="topTable">
-                            <tr class="header">
+                        <thead class="topTable text-center">
+                            <tr class="headerMhs ">
                                 <th scope="col">NIM</th>
                                 <th scope="col">NAMA</th>
                                 <th scope="col">JK</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">EMAIL</th>
                                 <th scope="col">No.HP</th>
-                                <th scope="col">Alamat</th>
+                                <th scope="col">ALAMAT</th>
                                 <th scope="col">SMT</th>
                                 <th scope="col">IPK</th>
                                 <th scope="col">AKSI</th>
                             </tr>
                         </thead>
                         <tbody class="contentTable text-dark">
-                            <tr class="text-white">
+                            <tr class=" text-white text-center">
                                 <th scope="row">190511094</th>
                                 <td>Ahmad Nur Cahyadi</td>
                                 <td>L</td>
@@ -163,31 +161,14 @@ if ($data_diri['level'] !== "Admin") {
                                 <td>Desa Kepuh Kecamatan Palimanan Kabupaten Cirebon</td>
                                 <td>7</td>
                                 <td>3.58</td>
-                                <td><a href="#" class="text-dark">
-                                        <i class="bi bi-pen-fill"></i>
-                                    </a>
+                                <td>
+                                    <span id="btnEdit"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
+                                            <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
+                                        </button></span>
                                     <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-                                    <a href="#" class="text-dark">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="text-white">
-                                <th scope="row">190511094</th>
-                                <td>Ahmad Nur Cahyadi</td>
-                                <td>L</td>
-                                <td>arcanearlaze02@gmail.com</td>
-                                <td>088707878053</td>
-                                <td>Desa Kepuh Kecamatan Palimanan Kabupaten Cirebon</td>
-                                <td>7</td>
-                                <td>3.58</td>
-                                <td><a href="#" class="text-dark">
-                                        <i class="bi bi-pen-fill"></i>
-                                    </a>
-                                    <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-                                    <a href="#" class="text-dark">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
+                                    <span id="btnDel"><button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
+                                            <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
+                                        </button></span>
                                 </td>
                             </tr>
                         </tbody>
@@ -197,25 +178,341 @@ if ($data_diri['level'] !== "Admin") {
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- List Mahasiswa End -->
-        <div class="content tab-content">
-            <!-- Registrasi Mahasiswa -->
-            <header id="InsertMhs" class="container-sm tab-pane fade">
-                Registrasi Mahasiswa
-            </header>
-            <form action="input" class="container-sm">
 
+        <!-- Registrasi Mahasiswa -->
+        <div class="container-sm" id="regis">
+            <h3>Registrasi Mahasiswa</h3>
+            <form action="">
+                <fieldset>
+                    <div class="username">
+                        <input class="usePass" type="text" placeholder="Username" name="username">
+                        <label><input class="checkbox" type="checkbox" name="checkbox">Cek Username</label>
+                    </div>
+                    <div class="password">
+                        <input class="usePass" type="password" placeholder="Password" name="password">
+                        <label><input class="checkbox" type="checkbox" name="checkbox">Cek Password</label>
+                    </div>
+                    <input type="text" placeholder="Nama" name="nama">
+                    <input type="text" placeholder="Jenis Kelamin" name="jenisKelamin">
+                    <input type="email" placeholder="Email" name="email">
+                    <input type="text" placeholder="NIM" name="nim">
+                    <input type="text" placeholder="Semester" name="semester">
+                    <input type="text" placeholder="IPK" name="ipk">
+                    <input type="text" placeholder="No. Telp" name="noTelp">
+                    <textarea name="alamat" cols="25" rows="10" placeholder="Alamat"></textarea>
+                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeRegis">
+                        <a href="#mhs">SUBMIT</a>
+                    </button>
+                </fieldset>
             </form>
-            <!-- Registrasi Mahasiswa End -->
-
         </div>
+        <!-- Registrasi Mahasiswa End -->
+
+        <!-- Edit Data Mahasiswa -->
+        <div class="container-sm" id="edit">
+            <h3>Edit Data Mahasiswa</h3>
+            <form action="">
+                <fieldset>
+                    <div class="username">
+                        <input class="usePass" type="text" placeholder="Username" name="username">
+                        <label><input class="checkbox" type="checkbox" name="checkbox">Cek Username</label>
+                    </div>
+                    <div class="password">
+                        <input class="usePass" type="password" placeholder="Password" name="password">
+                        <label><input class="checkbox" type="checkbox" name="checkbox">Cek Password</label>
+                    </div>
+                    <input type="text" placeholder="Nama" name="nama">
+                    <input type="text" placeholder="Jenis Kelamin" name="jenisKelamin">
+                    <input type="email" placeholder="Email" name="email">
+                    <input type="text" placeholder="NIM" name="nim">
+                    <input type="text" placeholder="Semester" name="semester">
+                    <input type="text" placeholder="IPK" name="ipk">
+                    <input type="text" placeholder="No. Telp" name="noTelp">
+                    <textarea name="alamat" cols="25" rows="10" placeholder="Alamat"></textarea>
+                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeEdit">
+                        <a href="#mhs">UPDATE</a>
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+        <!-- Edit Data Mahasiswa End -->
+
+        <!-- Delete Mahasiswa -->
+        <div class="container-sm text-center shadow" id="delete">
+            <h3>CONFIRM</h3>
+            <span></span>
+            <p>Apakah anda yakin ingin menghapusnya?</p>
+            <span></span>
+            <div class="d-flex ms-auto">
+                <button id="confirm" type="button" class="btn btn-outline-primary btn-sm me-2">
+                    <a href="#mhs">Yes</a>
+                </button>
+                <button id="back" type="button" class="btn btn-outline-danger btn-sm">
+                    <a href="#mhs">No</a>
+                </button>
+            </div>
+        </div>
+        <!-- Delete Mahasiswa End -->
         <!-- Tab Mahasiswa End -->
+
         <!-- Tab Mata kuliah -->
+        <!-- list Mk -->
+        <div id="matkul" class="container-md tab-pane fade">
+            <header class="mb-2">Data Mata Kuliah</header>
+            <button id="btnMatkul" type="button" class="btn text-white mb-2">
+                <i class="bi bi-plus-square-fill me-1"></i>
+                Tambah Mata Kuliah
+            </button>
+            <div class="row-sm">
+                <div class="col-sm table-responsive" id="listMatkul">
+                    <table class="table text-white">
+                        <thead class="topTable text-center">
+                            <tr class="headerMatkul">
+                                <th scope="col">KODE</th>
+                                <th scope="col">NAMA MATA KULIAH</th>
+                                <th scope="col">SEMESTER</th>
+                                <th scope="col">SKS</th>
+                                <th scope="col">AKSI</th>
+                            </tr>
+                        </thead>
+                        <tbody class="contentTable text-dark">
+                            <tr class="text-white text-center">
+                                <th scope="row">AA001</th>
+                                <td>Pemrograman Bergerak</td>
+                                <td>7</td>
+                                <td>3</td>
+                                <td>
+                                    <span id="btnEditMk"><button class="btn btn-sm p-0 m-0" style="width: 12px;">
+                                            <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
+                                        </button>
+                                    </span>
+                                    <span class="text-dark mx-1" style="font-size: 9px;">|</span>
+                                    <span id="btnDelMk"><button class="btn btn-sm p-0 m-0" style="width: 12px;">
+                                            <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
+                                        </button>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer><img src="image/Logo2.png" alt="logo"></footer>
+        </div>
+        <!-- list Mk End -->
+
+        <!-- Input data matkul -->
+        <div class="container-sm" id="inputMk">
+            <h3>Insert Mata Kuliah</h3>
+            <form action="">
+                <fieldset>
+                    <input type="text" placeholder="Kode" name="kode">
+                    <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
+                    <input type="text" placeholder="Semester" name="semester">
+                    <input type="text" placeholder="SKS" name="sks">
+                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeMatkul">
+                        <a href="#matkul">SUBMIT</a>
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+        <!-- Input data matkul End -->
+
+        <!-- Edit data matkul -->
+        <div class="container-sm" id="editMk">
+            <h3>Edit Mata Kuliah</h3>
+            <form action="">
+                <fieldset>
+                    <input type="text" placeholder="Kode" name="kode">
+                    <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
+                    <input type="text" placeholder="Semester" name="semester">
+                    <input type="text" placeholder="SKS" name="sks">
+                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeEditMk">
+                        <a href="#matkul">UPDATE</a>
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+        <!-- Edit data matkul End -->
+
+        <!-- Delete matkul -->
+        <div class="container-sm text-center shadow" id="deleteMk">
+            <h3>CONFIRM</h3>
+            <span></span>
+            <p>Apakah anda yakin ingin menghapusnya?</p>
+            <span></span>
+            <div class="d-flex ms-auto">
+                <button id="confirmMk" type="button" class="btn btn-outline-primary btn-sm me-2">
+                    <a href="#matkul">Yes</a>
+                </button>
+                <button id="backMk" type="button" class="btn btn-outline-danger btn-sm">
+                    <a href="#matkul">No</a>
+                </button>
+            </div>
+        </div>
+        <!-- Delete matkul End -->
         <!-- Tab Mata kuliah End -->
+
         <!-- Tab KRS -->
+        <!-- list KRS -->
+        <div id="krs" class="container-md tab-pane fade">
+            <header class="mb-4">Data KRS</header>
+            <div class="row-sm">
+                <div class="col-sm table-responsive" id="listKrs">
+                    <table class="table text-white">
+                        <thead class="topTable text-center">
+                            <tr class="headerKrs ">
+                                <th scope="col">NIM</th>
+                                <th scope="col">NAMA</th>
+                                <th scope="col">SEMESTER</th>
+                                <th scope="col">SKS</th>
+                                <th scope="col">AKSI</th>
+                            </tr>
+                        </thead>
+                        <tbody class="contentTable text-dark">
+                            <tr class="text-white text-center">
+                                <th scope="row">190511094</th>
+                                <td>Ahmad Nur Cahyadi</td>
+                                <td>7</td>
+                                <td>24</td>
+                                <td>
+                                    <button id="btnDetail" class="btn btn-sm" type="menu"><a href="#detailKrs">DETAIL</a></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer><img src="image/Logo2.png" alt="logo"></footer>
+        </div>
+        <!-- list KRS End -->
+
+        <!-- Detail KRS -->
+        <div class="container-sm" id="detailKrs">
+            <h2>Detail KRS</h2>
+            <div class="container-sm" id="detailMenu">
+                <p>Detail Mahasiswa</p>
+                <form action="">
+                    <fieldset>
+                        <div>
+                            <span>NIM</span>
+                            <p>:</p>
+                            <input type="text" placeholder="NIM" name="nim">
+                        </div>
+                        <div>
+                            <span>Nama</span>
+                            <p>:</p>
+                            <input type="text" placeholder="Nama" name="nama">
+                        </div>
+                        <div>
+                            <span>Semester</span>
+                            <p>:</p>
+                            <input type="text" placeholder="Semester" name="semester">
+                        </div>
+                        <div>
+                            <span>IPK</span>
+                            <p>:</p>
+                            <input type="text" placeholder="IPK" name="ipk">
+                        </div>
+                    </fieldset>
+                </form>
+                <p class="mt-3">Daftar Mata Kuliah Yang Diajukan</p>
+                <div class="table-responsive" id="krsMhs">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Mata Kuliah</th>
+                                <th scope="col">SKS</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Pemrograman Bergerak</th>
+                                <td>3</td>
+                                <td>checked</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sistem Pakar</th>
+                                <td>3</td>
+                                <td>checked</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Riset Operasi</th>
+                                <td>3</td>
+                                <td>checked</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Big Data</th>
+                                <td>3</td>
+                                <td>checked</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Kecerdasan Buatan</th>
+                                <td>3</td>
+                                <td>checked</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="toggleKrs">
+                    <button type="button" class="btn btn-outline-danger btn-sm me-2" id="upKrs">
+                        <a href="#krs">UPDATE</a>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm" id="downKrs">
+                        <a href="#krs">DELETE</a>
+                    </button>
+                </div>
+            </div>
+            <footer><img src="image/Logo2.png" alt="logo"></footer>
+        </div>
+        <!-- Detail KRS End -->
         <!-- Tab KRS End -->
+
         <!-- Tab About -->
+        <div id="about" class="container-md tab-pane fade">
+            <h2 class="mb-2">About This Apps</h2>
+            <article>M-Project merupakan aplikasi pengisian KRS online berbasis webdroid yang mana adalah hasil dari
+                tugas akhir Mata Kuliah
+                Pemrograman Bergerak</article>
+            <div id="medsos">
+                <p>M-Project dirancang oleh :</p>
+                <i id="icon" class="bi bi-envelope-at"></i>
+                <div class="email">
+                    <a href="">ekanursevas@gmail.com</a>
+                    <a href="">arcanearlaze02@gmail.com</a>
+                    <a href="">fillah.alhaqi11@gmail.com</a>
+                    <a href="">velyafitria@gmail.com</a>
+                </div>
+                <div class="insta d-flex flex-wrap">
+                    <ul>
+                        <li class="p-1">
+                            <i class="bi bi-instagram"></i>
+                            <a href="https://instagram.com/cimets_13?igshid=OGQ2MjdiOTE=">cimets_13</a>
+                        </li>
+                        <li class="p-1">
+                            <i class="bi bi-instagram"></i>
+                            <a href="https://instagram.com/velyafitri.azzahra?igshid=OGQ2MjdiOTE=">velyafitri.azzahra</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="p-1">
+                            <i class="bi bi-instagram"></i>
+                            <a href="https://instagram.com/fillah_alhaqi21?igshid=YmMyMTA2M2Y=">fillah_alhaqi21</a>
+                        </li>
+                        <li class="p-1">
+                            <i class="bi bi-instagram"></i>
+                            <a href="https://instagram.com/ekanurseva?igshid=OGQ2MjdiOTE=">ekanurseva</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <footer><img src="image/Logo2.png" alt="logo"></footer>
+        </div>
         <!-- Tab About End -->
     </div>
+    <!-- CONTENT END -->
+
     <!-- Js Bootstrap -->
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
