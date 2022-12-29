@@ -45,7 +45,7 @@
 </head>
 <body>
     <!--SIDEBAR MAHASISWA-->
-    <div class="container-fluid-md d-flex" style="min-height: 100vh; background-color: #D23939; padding-left: 0px;">
+    <div class="container-fluid d-flex" style="min-height: 100vh; background-color: #D23939; padding-left: 0px;">
         <div class="sidebar" id="side-nav">
             <div class="header justify-content-between">
                 <a href="image/Logo.png">
@@ -75,15 +75,16 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a class="dropdown-toggle py-2 d-block" data-bs-toggle="dropdown">
-                        <i class="bi bi-bookmark-star-fill"></i><span class="text"> KRS</span>
+                    <a class="dd py-2" data-bs-toggle="tab" href="dropdown">
+                        <i class="bi bi-bookmark-star-fill"></i><span class="text"> KRS</span> 
+                        <i class="icon bi bi-caret-down-fill"></i>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdown">
-                        <li><a class="dropdown-item" href="#smt1">Semester 1</a></li>
-                        <li><a class="dropdown-item" href="#smt3">Semester 3</a></li>
-                        <li><a class="dropdown-item" href="#smt5">Semester 5</a></li>
-                        <li><a class="dropdown-item" href="#smt7">Semester 7</a></li>
-                        <li><a class="dropdown-item" href="#validasi">Validasi Ajuan</a></li>
+                    <ul id="dropdown">
+                        <li><a data-bs-toggle="tab" href="#smt1">Semester 1</a></li>
+                        <li><a data-bs-toggle="tab" href="#smt3">Semester 3</a></li>
+                        <li><a data-bs-toggle="tab" href="#smt5">Semester 5</a></li>
+                        <li><a data-bs-toggle="tab" href="#smt7">Semester 7</a></li>
+                        <li><a data-bs-toggle="tab" href="#validasi">Validasi Ajuan</a></li>
                     </ul>
                 </li>
                 <li class="nav-link">
@@ -227,7 +228,7 @@
             <div id="validasi" class="container tab-pane fade">
                 <h3 class="mt-4 text-white">KRS</h3>
                     <div class="box mt-3">
-                        <h5>Detail Mahasiswa</h5>
+                        <h6>Detail Mahasiswa</h6>
                         <div class="row mt-1">
                             <div class="col-md-6">
                                 <div class="">
@@ -259,7 +260,7 @@
                     </div>
                     
                     <div class="box mt-3">
-                        <h5>Daftar Mata Kuliah Yang Diajukan</h5>
+                        <h6>Daftar Mata Kuliah Yang Diajukan</h6>
                         <table class="table">
                             <thead class="table-defult">
                                 <tr>
@@ -281,7 +282,7 @@
                         </table>
                     </div>
                     <div class="box mt-3 d-grid">
-                        <span style="font-size: 13px; font-color: grey">Note: Jika Tarik Ajuan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
+                        <span style="font-size: 10px; font-color: grey">Note: Jika Tarik Ajuan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
                         <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Ajukan</button>
                     </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
@@ -289,8 +290,9 @@
 
             <!--BIODATA-->
             <div id="biodata" class="container tab-pane fade">
-                <h3 class="mt-4 text-white">BIODATA MAHASISWA</h3>
+                <h4 class="mt-4 text-white">BIODATA MAHASISWA</h4>
                     <div class="box mt-3">
+                    <h5>Detail Mahasiswa</h5>
                         <div class="row mt-1">
                             <div class="col-md-13">
                                 <div class="">
@@ -363,27 +365,27 @@
             <div id="about" class="container tab-pane fade">
                 <h3 class="mt-4 text-white">M-PROJECT</h3>
                 <div class="box mt-3">
-                    <div class="row mt-1 fw-bold">
-                        <span style="text-align: center;">M-Project merupakan aplikasi pengisian KRS online berbasis webdroid yang mana adalah hasil dari tugas akhir Mata Kuliah Pemrograman Bergerak</span>
+                    <div class="row mt-1 fw-bold text-center">
+                        <span>M-Project merupakan aplikasi pengisian KRS online berbasis webdroid yang mana adalah hasil dari tugas akhir Mata Kuliah Pemrograman Bergerak</span>
                     </div>
                 </div>
                 <div class="box mt-3">
-                    <div class="row mt-1">
-                        <span style="text-align: center; font-weight: bold;">M-Project dirancang oleh:</span>
-                        <i style="text-align: center; widht: 50px; heigth: 50px" class="bi bi-envelope"></i>
-                        <span style="text-align: center; text-decoration: none; color: black">ekanursevas@gmail.com</span>
-                        <span style="text-align: center; text-decoration: none; color: black">arcanearlaze02@gmail.com</span>
-                        <span style="text-align: center; text-decoration: none; color: black">fillah.alhaqi11@gmail.com</span>
-                        <span style="text-align: center; text-decoration: none; color: black">velyafitria@gmail.com</span>
+                    <div class="email row mt-1">
+                        <span>M-Project dirancang oleh:</span>
+                        <i style="text-align: center; font-size: 25px;" class="bi bi-envelope"></i>
+                        <span style="font-weight: normal; color: black">ekanursevas@gmail.com</span>
+                        <span style="font-weight: normal; color: black">arcanearlaze02@gmail.com</span>
+                        <span style="font-weight: normal; color: black">fillah.alhaqi11@gmail.com</span>
+                        <span style="font-weight: normal; color: black">velyafitria@gmail.com</span>
                     </div>
                     <div class="row mt-3 text-center">
-                        <div class="col-md-6">
-                            <a style="font-size: 13px text-decoration: none; color: black" href="https://www.instagram.com/ekanurseva/"><i class="bi bi-instagram"></i> ekanurseva</a>
-                            <a style="font-size: 13px text-decoration: none; color: black" href="https://instagram.com/fillah_alhaqi21/"><i class="bi bi-instagram"></i> fillah_alhaqi21</a>
+                        <div class="insta col-md-6">
+                            <a style="font-size: 12px cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/ekanurseva/"><i class="bi bi-instagram"></i> ekanurseva</a>
+                            <a style="font-size: 12px  cursor: pointer; text-decoration: none; color: black" href="https://instagram.com/fillah_alhaqi21/"><i class="bi bi-instagram"></i> fillah_alhaqi21</a>
                         </div>
-                        <div class="col-md-6">
-                            <a style="font-size: 13px text-decoration: none; color: black" href="https://www.instagram.com/cimets_13/"><i class="bi bi-instagram"> cimets_13</i></a>
-                            <a style="font-size: 13px text-decoration: none; color: black" href="https://www.instagram.com/velyafitri.azzahra/"><i class="bi bi-instagram"> velyafitri.azzahra</i></a>
+                        <div class="insta col-md-6">
+                            <a style="font-size: 12px  cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/cimets_13/"><i class="bi bi-instagram"> cimets_13</i></a>
+                            <a style="font-size: 12px  cursor: pointer;text-decoration: none; color: black" href="https://www.instagram.com/velyafitri.azzahra/"><i class="bi bi-instagram"> velyafitri.azzahra</i></a>
                         </div>
                     </div>
                 </div>

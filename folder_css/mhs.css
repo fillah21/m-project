@@ -105,29 +105,60 @@ body{
     transition: none;
 }
 
-.sidebar ul.nav-tabs li ul.dropdown-menu{
+.sidebar li.nav-link a i.icon{
+    position: absolute;
+    right: 27px;
+    margin: 0px;
+    transition: 0.3s ease;
+}
+
+.sidebar.hide li.nav-link a i.icon{
+    display: none;
+}
+
+.sidebar li.nav-link .dd{
+    display: block;
+    border: none;
+    color: none;
+    transition: none;
+}
+
+.sidebar li.nav-link #dropdown{
     border-radius: 4px;
     background-color: #711A1A;
     border: 2px solid #D23939;
     min-width: 0rem;
-}
-
-.sidebar.hide ul.nav-tabs li ul.dropdown-menu{
     position: absolute;
-
+    padding: 1px 15px 1px 8px;
+    display: none;
 }
 
-.sidebar ul.nav-tabs li ul.dropdown-menu li.dropdown-item a:hover{
-    color: #D23939;   
+.sidebar.hide li.nav-link #dropdown{
+    border-radius: 4px;
+    background-color: #711A1A;
+    border: 2px solid #D23939;
+    min-width: 0rem;
+    position: absolute;
+    padding: 1px 15px 1px 8px;
+    left: 100%;
+    width: 115px;   
+}
+
+.sidebar li.nav-link #dropdown a{
+    font-size: 12px;
+}
+
+.sidebar li.nav-link #dropdown a:hover{
+    background: #D23939;
+    border-radius: 4px;
+}
+
+.sidebar li.nav-link ul li{
+    list-style-type: none;
 }
 
 .sidebar.hide ul.nav{
     margin-top: 1px;
-}
-
-.sidebar li i{
-    margin-right: 7px;
-    width: 192px;
 }
 
 .sidebar li a{
@@ -279,28 +310,149 @@ body{
     margin: 10px 0;
 }
 
+#smt1{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt1 img{
+    width: 170px;
+    margin-top: 150px;
+}
+#smt1 .row{
+    font-size: 10px;
+}
+
+#smt3{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt3 img{
+    width: 170px;
+    margin-top: 150px;
+}
+#smt3 .row{
+    font-size: 10px;
+}
+
+#smt5{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt5 img{
+    width: 170px;
+    margin-top: 150px;
+}
+#smt5 .row{
+    font-size: 10px;
+}
+
+#smt7{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt7 img{
+    width: 170px;
+    margin-top: 150px;
+}
+#smt7 .row{
+    font-size: 10px;
+}
+
+#validasi{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+
+#validasi img{
+    width: 170px;
+    margin-top: 55px;
+}
+
+#validasi .row{
+    font-size: 12px;
+}
+
+#validasi th{
+    font-size: 15px;
+}
+
+#validasi td{
+    font-size: 13px;
+}
+
 /*MAHASISWA-BIODATA*/
 #biodata{
     margin-left: 80px;
+    margin-top: 35px;
 }
 
+#biodata .row{
+    font-size: 10px;
+}
 #biodata img {
     width: 170px;
-    margin-top: 120px;
+    margin-top: 90px;
 }
 
 /*MAHASISWA-ABOUT*/
 #about{
     margin-left: 80px;
+    margin-top: 35px;
 }
 
 #about .email span{
     text-align: center;
+    font-weight: bold;
+}
+
+#about .insta{
+    font-size: 12px;
     text-decoration: none;
     color: #0000;
 }
 
 #about img {
     width: 170px;
-    margin-top: 150px;
+    margin-top: 140px;      
+}
+
+/* Responsive */
+@media screen and (max-width: 375px) {
+    .sidebar{
+        position: fixed;
+    }
+
+    #about{
+        width: auto;
+    }
+    #about img{
+        margin-top: 30px;
+    }
+
+    #smt1{
+        width: auto;
+    }
+    #smt1 img{
+        margin-top: auto;
+    }
+
+    #smt3{
+        width: auto;   
+    }
+
+    #smt5{
+        width: auto;
+    }
+
+    #smt7{
+        width: auto;
+    }
+
+    #validasi{
+        width: auto;
+    }
+
+    #biodata{
+        width: auto;
+    }
 }
