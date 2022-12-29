@@ -32,7 +32,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M-PROJECT | Mahasiswa</title>
     <!--CSS Lokal-->
-    <link rel="stylesheet" href="folder_css/mhs.css">
+    <link rel="stylesheet" href="folder_css/mahasiswa.css">
 
      <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet" />
