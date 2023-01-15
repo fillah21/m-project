@@ -15,6 +15,8 @@
 
     $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
 
+    $data_matkul = query("SELECT * FROM mata_kuliah");
+
     if ($data_diri['level'] !== "Admin") {
         echo "<script>
                     alert('Hak akses tidak diizinkan');
@@ -22,6 +24,23 @@
                 </script>";
         exit;
     }
+
+    // Proses tambah mata kuliah
+    if (isset($_POST["submit_matkul"])) {
+        // Jika fungsi registrasi berhasil
+        if (tambah_matkul($_POST) > 0) {
+          echo "
+            <script>
+              alert('Kosakata Berhasil Ditambahkan');
+            </script>
+          ";
+        } else {
+            echo "<script>
+                   alert('Kosakata Gagal Ditambahkan!');
+                  </script>";
+        }
+    }
+    // Tambah mata kuliah selesai
 ?>
 
 
@@ -175,7 +194,7 @@
                                         </span>
                                         
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-                                        
+
                                         <span id="btnDel">
                                             <button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
                                                 <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
@@ -282,6 +301,7 @@
                     <table class="table text-white">
                         <thead class="topTable text-center">
                             <tr class="headerMatkul">
+                                <th scope="col">NO</th>
                                 <th scope="col">KODE</th>
                                 <th scope="col">NAMA MATA KULIAH</th>
                                 <th scope="col">SEMESTER</th>
@@ -290,23 +310,28 @@
                             </tr>
                         </thead>
                         <tbody class="contentTable text-dark">
-                            <tr class="text-white text-center">
-                                <th scope="row">AA001</th>
-                                <td>Pemrograman Bergerak</td>
-                                <td>7</td>
-                                <td>3</td>
-                                <td>
-                                    <span id="btnEditMk"><button class="btn btn-sm p-0 m-0" style="width: 12px;">
-                                            <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
-                                        </button>
-                                    </span>
-                                    <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-                                    <span id="btnDelMk"><button class="btn btn-sm p-0 m-0" style="width: 12px;">
-                                            <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
-                                        </button>
-                                    </span>
-                                </td>
-                            </tr>
+                            <?php $j = 1; ?>
+                            <?php foreach ($data_matkul as $matkul) : ?>
+                                <tr class="text-white text-center">
+                                    <td><?= $j; ?></td>
+                                    <th scope="row"><?= $matkul['kode_matkul']; ?></th>
+                                    <td><?= $matkul['nama_matkul']; ?></td>
+                                    <td><?= $matkul['semester_matkul']; ?></td>
+                                    <td><?= $matkul['sks']; ?></td>
+                                    <td>
+                                        <span id="btnEditMk"><button class="btn btn-sm p-0 m-0" style="width: 12px;">
+                                                <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
+                                            </button>
+                                        </span>
+                                        <span class="text-dark mx-1" style="font-size: 9px;">|</span>
+                                        <span id="btnDelMk"><button class="btn btn-sm p-0 m-0" style="width: 12px;">
+                                                <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
+                                            </button>
+                                        </span>
+                                    </td>
+                                </tr>
+                            <?php $j++; ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -318,13 +343,13 @@
         <!-- Input data matkul -->
         <div class="container-sm" id="inputMk">
             <h3>Insert Mata Kuliah</h3>
-            <form action="">
+            <form action="" method="POST">
                 <fieldset>
-                    <input type="text" placeholder="Kode" name="kode">
-                    <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
-                    <input type="text" placeholder="Semester" name="semester">
+                    <input type="text" placeholder="Kode" name="kode_matkul">
+                    <input type="text" placeholder="Nama Mata Kuliah" name="nama_matkul">
+                    <input type="text" placeholder="Semester" name="semester_matkul">
                     <input type="text" placeholder="SKS" name="sks">
-                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeMatkul">
+                    <button type="submit" class="btn d-flex justify-content-center ms-auto" name="submit_matkul">
                         <a href="#matkul">SUBMIT</a>
                     </button>
                 </fieldset>

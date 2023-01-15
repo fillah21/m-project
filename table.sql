@@ -14,3 +14,11 @@ CREATE TABLE `user` (
     `sudah_krs` varchar(100) NOT NULL,
     `level` varchar(25) NOT NULL
 );
+
+CREATE TABLE `mata_kuliah` (
+    `id_matkul` int(11) primary key auto_increment,
+    `kode_matkul` varchar(100),
+    `nama_matkul` varchar(100),
+    `semester_matkul` int(11),
+    `sks` int(11)
+);

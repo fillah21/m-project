@@ -76,4 +76,23 @@
         return $sks;
     }
     // Fungsi Cek SKS selesai
+
+
+
+    // Fungsi Tambah Matkul
+    function tambah_matkul($data) {
+        global $conn;
+        $kode_matkul = htmlspecialchars($data['kode_matkul']);
+        $nama_matkul = htmlspecialchars($data['nama_matkul']);
+        $semester_matkul = htmlspecialchars($data['semester_matkul']);
+        $sks = htmlspecialchars($data['sks']);
+
+        $query = "INSERT INTO mata_kuliah
+                    VALUES 
+                    ('', '$kode_matkul', '$nama_matkul', '$semester_matkul', '$sks')";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Tambah Matkul Selesai
 ?>
