@@ -98,7 +98,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#" class="py-2 d-block" data-bs-toggle="tab"><i class="bi bi-door-open-fill"></i>
+                    <a href="logout.php" class="py-2 d-block"><i class="bi bi-door-open-fill"></i>
                         <span class="text"> Logout</span>
                     </a>
                 </li>
@@ -282,7 +282,7 @@
                         </table>
                     </div>
                     <div class="box mt-3 d-grid">
-                        <span style="font-size: 10px; font-color: grey">Note: Jika Tarik Ajuan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
+                        <span style="font-size: 10px;">Note: Jika Tarik Ajukan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
                         <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Ajukan</button>
                     </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
@@ -380,12 +380,12 @@
                     </div>
                     <div class="row mt-3 text-center">
                         <div class="insta col-md-6">
-                            <a style="font-size: 12px cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/ekanurseva/"><i class="bi bi-instagram"></i> ekanurseva</a>
-                            <a style="font-size: 12px  cursor: pointer; text-decoration: none; color: black" href="https://instagram.com/fillah_alhaqi21/"><i class="bi bi-instagram"></i> fillah_alhaqi21</a>
+                            <a style="font-size: 12px; cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/ekanurseva/"><i class="bi bi-instagram"></i> ekanurseva</a>
+                            <a style="font-size: 12px;  cursor: pointer; text-decoration: none; color: black" href="https://instagram.com/fillah_alhaqi21/"><i class="bi bi-instagram"></i> fillah_alhaqi21</a>
                         </div>
                         <div class="insta col-md-6">
-                            <a style="font-size: 12px  cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/cimets_13/"><i class="bi bi-instagram"> cimets_13</i></a>
-                            <a style="font-size: 12px  cursor: pointer;text-decoration: none; color: black" href="https://www.instagram.com/velyafitri.azzahra/"><i class="bi bi-instagram"> velyafitri.azzahra</i></a>
+                            <a style="font-size: 12px;  cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/cimets_13/"><i class="bi bi-instagram"> cimets_13</i></a>
+                            <a style="font-size: 12px; cursor: pointer;text-decoration: none; color: black" href="https://www.instagram.com/velyafitri.azzahra/"><i class="bi bi-instagram"> velyafitri.azzahra</i></a>
                         </div>
                     </div>
                 </div>

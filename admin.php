@@ -1,25 +1,27 @@
 <?php
-include("function.php");
+    include("function.php");
 
-if (!isset($_COOKIE['project'])) {
-    echo "<script>
-                alert('Silahkan Login terlebih dahulu');
-                document.location.href='login.php';
-              </script>";
-    exit;
-}
+    if (!isset($_COOKIE['project'])) {
+        echo "<script>
+                    alert('Silahkan Login terlebih dahulu');
+                    document.location.href='login.php';
+                </script>";
+        exit;
+    }
 
-$deskripsi = deskripsi($_COOKIE['project']);
+    $deskripsi = deskripsi($_COOKIE['project']);
 
-$data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
+    $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
 
-if ($data_diri['level'] !== "Admin") {
-    echo "<script>
-                alert('Hak akses tidak diizinkan');
-                document.location.href='logout.php';
-              </script>";
-    exit;
-}
+    $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
+
+    if ($data_diri['level'] !== "Admin") {
+        echo "<script>
+                    alert('Hak akses tidak diizinkan');
+                    document.location.href='logout.php';
+                </script>";
+        exit;
+    }
 ?>
 
 
@@ -68,7 +70,7 @@ if ($data_diri['level'] !== "Admin") {
             <!-- Profil -->
             <div class="profil">
                 <img src="profil/2.jpg" alt="profi" class="rounded-circle">
-                <h1>Ahmad Nur Cahyadi</h1>
+                <h1><?= $data_diri['nama']; ?></h1>
             </div>
             <!-- Profil End -->
 
@@ -118,7 +120,7 @@ if ($data_diri['level'] !== "Admin") {
                 <p>
                     Selamat Datang
                     <br>
-                    Ahmad Nur Cahyadi
+                    <?= $data_diri['nama']; ?>
                 </p>
             </header>
             <footer>
@@ -140,6 +142,7 @@ if ($data_diri['level'] !== "Admin") {
                     <table class="table text-white">
                         <thead class="topTable text-center">
                             <tr class="headerMhs ">
+                                <th scope="col">No</th>
                                 <th scope="col">NIM</th>
                                 <th scope="col">NAMA</th>
                                 <th scope="col">JK</th>
@@ -152,25 +155,36 @@ if ($data_diri['level'] !== "Admin") {
                             </tr>
                         </thead>
                         <tbody class="contentTable text-dark">
-                            <tr class=" text-white text-center">
-                                <th scope="row">190511094</th>
-                                <td>Ahmad Nur Cahyadi</td>
-                                <td>L</td>
-                                <td>arcanearlaze02@gmail.com</td>
-                                <td>088707878053</td>
-                                <td>Desa Kepuh Kecamatan Palimanan Kabupaten Cirebon</td>
-                                <td>7</td>
-                                <td>3.58</td>
-                                <td>
-                                    <span id="btnEdit"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
-                                            <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
-                                        </button></span>
-                                    <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-                                    <span id="btnDel"><button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
-                                            <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
-                                        </button></span>
-                                </td>
-                            </tr>
+                            <?php $i = 1; ?>
+                            <?php foreach ($data_mahasiswa as $mhs) : ?>
+                                <tr class=" text-white text-center">
+                                    <td><?= $i; ?></td>
+                                    <th scope="row"><?= $mhs['no_induk']; ?></th>
+                                    <td><?= $mhs['nama']; ?></td>
+                                    <td><?= $mhs['jk']; ?></td>
+                                    <td><?= $mhs['email']; ?></td>
+                                    <td><?= $mhs['no_hp']; ?></td>
+                                    <td><?= $mhs['alamat']; ?></td>
+                                    <td><?= $mhs['semester']; ?></td>
+                                    <td><?= $mhs['ipk']; ?></td>
+                                    <td>
+                                        <span id="btnEdit">
+                                            <button class="btn btn-sm p-0 ms-1" style="width: 12px;">
+                                                <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
+                                            </button>
+                                        </span>
+                                        
+                                        <span class="text-dark mx-1" style="font-size: 9px;">|</span>
+                                        
+                                        <span id="btnDel">
+                                            <button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
+                                                <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
+                                            </button>
+                                        </span>
+                                    </td>
+                                </tr>
+                            <?php $i++ ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

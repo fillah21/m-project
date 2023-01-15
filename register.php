@@ -7,12 +7,13 @@
         $password2 = mysqli_real_escape_string($conn, $_POST["pwd2"]);
         $nama = $_POST['nama'];
         $email = $_POST['email'];
+        $gambar = "foto.png";
         $no_induk = $_POST['no_induk'];
         $semester = $_POST['semester'];
         $ipk = $_POST['ipk'];
         $alamat = "Kuningan";
         $no_hp = "085826389656";
-        $gambar = "foto.png";
+        $jk = "L";
         $sudah_krs = "Belum";
         $level = "User";
 
@@ -39,7 +40,7 @@
         $password = password_hash($password2, PASSWORD_DEFAULT);
         
         //jika password sama, masukkan data ke database
-        mysqli_query($conn, "INSERT INTO user VALUES ('', '$username', '$password', '$nama', '$email', '$no_induk', '$semester', '$ipk', '$alamat', '$no_hp', '$gambar', '$sudah_krs', '$level')");
+        mysqli_query($conn, "INSERT INTO user VALUES ('', '$username', '$password', '$nama', '$email', '$foto', '$no_induk', '$semester', '$ipk', '$alamat', '$no_hp', '$jk', '$sudah_krs', '$level')");
         echo "<script>
                 alert('Data Berhasil Disimpan, dan Silahkan Login');
                 document.location.href='login.php';
