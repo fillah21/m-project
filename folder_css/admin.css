@@ -23,19 +23,30 @@ body {
   flex-direction: column;
   border-radius: 0 9px 9px 0;
   transition: all ease-in 0.3s;
+  z-index: 20;
+}
+
+.sidebar .header a .img {
+  width: 125px;
+  float: right;
+  margin-top: 24px;
+  margin-right: 8px;
 }
 
 .sidebar.hide {
-  width: 93px;
+  min-height: 100vh;
+  width: 90px;
   transition: all ease-out 0.3s;
 }
 
 .sidebar .profil img {
   width: 100px;
+  height: 100px;
   margin-left: 32px;
   margin-top: 30px;
   margin-bottom: 20px;
   transition: ease-in 0.3s;
+  object-fit: cover;
 }
 
 .sidebar .profil h1 {
@@ -47,8 +58,10 @@ body {
 
 .sidebar.hide .profil img {
   width: 45px;
+  height: 45px;
   margin-left: 12px;
   margin-top: 80px;
+  object-fit: cover;
 }
 
 .sidebar.hide .profil h1 {
@@ -95,6 +108,10 @@ body {
 
 .sidebar .nav:hover {
   border: none;
+}
+
+.sidebar.hide ul li {
+  display: visible;
 }
 
 .sidebar.hide ul li .text {
@@ -320,7 +337,7 @@ body {
 
 #listItem {
   height: 425px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #listItem .headerMhs th {
@@ -365,6 +382,22 @@ body {
 }
 
 /* List Mahasiswa End */
+
+.back-btn {
+  position: absolute;
+  left: 90%;
+  top: -5%;
+  font-size: 28px;
+}
+
+.back-btn a:hover {
+  color: #adadad;
+}
+
+.back-btn a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
 
 /* Registrasi */
 #regis {
@@ -466,6 +499,10 @@ body {
   background: #D23939;
   border: 1px solid #FFFFFF;
   border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #FFFFFF;
 }
 
 #regis form button a {
@@ -681,7 +718,7 @@ body {
 
 #listMatkul {
   height: 425px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #listMatkul .headerMatkul th {
@@ -763,6 +800,22 @@ body {
   margin-bottom: 10px;
 }
 
+#inputMk .back-btn {
+  position: absolute;
+  left: 90%;
+  top: -10%;
+  font-size: 28px;
+}
+
+#inputMk .back-btn a:hover {
+  color: #adadad;
+}
+
+#inputMk .back-btn a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 #inputMk form input {
   background: #D23939;
   border-radius: 8px;
@@ -824,6 +877,22 @@ body {
   color: #FFFFFF;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#editMk .back-btn {
+  position: absolute;
+  left: 90%;
+  top: -10%;
+  font-size: 28px;
+}
+
+#editMk .back-btn a:hover {
+  color: #adadad;
+}
+
+#editMk .back-btn a {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 #editMk form input {
@@ -946,7 +1015,7 @@ body {
 
 #listKrs {
   height: 425px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #listKrs .headerKrs th {
@@ -1082,7 +1151,7 @@ body {
 
 #krsMhs {
   width: auto;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #krsMhs table {
@@ -1104,6 +1173,12 @@ body {
   justify-content: end;
 }
 
+#toggleKrs button {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+}
+
 #toggleKrs button a {
   text-decoration: none;
   font-size: 12px;
@@ -1120,6 +1195,68 @@ body {
   width: 170px;
 }
 
+/* Delete KRS */
+#deleteKrs {
+  position: absolute;
+  width: 270px;
+  height: 150px;
+  left: 50%;
+  top: 0;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.3s;
+}
+
+#deleteKrs.open {
+  top: 20%;
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
+  z-index: 50;
+}
+
+#deleteKrs h3 {
+  font-family: 'Acme';
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+#deleteKrs span {
+  width: 100%;
+  height: 3px;
+  background-color: #711A1A;
+  border-radius: 3px;
+  border: 0;
+  margin-bottom: 10px;
+}
+
+#deleteKrs p {
+  width: 100%;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 12px;
+  color: #000000;
+}
+
+#deleteKrs button {
+  width: 65px;
+  margin: 0;
+  padding: 4px;
+  font-weight: 800;
+}
+
+#deleteKrs button a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Delete KRS End */
 /* Detail Krs End */
 /* dsb Krs End*/
 
@@ -1215,14 +1352,114 @@ body {
 
 /* dsb About End */
 
-/* Responsive */
+/* Responsive small android */
 @media screen and (max-width: 375px) {
+  .sidebar {
+    position: absolute;
+    background-color: #711A1A;
+    width: 130px;
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    border-radius: 0 9px 9px 0;
+    transition: all ease-in 0.3s;
+    z-index: 20;
+  }
+
+  .sidebar .header a .img {
+    width: 73px;
+    margin-right: 3px;
+    margin-top: 28px;
+  }
+
+  .sidebar .profil img {
+    width: 85px;
+    height: 85px;
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    transition: ease-in 0.3s;
+    object-fit: cover;
+  }
+
+  .sidebar .profil h1 {
+    font-weight: 700;
+    font-size: 8px;
+    color: #FFFFFF;
+    margin-left: 13px;
+  }
+
+  .sidebar .text {
+    font-size: 8px;
+    font-weight: 700;
+    text-align: left;
+    color: #FFFF;
+  }
+
+  .sidebar ul li .text {
+    font-size: 8px;
+  }
+
+  .sidebar li.nav-link.active {
+    background-color: #D23939;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    width: 250px;
+  }
+
+  .sidebar li i {
+    margin-right: 5px;
+  }
+
+  .sidebar.hide {
+    min-height: 100vh;
+    width: 50px;
+    transition: all ease-out 0.3s;
+  }
+
+  .sidebar.hide #menu-button {
+    top: 34px;
+    width: 25px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 2.5px;
+    transition: ease-in 0.4s;
+  }
+
+  .sidebar.hide .profil img {
+    width: 35px;
+    height: 35px;
+    margin-left: -3px;
+    margin-top: 80px;
+    object-fit: cover;
+  }
+
+  .sidebar.hide ul li {
+    display: visible;
+    padding-left: 8px;
+  }
+
+  .sidebar.hide li.nav-link.active {
+    background-color: #D23939;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 250px;
+  }
+
   #home header {
     font-weight: 400;
     font-size: 25px;
     line-height: 32px;
     width: 300px;
-    margin-left: 17%;
+    margin-left: 10%;
     margin-top: 30%;
     padding: 10px;
   }
@@ -1234,14 +1471,14 @@ body {
 
   #home img {
     width: 170px;
-    margin-left: 35%;
+    margin-left: 30%;
     margin-top: 90%;
   }
 
   #mhs {
     width: auto;
     margin-top: 40px;
-    margin-left: 85px;
+    margin-left: 10%;
   }
 
   #mhs header {
@@ -1266,7 +1503,7 @@ body {
 
   #mhs footer img {
     width: 170px;
-    margin-left: 40px;
+    margin-left: 23%;
     margin-top: 25px;
   }
 
@@ -1340,7 +1577,7 @@ body {
   #matkul {
     width: auto;
     margin-top: 40px;
-    margin-left: 85px;
+    margin-left: 10%;
   }
 
   #matkul header {
@@ -1365,7 +1602,7 @@ body {
 
   #matkul footer img {
     width: 170px;
-    margin-left: 40px;
+    margin-left: 20%;
     margin-top: 25px;
   }
 
@@ -1439,7 +1676,7 @@ body {
   #krs {
     width: auto;
     margin-top: 40px;
-    margin-left: 85px;
+    margin-left: 10%;
     visibility: visible;
     transform: scale(1);
   }
@@ -1466,7 +1703,7 @@ body {
 
   #krs footer img {
     width: 170px;
-    margin-left: 40px;
+    margin-left: 20%;
     margin-top: 25px;
   }
 
@@ -1484,7 +1721,7 @@ body {
   }
 
   #detailKrs.open {
-    left: 62%;
+    left: 55%;
     top: 30%;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
@@ -1566,17 +1803,17 @@ body {
 
   #detailKrs footer {
     text-align: center;
-    margin-top: 3%;
   }
 
   #detailKrs footer img {
+    margin-top: 10%;
     width: 170px;
   }
 
   #about {
     width: auto;
     margin-top: 40px;
-    margin-left: 85px;
+    margin-left: 18%;
   }
 
   #about h2 {
@@ -1640,7 +1877,537 @@ body {
 
   #about footer img {
     width: 170px;
-    margin-left: 15%;
+    margin-left: 14%;
+    margin-top: 13%;
+  }
+}
+
+/* Responsive huge android */
+@media screen and (max-width: 412px) {
+  .sidebar {
+    position: absolute;
+    background-color: #711A1A;
+    width: 130px;
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    border-radius: 0 9px 9px 0;
+    transition: all ease-in 0.3s;
+    z-index: 20;
+  }
+
+  .sidebar .header a .img {
+    width: 73px;
+    margin-right: 3px;
+    margin-top: 28px;
+  }
+
+  .sidebar .profil img {
+    width: 85px;
+    height: 85px;
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    transition: ease-in 0.3s;
+    object-fit: cover;
+  }
+
+  .sidebar .profil h1 {
+    font-weight: 700;
+    font-size: 8px;
+    color: #FFFFFF;
+    margin-left: 13px;
+  }
+
+  .sidebar .text {
+    font-size: 8px;
+    font-weight: 700;
+    text-align: left;
+    color: #FFFF;
+  }
+
+  .sidebar ul li .text {
+    font-size: 8px;
+  }
+
+  .sidebar li.nav-link.active {
+    background-color: #D23939;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    width: 250px;
+  }
+
+  .sidebar li i {
+    margin-right: 5px;
+  }
+
+  .sidebar.hide {
+    min-height: 100vh;
+    width: 50px;
+    transition: all ease-out 0.3s;
+  }
+
+  .sidebar.hide #menu-button {
+    top: 34px;
+    width: 25px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 2.5px;
+    transition: ease-in 0.4s;
+  }
+
+  .sidebar.hide .profil img {
+    width: 35px;
+    height: 35px;
+    margin-left: -3px;
+    margin-top: 80px;
+    object-fit: cover;
+  }
+
+  .sidebar.hide ul li {
+    display: visible;
+    padding-left: 8px;
+  }
+
+  .sidebar.hide li.nav-link.active {
+    background-color: #D23939;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 250px;
+  }
+
+  #home header {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+    width: 300px;
+    margin-left: 10%;
+    margin-top: 30%;
+    padding: 10px;
+  }
+
+  #home header p {
+    width: 100%;
+    text-align: center;
+  }
+
+  #home img {
+    width: 170px;
+    margin-left: 30%;
+    margin-top: 90%;
+  }
+
+  #mhs {
+    width: auto;
+    margin-top: 40px;
+    margin-left: 10%;
+  }
+
+  #mhs header {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #btnRegis {
+    padding-left: 0;
+    font-size: 17px;
+  }
+
+  #mhs table {
+    font-size: 11px;
+  }
+
+  #listItem {
+    height: 425px;
+    overflow-y: scroll;
+  }
+
+  #mhs footer img {
+    width: 170px;
+    margin-left: 23%;
+    margin-top: 25px;
+  }
+
+  #regis {
+    position: absolute;
+    width: 290px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+  }
+
+  #regis.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+  }
+
+  #edit {
+    position: absolute;
+    width: 290px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+  }
+
+  #edit.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+  }
+
+  #delete {
+    position: absolute;
+    width: 270px;
+    height: 150px;
+    left: 50%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  }
+
+  #delete.open {
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    z-index: 50;
+  }
+
+  #matkul {
+    width: auto;
+    margin-top: 40px;
+    margin-left: 10%;
+  }
+
+  #matkul header {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #btnMatkul {
+    padding-left: 0;
+    font-size: 17px;
+  }
+
+  #matkul table {
+    font-size: 11px;
+  }
+
+  #listMatkul {
+    height: 425px;
+    overflow-y: scroll;
+  }
+
+  #matkul footer img {
+    width: 170px;
+    margin-left: 20%;
+    margin-top: 25px;
+  }
+
+  #inputMk {
+    position: absolute;
+    width: 290px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+  }
+
+  #inputMk.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+  }
+
+  #editMk {
+    position: absolute;
+    width: 290px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+  }
+
+  #editMk.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+  }
+
+  #deleteMk {
+    position: absolute;
+    width: 270px;
+    height: 150px;
+    left: 50%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  }
+
+  #deleteMk.open {
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    z-index: 50;
+  }
+
+  #krs {
+    width: auto;
+    margin-top: 40px;
+    margin-left: 10%;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  #krs.open {
+    visibility: hidden;
+    transform: scale(0.1);
+  }
+
+  #krs header {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #krs table {
+    font-size: 11px;
+  }
+
+  #listKrs {
+    height: 425px;
+    overflow-y: scroll;
+  }
+
+  #krs footer img {
+    width: 170px;
+    margin-left: 20%;
+    margin-top: 25px;
+  }
+
+  #detailKrs {
+    position: absolute;
+    left: 0;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  }
+
+  #detailKrs.open {
+    left: 55%;
+    top: 30%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  #detailKrs h2 {
+    text-align: left;
+    margin-top: 60%;
+    margin-left: 17%;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #detailMenu {
+    width: 250px;
+    height: 420px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  #detailMenu p {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  #detailMenu span {
+    width: 50px;
+    margin-right: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  #detailMenu input {
+    margin-left: 20px;
+    width: 140px;
+    height: 20px;
+    border-radius: 6px;
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  #detailMenu form div {
+    display: flex;
+    justify-content: center;
+  }
+
+  #krsMhs {
+    width: auto;
+    overflow-y: scroll;
+  }
+
+  #krsMhs table {
+    font-size: 10px;
+  }
+
+  #krsMhs table thead {
+    padding: 4px;
+    text-align: center;
+  }
+
+  #krsMhs table tbody tr th {
+    padding: 8px 2px 4px 4px;
+  }
+
+  #toggleKrs {
+    display: flex;
+    justify-content: end;
+  }
+
+  #toggleKrs button a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  #detailKrs footer {
+    text-align: center;
+  }
+
+  #detailKrs footer img {
+    margin-top: 10%;
+    width: 170px;
+  }
+
+  #about {
+    width: auto;
+    margin-top: 40px;
+    margin-left: 18%;
+  }
+
+  #about h2 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  #about article {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    padding: 15px;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  #medsos {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    padding: 15px;
+  }
+
+  #medsos p {
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  #medsos #icon {
+    position: relative;
+    left: 40%;
+    font-size: 23px;
+  }
+
+  #medsos .email {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #medsos .email a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  #medsos .insta ul {
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    padding: 4px;
+    margin: 0;
+  }
+
+  #about footer img {
+    width: 170px;
+    margin-left: 14%;
     margin-top: 13%;
   }
 }
