@@ -1,46 +1,46 @@
 <?php
-    include("function.php");
+include("function.php");
 
-    if (!isset($_COOKIE['project'])) {
-        echo "<script>
+if (!isset($_COOKIE['project'])) {
+    echo "<script>
                     alert('Silahkan Login terlebih dahulu');
                     document.location.href='login.php';
                 </script>";
-        exit;
-    }
+    exit;
+}
 
-    $deskripsi = deskripsi($_COOKIE['project']);
+$deskripsi = deskripsi($_COOKIE['project']);
 
-    $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
+$data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
 
-    $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
+$data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
 
-    $data_matkul = query("SELECT * FROM mata_kuliah");
+$data_matkul = query("SELECT * FROM mata_kuliah");
 
-    if ($data_diri['level'] !== "Admin") {
-        echo "<script>
+if ($data_diri['level'] !== "Admin") {
+    echo "<script>
                     alert('Hak akses tidak diizinkan');
                     document.location.href='logout.php';
                 </script>";
-        exit;
-    }
+    exit;
+}
 
-    // Proses tambah mata kuliah
-    if (isset($_POST["submit_matkul"])) {
-        // Jika fungsi registrasi berhasil
-        if (tambah_matkul($_POST) > 0) {
-          echo "
+// Proses tambah mata kuliah
+if (isset($_POST["submit_matkul"])) {
+    // Jika fungsi registrasi berhasil
+    if (tambah_matkul($_POST) > 0) {
+        echo "
             <script>
               alert('Kosakata Berhasil Ditambahkan');
             </script>
           ";
-        } else {
-            echo "<script>
+    } else {
+        echo "<script>
                    alert('Kosakata Gagal Ditambahkan!');
                   </script>";
-        }
     }
-    // Tambah mata kuliah selesai
+}
+// Tambah mata kuliah selesai
 ?>
 
 
@@ -192,7 +192,7 @@
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
                                             </button>
                                         </span>
-                                        
+
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
 
                                         <span id="btnDel">
@@ -202,7 +202,7 @@
                                         </span>
                                     </td>
                                 </tr>
-                            <?php $i++ ?>
+                                <?php $i++ ?>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -215,6 +215,9 @@
         <!-- Registrasi Mahasiswa -->
         <div class="container-sm" id="regis">
             <h3>Registrasi Mahasiswa</h3>
+            <button type="reset" class="btn back-btn" id="backBtn">
+                <a href="#mhs"><i class="bi bi-x-circle-fill"></i></a>
+            </button>
             <form action="">
                 <fieldset>
                     <div class="username">
@@ -233,6 +236,9 @@
                     <input type="text" placeholder="IPK" name="ipk">
                     <input type="text" placeholder="No. Telp" name="noTelp">
                     <textarea name="alamat" cols="25" rows="10" placeholder="Alamat"></textarea>
+                    <button type="submit" class="btn btn-sm me-2" id="upFoto">
+                        Upload Foto
+                    </button>
                     <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeRegis">
                         <a href="#mhs">SUBMIT</a>
                     </button>
@@ -244,6 +250,9 @@
         <!-- Edit Data Mahasiswa -->
         <div class="container-sm" id="edit">
             <h3>Edit Data Mahasiswa</h3>
+            <button type="reset" class="btn back-btn" id="backBtnEdit">
+                <a href="#mhs"><i class="bi bi-x-circle-fill"></i></a>
+            </button>
             <form action="">
                 <fieldset>
                     <div class="username">
@@ -330,7 +339,7 @@
                                         </span>
                                     </td>
                                 </tr>
-                            <?php $j++; ?>
+                                <?php $j++; ?>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -343,6 +352,9 @@
         <!-- Input data matkul -->
         <div class="container-sm" id="inputMk">
             <h3>Insert Mata Kuliah</h3>
+            <button type="reset" class="btn back-btn" id="backBtnMk">
+                <a href="#matkul"><i class="bi bi-x-circle-fill"></i></a>
+            </button>
             <form action="" method="POST">
                 <fieldset>
                     <input type="text" placeholder="Kode" name="kode_matkul">
@@ -360,6 +372,9 @@
         <!-- Edit data matkul -->
         <div class="container-sm" id="editMk">
             <h3>Edit Mata Kuliah</h3>
+            <button type="reset" class="btn back-btn" id="backEditMk">
+                <a href="#matkul"><i class="bi bi-x-circle-fill"></i></a>
+            </button>
             <form action="">
                 <fieldset>
                     <input type="text" placeholder="Kode" name="kode">
@@ -495,16 +510,36 @@
                     </table>
                 </div>
                 <div id="toggleKrs">
+                    <button type="button" class="btn btn-outline-danger btn-sm me-2" id="beforeKrs">
+                        <a href="#krs">BACK</a>
+                    </button>
                     <button type="button" class="btn btn-outline-danger btn-sm me-2" id="upKrs">
                         <a href="#krs">UPDATE</a>
                     </button>
                     <button type="button" class="btn btn-outline-danger btn-sm" id="downKrs">
-                        <a href="#krs">DELETE</a>
+                        DELETE
                     </button>
                 </div>
             </div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
+
+        <!-- Delete Krs -->
+        <div class="container-sm text-center shadow" id="deleteKrs">
+            <h3>CONFIRM</h3>
+            <span></span>
+            <p>Apakah anda yakin ingin menghapusnya?</p>
+            <span></span>
+            <div class="d-flex ms-auto">
+                <button id="confirmKrs" type="button" class="btn btn-outline-primary btn-sm me-2">
+                    <a href="#krs">Yes</a>
+                </button>
+                <button id="backKrs" type="button" class="btn btn-outline-danger btn-sm">
+                    <a href="#krs">No</a>
+                </button>
+            </div>
+        </div>
+        <!-- Delete Krs End -->
         <!-- Detail KRS End -->
         <!-- Tab KRS End -->
 
