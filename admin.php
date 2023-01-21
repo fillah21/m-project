@@ -74,7 +74,7 @@ if (isset($_POST["submit_matkul"])) {
         <div class="sidebar" id="side-nav">
             <div class="header justify-content-between">
                 <a href="#">
-                    <img class="img" src="image/Logo3.png" alt="logo" style="width: 125px; float:right; margin-top: 24px; margin-right: 8px;">
+                    <img class="img" src="image/Logo3.png" alt="logo">
                 </a>
                 <!--HAMBURGER-->
                 <div id="menu-button">
