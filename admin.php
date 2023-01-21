@@ -239,7 +239,7 @@ if (isset($_POST["submit_matkul"])) {
                     <button type="submit" class="btn btn-sm me-2" id="upFoto">
                         Upload Foto
                     </button>
-                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeRegis">
+                    <button type="submit" class="btn btn-sm" id="closeRegis">
                         <a href="#mhs">SUBMIT</a>
                     </button>
                 </fieldset>
