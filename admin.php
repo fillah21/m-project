@@ -163,6 +163,7 @@ if (isset($_POST["submit_matkul"])) {
                     <table class="table text-white">
                         <thead class="topTable text-center">
                             <tr class="headerMhs ">
+                                <th scope="col">No</th>
                                 <th scope="col">NIM</th>
                                 <th scope="col">NAMA</th>
                                 <th scope="col">JK</th>
@@ -216,8 +217,9 @@ if (isset($_POST["submit_matkul"])) {
             </button>
             <form action="">
                 <fieldset>
-                    <input class="usePass" type="text" placeholder="Username" name="username">
-                    <input class="usePass" type="password" placeholder="Password" name="password">
+                    <input type="text" placeholder="Username" name="username">
+                    <input type="password" placeholder="Password" name="password">
+                    <input type="password" placeholder="Konformasi Password" name="password2">
                     <input type="text" placeholder="Nama" name="nama">
                     <input type="text" placeholder="Jenis Kelamin" name="jenisKelamin">
                     <input type="email" placeholder="Email" name="email">
@@ -300,6 +302,7 @@ if (isset($_POST["submit_matkul"])) {
                     <table class="table text-white">
                         <thead class="topTable text-center">
                             <tr class="headerMatkul">
+                                <th scope="col">NO</th>
                                 <th scope="col">KODE</th>
                                 <th scope="col">NAMA MATA KULIAH</th>
                                 <th scope="col">SEMESTER</th>

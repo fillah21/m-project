@@ -1,6 +1,24 @@
 <?php
   include("function.php");
 
+  if(isset($_COOKIE['project'])) {
+    $deskripsi = deskripsi($_COOKIE['project']);
+
+    $level = query("SELECT level FROM user WHERE id_user = $deskripsi") [0];
+
+    if ($level['level'] === "Admin") {
+      echo "<script>
+              document.location.href='admin.php';
+            </script>";
+      exit;
+    } elseif ($level['level'] === "User") {
+      echo "<script>
+              document.location.href='mahasiswa.php';
+            </script>";
+      exit;
+    }
+  }
+
   if (isset($_POST["login"])) {
     $username = $_POST["username"];
     $password = $_POST["pwd"];
