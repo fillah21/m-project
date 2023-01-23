@@ -203,6 +203,7 @@ if (isset($_POST["submit_matkul"])) {
                     </table>
                 </div>
             </div>
+            <div class="jumlahData">Jumlah Data</div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- List Mahasiswa End -->
@@ -215,14 +216,8 @@ if (isset($_POST["submit_matkul"])) {
             </button>
             <form action="">
                 <fieldset>
-                    <div class="username">
-                        <input class="usePass" type="text" placeholder="Username" name="username">
-                        <label><input class="checkbox" type="checkbox" name="checkbox">Cek Username</label>
-                    </div>
-                    <div class="password">
-                        <input class="usePass" type="password" placeholder="Password" name="password">
-                        <label><input class="checkbox" type="checkbox" name="checkbox">Cek Password</label>
-                    </div>
+                    <input class="usePass" type="text" placeholder="Username" name="username">
+                    <input class="usePass" type="password" placeholder="Password" name="password">
                     <input type="text" placeholder="Nama" name="nama">
                     <input type="text" placeholder="Jenis Kelamin" name="jenisKelamin">
                     <input type="email" placeholder="Email" name="email">
@@ -230,10 +225,10 @@ if (isset($_POST["submit_matkul"])) {
                     <input type="text" placeholder="Semester" name="semester">
                     <input type="text" placeholder="IPK" name="ipk">
                     <input type="text" placeholder="No. Telp" name="noTelp">
-                    <textarea name="alamat" cols="25" rows="10" placeholder="Alamat"></textarea>
-                    <button type="submit" class="btn btn-sm me-2" id="upFoto">
-                        Upload Foto
-                    </button>
+                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
+                    <div class="input-group mb-3 uploadFoto">
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                    </div>
                     <button type="submit" class="btn btn-sm" id="closeRegis">
                         <a href="#mhs">SUBMIT</a>
                     </button>
@@ -339,6 +334,7 @@ if (isset($_POST["submit_matkul"])) {
                     </table>
                 </div>
             </div>
+            <div class="jumlahData">Jumlah Data</div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- list Mk End -->
@@ -432,6 +428,7 @@ if (isset($_POST["submit_matkul"])) {
                     </table>
                 </div>
             </div>
+            <div class="jumlahData">Jumlah Data</div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- list KRS End -->
@@ -446,22 +443,22 @@ if (isset($_POST["submit_matkul"])) {
                         <div>
                             <span>NIM</span>
                             <p>:</p>
-                            <input type="text" placeholder="NIM" name="nim">
+                            <input type="text" readonly value="NIM" name="nim">
                         </div>
                         <div>
                             <span>Nama</span>
                             <p>:</p>
-                            <input type="text" placeholder="Nama" name="nama">
+                            <input type="text" readonly value="Nama" name="nama">
                         </div>
                         <div>
                             <span>Semester</span>
                             <p>:</p>
-                            <input type="text" placeholder="Semester" name="semester">
+                            <input type="text" readonly value="Semester" name="semester">
                         </div>
                         <div>
                             <span>IPK</span>
                             <p>:</p>
-                            <input type="text" placeholder="IPK" name="ipk">
+                            <input type="text" readonly value="IPK" name="ipk">
                         </div>
                     </fieldset>
                 </form>
@@ -479,27 +476,27 @@ if (isset($_POST["submit_matkul"])) {
                             <tr>
                                 <th scope="row">Pemrograman Bergerak</th>
                                 <td>3</td>
-                                <td>checked</td>
+                                <td><i class="bi bi-trash"></i></td>
                             </tr>
                             <tr>
                                 <th scope="row">Sistem Pakar</th>
                                 <td>3</td>
-                                <td>checked</td>
+                                <td><i class="bi bi-trash"></i></td>
                             </tr>
                             <tr>
                                 <th scope="row">Riset Operasi</th>
                                 <td>3</td>
-                                <td>checked</td>
+                                <td><i class="bi bi-trash"></i></td>
                             </tr>
                             <tr>
                                 <th scope="row">Big Data</th>
                                 <td>3</td>
-                                <td>checked</td>
+                                <td><i class="bi bi-trash"></i></td>
                             </tr>
                             <tr>
                                 <th scope="row">Kecerdasan Buatan</th>
                                 <td>3</td>
-                                <td>checked</td>
+                                <td><i class="bi bi-trash"></i></td>
                             </tr>
                         </tbody>
                     </table>
@@ -509,10 +506,7 @@ if (isset($_POST["submit_matkul"])) {
                         <a href="#krs">BACK</a>
                     </button>
                     <button type="button" class="btn btn-outline-danger btn-sm me-2" id="upKrs">
-                        <a href="#krs">UPDATE</a>
-                    </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm" id="downKrs">
-                        DELETE
+                        <a href="#krs">UNBLOCK</a>
                     </button>
                 </div>
             </div>
