@@ -45,11 +45,11 @@
 </head>
 <body>
     <!--SIDEBAR MAHASISWA-->
-    <div class="container-fluid d-flex" style="min-height: 100vh; background-color: #D23939; padding-left: 0px;">
-        <div class="sidebar" id="side-nav">
+    <div class="container-fluid d-flex" id="container" style="min-height: 100vh; background-color: #D23939; padding-left: 0px;">
+        <div class="sidebar">
             <div class="header justify-content-between">
                 <a href="image/Logo.png">
-                    <img class="img" src="image/Logo3.png" alt="" style="width: 100px; float:right; margin-right: 2px; margin-top: 12px">
+                    <img class="img" src="image/Logo3.png" alt="">
                 </a>
                 <!--HAMBURGER-->
                 <div id="menu-button">
@@ -68,19 +68,19 @@
             </div>
             <!--PROFIL SELESAI-->
 
-            <ul class="nav nav-tabs list-unstyled mt-3px" role="tablist">
+            <ul class="nav list-unstyled mt-3px" role="tablist">
                 <li class="nav-link">
-                    <a href="#home" class="py-2 d-block" data-bs-toggle="tab"><i class="bi bi-house-door-fill"></i>
+                    <a href="#home" class="d-block" data-bs-toggle="tab"><i class="bi bi-house-door-fill"></i>
                         <span class="text"> Home</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a class="dd py-2" data-bs-toggle="tab" href="dropdown">
+                    <a class="dd" data-bs-toggle="tab" href="dropdown">
                         <i class="bi bi-bookmark-star-fill"></i><span class="text"> KRS</span> 
                         <i class="icon bi bi-caret-down-fill"></i>
                     </a>
                     <ul id="dropdown">
-                        <li><a data-bs-toggle="tab" href="#smt1">Semester 1</a></li>
+                        <li><a id="sem1" data-bs-toggle="tab" href="#smt1">Semester 1</a></li>
                         <li><a data-bs-toggle="tab" href="#smt3">Semester 3</a></li>
                         <li><a data-bs-toggle="tab" href="#smt5">Semester 5</a></li>
                         <li><a data-bs-toggle="tab" href="#smt7">Semester 7</a></li>
@@ -88,17 +88,17 @@
                     </ul>
                 </li>
                 <li class="nav-link">
-                    <a href="#biodata" class="py-2 d-block" data-bs-toggle="tab"><i class="bi bi-person-lines-fill"></i> 
+                    <a href="#biodata" class="d-block" data-bs-toggle="tab"><i class="bi bi-person-lines-fill"></i> 
                         <span class="text"> Biodata</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#about" class="py-2 d-block" data-bs-toggle="tab"><i class="bi bi-gear-wide"></i> 
+                    <a href="#about" class="d-block" data-bs-toggle="tab"><i class="bi bi-gear-wide"></i> 
                         <span class="text"> About</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="logout.php" class="py-2 d-block"><i class="bi bi-door-open-fill"></i>
+                    <a href="logout.php" class="d-block"><i class="bi bi-door-open-fill"></i>
                         <span class="text"> Logout</span>
                     </a>
                 </li>
@@ -106,7 +106,7 @@
         </div>
 
         <!--CONTENT MAHASISWA-->
-        <div class="content tab-content dropdown-content">
+        <div class="content tab-content dropdown-content" id="content">
             <!--DASHBOARD-->
             <div id="home" class="container tab-pane active" style="text-align: center;">
                 <header>
@@ -117,7 +117,7 @@
             <!--DASHBOARD SELESAI-->    
 
             <!--KRS-->
-            <div id="smt1" class="container tab-pane fade">
+            <div id="smt1" class="container tab-pane">
                 <h3 class="mt-4 text-white">Semester 1</h3>
                     <div class="box mt-3">
                             <h5>Daftar Mata Kuliah Yang Diajukan</h5>
@@ -144,7 +144,7 @@
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
 
-            <div id="smt3" class="container tab-pane fade">
+            <div id="smt3" class="container tab-pane">
                 <h3 class="mt-4 text-white">Semester 3</h3>
                     <div class="box mt-3">
                             <h5>Daftar Mata Kuliah Yang Diajukan</h5>
@@ -171,7 +171,7 @@
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
 
-            <div id="smt5" class="container tab-pane fade">
+            <div id="smt5" class="container tab-pane">
                 <h3 class="mt-4 text-white">Semester 5</h3>
                     <div class="box mt-3">
                             <h5>Daftar Mata Kuliah Yang Diajukan</h5>
@@ -198,7 +198,7 @@
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
 
-            <div id="smt7" class="container tab-pane fade">
+            <div id="smt7" class="container tab-pane">
                 <h3 class="mt-4 text-white">Semester 7</h3>
                     <div class="box mt-3">
                             <h5>Daftar Mata Kuliah Yang Diajukan</h5>
@@ -225,7 +225,7 @@
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
 
-            <div id="validasi" class="container tab-pane fade">
+            <div id="validasi" class="container tab-pane">
                 <h3 class="mt-4 text-white">KRS</h3>
                     <div class="box mt-3">
                         <h6>Detail Mahasiswa</h6>
@@ -282,7 +282,7 @@
                         </table>
                     </div>
                     <div class="box mt-3 d-grid">
-                        <span style="font-size: 10px;">Note: Jika Tarik Ajukan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
+                        <span style="font-size: 10px; font-color: grey">Note: Jika Tarik Ajuan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
                         <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Ajukan</button>
                     </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
@@ -380,12 +380,12 @@
                     </div>
                     <div class="row mt-3 text-center">
                         <div class="insta col-md-6">
-                            <a style="font-size: 12px; cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/ekanurseva/"><i class="bi bi-instagram"></i> ekanurseva</a>
-                            <a style="font-size: 12px;  cursor: pointer; text-decoration: none; color: black" href="https://instagram.com/fillah_alhaqi21/"><i class="bi bi-instagram"></i> fillah_alhaqi21</a>
+                            <a style="font-size: 12px cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/ekanurseva/"><i class="bi bi-instagram"></i> ekanurseva</a>
+                            <a style="font-size: 12px  cursor: pointer; text-decoration: none; color: black" href="https://instagram.com/fillah_alhaqi21/"><i class="bi bi-instagram"></i> fillah_alhaqi21</a>
                         </div>
                         <div class="insta col-md-6">
-                            <a style="font-size: 12px;  cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/cimets_13/"><i class="bi bi-instagram"> cimets_13</i></a>
-                            <a style="font-size: 12px; cursor: pointer;text-decoration: none; color: black" href="https://www.instagram.com/velyafitri.azzahra/"><i class="bi bi-instagram"> velyafitri.azzahra</i></a>
+                            <a style="font-size: 12px  cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/cimets_13/"><i class="bi bi-instagram"> cimets_13</i></a>
+                            <a style="font-size: 12px  cursor: pointer;text-decoration: none; color: black" href="https://www.instagram.com/velyafitri.azzahra/"><i class="bi bi-instagram"> velyafitri.azzahra</i></a>
                         </div>
                     </div>
                 </div>
