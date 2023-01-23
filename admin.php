@@ -203,6 +203,7 @@ if (isset($_POST["submit_matkul"])) {
                     </table>
                 </div>
             </div>
+            <div class="jumlahData">Jumlah Data</div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- List Mahasiswa End -->
@@ -339,6 +340,7 @@ if (isset($_POST["submit_matkul"])) {
                     </table>
                 </div>
             </div>
+            <div class="jumlahData">Jumlah Data</div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- list Mk End -->
@@ -432,6 +434,7 @@ if (isset($_POST["submit_matkul"])) {
                     </table>
                 </div>
             </div>
+            <div class="jumlahData">Jumlah Data</div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- list KRS End -->
