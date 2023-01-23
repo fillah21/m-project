@@ -782,7 +782,7 @@ body {
   transition: all ease-in 0.4s;
 }
 
-#inputMk.openMk {
+#inputMk.open {
   top: 50%;
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
@@ -861,7 +861,7 @@ body {
   transition: all ease-in 0.4s;
 }
 
-#editMk.openMk {
+#editMk.open {
   top: 50%;
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
@@ -940,7 +940,7 @@ body {
   transition: all ease-in 0.3s;
 }
 
-#deleteMk.openMk {
+#deleteMk.open {
   top: 20%;
   transform: translate(-50%, -50%) scale(1);
   visibility: visible;
@@ -996,7 +996,7 @@ body {
   transform: scale(1);
 }
 
-#krs.openKrs {
+#krs.open {
   visibility: hidden;
   transform: scale(0.1);
 }
@@ -1090,7 +1090,7 @@ body {
   transition: all ease-in 0.3s;
 }
 
-#detailKrs.openKrs {
+#detailKrs.open {
   left: 50%;
   top: 50%;
   visibility: visible;
@@ -1213,7 +1213,7 @@ body {
   transition: all ease-in 0.3s;
 }
 
-#deleteKrs.openKrs {
+#deleteKrs.open {
   top: 20%;
   transform: translate(-50%, -50%) scale(1);
   visibility: visible;

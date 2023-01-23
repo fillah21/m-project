@@ -6,9 +6,9 @@ $('.sidebar ul li').on('click', function () {
 const menu = document.getElementById('m-label');
 const sidebar = document.getElementsByClassName('sidebar')[0];
 
-menu.onclick = function () {
+menu.addEventListener('click', function () {
   sidebar.classList.toggle('hide');
-};
+});
 
 // dsb mhs
 // CRUD registrasi
@@ -17,17 +17,17 @@ const btnOpen = document.getElementById('btnRegis');
 const btnClose = document.getElementById('closeRegis');
 const btnBack = document.getElementById('backBtn');
 
-btnOpen.onclick = function () {
+btnOpen.addEventListener('click', function () {
   registrasi.classList.toggle('open');
-};
+});
 
-btnClose.onclick = function () {
+btnClose.addEventListener('click', function () {
   registrasi.classList.remove('open');
-};
+});
 
-btnBack.onclick = function () {
+btnBack.addEventListener('click', function () {
   registrasi.classList.remove('open');
-};
+});
 
 // CRUD edit
 const edit = document.getElementById('edit');
@@ -35,17 +35,17 @@ const openEdit = document.getElementById('btnEdit');
 const closeEdit = document.getElementById('closeEdit');
 const backEdit = document.getElementById('backBtnEdit');
 
-openEdit.onclick = function () {
+openEdit.addEventListener('click', function () {
   edit.classList.toggle('open');
-};
+});
 
-closeEdit.onclick = function () {
+closeEdit.addEventListener('click', function () {
   edit.classList.remove('open');
-};
+});
 
-backEdit.onclick = function () {
+backEdit.addEventListener('click', function () {
   edit.classList.remove('open');
-};
+});
 
 // CRUD delete
 const del = document.getElementById('delete');
@@ -53,17 +53,17 @@ const openDel = document.getElementById('btnDel');
 const confirmDel = document.getElementById('confirm');
 const closeDel = document.getElementById('back');
 
-openDel.onclick = function () {
-  del.classList.toggle('open');
-};
+openDel.addEventListener('click', function () {
+  del.classList.add('open');
+});
 
-confirmDel.onclick = function () {
+confirmDel.addEventListener('click', function () {
   del.classList.remove('open');
-};
+});
 
-closeDel.onclick = function () {
+closeDel.addEventListener('click', function () {
   del.classList.remove('open');
-};
+});
 
 // dsb matkul
 // CRUD Input
@@ -72,17 +72,17 @@ const openIn = document.getElementById('btnMatkul');
 const closeIn = document.getElementById('closeMatkul');
 const backIn = document.getElementById('backBtnMk');
 
-openIn.onclick = function () {
-  input.classList.toggle('openMk');
-};
+openIn.addEventListener('click', function () {
+  input.classList.add('open');
+});
 
-closeIn.onclick = function () {
-  input.classList.remove('openMk');
-};
+closeIn.addEventListener('click', function () {
+  input.classList.remove('open');
+});
 
-backIn.onclick = function () {
-  input.classList.remove('openMk');
-};
+backIn.addEventListener('click', function () {
+  input.classList.remove('open');
+});
 
 // CRUD edit
 const editMk = document.getElementById('editMk');
@@ -90,17 +90,17 @@ const openEditMk = document.getElementById('btnEditMk');
 const closeEditMk = document.getElementById('closeEditMk');
 const backEditMk = document.getElementById('backEditMk');
 
-openEditMk.onclick = function () {
-  editMk.classList.toggle('openMk');
-};
+openEditMk.addEventListener('click', function () {
+  editMk.classList.add('open');
+});
 
-closeEditMk.onclick = function () {
-  editMk.classList.remove('openMk');
-};
+closeEditMk.addEventListener('click', function () {
+  editMk.classList.remove('open');
+});
 
-backEditMk.onclick = function () {
-  editMk.classList.remove('openMk');
-};
+backEditMk.addEventListener('click', function () {
+  editMk.classList.remove('open');
+});
 
 // CRUD delete
 const delMk = document.getElementById('deleteMk');
@@ -108,17 +108,17 @@ const openDelMk = document.getElementById('btnDelMk');
 const confirmDelMk = document.getElementById('confirmMk');
 const closeDelMk = document.getElementById('backMk');
 
-openDelMk.onclick = function () {
-  delMk.classList.toggle('openMk');
-};
+openDelMk.addEventListener('click', function () {
+  delMk.classList.add('open');
+});
 
-confirmDelMk.onclick = function () {
-  delMk.classList.remove('openMk');
-};
+confirmDelMk.addEventListener('click', function () {
+  delMk.classList.remove('open');
+});
 
-closeDelMk.onclick = function () {
-  delMk.classList.remove('openMk');
-};
+closeDelMk.addEventListener('click', function () {
+  delMk.classList.remove('open');
+});
 
 // dsb Krs
 // detail Krs
@@ -133,35 +133,35 @@ const delKrs = document.getElementById('deleteKrs');
 const confirmDelKrs = document.getElementById('confirmKrs');
 const closeDelKrs = document.getElementById('backKrs');
 
-openDetail.onclick = function () {
-  krs.classList.toggle('openKrs');
-  menuKrs.classList.toggle('openKrs');
-};
+openDetail.addEventListener('click', function () {
+  krs.classList.add('open');
+  menuKrs.classList.add('open');
+});
 
-backDetail.onclick = function () {
-  krs.classList.remove('openKrs');
-  menuKrs.classList.remove('openKrs');
-};
+backDetail.addEventListener('click', function () {
+  krs.classList.remove('open');
+  menuKrs.classList.remove('open');
+});
 
-upDetail.onclick = function () {
-  krs.classList.remove('openKrs');
-  menuKrs.classList.remove('openKrs');
-};
+upDetail.addEventListener('click', function () {
+  krs.classList.remove('open');
+  menuKrs.classList.remove('open');
+});
 
-openWarning.onclick = function () {
-  delKrs.classList.toggle('openKrs');
-  krs.classList.remove('openKrs');
-  menuKrs.classList.remove('openKrs');
-};
+openWarning.addEventListener('click', function () {
+  delKrs.classList.add('open');
+  krs.classList.remove('open');
+  menuKrs.classList.remove('open');
+});
 
-confirmDelKrs.onclick = function () {
-  delKrs.classList.remove('openKrs');
-  krs.classList.remove('openKrs');
-  menuKrs.classList.remove('openKrs');
-};
+confirmDelKrs.addEventListener('click', function () {
+  delKrs.classList.remove('open');
+  krs.classList.remove('open');
+  menuKrs.classList.remove('open');
+});
 
-closeDelKrs.onclick = function () {
-  delKrs.classList.remove('openKrs');
-  krs.classList.remove('openKrs');
-  menuKrs.classList.remove('openKrs');
-};
+closeDelKrs.addEventListener('click', function () {
+  delKrs.classList.remove('open');
+  krs.classList.remove('open');
+  menuKrs.classList.remove('open');
+});

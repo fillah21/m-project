@@ -52,6 +52,7 @@ if (isset($_POST["submit_matkul"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Project | Admin</title>
+    <link rel="Icon" href="image/Logo.png">
 
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
@@ -62,7 +63,6 @@ if (isset($_POST["submit_matkul"])) {
     <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
 
     <!-- Css lokal -->
     <link rel="stylesheet" href="folder_css/admin.css" />
@@ -88,7 +88,7 @@ if (isset($_POST["submit_matkul"])) {
 
             <!-- Profil -->
             <div class="profil">
-                <img src="profil/2.jpg" alt="profi" class="rounded-circle">
+                <img src="profil/2.jpg" class="rounded-circle" alt="profi">
                 <h1><?= $data_diri['nama']; ?></h1>
             </div>
             <!-- Profil End -->
@@ -101,7 +101,8 @@ if (isset($_POST["submit_matkul"])) {
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#mhs" class="font py-2 d-block" data-bs-toggle="tab"><i class="bi bi-journal-bookmark-fill"></i>
+                    <a href="#mhs" class="font py-2 d-block" data-bs-toggle="tab"><i
+                            class="bi bi-journal-bookmark-fill"></i>
                         <span class="text"> Mahasiswa</span>
                     </a>
                 </li>
@@ -111,7 +112,8 @@ if (isset($_POST["submit_matkul"])) {
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#krs" class="font py-2 d-block" data-bs-toggle="tab"><i class="bi bi-bookmark-star-fill"></i>
+                    <a href="#krs" class="font py-2 d-block" data-bs-toggle="tab"><i
+                            class="bi bi-bookmark-star-fill"></i>
                         <span class="text"> KRS</span>
                     </a>
                 </li>
@@ -161,7 +163,6 @@ if (isset($_POST["submit_matkul"])) {
                     <table class="table text-white">
                         <thead class="topTable text-center">
                             <tr class="headerMhs ">
-                                <th scope="col">No</th>
                                 <th scope="col">NIM</th>
                                 <th scope="col">NAMA</th>
                                 <th scope="col">JK</th>
@@ -187,19 +188,13 @@ if (isset($_POST["submit_matkul"])) {
                                     <td><?= $mhs['semester']; ?></td>
                                     <td><?= $mhs['ipk']; ?></td>
                                     <td>
-                                        <span id="btnEdit">
-                                            <button class="btn btn-sm p-0 ms-1" style="width: 12px;">
+                                        <span id="btnEdit"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
-                                            </button>
-                                        </span>
-
+                                            </button></span>
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-
-                                        <span id="btnDel">
-                                            <button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
+                                        <span id="btnDel"><button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
                                                 <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
-                                            </button>
-                                        </span>
+                                            </button></span>
                                     </td>
                                 </tr>
                                 <?php $i++ ?>
@@ -310,7 +305,6 @@ if (isset($_POST["submit_matkul"])) {
                     <table class="table text-white">
                         <thead class="topTable text-center">
                             <tr class="headerMatkul">
-                                <th scope="col">NO</th>
                                 <th scope="col">KODE</th>
                                 <th scope="col">NAMA MATA KULIAH</th>
                                 <th scope="col">SEMESTER</th>
@@ -355,13 +349,13 @@ if (isset($_POST["submit_matkul"])) {
             <button type="reset" class="btn back-btn" id="backBtnMk">
                 <a href="#matkul"><i class="bi bi-x-circle-fill"></i></a>
             </button>
-            <form action="" method="POST">
+            <form action="">
                 <fieldset>
-                    <input type="text" placeholder="Kode" name="kode_matkul">
-                    <input type="text" placeholder="Nama Mata Kuliah" name="nama_matkul">
-                    <input type="text" placeholder="Semester" name="semester_matkul">
+                    <input type="text" placeholder="Kode" name="kode">
+                    <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
+                    <input type="text" placeholder="Semester" name="semester">
                     <input type="text" placeholder="SKS" name="sks">
-                    <button type="submit" class="btn d-flex justify-content-center ms-auto" name="submit_matkul">
+                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeMatkul">
                         <a href="#matkul">SUBMIT</a>
                     </button>
                 </fieldset>
@@ -430,7 +424,8 @@ if (isset($_POST["submit_matkul"])) {
                                 <td>7</td>
                                 <td>24</td>
                                 <td>
-                                    <button id="btnDetail" class="btn btn-sm" type="menu"><a href="#detailKrs">DETAIL</a></button>
+                                    <button id="btnDetail" class="btn btn-sm" type="menu"><a
+                                            href="#detailKrs">DETAIL</a></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -566,7 +561,8 @@ if (isset($_POST["submit_matkul"])) {
                         </li>
                         <li class="p-1">
                             <i class="bi bi-instagram"></i>
-                            <a href="https://instagram.com/velyafitri.azzahra?igshid=OGQ2MjdiOTE=">velyafitri.azzahra</a>
+                            <a
+                                href="https://instagram.com/velyafitri.azzahra?igshid=OGQ2MjdiOTE=">velyafitri.azzahra</a>
                         </li>
                     </ul>
                     <ul>
