@@ -19,9 +19,9 @@ $data_matkul = query("SELECT * FROM mata_kuliah");
 
 if ($data_diri['level'] !== "Admin") {
     echo "<script>
-                    alert('Hak akses tidak diizinkan');
-                    document.location.href='logout.php';
-                </script>";
+            alert('Hak akses tidak diizinkan');
+            document.location.href='logout.php';
+          </script>";
     exit;
 }
 
