@@ -1367,6 +1367,16 @@ body {
 
 /* Responsive small android */
 @media screen and (max-width: 375px) {
+  #krs .jumlahData {
+    color: #FFFFFF;
+    font-size: 15px;
+  }
+
+  .jumlahData {
+    color: #FFFFFF;
+    font-size: 15px;
+  }
+
   .sidebar {
     position: absolute;
     background-color: #711A1A;
@@ -1897,6 +1907,16 @@ body {
 
 /* Responsive huge android */
 @media screen and (max-width: 412px) {
+  #krs .jumlahData {
+    color: #FFFFFF;
+    font-size: 15px;
+  }
+
+  .jumlahData {
+    color: #FFFFFF;
+    font-size: 15px;
+  }
+
   .sidebar {
     position: absolute;
     background-color: #711A1A;
