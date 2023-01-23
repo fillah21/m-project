@@ -73,15 +73,15 @@ const closeIn = document.getElementById('closeMatkul');
 const backIn = document.getElementById('backBtnMk');
 
 openIn.onclick = function () {
-  input.classList.toggle('open');
+  input.classList.toggle('openMk');
 };
 
 closeIn.onclick = function () {
-  input.classList.remove('open');
+  input.classList.remove('openMk');
 };
 
 backIn.onclick = function () {
-  input.classList.remove('open');
+  input.classList.remove('openMk');
 };
 
 // CRUD edit
@@ -91,15 +91,15 @@ const closeEditMk = document.getElementById('closeEditMk');
 const backEditMk = document.getElementById('backEditMk');
 
 openEditMk.onclick = function () {
-  editMk.classList.toggle('open');
+  editMk.classList.toggle('openMk');
 };
 
 closeEditMk.onclick = function () {
-  editMk.classList.remove('open');
+  editMk.classList.remove('openMk');
 };
 
 backEditMk.onclick = function () {
-  editMk.classList.remove('open');
+  editMk.classList.remove('openMk');
 };
 
 // CRUD delete
@@ -109,15 +109,15 @@ const confirmDelMk = document.getElementById('confirmMk');
 const closeDelMk = document.getElementById('backMk');
 
 openDelMk.onclick = function () {
-  delMk.classList.toggle('open');
+  delMk.classList.toggle('openMk');
 };
 
 confirmDelMk.onclick = function () {
-  delMk.classList.remove('open');
+  delMk.classList.remove('openMk');
 };
 
 closeDelMk.onclick = function () {
-  delMk.classList.remove('open');
+  delMk.classList.remove('openMk');
 };
 
 // dsb Krs
@@ -134,34 +134,34 @@ const confirmDelKrs = document.getElementById('confirmKrs');
 const closeDelKrs = document.getElementById('backKrs');
 
 openDetail.onclick = function () {
-  krs.classList.toggle('open');
-  menuKrs.classList.toggle('open');
+  krs.classList.toggle('openKrs');
+  menuKrs.classList.toggle('openKrs');
 };
 
 backDetail.onclick = function () {
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  krs.classList.remove('openKrs');
+  menuKrs.classList.remove('openKrs');
 };
 
 upDetail.onclick = function () {
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  krs.classList.remove('openKrs');
+  menuKrs.classList.remove('openKrs');
 };
 
 openWarning.onclick = function () {
-  delKrs.classList.toggle('open');
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  delKrs.classList.toggle('openKrs');
+  krs.classList.remove('openKrs');
+  menuKrs.classList.remove('openKrs');
 };
 
 confirmDelKrs.onclick = function () {
-  delKrs.classList.remove('open');
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  delKrs.classList.remove('openKrs');
+  krs.classList.remove('openKrs');
+  menuKrs.classList.remove('openKrs');
 };
 
 closeDelKrs.onclick = function () {
-  delKrs.classList.remove('open');
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  delKrs.classList.remove('openKrs');
+  krs.classList.remove('openKrs');
+  menuKrs.classList.remove('openKrs');
 };
