@@ -11,6 +11,108 @@ body {
   background-color: #D23939;
 }
 
+body select {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+/* untuk chrome */
+form input::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+/* untuk mozilla */
+form input::-moz-input-placeholder {
+  color: #FFFFFF;
+}
+
+/* untuk internet explorer */
+form input::-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+/* untuk chrome */
+form textarea::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+/* untuk mozilla */
+form textarea::-moz-input-placeholder {
+  color: #FFFFFF;
+}
+
+/* untuk internet explorer */
+form textarea::-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+#mhs .search {
+  position: absolute;
+  right: 8%;
+  top: 15%;
+}
+
+#mhs .search input {
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  padding: 10px;
+}
+
+#mhs .search button {
+  border: 2px solid #FFFFFF;
+  font-size: 12px;
+  color: #FFFFFF;
+  margin-left: 10px;
+  border-radius: 30%;
+}
+
+#matkul .search {
+  position: absolute;
+  right: 8%;
+  top: 15%;
+}
+
+#matkul .search input {
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  padding: 10px;
+}
+
+#matkul .search button {
+  border: 2px solid #FFFFFF;
+  font-size: 12px;
+  color: #FFFFFF;
+  margin-left: 10px;
+  border-radius: 30%;
+}
+
+#krs .search {
+  position: absolute;
+  right: 8%;
+  top: 1%;
+}
+
+#krs .search input {
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  padding: 10px;
+}
+
+#krs .search button {
+  border: 2px solid #FFFFFF;
+  font-size: 12px;
+  color: #FFFFFF;
+  margin-left: 10px;
+  border-radius: 30%;
+}
+
 .jumlahData {
   color: #FFFFFF;
   font-size: 15px;
@@ -444,39 +546,7 @@ body {
   background: #D23939;
   border-radius: 8px;
   width: 100%;
-  margin-top: 10px;
-  margin-bottom: 6px;
   padding: 5px;
-}
-
-/* untuk chrome */
-#regis form input::-webkit-input-placeholder {
-  color: #FFFFFF;
-}
-
-/* untuk mozilla */
-#regis form input::-moz-input-placeholder {
-  color: #FFFFFF;
-}
-
-/* untuk internet explorer */
-#regis form input::-ms-input-placeholder {
-  color: #FFFFFF;
-}
-
-/* untuk chrome */
-#regis form textarea::-webkit-input-placeholder {
-  color: #FFFFFF;
-}
-
-/* untuk mozilla */
-#regis form textarea::-moz-input-placeholder {
-  color: #FFFFFF;
-}
-
-/* untuk internet explorer */
-#regis form textarea::-ms-input-placeholder {
-  color: #FFFFFF;
 }
 
 #regis form input {
@@ -553,46 +623,11 @@ body {
   margin-bottom: 10px;
 }
 
-#edit .username {
-  display: flex;
-}
-
 #edit .usePass {
   background: #D23939;
   border-radius: 8px;
-  width: 129px;
-  margin-top: 10px;
-  margin-bottom: 6px;
+  width: 100%;
   padding: 5px;
-
-}
-
-#edit .username label {
-  padding: 4px;
-  margin-left: 10px;
-  width: 150px;
-}
-
-#edit .username .checkbox {
-  margin: 2px;
-  width: 25px;
-  margin-top: 10px;
-}
-
-#edit .password {
-  display: flex;
-}
-
-#edit .password label {
-  padding: 4px;
-  margin-left: 10px;
-  width: 150px;
-}
-
-#edit .password .checkbox {
-  margin: 2px;
-  width: 25px;
-  margin-top: 10px;
 }
 
 #edit form input {
@@ -1074,12 +1109,6 @@ body {
   margin-top: 3%;
 }
 
-#krs .search {
-  position: absolute;
-  left: 84%;
-  top: 2%;
-}
-
 #krs .jumlahData {
   color: #FFFFFF;
   font-size: 15px;
@@ -1367,6 +1396,69 @@ body {
 
 /* Responsive small android */
 @media screen and (max-width: 375px) {
+  #mhs .search {
+    position: relative;
+    left: 1%;
+  }
+
+  #mhs .search input {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  #mhs .search button {
+    border: 2px solid #FFFFFF;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    border-radius: 30%;
+  }
+
+  #matkul .search {
+    position: relative;
+    left: 1%;
+  }
+
+  #matkul .search input {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  #matkul .search button {
+    border: 2px solid #FFFFFF;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    border-radius: 30%;
+  }
+
+  #krs .search {
+    position: relative;
+    left: 1%;
+  }
+
+  #krs .search input {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  #krs .search button {
+    border: 2px solid #FFFFFF;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    border-radius: 30%;
+  }
+
   #krs .jumlahData {
     color: #FFFFFF;
     font-size: 15px;
@@ -1907,6 +1999,70 @@ body {
 
 /* Responsive huge android */
 @media screen and (max-width: 412px) {
+  #mhs .search {
+    position: relative;
+    display: inline-block;
+    left: 1%;
+  }
+
+  #mhs .search input {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  #mhs .search button {
+    border: 2px solid #FFFFFF;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    border-radius: 30%;
+  }
+
+  #matkul .search {
+    position: relative;
+    left: 1%;
+  }
+
+  #matkul .search input {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  #matkul .search button {
+    border: 2px solid #FFFFFF;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    border-radius: 30%;
+  }
+
+  #krs .search {
+    position: relative;
+    left: 1%;
+  }
+
+  #krs .search input {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  #krs .search button {
+    border: 2px solid #FFFFFF;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    border-radius: 30%;
+  }
+
   #krs .jumlahData {
     color: #FFFFFF;
     font-size: 15px;
