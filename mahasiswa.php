@@ -33,7 +33,7 @@
     <title>M-PROJECT | Mahasiswa</title>
     <link rel="Icon" href="image/Logo.png">
     <!--CSS Lokal-->
-    <link rel="stylesheet" href="folder_css/mhs.css">
+    <link rel="stylesheet" href="folder_css/mahasiswa.css">
 
      <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet" />
