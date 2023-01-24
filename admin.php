@@ -320,12 +320,14 @@ if (isset($_POST["submit_matkul"])) {
                                     <td><?= $matkul['semester_matkul']; ?></td>
                                     <td><?= $matkul['sks']; ?></td>
                                     <td>
-                                        <span id="btnEditMk"><button class="btn btn-sm p-0 m-0" style="width: 12px;">
+                                        <span id="btnEditMk">
+                                            <button class="btn btn-sm p-0 m-0" style="width: 12px;">
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
                                             </button>
                                         </span>
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-                                        <span id="btnDelMk"><button class="btn btn-sm p-0 m-0" style="width: 12px;">
+                                        <span id="btnDelMk">
+                                            <button class="btn btn-sm p-0 m-0" style="width: 12px;">
                                                 <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
                                             </button>
                                         </span>
