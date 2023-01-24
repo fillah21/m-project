@@ -33,7 +33,7 @@
     <title>M-PROJECT | Mahasiswa</title>
     <link rel="Icon" href="image/Logo.png">
     <!--CSS Lokal-->
-    <link rel="stylesheet" href="folder_css/mhs.css">
+    <link rel="stylesheet" href="folder_css/mahasiswa.css">
 
      <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet" />
@@ -99,7 +99,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#" class="d-block" data-bs-toggle="tab"><i class="bi bi-door-open-fill"></i>
+                    <a href="logout.php" ><i class="bi bi-door-open-fill"></i>
                         <span class="text"> Logout</span>
                     </a>
                 </li>
@@ -461,6 +461,6 @@
     <!--Javascript-->
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="folder_js/script-mahasiswa.js"></script>
+    <script src="folder_js/script-mhs.js"></script>
 </body>
 </html>

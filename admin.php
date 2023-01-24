@@ -154,10 +154,10 @@ if (isset($_POST["submit_matkul"])) {
         <!-- List Mahasiswa -->
         <div id="mhs" class="container-md tab-pane fade">
             <header class="mb-2">Data Mahasiswa</header>
-            <button id="btnRegis" type="button" class="btn text-white mb-2">
-                <i class="bi bi-plus-square-fill me-1"></i>
-                Registrasi
-            </button>
+            <span class="search">
+                <input type="text" name="search" placeholder="Search">
+                <button class="btn"><i class="bi bi-search"></i></button>
+            </span>
             <div class="row-sm">
                 <div class="col-sm table-responsive" id="listItem">
                     <table class="table text-white">
@@ -221,10 +221,23 @@ if (isset($_POST["submit_matkul"])) {
                     <input type="password" placeholder="Password" name="password">
                     <input type="password" placeholder="Konformasi Password" name="password2">
                     <input type="text" placeholder="Nama" name="nama">
-                    <input type="text" placeholder="Jenis Kelamin" name="jenisKelamin">
+                    <select name="jenis kelamin">
+                        <option value="" disabled selected hidden>Jenis Kelamin</option>
+                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
+                        <option value="Perempuan" class="select-jk">Perempuan</option>
+                    </select>
                     <input type="email" placeholder="Email" name="email">
                     <input type="text" placeholder="NIM" name="nim">
-                    <input type="text" placeholder="Semester" name="semester">
+                    <select name="semester">
+                        <option value="" disabled selected hidden>Semester</option>
+                        <option value="1" class="select-jk">1</option>
+                        <option value="2" class="select-jk">2</option>
+                        <option value="3" class="select-jk">3</option>
+                        <option value="4" class="select-jk">4</option>
+                        <option value="5" class="select-jk">5</option>
+                        <option value="6" class="select-jk">6</option>
+                        <option value="7" class="select-jk">7</option>
+                    </select>
                     <input type="text" placeholder="IPK" name="ipk">
                     <input type="text" placeholder="No. Telp" name="noTelp">
                     <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
@@ -247,22 +260,32 @@ if (isset($_POST["submit_matkul"])) {
             </button>
             <form action="">
                 <fieldset>
-                    <div class="username">
-                        <input class="usePass" type="text" placeholder="Username" name="username">
-                        <label><input class="checkbox" type="checkbox" name="checkbox">Cek Username</label>
-                    </div>
-                    <div class="password">
-                        <input class="usePass" type="password" placeholder="Password" name="password">
-                        <label><input class="checkbox" type="checkbox" name="checkbox">Cek Password</label>
-                    </div>
+                    <input class="usePass" type="text" placeholder="Username" name="username">
+                    <input class="usePass" type="password" placeholder="Password" name="password">
                     <input type="text" placeholder="Nama" name="nama">
-                    <input type="text" placeholder="Jenis Kelamin" name="jenisKelamin">
+                    <select name="jenis kelamin">
+                        <option value="" disabled selected hidden>Jenis Kelamin</option>
+                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
+                        <option value="Perempuan" class="select-jk">Perempuan</option>
+                    </select>
                     <input type="email" placeholder="Email" name="email">
                     <input type="text" placeholder="NIM" name="nim">
-                    <input type="text" placeholder="Semester" name="semester">
+                    <select name="semester">
+                        <option value="" disabled selected hidden>Semester</option>
+                        <option value="1" class="select-jk">1</option>
+                        <option value="2" class="select-jk">2</option>
+                        <option value="3" class="select-jk">3</option>
+                        <option value="4" class="select-jk">4</option>
+                        <option value="5" class="select-jk">5</option>
+                        <option value="6" class="select-jk">6</option>
+                        <option value="7" class="select-jk">7</option>
+                    </select>
                     <input type="text" placeholder="IPK" name="ipk">
                     <input type="text" placeholder="No. Telp" name="noTelp">
-                    <textarea name="alamat" cols="25" rows="10" placeholder="Alamat"></textarea>
+                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
+                    <div class="input-group mb-3 uploadFoto">
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                    </div>
                     <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeEdit">
                         <a href="#mhs">UPDATE</a>
                     </button>
@@ -297,6 +320,10 @@ if (isset($_POST["submit_matkul"])) {
                 <i class="bi bi-plus-square-fill me-1"></i>
                 Tambah Mata Kuliah
             </button>
+            <span class="search">
+                <input type="text" name="search" placeholder="Search">
+                <button class="btn"><i class="bi bi-search"></i></button>
+            </span>
             <div class="row-sm">
                 <div class="col-sm table-responsive" id="listMatkul">
                     <table class="table text-white">
@@ -354,7 +381,16 @@ if (isset($_POST["submit_matkul"])) {
                 <fieldset>
                     <input type="text" placeholder="Kode" name="kode">
                     <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
-                    <input type="text" placeholder="Semester" name="semester">
+                    <select name="semester">
+                        <option value="" disabled selected hidden>Semester</option>
+                        <option value="1" class="select-jk">1</option>
+                        <option value="2" class="select-jk">2</option>
+                        <option value="3" class="select-jk">3</option>
+                        <option value="4" class="select-jk">4</option>
+                        <option value="5" class="select-jk">5</option>
+                        <option value="6" class="select-jk">6</option>
+                        <option value="7" class="select-jk">7</option>
+                    </select>
                     <input type="text" placeholder="SKS" name="sks">
                     <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeMatkul">
                         <a href="#matkul">SUBMIT</a>
@@ -374,7 +410,16 @@ if (isset($_POST["submit_matkul"])) {
                 <fieldset>
                     <input type="text" placeholder="Kode" name="kode">
                     <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
-                    <input type="text" placeholder="Semester" name="semester">
+                    <select name="semester">
+                        <option value="" disabled selected hidden>Semester</option>
+                        <option value="1" class="select-jk">1</option>
+                        <option value="2" class="select-jk">2</option>
+                        <option value="3" class="select-jk">3</option>
+                        <option value="4" class="select-jk">4</option>
+                        <option value="5" class="select-jk">5</option>
+                        <option value="6" class="select-jk">6</option>
+                        <option value="7" class="select-jk">7</option>
+                    </select>
                     <input type="text" placeholder="SKS" name="sks">
                     <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeEditMk">
                         <a href="#matkul">UPDATE</a>
@@ -406,6 +451,10 @@ if (isset($_POST["submit_matkul"])) {
         <!-- list KRS -->
         <div id="krs" class="container-md tab-pane fade">
             <header class="mb-4">Data KRS</header>
+            <span class="search">
+                <input type="text" name="search" placeholder="Search">
+                <button class="btn"><i class="bi bi-search"></i></button>
+            </span>
             <div class="row-sm">
                 <div class="col-sm table-responsive" id="listKrs">
                     <table class="table text-white">
