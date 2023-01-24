@@ -31,8 +31,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M-PROJECT | Mahasiswa</title>
+    <link rel="Icon" href="image/Logo.png">
     <!--CSS Lokal-->
-    <link rel="stylesheet" href="folder_css/mahasiswa.css">
+    <link rel="stylesheet" href="folder_css/mhs.css">
 
      <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet" />
@@ -81,10 +82,10 @@
                     </a>
                     <ul id="dropdown">
                         <li><a id="sem1" data-bs-toggle="tab" href="#smt1">Semester 1</a></li>
-                        <li><a data-bs-toggle="tab" href="#smt3">Semester 3</a></li>
-                        <li><a data-bs-toggle="tab" href="#smt5">Semester 5</a></li>
-                        <li><a data-bs-toggle="tab" href="#smt7">Semester 7</a></li>
-                        <li><a data-bs-toggle="tab" href="#validasi">Validasi Ajuan</a></li>
+                        <li><a id="sem3" data-bs-toggle="tab" href="#smt3">Semester 3</a></li>
+                        <li><a id="sem5" data-bs-toggle="tab" href="#smt5">Semester 5</a></li>
+                        <li><a id="sem7" data-bs-toggle="tab" href="#smt7">Semester 7</a></li>
+                        <li><a id="val" data-bs-toggle="tab" href="#validasi">Validasi Ajuan</a></li>
                     </ul>
                 </li>
                 <li class="nav-link">
@@ -98,7 +99,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="logout.php" class="d-block"><i class="bi bi-door-open-fill"></i>
+                    <a href="#" class="d-block" data-bs-toggle="tab"><i class="bi bi-door-open-fill"></i>
                         <span class="text"> Logout</span>
                     </a>
                 </li>
@@ -134,14 +135,30 @@
                                         <td>Pemrograman Bergerak</td>
                                         <td>3</td>
                                         <td>
-                                        <input type="checkbox" id="cek-sks" style="display: none;">
-                                        <label for="cek-sks" onclick="return confirm('Apakah Yakin Ingin Pilih Ini?')"><i class="bi bi-check-square-fill"></i></label>
+                                            <button id="btnpilih" class="btn btn-sm" type="menu">
+                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
+            </div>
+
+            <div class="container-sm text-center shadow" id="pilih1">
+                <h3>CONFIRM</h3>
+                <span></span>
+                <p>Apakah anda yakin ingin memilihnya?</p>
+                <span></span>
+                <div class="d-flex ms-auto">
+                    <button id="confirm" type="button" class="btn btn-outline-primary btn-sm me-2">
+                        <a href="#smt1">Yes</a>
+                    </button>
+                    <button id="back" type="button" class="btn btn-outline-danger btn-sm">
+                        <a href="#smt1">No</a>
+                    </button>
+                </div>
             </div>
 
             <div id="smt3" class="container tab-pane">
@@ -161,14 +178,30 @@
                                         <td>Pemrograman Bergerak</td>
                                         <td>3</td>
                                         <td>
-                                        <input type="checkbox" id="cek-sks" style="display: none;">
-                                        <label for="cek-sks" onclick="return confirm('Apakah Yakin Ingin Pilih Ini?')"><i class="bi bi-check-square-fill"></i></label>
+                                            <button id="btnpilih3" class="btn btn-sm" type="menu">
+                                                <i class="bi bi-check-square"></i><a href="#pilih3"> Pilih</a>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
+            </div>
+
+            <div class="container-sm text-center shadow" id="pilih3">
+                <h3>CONFIRM</h3>
+                <span></span>
+                <p>Apakah anda yakin ingin memilihnya?</p>
+                <span></span>
+                <div class="d-flex ms-auto">
+                    <button id="confirm3" type="button" class="btn btn-outline-primary btn-sm me-2">
+                        <a href="#smt3">Yes</a>
+                    </button>
+                    <button id="back3" type="button" class="btn btn-outline-danger btn-sm">
+                        <a href="#smt3">No</a>
+                    </button>
+                </div>
             </div>
 
             <div id="smt5" class="container tab-pane">
@@ -188,14 +221,30 @@
                                         <td>Pemrograman Bergerak</td>
                                         <td>3</td>
                                         <td>
-                                        <input type="checkbox" id="cek-sks" style="display: none;">
-                                        <label for="cek-sks" onclick="return confirm('Apakah Yakin Ingin Pilih Ini?')"><i class="bi bi-check-square-fill"></i></label>
+                                            <button id="btnpilih5" class="btn btn-sm" type="menu">
+                                                <i class="bi bi-check-square"></i><a href="#pilih5"> Pilih</a>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
+            </div>
+
+            <div class="container-sm text-center shadow" id="pilih5">
+                <h3>CONFIRM</h3>
+                <span></span>
+                <p>Apakah anda yakin ingin memilihnya?</p>
+                <span></span>
+                <div class="d-flex ms-auto">
+                    <button id="confirm5" type="button" class="btn btn-outline-primary btn-sm me-2">
+                        <a href="#smt5">Yes</a>
+                    </button>
+                    <button id="back5" type="button" class="btn btn-outline-danger btn-sm">
+                        <a href="#smt5">No</a>
+                    </button>
+                </div>
             </div>
 
             <div id="smt7" class="container tab-pane">
@@ -215,14 +264,30 @@
                                         <td>Pemrograman Bergerak</td>
                                         <td>3</td>
                                         <td>
-                                        <input type="checkbox" id="cek-sks" style="display: none;">
-                                        <label for="cek-sks" onclick="return confirm('Apakah Yakin Ingin Pilih Ini?')"><i class="bi bi-check-square-fill"></i></label>
+                                            <button id="btnpilih7" class="btn btn-sm" type="menu">
+                                                <i class="bi bi-check-square"></i><a href="#pilih7"> Pilih</a>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
+            </div>
+
+            <div class="container-sm text-center shadow" id="pilih7">
+                <h3>CONFIRM</h3>
+                <span></span>
+                <p>Apakah anda yakin ingin memilihnya?</p>
+                <span></span>
+                <div class="d-flex ms-auto">
+                    <button id="confirm7" type="button" class="btn btn-outline-primary btn-sm me-2">
+                        <a href="#smt7">Yes</a>
+                    </button>
+                    <button id="back7" type="button" class="btn btn-outline-danger btn-sm">
+                        <a href="#smt7">No</a>
+                    </button>
+                </div>
             </div>
 
             <div id="validasi" class="container tab-pane">
@@ -266,7 +331,7 @@
                                 <tr>
                                     <th scope="col">Mata Kuliah</th>
                                     <th scope="col">SKS</th>
-                                    <th scope="col">Aksi</th>
+                                    <th scope="col">Proses</th>
                                 </tr>
                             </thead>
                             <tbody class="align-middle">
@@ -274,15 +339,14 @@
                                     <td>Pemrograman Bergerak</td>
                                     <td>3</td>
                                     <td>
-                                    <input type="checkbox" id="cek-sks" style="display: none;">
-                                    <label for="cek-sks" onclick="return confirm('Apakah Yakin Ingin Pilih Ini?')"><i class="bi bi-check-square-fill"></i></label>
+                                        <span><i class="bi bi-reception-0"></i></span>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="box mt-3 d-grid">
-                        <span style="font-size: 10px;">Note: Jika Tarik Ajuan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
+                        <span style="font-size: 10px; font-color: grey">Note: Jika Tarik Ajuan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
                         <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Ajukan</button>
                     </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
@@ -380,12 +444,12 @@
                     </div>
                     <div class="row mt-3 text-center">
                         <div class="insta col-md-6">
-                            <a style="font-size: 12px; cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/ekanurseva/"><i class="bi bi-instagram"></i> ekanurseva</a>
-                            <a style="font-size: 12px;  cursor: pointer; text-decoration: none; color: black" href="https://instagram.com/fillah_alhaqi21/"><i class="bi bi-instagram"></i> fillah_alhaqi21</a>
+                            <a style="font-size: 12px cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/ekanurseva/"><i class="bi bi-instagram"></i> ekanurseva</a>
+                            <a style="font-size: 12px  cursor: pointer; text-decoration: none; color: black" href="https://instagram.com/fillah_alhaqi21/"><i class="bi bi-instagram"></i> fillah_alhaqi21</a>
                         </div>
                         <div class="insta col-md-6">
-                            <a style="font-size: 12px;  cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/cimets_13/"><i class="bi bi-instagram"> cimets_13</i></a>
-                            <a style="font-size: 12px;  cursor: pointer;text-decoration: none; color: black" href="https://www.instagram.com/velyafitri.azzahra/"><i class="bi bi-instagram"> velyafitri.azzahra</i></a>
+                            <a style="font-size: 12px  cursor: pointer; text-decoration: none; color: black" href="https://www.instagram.com/cimets_13/"><i class="bi bi-instagram"> cimets_13</i></a>
+                            <a style="font-size: 12px  cursor: pointer;text-decoration: none; color: black" href="https://www.instagram.com/velyafitri.azzahra/"><i class="bi bi-instagram"> velyafitri.azzahra</i></a>
                         </div>
                     </div>
                 </div>

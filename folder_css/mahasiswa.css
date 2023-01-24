@@ -325,6 +325,222 @@ body{
     margin: 10px 0;
 }
 
+#pilih1 {
+    position: absolute;
+    width: 270px;
+    height: 150px;
+    left: 50%;
+    top: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  } 
+#pilih1.open {
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    z-index: 50;
+} 
+#pilih1 h3 {
+    font-family: 'Acme';
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 32px;
+}
+#pilih1 span {
+    width: 100%;
+    height: 3px;
+    background-color: #711A1A;
+    border-radius: 3px;
+    border: 0;
+    margin-bottom: 10px;
+} 
+#pilih1 p {
+    width: 100%;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 12px;
+    color: #000000;
+}
+#pilih1 button {
+    width: 65px;
+    margin: 0;
+    padding: 4px;
+    font-weight: 800;
+}
+#pilih1 button a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#pilih3 {
+    position: absolute;
+    width: 270px;
+    height: 150px;
+    left: 50%;
+    top: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  } 
+#pilih3.open {
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    z-index: 50;
+} 
+#pilih3 h3 {
+    font-family: 'Acme';
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 32px;
+}
+#pilih3 span {
+    width: 100%;
+    height: 3px;
+    background-color: #711A1A;
+    border-radius: 3px;
+    border: 0;
+    margin-bottom: 10px;
+} 
+#pilih3 p {
+    width: 100%;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 12px;
+    color: #000000;
+}
+#pilih3 button {
+    width: 65px;
+    margin: 0;
+    padding: 4px;
+    font-weight: 800;
+}
+#pilih3 button a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#pilih5 {
+    position: absolute;
+    width: 270px;
+    height: 150px;
+    left: 50%;
+    top: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  } 
+#pilih5.open {
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    z-index: 50;
+} 
+#pilih5 h3 {
+    font-family: 'Acme';
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 32px;
+}
+#pilih5 span {
+    width: 100%;
+    height: 3px;
+    background-color: #711A1A;
+    border-radius: 3px;
+    border: 0;
+    margin-bottom: 10px;
+} 
+#pilih5 p {
+    width: 100%;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 12px;
+    color: #000000;
+}
+#pilih5 button {
+    width: 65px;
+    margin: 0;
+    padding: 4px;
+    font-weight: 800;
+}
+#pilih5 button a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#pilih7 {
+    position: absolute;
+    width: 270px;
+    height: 150px;
+    left: 50%;
+    top: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.3s;
+  } 
+#pilih7.open {
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    z-index: 50;
+} 
+#pilih7 h3 {
+    font-family: 'Acme';
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 32px;
+}
+#pilih7 span {
+    width: 100%;
+    height: 3px;
+    background-color: #711A1A;
+    border-radius: 3px;
+    border: 0;
+    margin-bottom: 10px;
+} 
+#pilih7 p {
+    width: 100%;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 12px;
+    color: #000000;
+}
+#pilih7 button {
+    width: 65px;
+    margin: 0;
+    padding: 4px;
+    font-weight: 800;
+}
+#pilih7 button a {
+    text-decoration: none;
+    color: #000000;
+}
+
 #smt1{
     margin-left: 80px;
     margin-top: 35px;
@@ -335,6 +551,11 @@ body{
 }
 #smt1 .row{
     font-size: 10px;
+}
+#smt1 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 9px;
 }
 
 #smt3{
@@ -348,6 +569,11 @@ body{
 #smt3 .row{
     font-size: 10px;
 }
+#smt3 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 9px;
+}
 
 #smt5{
     margin-left: 80px;
@@ -359,6 +585,11 @@ body{
 }
 #smt5 .row{
     font-size: 10px;
+}
+#smt5 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 9px;
 }
 
 #smt7{
@@ -372,29 +603,29 @@ body{
 #smt7 .row{
     font-size: 10px;
 }
+#smt7 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 9px;
+}
 
 #validasi{
     margin-left: 80px;
     margin-top: 35px;
 }
-
 #validasi img{
     width: 170px;
     margin-top: 55px;
 }
-
 #validasi .row{
     font-size: 12px;
 }
-
 #validasi th{
     font-size: 15px;
 }
-
 #validasi td{
     font-size: 13px;
 }
-
 /*MAHASISWA-BIODATA*/
 #biodata{
     margin-left: 80px;
