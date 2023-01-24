@@ -93,9 +93,9 @@ $(function() {
 
 // Modal pilih
 const pil = document.getElementById('pilih1');
-const openp = document.getElementById('btnpilih');
-const yes = document.getElementById('confirm');
-const no = document.getElementById('back');
+const openp = document.getElementById('btnpilih1');
+const yes = document.getElementById('confirm1');
+const no = document.getElementById('back1');
 
 openp.addEventListener('click', function () {
   pil.classList.add('open');

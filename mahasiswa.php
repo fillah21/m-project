@@ -33,7 +33,7 @@
     <title>M-PROJECT | Mahasiswa</title>
     <link rel="Icon" href="image/Logo.png">
     <!--CSS Lokal-->
-    <link rel="stylesheet" href="folder_css/mahasiswa.css">
+    <link rel="stylesheet" href="folder_css/mhs.css">
 
      <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet" />
@@ -135,7 +135,7 @@
                                         <td>Pemrograman Bergerak</td>
                                         <td>3</td>
                                         <td>
-                                            <button id="btnpilih" class="btn btn-sm" type="menu">
+                                            <button id="btnpilih1" class="btn btn-sm" type="menu">
                                                 <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
                                             </button>
                                         </td>
@@ -152,10 +152,10 @@
                 <p>Apakah anda yakin ingin memilihnya?</p>
                 <span></span>
                 <div class="d-flex ms-auto">
-                    <button id="confirm" type="button" class="btn btn-outline-primary btn-sm me-2">
+                    <button id="confirm1" type="button" class="btn btn-outline-primary btn-sm me-2">
                         <a href="#smt1">Yes</a>
                     </button>
-                    <button id="back" type="button" class="btn btn-outline-danger btn-sm">
+                    <button id="back1" type="button" class="btn btn-outline-danger btn-sm">
                         <a href="#smt1">No</a>
                     </button>
                 </div>
@@ -461,6 +461,6 @@
     <!--Javascript-->
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="folder_js/script-mhs.js"></script>
+    <script src="folder_js/script-mahasiswa.js"></script>
 </body>
 </html>
