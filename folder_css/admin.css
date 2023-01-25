@@ -21,30 +21,30 @@ body select {
 }
 
 /* kelola admin */
-.sidebar .kelola {
+.sidebar .profil span {
   margin-top: 55%;
   margin-left: 15px;
 }
 
-.sidebar.hide .kelola {
+.sidebar.hide .profil span {
   margin-top: 85%;
   margin-left: 10px;
 }
 
-.sidebar .kelola a i {
+.sidebar .profil span a i {
   text-decoration: none;
   list-style-type: none;
   color: #FFFFFF
 }
 
-.sidebar .kelola ul.dropdown-menu {
+.sidebar .profil span ul.dropdown-menu {
   background-color: #711A1A;
   border: 2px solid #D23939;
   font-size: 10px;
   min-width: 7rem;
 }
 
-.sidebar .kelola ul.dropdown-menu li a:hover {
+.sidebar .profil span ul.dropdown-menu li a:hover {
   background: #D23939;
   border-radius: 4px;
   color: #FFFFFF;
@@ -145,6 +145,20 @@ body select {
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
+}
+
+#editr form .form-control{
+  position: absolute;
+  font-size: .5rem;
+  width: 215px;
+  margin-top: -50px;
+  margin-left: 55px;
+}
+
+#editr form img{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 3px;
 }
 
 #editr.active {
@@ -481,6 +495,19 @@ form textarea::-ms-input-placeholder {
   margin-left: 12px;
   margin-top: 80px;
   object-fit: cover;
+}
+
+.sidebar .profil button{
+  border: 1.5px solid #711A1A;
+  position: absolute;
+  margin-top: 93px;
+  margin-left: -35px;
+  width: 25px;
+  height: 25px;
+}
+
+.sidebar.hide .profil button{
+  display: none;
 }
 
 .sidebar.hide .profil h1 {
