@@ -42,6 +42,21 @@ body{
     object-fit: cover;   
 }
 
+.sidebar .profil button{
+    border: 1.5px solid #711A1A;
+    position: absolute;
+    margin-top: 106px;
+    margin-left: -27px;
+}
+
+.sidebar.hide .profil button{
+    display: none;
+}
+
+.sidebar .profil i{
+    color: #711A1A;
+}
+
 .sidebar .profil h1{
     font-weight: 700;
     font-size: 15px;
@@ -178,6 +193,92 @@ body{
 
 .sidebar li a{
     color: #FFFF;
+}
+
+/* edit foto profil */
+#editp {
+    position: absolute;
+    width: 250px;
+    padding: 10px;
+    left: 50%;
+    top: 0;
+    background: #D23939;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #FFFFFF;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: all ease-in 0.4s;
+    border: 2px solid #EA7A7A;
+  }
+
+#editp .form-control{
+    font-size: .7rem;
+}
+
+#editp.open {
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 50;
+}
+  
+#editp h3 {
+    font-family: 'Acme';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+  
+#editp form button {
+    width: 100px;
+    background: #D23939;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: #FFFFFF;
+}
+  
+#editp form button a {
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#editp form img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 3px;
+}
+
+#editp .back-btn {
+    position: absolute;
+    left: 90%;
+    top: -10%;
+    font-size: 28px;
+}
+  
+#editp .back-btn a:hover {
+    color: #adadad;
+}
+  
+#editp .back-btn a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#editp .btn-sm{
+    margin-top: -10px;
 }
 /*SIDEBAR SELESAI*/
 

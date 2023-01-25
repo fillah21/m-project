@@ -17,7 +17,6 @@ menu.onclick = (function(){
 content.onclick = (function(){
   sidebar.classList.add('hide');
 });
-
 // sidebar selesai
 
 // dropdown
@@ -158,4 +157,23 @@ pil7.classList.remove('open');
 
 no7.addEventListener('click', function () {
 pil7.classList.remove('open');
+});
+// Modal pilih selesai
+
+// Edit Foto Profi
+const opedit = document.getElementById('opedit');
+const editp = document.getElementById('editp');
+const closee = document.getElementById('closee');
+const backe = document.getElementById('backe');
+
+opedit.addEventListener('click', function () {
+editp.classList.toggle('open');
+});
+
+closee.addEventListener('click', function () {
+editp.classList.remove('open');
+});
+
+backe.addEventListener('click', function () {
+editp.classList.remove('open');
 });

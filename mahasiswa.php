@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="folder_css/mahasiswa.css">
 
      <!-- Font Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -64,7 +64,8 @@
 
             <!--PROFIL-->
             <div class="profil">
-                <img src="profil/aku.jpg" alt="profi" class="rounded-circle">
+                <img src="profil/aku.jpg" class="rounded-circle">
+                <span  id="opedit"><button class="rounded-circle"><i class="bi bi-brush-fill"></i></button></span>
                 <h1>Eka Nurseva Saniyah</h1>
             </div>
             <!--PROFIL SELESAI-->
@@ -107,7 +108,7 @@
         </div>
 
         <!--CONTENT MAHASISWA-->
-        <div class="content tab-content dropdown-content" id="content">
+        <div class="content tab-content" id="content">
             <!--DASHBOARD-->
             <div id="home" class="container tab-pane active" style="text-align: center;">
                 <header>
@@ -115,7 +116,26 @@
                 </header>    
                 <footer> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
-            <!--DASHBOARD SELESAI-->    
+            <!--DASHBOARD SELESAI-->  
+            
+            <!-- Edit Foto Profil -->
+            <div id="editp" class="container-sm">
+                <h3>Edit Foto Profil</h3>
+                <button type="reset" class="btn back-btn" id="closee">
+                    <a href="#home"><i class="bi bi-x-circle-fill"></i></a>
+                </button>
+                <form action="">
+                    <fifieldset>
+                        <img src="profil/aku.jpg">
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="inputGroupFile01">
+                        </div>
+                        <button type="submit" class="btn btn-sm" id="backe">
+                            <a href="#home">UPDATE</a>
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
 
             <!--KRS-->
             <div id="smt1" class="container tab-pane">

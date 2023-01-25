@@ -182,7 +182,7 @@ if (isset($_POST["submit_matkul"])) {
             <form action="">
                 <fifieldset>
                     <div class="row-sm">
-                        <div class="col-sm table-responsive" id="listItem">   
+                        <div class="col-sm table-responsive">   
                             <table class="table text-white">
                                 <thead class="topTable text-center">
                                     <tr class="headerMhs ">
