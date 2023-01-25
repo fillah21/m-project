@@ -28,25 +28,21 @@
         $tmpName = $_FILES['foto']['tmp_name'];
 
         // Cek apakah ada gambar yang diupload atau tidak
-        if ($error === 4) {
-        echo "<script>
-                alert('Silahkan Masukkan Foto');
-                </script>";
-        return false;
+        if(!$namaFile === "") {
+            //cek apakah yang di upload gambar atau bukan
+            $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+            $ekstensiGambar = explode('.', $namaFile);
+            $ekstensiGambar = strtolower(end($ekstensiGambar));
+    
+            //cek apakah ekstensinya ada atau tidak di dalam array $ekstensiGambarValid
+            if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+            echo "<script>
+                    alert('Yang anda upload bukan gambar');
+                    </script>";
+            return false;
+            }
         }
 
-        //cek apakah yang di upload gambar atau bukan
-        $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
-        $ekstensiGambar = explode('.', $namaFile);
-        $ekstensiGambar = strtolower(end($ekstensiGambar));
-
-        //cek apakah ekstensinya ada atau tidak di dalam array $ekstensiGambarValid
-        if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-        echo "<script>
-                alert('Yang anda upload bukan gambar');
-                </script>";
-        return false;
-        }
 
         //cek jika ukurannya terlalu besar, ukurannya dalam byte
         if($ukuranFile > 5000000) {
@@ -57,13 +53,19 @@
         }
 
         //generate nama gambar baru
-        $namaFileBaru = uniqid();
-        $namaFileBaru .= '.';
-        $namaFileBaru .= $ekstensiGambar;
-        //parameternya file namenya, lalu tujuannya
-        move_uploaded_file($tmpName, 'profil/'.$namaFileBaru);
+        if(!$namaFile === "") {
+            $namaFileBaru = uniqid();
+            $namaFileBaru .= '.';
+            $namaFileBaru .= $ekstensiGambar;
+            //parameternya file namenya, lalu tujuannya
+            move_uploaded_file($tmpName, 'profil/'.$namaFileBaru);
 
-        return $namaFileBaru;
+            return $namaFileBaru;
+        } else {
+            $namaFileBaru = "";
+
+            return $namaFileBaru;
+        }
     }
     // Fungsi Upload Foto Selesai
 
@@ -193,4 +195,16 @@
         return mysqli_affected_rows($conn);
     }
     // Fungsi Tambah Matkul Selesai
+
+
+    // Fungsi jumlah data
+    function jumlah_data($data) {
+        global $conn;
+        $query = mysqli_query($conn, $data);
+
+        $jumlah_data = mysqli_num_rows($query);
+
+        return $jumlah_data;
+    }
+    // Fungsi jumlah data selesai
 ?>

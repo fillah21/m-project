@@ -17,6 +17,9 @@ $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
 
 $data_matkul = query("SELECT * FROM mata_kuliah");
 
+$jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
+
+
 if ($data_diri['level'] !== "Admin") {
     echo "<script>
             alert('Hak akses tidak diizinkan');
@@ -32,11 +35,13 @@ if (isset($_POST["submit_matkul"])) {
         echo "
             <script>
               alert('Mata Kuliah Berhasil Ditambahkan');
+              document.location.href='admin.php';
             </script>
           ";
     } else {
         echo "<script>
                    alert('Mata Kuliah Gagal Ditambahkan!');
+                   document.location.href='admin.php';
                   </script>";
     }
 }
@@ -107,7 +112,7 @@ if (isset($_POST["submit_mahasiswa"])) {
 
             <!-- Profil -->
             <div class="profil">
-                <img src="profil/2.jpg" class="rounded-circle" alt="profi">
+                <img src="profil/<?= $data_diri['foto']; ?>" class="rounded-circle" alt="profi">
                     <span  id="opedit">
                         <button class="rounded-circle" id="dropdownMenuLink" data-bs-toggle="dropdown">
                             <i class="bi bi-info-lg"></i>
@@ -362,7 +367,7 @@ if (isset($_POST["submit_mahasiswa"])) {
                     </table>
                 </div>
             </div>
-            <div class="jumlahData">Jumlah Data</div>
+            <div class="jumlahData">Jumlah Data : <?= $jumlah_mahasiswa; ?></div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- List Mahasiswa End -->
