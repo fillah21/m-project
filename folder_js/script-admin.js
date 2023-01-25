@@ -5,10 +5,65 @@ $('.sidebar ul li').on('click', function () {
 
 const menu = document.getElementById('m-label');
 const sidebar = document.getElementsByClassName('sidebar')[0];
+const content = document.getElementById('content');
 
-menu.addEventListener('click', function () {
+menu.onclick = (function(){
   sidebar.classList.toggle('hide');
 });
+
+content.onclick = (function(){
+  sidebar.classList.add('hide');
+});
+
+// dsb kelola data admin
+// data admin
+const opend = document.getElementById('opend');
+const kelola = document.getElementById('kelola');
+const closel = document.getElementById('closel');
+
+opend.addEventListener('click', function () {
+  kelola.classList.toggle('active');
+});
+
+closel.addEventListener('click', function () {
+  kelola.classList.remove('active');
+});
+
+// registrasi admin
+const openr = document.getElementById('openr');
+const regt = document.getElementById('regt');
+const closer = document.getElementById('closer');
+const backr = document.getElementById('backr');
+
+openr.addEventListener('click', function () {
+  regt.classList.toggle('active');
+});
+
+closer.addEventListener('click', function () {
+  regt.classList.remove('active');
+});
+
+backr.addEventListener('click', function () {
+  regt.classList.remove('active');
+});
+// confirm ubah level
+const lev = document.getElementById('ganlev');
+const ganti = document.getElementById('ganti');
+const ya = document.getElementById('ya');
+const ga = document.getElementById('ga');
+
+ganti.addEventListener('click', function () {
+  lev.classList.add('open');
+});
+
+ya.addEventListener('click', function () {
+  lev.classList.remove('open');
+});
+
+ga.addEventListener('click', function () {
+  lev.classList.remove('open');
+});
+// dsb kelola data admin selesai
 
 // dsb mhs
 // CRUD registrasi

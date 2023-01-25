@@ -20,6 +20,239 @@ body select {
   color: #FFFFFF;
 }
 
+/* kelola admin */
+.sidebar .kelola{
+  margin-top: 55%;
+  margin-left: 15px;
+}
+
+.sidebar.hide .kelola{
+  margin-top: 85%;
+  margin-left: 10px;
+}
+
+.sidebar .kelola a i{
+  text-decoration: none;
+  list-style-type: none;
+  color:#FFFFFF
+}
+
+.sidebar .kelola ul.dropdown-menu{
+  background-color: #711A1A;
+  border: 2px solid #D23939;
+  font-size: 10px;
+  min-width: 7rem;
+}
+
+.sidebar .kelola ul.dropdown-menu li a:hover{
+  background: #D23939;
+  border-radius: 4px;
+  color: #FFFFFF;
+}
+
+/* registrasi admin */
+#regt {
+  position: absolute;
+  width: 290px;
+  padding: 10px;
+  left: 50%;
+  top: 0;
+  background: #EA7A7A;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #FFFFFF;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.4s;
+}
+
+#regt.active {
+  top: 50%;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 50;
+}
+
+#regt h3 {
+  font-family: 'Acme';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#regt .usePass {
+  background: #D23939;
+  border-radius: 8px;
+  width: 100%;
+  padding: 5px;
+}
+
+#regt form input {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+#regt form textarea {
+  background: #D23939;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding: 5px;
+  width: 100%;
+}
+
+#regt form button {
+  width: 100px;
+  background: #D23939;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+#regt form button a {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* kelola data admin */
+#kelola {
+  position: absolute;
+  width: 290px;
+  height: 300px;
+  padding: 5px;
+  left: 50%;
+  top: 0;
+  background: #D23939;
+  border: 5px solid #EA7A7A;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #FFFFFF;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.4s;
+}
+
+#kelola.active {
+  top: 50%;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 50;
+}
+
+#kelola h3 {
+  font-family: 'Acme';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#kelola p{
+  color: #FFFFFF;
+  font-size: 7px;
+  margin-bottom: 0;
+}
+
+#kelola button .back-btn {
+  position: absolute;
+  left: 90%;
+  top: -10%;
+  font-size: 28px;
+}
+
+#kelola .btn-sm{
+  font-size: .1rem;
+}
+
+#kelola #i{
+  color: #FFFFFF;
+  font-size: 10px;
+}
+
+/* confirm ubah level */
+#ganlev {
+  position: absolute;
+  width: 270px;
+  height: 150px;
+  left: 50%;
+  top: 0;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: all ease-in 0.3s;
+}
+
+#ganlev.open {
+  top: 20%;
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
+  z-index: 50;
+}
+
+#ganlev h3 {
+  font-family: 'Acme';
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+#ganlev span {
+  width: 100%;
+  height: 3px;
+  background-color: #711A1A;
+  border-radius: 3px;
+  border: 0;
+  margin-bottom: 5px;
+}
+
+#ganlev p {
+  width: 100%;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 12px;
+  color: #000000;
+  margin-bottom: .5rem;
+}
+
+#ganlev button {
+  width: 65px;
+  margin: 0;
+  padding: 4px;
+  font-weight: 800;
+}
+
+#ganlev button a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* kelola data admin end */
+
 /* untuk chrome */
 form input::-webkit-input-placeholder {
   color: #FFFFFF;
@@ -399,7 +632,7 @@ form textarea::-ms-input-placeholder {
   line-height: 50px;
   width: 500px;
   margin-left: 35%;
-  margin-top: 7%;
+  margin-top: 5%;
   padding: 10px;
 }
 
