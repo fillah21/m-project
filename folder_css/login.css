@@ -92,17 +92,6 @@ body {
   border-radius: 30px;
 }
 
-.check-box {
-  margin: 30px 10px 30px 0;
-}
-
-.check-box span {
-  color: rgb(27, 27, 27);
-  font-size: 14px;
-  left: 20px;
-  position: absolute;
-}
-
 #login {
   left: 10px;
 }
