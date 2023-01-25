@@ -46,6 +46,25 @@ closer.addEventListener('click', function () {
 backr.addEventListener('click', function () {
   regt.classList.remove('active');
 });
+
+// edit data admin
+const opene = document.getElementById('opene');
+const editr = document.getElementById('editr');
+const closee = document.getElementById('closee');
+const backe = document.getElementById('backe');
+
+opene.addEventListener('click', function () {
+  editr.classList.toggle('active');
+});
+
+closee.addEventListener('click', function () {
+  editr.classList.remove('active');
+});
+
+backe.addEventListener('click', function () {
+  editr.classList.remove('active');
+});
+
 // confirm ubah level
 const lev = document.getElementById('ganlev');
 const ganti = document.getElementById('ganti');

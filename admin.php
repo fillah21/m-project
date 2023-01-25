@@ -89,7 +89,7 @@ if (isset($_POST["submit_matkul"])) {
             <!-- Profil -->
             <div class="profil">
                 <img src="profil/2.jpg" class="rounded-circle" alt="profi">
-                <h1><?= $data_diri['nama']; ?></h1>
+                <h1><p id="opene"><?= $data_diri['nama']; ?></p></h1>
             </div>
             <!-- Profil End -->
 
@@ -144,6 +144,34 @@ if (isset($_POST["submit_matkul"])) {
 
     <!-- CONTENT -->
     <div class="content tab-content" id="content">
+        <!-- List Edit Data Admin -->
+        <div class="container-sm" id="editr">
+            <h3>Edit Data Admin</h3>
+            <button type="reset" class="btn back-btn" id="closee">
+                <a href="#home"><i class="bi bi-x-circle-fill"></i></a>
+            </button>
+            <form action="">
+                <fifieldset>
+                <input type="text" placeholder="Username" name="username">
+                    <input type="password" placeholder="Password" name="password">
+                    <input type="password" placeholder="Konformasi Password" name="password2">
+                    <input type="text" placeholder="Nama" name="nama">
+                    <select name="jenis kelamin">
+                        <option value="" disabled selected hidden>Jenis Kelamin</option>
+                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
+                        <option value="Perempuan" class="select-jk">Perempuan</option>
+                    </select>
+                    <input type="email" placeholder="Email" name="email">
+                    <input type="text" placeholder="No. Telp" name="noTelp">
+                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
+                    <button type="submit" class="btn btn-sm" id="backe">
+                        <a href="#home">Update</a>
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+        <!-- List Edit Admin End -->
+
         <!-- List Kelola Data Admin -->
         <!-- Data Admin -->
         <div class="container-sm" id="kelola">
@@ -154,7 +182,7 @@ if (isset($_POST["submit_matkul"])) {
             <form action="">
                 <fifieldset>
                     <div class="row-sm">
-                        <div class="col-sm table-responsive">
+                        <div class="col-sm table-responsive" id="listItem">   
                             <table class="table text-white">
                                 <thead class="topTable text-center">
                                     <tr class="headerMhs ">
@@ -234,7 +262,6 @@ if (isset($_POST["submit_matkul"])) {
                 </fieldset>
             </form>
         </div>
-
         <!-- List Kelola Data Admin End -->
 
         <!-- Tab Dashboard -->
