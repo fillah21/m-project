@@ -65,7 +65,7 @@
             <!--PROFIL-->
             <div class="profil">
                 <img src="profil/aku.jpg" class="rounded-circle">
-                <span  id="opedit"><button class="rounded-circle"><i class="bi bi-brush-fill"></i></button></span>
+                    <span  id="opedit"><button class="rounded-circle"><i class="bi bi-brush-fill"></i></button></span>
                 <h1>Eka Nurseva Saniyah</h1>
             </div>
             <!--PROFIL SELESAI-->

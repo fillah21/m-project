@@ -89,7 +89,16 @@ if (isset($_POST["submit_matkul"])) {
             <!-- Profil -->
             <div class="profil">
                 <img src="profil/2.jpg" class="rounded-circle" alt="profi">
-                <h1><p id="opene"><?= $data_diri['nama']; ?></p></h1>
+                    <span  id="opedit">
+                        <button class="rounded-circle" id="dropdownMenuLink" data-bs-toggle="dropdown">
+                            <i class="bi bi-info-lg"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a id="opend" class="dropdown-item" href="#kelola">Kelola Data Admin</a></li>
+                            <li><a id="opene" class="dropdown-item" href="#regt">Edit Data Admin</a></li>
+                        </ul>
+                    </span>
+                <h1><?= $data_diri['nama']; ?></h1>
             </div>
             <!-- Profil End -->
 
@@ -128,15 +137,6 @@ if (isset($_POST["submit_matkul"])) {
                     </a>
                 </li>
             </ul>
-            <div class="kelola">
-                <a class="font py-2 d-block" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown">
-                    <i class="bi bi-info-lg"></i>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a id="opend" class="dropdown-item" href="#kelola">Kelola Data Admin</a></li>
-                    <li><a id="openr" class="dropdown-item" href="#regt">Registrasi Admin</a></li>
-                </ul>
-            </div>
             <!-- Link End -->
         </div>
     </div>
@@ -152,7 +152,7 @@ if (isset($_POST["submit_matkul"])) {
             </button>
             <form action="">
                 <fifieldset>
-                <input type="text" placeholder="Username" name="username">
+                    <input type="text" placeholder="Username" name="username">
                     <input type="password" placeholder="Password" name="password">
                     <input type="password" placeholder="Konformasi Password" name="password2">
                     <input type="text" placeholder="Nama" name="nama">
@@ -164,6 +164,10 @@ if (isset($_POST["submit_matkul"])) {
                     <input type="email" placeholder="Email" name="email">
                     <input type="text" placeholder="No. Telp" name="noTelp">
                     <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
+                    <img src="profil/aku.jpg">
+                    <div class="input-group mb-3 uploadFoto">
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                    </div>
                     <button type="submit" class="btn btn-sm" id="backe">
                         <a href="#home">Update</a>
                     </button>
@@ -179,6 +183,10 @@ if (isset($_POST["submit_matkul"])) {
             <button type="reset" class="btn back-btn" id="closel">
                 <a href="#home"><i class="bi bi-x-circle-fill"></i></a>
             </button>
+            <button id="openr" type="button" class="btn text-white mb-2">
+                <i class="bi bi-plus-square-fill me-1"></i>
+                Registrasi Admin
+            </button>
             <form action="">
                 <fifieldset>
                     <div class="row-sm">
@@ -189,7 +197,6 @@ if (isset($_POST["submit_matkul"])) {
                                         <th scope="col">No</th>
                                         <th scope="col">NAMA</th>
                                         <th scope="col">JK</th>
-                                        <th scope="col">EMAIL</th>
                                         <th scope="col">No.HP</th>
                                         <th scope="col">Level</th>
                                     </tr>
@@ -199,8 +206,7 @@ if (isset($_POST["submit_matkul"])) {
                                         <td>1</td>
                                         <td>Makmur Sentosa</td>
                                         <td>L</td>
-                                        <td>makmurrrr@gmail.com</td>
-                                        <td>08765436789</td>
+                                        <td>087654367897</td>
                                         <td>
                                         <span id="ganti">
                                             <button class="btn btn-sm p-0 m-0">
