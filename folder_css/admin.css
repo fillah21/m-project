@@ -21,30 +21,30 @@ body select {
 }
 
 /* kelola admin */
-.sidebar .kelola{
+.sidebar .kelola {
   margin-top: 55%;
   margin-left: 15px;
 }
 
-.sidebar.hide .kelola{
+.sidebar.hide .kelola {
   margin-top: 85%;
   margin-left: 10px;
 }
 
-.sidebar .kelola a i{
+.sidebar .kelola a i {
   text-decoration: none;
   list-style-type: none;
-  color:#FFFFFF
+  color: #FFFFFF
 }
 
-.sidebar .kelola ul.dropdown-menu{
+.sidebar .kelola ul.dropdown-menu {
   background-color: #711A1A;
   border: 2px solid #D23939;
   font-size: 10px;
   min-width: 7rem;
 }
 
-.sidebar .kelola ul.dropdown-menu li a:hover{
+.sidebar .kelola ul.dropdown-menu li a:hover {
   background: #D23939;
   border-radius: 4px;
   color: #FFFFFF;
@@ -246,7 +246,7 @@ body select {
   margin-bottom: 10px;
 }
 
-#kelola p{
+#kelola p {
   color: #FFFFFF;
   font-size: 7px;
   margin-bottom: 0;
@@ -259,11 +259,11 @@ body select {
   font-size: 28px;
 }
 
-#kelola .btn-sm{
+#kelola .btn-sm {
   font-size: .1rem;
 }
 
-#kelola #i{
+#kelola #i {
   color: #FFFFFF;
   font-size: 10px;
 }
@@ -1925,7 +1925,7 @@ form textarea::-ms-input-placeholder {
 
   #listItem {
     height: 425px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #mhs footer img {
@@ -2024,7 +2024,7 @@ form textarea::-ms-input-placeholder {
 
   #listMatkul {
     height: 425px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #matkul footer img {
@@ -2125,7 +2125,7 @@ form textarea::-ms-input-placeholder {
 
   #listKrs {
     height: 425px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #krs footer img {
@@ -2529,7 +2529,7 @@ form textarea::-ms-input-placeholder {
 
   #listItem {
     height: 425px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #mhs footer img {
@@ -2628,7 +2628,7 @@ form textarea::-ms-input-placeholder {
 
   #listMatkul {
     height: 425px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #matkul footer img {
@@ -2729,7 +2729,7 @@ form textarea::-ms-input-placeholder {
 
   #listKrs {
     height: 425px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #krs footer img {
