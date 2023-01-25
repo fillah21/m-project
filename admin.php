@@ -31,16 +31,35 @@ if (isset($_POST["submit_matkul"])) {
     if (tambah_matkul($_POST) > 0) {
         echo "
             <script>
-              alert('Kosakata Berhasil Ditambahkan');
+              alert('Mata Kuliah Berhasil Ditambahkan');
             </script>
           ";
     } else {
         echo "<script>
-                   alert('Kosakata Gagal Ditambahkan!');
+                   alert('Mata Kuliah Gagal Ditambahkan!');
                   </script>";
     }
 }
 // Tambah mata kuliah selesai
+
+// Proses tambah mahasiswa
+if (isset($_POST["submit_mahasiswa"])) {
+    // Jika fungsi registrasi berhasil
+    if (register($_POST) > 0) {
+        echo "
+            <script>
+              alert('Registrasi Berhasil');
+            </script>
+          ";
+    } else {
+        echo "<script>
+                   alert('Registrasi Gagal');
+                  </script>";
+    }
+}
+// Tambah mahasiswa selesai
+
+
 ?>
 
 
@@ -348,19 +367,18 @@ if (isset($_POST["submit_matkul"])) {
             <button type="reset" class="btn back-btn" id="backBtn">
                 <a href="#mhs"><i class="bi bi-x-circle-fill"></i></a>
             </button>
-            <form action="">
+            <form action="" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <input type="text" placeholder="Username" name="username">
-                    <input type="password" placeholder="Password" name="password">
-                    <input type="password" placeholder="Konformasi Password" name="password2">
+                    <input type="password" placeholder="Password" name="pwd">
+                    <input type="password" placeholder="Konformasi Password" name="pwd2">
                     <input type="text" placeholder="Nama" name="nama">
-                    <select name="jenis kelamin">
-                        <option value="" disabled selected hidden>Jenis Kelamin</option>
-                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
-                        <option value="Perempuan" class="select-jk">Perempuan</option>
-                    </select>
                     <input type="email" placeholder="Email" name="email">
-                    <input type="text" placeholder="NIM" name="nim">
+                    <label for="foto" class="mb-1">Foto Profil :</label>
+                    <div class="input-group uploadFoto">
+                        <input type="file" class="form-control" id="foto" name="foto">
+                    </div>
+                    <input type="text" placeholder="NIM" name="no_induk">
                     <select name="semester">
                         <option value="" disabled selected hidden>Semester</option>
                         <option value="1" class="select-jk">1</option>
@@ -370,15 +388,18 @@ if (isset($_POST["submit_matkul"])) {
                         <option value="5" class="select-jk">5</option>
                         <option value="6" class="select-jk">6</option>
                         <option value="7" class="select-jk">7</option>
+                        <option value="8" class="select-jk">8</option>
                     </select>
                     <input type="text" placeholder="IPK" name="ipk">
-                    <input type="text" placeholder="No. Telp" name="noTelp">
                     <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
-                    <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control" id="inputGroupFile01">
-                    </div>
-                    <button type="submit" class="btn btn-sm" id="closeRegis">
-                        <a href="#mhs">SUBMIT</a>
+                    <input type="number" placeholder="No. Telp" name="no_hp">
+                    <select name="jk">
+                        <option value="" disabled selected hidden>Jenis Kelamin</option>
+                        <option value="L" class="select-jk">Laki-laki</option>
+                        <option value="P" class="select-jk">Perempuan</option>
+                    </select>
+                    <button type="submit" class="btn btn-sm" name="submit_mahasiswa">
+                        SUBMIT
                     </button>
                 </fieldset>
             </form>
