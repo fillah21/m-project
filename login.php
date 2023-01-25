@@ -62,12 +62,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M Project | Login</title>
+  <link rel="Icon" href="image/Logo.png">
+
   <!-- css lokal -->
   <link rel="stylesheet" href="folder_css/login.css" />
 
   <!-- link font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik:wght@300&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -83,10 +86,7 @@
         <?php endif; ?>
         <input type="text" class="input-field" placeholder="Username" name="username" />
         <input type="password" class="input-field" placeholder="Password" name="pwd" />
-        <div class="check-box">
-          <input type="checkbox" />
-          <span>Remember Me</span>
-        </div>
+        
         <button type="submit" class="submit-button" name="login">Login</button>
       </form>
     </div>
