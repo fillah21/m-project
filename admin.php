@@ -149,7 +149,7 @@ if (isset($_POST["submit_mahasiswa"])) {
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#krs" class="font py-2 d-block" data-bs-toggle="tab"><i
+                    <a href="#krsm" class="font py-2 d-block" data-bs-toggle="tab"><i
                             class="bi bi-bookmark-star-fill"></i>
                         <span class="text"> KRS</span>
                     </a>
@@ -379,7 +379,7 @@ if (isset($_POST["submit_mahasiswa"])) {
         <!-- Registrasi Mahasiswa -->
         <div class="container-sm" id="regis">
             <h3>Registrasi Mahasiswa</h3>
-            <button type="reset" class="btn back-btn" id="backBtn">
+            <button type="reset" class="btn back-btn" id="btnBack">
                 <a href="#mhs"><i class="bi bi-x-circle-fill"></i></a>
             </button>
             <form action="" method="post" enctype="multipart/form-data">
@@ -618,7 +618,7 @@ if (isset($_POST["submit_mahasiswa"])) {
 
         <!-- Tab KRS -->
         <!-- list KRS -->
-        <div id="krs" class="container-md tab-pane fade">
+        <div id="krsm" class="container-md tab-pane fade">
             <header class="mb-4">Data KRS</header>
             <span class="search">
                 <input type="text" name="search" placeholder="Search">

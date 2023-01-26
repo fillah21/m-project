@@ -72,15 +72,15 @@ const ya = document.getElementById('ya');
 const ga = document.getElementById('ga');
 
 ganti.addEventListener('click', function () {
-  lev.classList.add('open');
+  lev.classList.add('active');
 });
 
 ya.addEventListener('click', function () {
-  lev.classList.remove('open');
+  lev.classList.remove('active');
 });
 
 ga.addEventListener('click', function () {
-  lev.classList.remove('open');
+  lev.classList.remove('active');
 });
 // dsb kelola data admin selesai
 
@@ -88,19 +88,14 @@ ga.addEventListener('click', function () {
 // CRUD registrasi
 const registrasi = document.getElementById('regis');
 const btnOpen = document.getElementById('btnRegis');
-const btnClose = document.getElementById('closeRegis');
-const btnBack = document.getElementById('backBtn');
+const btnBack = document.getElementById('btnBack');
 
 btnOpen.addEventListener('click', function () {
-  registrasi.classList.toggle('open');
-});
-
-btnClose.addEventListener('click', function () {
-  registrasi.classList.remove('open');
+  registrasi.classList.toggle('active');
 });
 
 btnBack.addEventListener('click', function () {
-  registrasi.classList.remove('open');
+  registrasi.classList.remove('active');
 });
 
 // CRUD edit
@@ -110,15 +105,15 @@ const closeEdit = document.getElementById('closeEdit');
 const backEdit = document.getElementById('backBtnEdit');
 
 openEdit.addEventListener('click', function () {
-  edit.classList.toggle('open');
+  edit.classList.toggle('active');
 });
 
 closeEdit.addEventListener('click', function () {
-  edit.classList.remove('open');
+  edit.classList.remove('active');
 });
 
 backEdit.addEventListener('click', function () {
-  edit.classList.remove('open');
+  edit.classList.remove('active');
 });
 
 // CRUD delete
@@ -128,15 +123,15 @@ const confirmDel = document.getElementById('confirm');
 const closeDel = document.getElementById('back');
 
 openDel.addEventListener('click', function () {
-  del.classList.add('open');
+  del.classList.add('active');
 });
 
 confirmDel.addEventListener('click', function () {
-  del.classList.remove('open');
+  del.classList.remove('active');
 });
 
 closeDel.addEventListener('click', function () {
-  del.classList.remove('open');
+  del.classList.remove('active');
 });
 
 // dsb matkul
@@ -147,15 +142,15 @@ const closeIn = document.getElementById('closeMatkul');
 const backIn = document.getElementById('backBtnMk');
 
 openIn.addEventListener('click', function () {
-  input.classList.add('open');
+  input.classList.add('active');
 });
 
 closeIn.addEventListener('click', function () {
-  input.classList.remove('open');
+  input.classList.remove('active');
 });
 
 backIn.addEventListener('click', function () {
-  input.classList.remove('open');
+  input.classList.remove('active');
 });
 
 // CRUD edit
@@ -165,15 +160,15 @@ const closeEditMk = document.getElementById('closeEditMk');
 const backEditMk = document.getElementById('backEditMk');
 
 openEditMk.addEventListener('click', function () {
-  editMk.classList.add('open');
+  editMk.classList.add('active');
 });
 
 closeEditMk.addEventListener('click', function () {
-  editMk.classList.remove('open');
+  editMk.classList.remove('active');
 });
 
 backEditMk.addEventListener('click', function () {
-  editMk.classList.remove('open');
+  editMk.classList.remove('active');
 });
 
 // CRUD delete
@@ -183,15 +178,15 @@ const confirmDelMk = document.getElementById('confirmMk');
 const closeDelMk = document.getElementById('backMk');
 
 openDelMk.addEventListener('click', function () {
-  delMk.classList.add('open');
+  delMk.classList.add('active');
 });
 
 confirmDelMk.addEventListener('click', function () {
-  delMk.classList.remove('open');
+  delMk.classList.remove('active');
 });
 
 closeDelMk.addEventListener('click', function () {
-  delMk.classList.remove('open');
+  delMk.classList.remove('active');
 });
 
 // dsb Krs
@@ -208,34 +203,34 @@ const confirmDelKrs = document.getElementById('confirmKrs');
 const closeDelKrs = document.getElementById('backKrs');
 
 openDetail.addEventListener('click', function () {
-  krs.classList.add('open');
-  menuKrs.classList.add('open');
+  krs.classList.add('active');
+  menuKrs.classList.add('active');
 });
 
 backDetail.addEventListener('click', function () {
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  krs.classList.remove('active');
+  menuKrs.classList.remove('active');
 });
 
 upDetail.addEventListener('click', function () {
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  krs.classList.remove('active');
+  menuKrs.classList.remove('active');
 });
 
 openWarning.addEventListener('click', function () {
-  delKrs.classList.add('open');
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  delKrs.classList.add('active');
+  krs.classList.remove('active');
+  menuKrs.classList.remove('active');
 });
 
 confirmDelKrs.addEventListener('click', function () {
-  delKrs.classList.remove('open');
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  delKrs.classList.remove('active');
+  krs.classList.remove('active');
+  menuKrs.classList.remove('active');
 });
 
 closeDelKrs.addEventListener('click', function () {
-  delKrs.classList.remove('open');
-  krs.classList.remove('open');
-  menuKrs.classList.remove('open');
+  delKrs.classList.remove('active');
+  krs.classList.remove('active');
+  menuKrs.classList.remove('active');
 });
