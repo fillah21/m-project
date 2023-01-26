@@ -64,9 +64,9 @@
 
             <!--PROFIL-->
             <div class="profil">
-                <img src="profil/aku.jpg" class="rounded-circle">
+                <img src="profil/<?= $data_diri['foto']; ?>" class="rounded-circle">
                     <span  id="opedit"><button class="rounded-circle"><i class="bi bi-brush-fill"></i></button></span>
-                <h1>Eka Nurseva Saniyah</h1>
+                <h1><?= $data_diri['nama']; ?></h1>
             </div>
             <!--PROFIL SELESAI-->
 
@@ -112,7 +112,7 @@
             <!--DASHBOARD-->
             <div id="home" class="container tab-pane active" style="text-align: center;">
                 <header>
-                    SELAMAT DATANG <br> Eka Nurseva Saniyah
+                    SELAMAT DATANG <br> <?= $data_diri['nama']; ?>
                 </header>    
                 <footer> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
@@ -318,13 +318,13 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="nim" class="col-sm-4 col-form-label">NIM</label>
-                                    <span>: 190511012</span>
+                                    <span>: <?= $data_diri['no_induk']; ?></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="smt" class="col-sm-4 col-form-label">Semester</label>
-                                    <span>: 7</span>
+                                    <span>: <?= $data_diri['semester']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -332,13 +332,13 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="nama" class="col-sm-4 col-form-label">Nama Mahasiswa</label>
-                                    <span>: Eka Nurseva Saniyah</span>
+                                    <span>: <?= $data_diri['nama']; ?></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="ipk" class="col-sm-4 col-form-label">IPK</label>
-                                    <span>: 4.00</span>
+                                    <span>: <?= $data_diri['ipk']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -381,7 +381,7 @@
                             <div class="col-md-13">
                                 <div class="">
                                     <label for="nim" class="col-sm-2 col-form-label">NIM</label>
-                                    <span>: 190511012</span>
+                                    <span>: <?= $data_diri['no_induk']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -389,7 +389,7 @@
                             <div class="col-md-13">
                                 <div class="">
                                     <label for="nama" class="col-sm-2 col-form-label">Nama Mahasiswa</label>
-                                    <span>: Eka Nurseva Saniyah</span>
+                                    <span>: <?= $data_diri['nama']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -397,7 +397,11 @@
                             <div class="col-md-13">
                                 <div class="">
                                     <label for="jk" class="col-sm-2 col-form-label">Jenis Kelamin</label>
-                                    <span>: Perempuan</span>
+                                    <?php if($data_diri['jk'] == "L" ) : ?>
+                                        <span>: Laki-Laki</span>
+                                    <?php elseif ($data_diri['jk'] == "P" ) : ?>
+                                        <span>: Perempuan</span>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
@@ -405,7 +409,7 @@
                             <div class="col-md-13">
                                 <div class="">
                                     <label for="smt" class="col-sm-2 col-form-label">Semester</label>
-                                    <span>: 7</span>
+                                    <span>: <?= $data_diri['semester']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -413,7 +417,7 @@
                             <div class="col-md-13">
                                 <div class="">
                                     <label for="ipk" class="col-sm-2 col-form-label">IPK</label>
-                                    <span>: 4.00</span>
+                                    <span>: <?= $data_diri['ipk']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -421,7 +425,7 @@
                             <div class="col-md-13">
                                 <div class="">
                                     <label for="email" class="col-sm-2 col-form-label">Email</label>
-                                    <span>: ekanursevas@gmail.com</span>
+                                    <span>: <?= $data_diri['email']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -429,7 +433,7 @@
                             <div class="col-md-13">
                                 <div class="">
                                     <label for="almt" class="col-sm-2 col-form-label">Alamat</label>
-                                    <span>: Ds. Pesanggrahan, blok Pesanggrahan, Kec. Plumbon, Kab. Cirebon</span>
+                                    <span>: <?= $data_diri['alamat']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -437,7 +441,7 @@
                             <div class="col-md-13">
                                 <div class="">
                                     <label for="no" class="col-sm-2 col-form-label">No Handphone</label>
-                                    <span>: 0895326850337</span>
+                                    <span>: <?= $data_diri['no_hp']; ?></span>
                                 </div>
                             </div>
                         </div>

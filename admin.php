@@ -112,7 +112,11 @@ if (isset($_POST["submit_mahasiswa"])) {
 
             <!-- Profil -->
             <div class="profil">
-                <img src="profil/<?= $data_diri['foto']; ?>" class="rounded-circle" alt="profi">
+                <?php if(!$data_diri['foto'] == "") : ?>
+                    <img src="profil/<?= $data_diri['foto']; ?>" class="rounded-circle" alt="profi">
+                <?php else : ?>
+                    <img src="profil/default.png ?>" class="rounded-circle" alt="profi">
+                <?php endif; ?>
                     <span  id="opedit">
                         <button class="rounded-circle" id="dropdownMenuLink" data-bs-toggle="dropdown">
                             <i class="bi bi-info-lg"></i>
