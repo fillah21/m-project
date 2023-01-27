@@ -1,71 +1,86 @@
 <?php
-include("function.php");
+    include("function.php");
 
-if (!isset($_COOKIE['project'])) {
-    echo "<script>
-                    alert('Silahkan Login terlebih dahulu');
-                    document.location.href='login.php';
-                </script>";
-    exit;
-}
-
-$deskripsi = deskripsi($_COOKIE['project']);
-
-$data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
-
-$data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
-
-$data_admin = query("SELECT * FROM user WHERE level = 'Admin'");
-
-$data_matkul = query("SELECT * FROM mata_kuliah");
-
-$jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
-
-
-if ($data_diri['level'] !== "Admin") {
-    echo "<script>
-            alert('Hak akses tidak diizinkan');
-            document.location.href='logout.php';
-          </script>";
-    exit;
-}
-
-// Proses tambah mata kuliah
-if (isset($_POST["submit_matkul"])) {
-    // Jika fungsi registrasi berhasil
-    if (tambah_matkul($_POST) > 0) {
-        echo "
-            <script>
-              alert('Mata Kuliah Berhasil Ditambahkan');
-              document.location.href='admin.php';
-            </script>
-          ";
-    } else {
+    if (!isset($_COOKIE['project'])) {
         echo "<script>
-                   alert('Mata Kuliah Gagal Ditambahkan!');
-                   document.location.href='admin.php';
-                  </script>";
+                        alert('Silahkan Login terlebih dahulu');
+                        document.location.href='login.php';
+                    </script>";
+        exit;
     }
-}
-// Tambah mata kuliah selesai
 
-// Proses tambah mahasiswa
-if (isset($_POST["submit_mahasiswa"])) {
-    // Jika fungsi registrasi berhasil
-    if (register($_POST) > 0) {
-        echo "
-            <script>
-              alert('Registrasi Berhasil');
-              document.location.href='admin.php';
-            </script>
-          ";
-    } else {
+    $deskripsi = deskripsi($_COOKIE['project']);
+
+    $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
+
+    $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
+
+    $data_admin = query("SELECT * FROM user WHERE level = 'Admin'");
+
+    $data_matkul = query("SELECT * FROM mata_kuliah");
+
+    $jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
+
+
+    if ($data_diri['level'] !== "Admin") {
         echo "<script>
-                   alert('Registrasi Gagal');
-                  </script>";
+                alert('Hak akses tidak diizinkan');
+                document.location.href='logout.php';
+            </script>";
+        exit;
     }
-}
-// Tambah mahasiswa selesai
+
+    // Proses tambah mata kuliah
+    if (isset($_POST["submit_matkul"])) {
+        if (tambah_matkul($_POST) > 0) {
+            echo "
+                <script>
+                alert('Mata Kuliah Berhasil Ditambahkan');
+                document.location.href='admin.php';
+                </script>
+            ";
+        } else {
+            echo "<script>
+                    alert('Mata Kuliah Gagal Ditambahkan!');
+                    document.location.href='admin.php';
+                    </script>";
+        }
+    }
+    // Tambah mata kuliah selesai
+
+    // Proses tambah mahasiswa
+    if (isset($_POST["submit_mahasiswa"])) {
+        if (register($_POST) > 0) {
+            echo "
+                <script>
+                alert('Registrasi Berhasil');
+                document.location.href='admin.php';
+                </script>
+            ";
+        } else {
+            echo "<script>
+                    alert('Registrasi Gagal');
+                    </script>";
+        }
+    }
+    // Tambah mahasiswa selesai
+
+    // Proses tambah admin
+    if (isset($_POST["submit_admin"])) {
+        if (register_admin($_POST) > 0) {
+            echo "
+                <script>
+                alert('Registrasi Admin Berhasil');
+                document.location.href='admin.php';
+                </script>
+            ";
+        } else {
+            echo "<script>
+                    alert('Registrasi Admin Gagal');
+                    </script>";
+        }
+    }
+    // Tambah admin selesai
 
 
 ?>
@@ -183,24 +198,24 @@ if (isset($_POST["submit_mahasiswa"])) {
             </button>
             <form action="">
                 <fifieldset>
-                    <input type="text" placeholder="Username" name="username">
-                    <input type="password" placeholder="Password" name="password">
-                    <input type="password" placeholder="Konformasi Password" name="password2">
-                    <input type="text" placeholder="Nama" name="nama">
-                    <select name="jenis kelamin">
+                    <input type="text" placeholder="Username" name="username" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="password" placeholder="Konformasi Password" name="password2" required>
+                    <input type="text" placeholder="Nama" name="nama" required>
+                    <select name="jenis kelamin" required>
                         <option value="" disabled selected hidden>Jenis Kelamin</option>
                         <option value="Laki-laki" class="select-jk">Laki-laki</option>
                         <option value="Perempuan" class="select-jk">Perempuan</option>
                     </select>
-                    <input type="email" placeholder="Email" name="email">
-                    <input type="text" placeholder="No. Telp" name="noTelp">
-                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="text" placeholder="No. Telp" name="noTelp" required>
+                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat" required></textarea>
                     <img src="profil/aku.jpg">
                     <div class="input-group mb-3 uploadFoto">
                         <input type="file" class="form-control" id="inputGroupFile01">
                     </div>
                     <button type="submit" class="btn btn-sm" id="backe">
-                        <a href="#home">Update</a>
+                        Update
                     </button>
                 </fieldset>
             </form>
@@ -280,25 +295,26 @@ if (isset($_POST["submit_mahasiswa"])) {
             <button type="reset" class="btn back-btn" id="closer">
                 <a href="#home"><i class="bi bi-x-circle-fill"></i></a>
             </button>
-            <form action="">
+            <form action="" method="post" enctype="multipart/form-data">
                 <fifieldset>
-                <input type="text" placeholder="Username" name="username">
-                    <input type="password" placeholder="Password" name="password">
-                    <input type="password" placeholder="Konformasi Password" name="password2">
-                    <input type="text" placeholder="Nama" name="nama">
-                    <select name="jenis kelamin">
-                        <option value="" disabled selected hidden>Jenis Kelamin</option>
-                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
-                        <option value="Perempuan" class="select-jk">Perempuan</option>
-                    </select>
-                    <input type="email" placeholder="Email" name="email">
-                    <input type="text" placeholder="No. Telp" name="noTelp">
-                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
+                <input type="text" placeholder="Username" name="username" required>
+                    <input type="password" placeholder="Password" name="pwd" required>
+                    <input type="password" placeholder="Konformasi Password" name="pwd2" required>
+                    <input type="text" placeholder="Nama" name="nama" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <label for="foto" class="mb-1">Foto Profil :</label>
                     <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control" id="inputGroupFile01">
+                        <input type="file" class="form-control" id="inputGroupFile01" name="foto">
                     </div>
-                    <button type="submit" class="btn btn-sm" id="backr">
-                        <a href="#home">SUBMIT</a>
+                    <textarea name="alamat" cols="25" rows="7" placeholder="alamat" required></textarea>
+                    <input type="text" placeholder="No. Telp" name="no_hp" required>
+                    <select name="jk" required>
+                        <option value="" disabled selected hidden>Jenis Kelamin</option>
+                        <option value="L" class="select-jk">Laki-laki</option>
+                        <option value="P" class="select-jk">Perempuan</option>
+                    </select>
+                    <button type="submit" class="btn btn-sm" id="backr" name="submit_admin">
+                        SUBMIT
                     </button>
                 </fieldset>
             </form>

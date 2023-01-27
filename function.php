@@ -70,7 +70,7 @@
 
 
 
-    // Fungsi Register
+    // Fungsi Register Mahasiswa
     function register($data) {
         global $conn;
         $username = strtolower(stripslashes ($data["username"]));
@@ -119,7 +119,57 @@
         
         return mysqli_affected_rows($conn);
     }
-    // Fungsi Register Selesai\
+    // Fungsi Register Mahasiswa Selesai
+
+
+
+    // Fungsi Register Mahasiswa
+    function register_admin($data) {
+        global $conn;
+        $username = strtolower(stripslashes ($data["username"]));
+        $password = mysqli_real_escape_string($conn, $data["pwd"]);
+        $password2 = mysqli_real_escape_string($conn, $data["pwd2"]);
+        $nama = $data['nama'];
+        $email = $data['email'];
+        $foto = uploadFoto();
+        if($foto == "") {
+            $foto = "default.png";
+        }
+        $no_induk = 1234;
+        $semester = 8;
+        $ipk = 4;
+        $alamat = $data['alamat'];
+        $no_hp = $data['no_hp'];
+        $jk = $data['jk'];
+        $sudah_krs = "Tidak";
+        $level = "Admin";
+
+        //cek username sudah ada atau belum
+        $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'") or die(mysqli_error($conn));
+        if (mysqli_fetch_assoc($result)) {
+            echo "<script>
+                    alert('Username Sudah Dipakai!!!');
+                </script>";
+            return false;
+        }
+
+        //cek konfirmasi password 1 dan password 2 sama atau tidak
+        if ($password !== $password2) {
+            echo "<script>
+                    alert('Password Tidak Sesuai!');
+                </script>";
+            return false;
+        }
+
+        //enskripsi password
+        $password = password_hash($password2, PASSWORD_DEFAULT);
+        
+        //jika password sama, masukkan data ke database
+        mysqli_query($conn, "INSERT INTO user VALUES ('', '$username', '$password', '$nama', '$email', '$foto', '$no_induk', '$semester', '$ipk', '$alamat', '$no_hp', '$jk', '$sudah_krs', '$level')");
+        
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Register Mahasiswa Selesai
 
 
 
