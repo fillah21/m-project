@@ -337,8 +337,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="">
-                                    <label for="ipk" class="col-sm-4 col-form-label">IPK</label>
-                                    <span>: <?= $data_diri['ipk']; ?></span>
+                                    <label for="sks" class="col-sm-4 col-form-label">Jumlah SKS yang bisa diambil</label>
+                                    <span>: 3</span>
                                 </div>
                             </div>
                         </div>
@@ -351,23 +351,24 @@
                                 <tr>
                                     <th scope="col">Mata Kuliah</th>
                                     <th scope="col">SKS</th>
-                                    <th scope="col">Proses</th>
+                                    <th scope="col">Keterangan</th>
                                 </tr>
                             </thead>
                             <tbody class="align-middle">
                                 <tr>
                                     <td>Pemrograman Bergerak</td>
                                     <td>3</td>
-                                    <td>
-                                        <span><i class="bi bi-reception-0"></i></span>
-                                    </td>
+                                    <td>terpilih</td>
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="col-md-6 p-2" style="font-size:12px;">
+                            <label for="sks-ambil">Jumlah SKS yang telah diambil</label>
+                            <span>: 3</span>
+                        </div>
                     </div>
                     <div class="box mt-3 d-grid">
-                        <span style="font-size: 10px;">Note: Jika Tarik Ajuan, akan merubah data KRS dan data ajuan. Harus dari Awal Lagi!</span>
-                        <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Ajukan</button>
+                        <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Validasi</button>
                     </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
