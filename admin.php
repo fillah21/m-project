@@ -15,6 +15,8 @@ $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
 
 $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
 
+$data_admin = query("SELECT * FROM user WHERE level = 'Admin'");
+
 $data_matkul = query("SELECT * FROM mata_kuliah");
 
 $jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
@@ -231,19 +233,23 @@ if (isset($_POST["submit_mahasiswa"])) {
                                     </tr>
                                 </thead>
                                 <tbody class="contentTable text-dark">
-                                    <tr class=" text-white text-center">
-                                        <td>1</td>
-                                        <td>Makmur Sentosa</td>
-                                        <td>L</td>
-                                        <td>087654367897</td>
-                                        <td>
-                                        <span id="ganti">
-                                            <button class="btn btn-sm p-0 m-0">
-                                                <i id="i" class="bi bi-box-arrow-down"></i>
-                                            </button>
-                                        </span>
-                                        </td>
-                                    </tr>
+                                    <?php $k = 1; ?>
+                                    <?php foreach($data_admin as $admin) : ?>
+                                        <tr class=" text-white text-center">
+                                            <td><?= $k; ?></td>
+                                            <td><?= $admin['nama']; ?></td>
+                                            <td><?= $admin['jk']; ?></td>
+                                            <td><?= $admin['no_hp']; ?></td>
+                                            <td>
+                                            <span id="ganti">
+                                                <button class="btn btn-sm p-0 m-0">
+                                                    <i id="i" class="bi bi-box-arrow-down"></i>
+                                                </button>
+                                            </span>
+                                            </td>
+                                        </tr>
+                                    <?php $k++; ?>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -547,11 +553,11 @@ if (isset($_POST["submit_mahasiswa"])) {
             <button type="reset" class="btn back-btn" id="backBtnMk">
                 <a href="#matkul"><i class="bi bi-x-circle-fill"></i></a>
             </button>
-            <form action="">
+            <form action="" method="post">
                 <fieldset>
-                    <input type="text" placeholder="Kode" name="kode">
-                    <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
-                    <select name="semester">
+                    <input type="text" placeholder="Kode" name="kode_matkul" required>
+                    <input type="text" placeholder="Nama Mata Kuliah" name="nama_matkul" required>
+                    <select name="semester_matkul" required>
                         <option value="" disabled selected hidden>Semester</option>
                         <option value="1" class="select-jk">1</option>
                         <option value="2" class="select-jk">2</option>
@@ -561,9 +567,9 @@ if (isset($_POST["submit_mahasiswa"])) {
                         <option value="6" class="select-jk">6</option>
                         <option value="7" class="select-jk">7</option>
                     </select>
-                    <input type="text" placeholder="SKS" name="sks">
-                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeMatkul">
-                        <a href="#matkul">SUBMIT</a>
+                    <input type="number" placeholder="SKS" name="sks" required>
+                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeMatkul matkul" name="submit_matkul">
+                        SUBMIT
                     </button>
                 </fieldset>
             </form>
