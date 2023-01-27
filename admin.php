@@ -54,6 +54,7 @@ if (isset($_POST["submit_mahasiswa"])) {
         echo "
             <script>
               alert('Registrasi Berhasil');
+              document.location.href='admin.php';
             </script>
           ";
     } else {
@@ -384,17 +385,17 @@ if (isset($_POST["submit_mahasiswa"])) {
             </button>
             <form action="" method="post" enctype="multipart/form-data">
                 <fieldset>
-                    <input type="text" placeholder="Username" name="username">
-                    <input type="password" placeholder="Password" name="pwd">
-                    <input type="password" placeholder="Konformasi Password" name="pwd2">
-                    <input type="text" placeholder="Nama" name="nama">
-                    <input type="email" placeholder="Email" name="email">
+                    <input type="text" placeholder="Username" name="username" required>
+                    <input type="password" placeholder="Password" name="pwd" required>
+                    <input type="password" placeholder="Konformasi Password" name="pwd2" required>
+                    <input type="text" placeholder="Nama" name="nama" required>
+                    <input type="email" placeholder="Email" name="email" required>
                     <label for="foto" class="mb-1">Foto Profil :</label>
                     <div class="input-group uploadFoto">
                         <input type="file" class="form-control" id="foto" name="foto">
                     </div>
-                    <input type="text" placeholder="NIM" name="no_induk">
-                    <select name="semester">
+                    <input type="text" placeholder="NIM" name="no_induk" required>
+                    <select name="semester" required>
                         <option value="" disabled selected hidden>Semester</option>
                         <option value="1" class="select-jk">1</option>
                         <option value="2" class="select-jk">2</option>
@@ -405,10 +406,10 @@ if (isset($_POST["submit_mahasiswa"])) {
                         <option value="7" class="select-jk">7</option>
                         <option value="8" class="select-jk">8</option>
                     </select>
-                    <input type="text" placeholder="IPK" name="ipk">
-                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
-                    <input type="number" placeholder="No. Telp" name="no_hp">
-                    <select name="jk">
+                    <input type="text" placeholder="IPK" name="ipk" required>
+                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat" required></textarea>
+                    <input type="number" placeholder="No. Telp" name="no_hp" required>
+                    <select name="jk" required>
                         <option value="" disabled selected hidden>Jenis Kelamin</option>
                         <option value="L" class="select-jk">Laki-laki</option>
                         <option value="P" class="select-jk">Perempuan</option>

@@ -24,11 +24,10 @@
     function uploadFoto() {
         $namaFile = $_FILES['foto']['name'];
         $ukuranFile = $_FILES ['foto']['size'];
-        $error = $_FILES ['foto']['error'];
         $tmpName = $_FILES['foto']['tmp_name'];
 
         // Cek apakah ada gambar yang diupload atau tidak
-        if(!$namaFile === "") {
+        if($namaFile != "") {
             //cek apakah yang di upload gambar atau bukan
             $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
             $ekstensiGambar = explode('.', $namaFile);
@@ -53,7 +52,7 @@
         }
 
         //generate nama gambar baru
-        if(!$namaFile === "") {
+        if($namaFile != "") {
             $namaFileBaru = uniqid();
             $namaFileBaru .= '.';
             $namaFileBaru .= $ekstensiGambar;
@@ -74,21 +73,24 @@
     // Fungsi Register
     function register($data) {
         global $conn;
-        $username = strtolower(stripslashes ($_POST["username"]));
-        $password = mysqli_real_escape_string($conn, $_POST["pwd"]);
-        $password2 = mysqli_real_escape_string($conn, $_POST["pwd2"]);
-        $nama = $_POST['nama'];
-        $email = $_POST['email'];
+        $username = strtolower(stripslashes ($data["username"]));
+        $password = mysqli_real_escape_string($conn, $data["pwd"]);
+        $password2 = mysqli_real_escape_string($conn, $data["pwd2"]);
+        $nama = $data['nama'];
+        $email = $data['email'];
         $foto = uploadFoto();
-        if(!$foto) {
+        if($foto == "") {
             $foto = "default.png";
         }
-        $no_induk = $_POST['no_induk'];
-        $semester = $_POST['semester'];
-        $ipk = $_POST['ipk'];
-        $alamat = $_POST['alamat'];
-        $no_hp = $_POST['no_hp'];
-        $jk = $_POST['jk'];
+        $no_induk = $data['no_induk'];
+        $semester = $data['semester'];
+        $ipk = $data['ipk'];
+        if($ipk > 4) {
+            $ipk = 4;
+        }
+        $alamat = $data['alamat'];
+        $no_hp = $data['no_hp'];
+        $jk = $data['jk'];
         $sudah_krs = "Belum";
         $level = "User";
 
