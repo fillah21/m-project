@@ -358,7 +358,7 @@
                                 <tr>
                                     <td>Pemrograman Bergerak</td>
                                     <td>3</td>
-                                    <td>terpilih</td>
+                                    <td><i class="bi bi-file-earmark-x-fill"></i>delete</td>
                                 </tr>
                             </tbody>
                         </table>

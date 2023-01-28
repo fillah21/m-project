@@ -141,7 +141,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li><a id="opend" class="dropdown-item" href="#kelola">Kelola Data Admin</a></li>
-                            <li><a id="opene" class="dropdown-item" href="#regt">Edit Data Admin</a></li>
+                            <li><a id="opene" class="dropdown-item" href="#editr">Edit Data Admin</a></li>
                         </ul>
                     </span>
                 <h1><?= $data_diri['nama']; ?></h1>
@@ -212,7 +212,7 @@
                     <textarea name="alamat" cols="25" rows="7" placeholder="Alamat" required></textarea>
                     <img src="profil/aku.jpg">
                     <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control" id="inputGroupFile01">
+                        <input type="file" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-sm" id="backe">
                         Update
@@ -304,7 +304,7 @@
                     <input type="email" placeholder="Email" name="email" required>
                     <label for="foto" class="mb-1">Foto Profil :</label>
                     <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control" id="inputGroupFile01" name="foto">
+                        <input type="file" class="form-control" name="foto">
                     </div>
                     <textarea name="alamat" cols="25" rows="7" placeholder="alamat" required></textarea>
                     <input type="text" placeholder="No. Telp" name="no_hp" required>
@@ -379,9 +379,9 @@
                                     <td><?= $mhs['semester']; ?></td>
                                     <td><?= $mhs['ipk']; ?></td>
                                     <td>
-                                        <span id="btnEdit"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
+                                        <span id="btnEdit"><a href="#edit?id=<?= $mhs['id_user'] ?>"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
-                                            </button></span>
+                                            </button></a></span>
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
                                         <span id="btnDel"><button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
                                                 <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
@@ -476,7 +476,7 @@
                     <input type="text" placeholder="No. Telp" name="noTelp">
                     <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
                     <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control" id="inputGroupFile01">
+                        <input type="file" class="form-control">
                     </div>
                     <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeEdit">
                         <a href="#mhs">UPDATE</a>
@@ -540,9 +540,11 @@
                                     <td><?= $matkul['sks']; ?></td>
                                     <td>
                                         <span id="btnEditMk">
+                                            <a href="#editMk?id=<?= $matkul['id_matkul'] ?>">
                                             <button class="btn btn-sm p-0 m-0" style="width: 12px;">
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
                                             </button>
+                                            </a>
                                         </span>
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
                                         <span id="btnDelMk">
@@ -566,7 +568,7 @@
         <!-- Input data matkul -->
         <div class="container-sm" id="inputMk">
             <h3>Insert Mata Kuliah</h3>
-            <button type="reset" class="btn back-btn" id="backBtnMk">
+            <button type="reset" class="btn back-btn" id="balik">
                 <a href="#matkul"><i class="bi bi-x-circle-fill"></i></a>
             </button>
             <form action="" method="post">
@@ -584,7 +586,7 @@
                         <option value="7" class="select-jk">7</option>
                     </select>
                     <input type="number" placeholder="SKS" name="sks" required>
-                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeMatkul matkul" name="submit_matkul">
+                    <button type="submit" class="btn d-flex justify-content-center ms-auto" name="submit_matkul">
                         SUBMIT
                     </button>
                 </fieldset>

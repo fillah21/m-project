@@ -21,11 +21,11 @@ const opend = document.getElementById('opend');
 const kelola = document.getElementById('kelola');
 const closel = document.getElementById('closel');
 
-opend.addEventListener('click', function () {
+opend.onclick = (function () {
   kelola.classList.toggle('active');
 });
 
-closel.addEventListener('click', function () {
+closel.onclick = (function () {
   kelola.classList.remove('active');
 });
 
@@ -35,15 +35,15 @@ const regt = document.getElementById('regt');
 const closer = document.getElementById('closer');
 const backr = document.getElementById('backr');
 
-openr.addEventListener('click', function () {
+openr.onclick = (function () {
   regt.classList.toggle('active');
 });
 
-closer.addEventListener('click', function () {
+closer.onclick = (function () {
   regt.classList.remove('active');
 });
 
-backr.addEventListener('click', function () {
+backr.onclick = (function () {
   regt.classList.remove('active');
 });
 
@@ -53,15 +53,15 @@ const editr = document.getElementById('editr');
 const closee = document.getElementById('closee');
 const backe = document.getElementById('backe');
 
-opene.addEventListener('click', function () {
+opene.onclick = (function () {
   editr.classList.toggle('active');
 });
 
-closee.addEventListener('click', function () {
+closee.onclick = (function () {
   editr.classList.remove('active');
 });
 
-backe.addEventListener('click', function () {
+backe.onclick = (function () {
   editr.classList.remove('active');
 });
 
@@ -71,15 +71,15 @@ const ganti = document.getElementById('ganti');
 const ya = document.getElementById('ya');
 const ga = document.getElementById('ga');
 
-ganti.addEventListener('click', function () {
+ganti.onclick = (function () {
   lev.classList.add('active');
 });
 
-ya.addEventListener('click', function () {
+ya.onclick = (function () {
   lev.classList.remove('active');
 });
 
-ga.addEventListener('click', function () {
+ga.onclick = (function () {
   lev.classList.remove('active');
 });
 // dsb kelola data admin selesai
@@ -90,11 +90,11 @@ const registrasi = document.getElementById('regis');
 const btnOpen = document.getElementById('btnRegis');
 const btnBack = document.getElementById('btnBack');
 
-btnOpen.addEventListener('click', function () {
+btnOpen.onclick = (function () {
   registrasi.classList.toggle('active');
 });
 
-btnBack.addEventListener('click', function () {
+btnBack.onclick = (function () {
   registrasi.classList.remove('active');
 });
 
@@ -104,15 +104,15 @@ const openEdit = document.getElementById('btnEdit');
 const closeEdit = document.getElementById('closeEdit');
 const backEdit = document.getElementById('backBtnEdit');
 
-openEdit.addEventListener('click', function () {
+openEdit.onclick = (function () {
   edit.classList.toggle('active');
 });
 
-closeEdit.addEventListener('click', function () {
+closeEdit.onclick = (function () {
   edit.classList.remove('active');
 });
 
-backEdit.addEventListener('click', function () {
+backEdit.onclick = (function () {
   edit.classList.remove('active');
 });
 
@@ -122,15 +122,15 @@ const openDel = document.getElementById('btnDel');
 const confirmDel = document.getElementById('confirm');
 const closeDel = document.getElementById('back');
 
-openDel.addEventListener('click', function () {
+openDel.onclick = (function () {
   del.classList.add('active');
 });
 
-confirmDel.addEventListener('click', function () {
+confirmDel.onclick = (function () {
   del.classList.remove('active');
 });
 
-closeDel.addEventListener('click', function () {
+closeDel.onclick = (function () {
   del.classList.remove('active');
 });
 
@@ -138,18 +138,13 @@ closeDel.addEventListener('click', function () {
 // CRUD Input
 const input = document.getElementById('inputMk');
 const openIn = document.getElementById('btnMatkul');
-const closeIn = document.getElementById('closeMatkul');
-const backIn = document.getElementById('backBtnMk');
+const balik = document.getElementById('balik');
 
-openIn.addEventListener('click', function () {
+openIn.onclick = (function () {
   input.classList.add('active');
 });
 
-closeIn.addEventListener('click', function () {
-  input.classList.remove('active');
-});
-
-backIn.addEventListener('click', function () {
+balik.onclick = (function () {
   input.classList.remove('active');
 });
 
@@ -159,15 +154,15 @@ const openEditMk = document.getElementById('btnEditMk');
 const closeEditMk = document.getElementById('closeEditMk');
 const backEditMk = document.getElementById('backEditMk');
 
-openEditMk.addEventListener('click', function () {
+openEditMk.onclick = (function () {
   editMk.classList.add('active');
 });
 
-closeEditMk.addEventListener('click', function () {
+closeEditMk.onclick = (function () {
   editMk.classList.remove('active');
 });
 
-backEditMk.addEventListener('click', function () {
+backEditMk.onclick = (function () {
   editMk.classList.remove('active');
 });
 
@@ -177,60 +172,47 @@ const openDelMk = document.getElementById('btnDelMk');
 const confirmDelMk = document.getElementById('confirmMk');
 const closeDelMk = document.getElementById('backMk');
 
-openDelMk.addEventListener('click', function () {
+openDelMk.onclick = (function () {
   delMk.classList.add('active');
 });
 
-confirmDelMk.addEventListener('click', function () {
+confirmDelMk.onclick = (function () {
   delMk.classList.remove('active');
 });
 
-closeDelMk.addEventListener('click', function () {
+closeDelMk.onclick = (function () {
   delMk.classList.remove('active');
 });
 
 // dsb Krs
 // detail Krs
 
-const menuKrs = document.getElementById('krs');
 const krs = document.getElementById('detailKrs');
 const openDetail = document.getElementById('btnDetail');
 const upDetail = document.getElementById('upKrs');
 const backDetail = document.getElementById('beforeKrs');
-const openWarning = document.getElementById('downKrs');
 const delKrs = document.getElementById('deleteKrs');
 const confirmDelKrs = document.getElementById('confirmKrs');
 const closeDelKrs = document.getElementById('backKrs');
 
-openDetail.addEventListener('click', function () {
-  krs.classList.add('active');
-  menuKrs.classList.add('active');
+openDetail.onclick = (function () {
+  krs.classList.add('active')
 });
 
-backDetail.addEventListener('click', function () {
+backDetail.onclick = (function () {
   krs.classList.remove('active');
-  menuKrs.classList.remove('active');
 });
 
-upDetail.addEventListener('click', function () {
+upDetail.onclick = (function () {
   krs.classList.remove('active');
-  menuKrs.classList.remove('active');
 });
 
-openWarning.addEventListener('click', function () {
-  delKrs.classList.add('active');
-  krs.classList.remove('active');
-  menuKrs.classList.remove('active');
-});
-
-confirmDelKrs.addEventListener('click', function () {
+confirmDelKrs.onclick = (function () {
   delKrs.classList.remove('active');
   krs.classList.remove('active');
-  menuKrs.classList.remove('active');
 });
 
-closeDelKrs.addEventListener('click', function () {
+closeDelKrs.onclick = (function () {
   delKrs.classList.remove('active');
   krs.classList.remove('active');
-  menuKrs.classList.remove('active');
 });
