@@ -829,22 +829,6 @@ form textarea::-ms-input-placeholder {
 
 /* List Mahasiswa End */
 
-.back-btn {
-  position: absolute;
-  left: 90%;
-  top: -5%;
-  font-size: 28px;
-}
-
-.back-btn a:hover {
-  color: #adadad;
-}
-
-.back-btn a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
 /* Registrasi */
 #regis {
   position: absolute;
@@ -1549,6 +1533,11 @@ form textarea::-ms-input-placeholder {
   padding: 8px 2px 4px 4px;
 }
 
+#krsMhs .btn-delete-krs i {
+  text-decoration: none;
+  color: #000000;
+}
+
 #toggleKrs {
   display: flex;
   justify-content: end;
@@ -1577,7 +1566,7 @@ form textarea::-ms-input-placeholder {
 }
 
 /* Delete KRS */
-#deleteKrs {
+.delete-krs {
   position: absolute;
   width: 270px;
   height: 150px;
@@ -1594,21 +1583,21 @@ form textarea::-ms-input-placeholder {
   transition: all ease-in 0.3s;
 }
 
-#deleteKrs.active {
+.delete-krs.active {
   top: 20%;
   transform: translate(-50%, -50%) scale(1);
   visibility: visible;
   z-index: 50;
 }
 
-#deleteKrs h3 {
+.delete-krs h3 {
   font-family: 'Acme';
   font-weight: 800;
   font-size: 20px;
   line-height: 32px;
 }
 
-#deleteKrs span {
+.delete-krs span {
   width: 100%;
   height: 3px;
   background-color: #711A1A;
@@ -1617,7 +1606,7 @@ form textarea::-ms-input-placeholder {
   margin-bottom: 10px;
 }
 
-#deleteKrs p {
+.delete-krs p {
   width: 100%;
   font-weight: 400;
   font-size: 11px;
@@ -1625,14 +1614,14 @@ form textarea::-ms-input-placeholder {
   color: #000000;
 }
 
-#deleteKrs button {
+.delete-krs button {
   width: 65px;
   margin: 0;
   padding: 4px;
   font-weight: 800;
 }
 
-#deleteKrs button a {
+.delete-krs button a {
   text-decoration: none;
   color: #000000;
 }
@@ -2135,7 +2124,7 @@ form textarea::-ms-input-placeholder {
     transform: scale(1);
   }
 
-  #krsm.active {
+  #krs.active {
     visibility: hidden;
     transform: scale(0.1);
   }
@@ -2739,7 +2728,7 @@ form textarea::-ms-input-placeholder {
     transform: scale(1);
   }
 
-  #krsm.active {
+  #krs.active {
     visibility: hidden;
     transform: scale(0.1);
   }

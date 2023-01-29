@@ -379,7 +379,7 @@
                                     <td><?= $mhs['semester']; ?></td>
                                     <td><?= $mhs['ipk']; ?></td>
                                     <td>
-                                        <span id="btnEdit"><a href="#edit?id=<?= $mhs['id_user'] ?>"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
+                                        <span id="btnEdit"><a href="edit-mhs.php"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
                                             </button></a></span>
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
@@ -444,49 +444,6 @@
         </div>
         <!-- Registrasi Mahasiswa End -->
 
-        <!-- Edit Data Mahasiswa -->
-        <div class="container-sm" id="edit">
-            <h3>Edit Data Mahasiswa</h3>
-            <button type="reset" class="btn back-btn" id="backBtnEdit">
-                <a href="#mhs"><i class="bi bi-x-circle-fill"></i></a>
-            </button>
-            <form action="">
-                <fieldset>
-                    <input class="usePass" type="text" placeholder="Username" name="username">
-                    <input class="usePass" type="password" placeholder="Password" name="password">
-                    <input type="text" placeholder="Nama" name="nama">
-                    <select name="jenis kelamin">
-                        <option value="" disabled selected hidden>Jenis Kelamin</option>
-                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
-                        <option value="Perempuan" class="select-jk">Perempuan</option>
-                    </select>
-                    <input type="email" placeholder="Email" name="email">
-                    <input type="text" placeholder="NIM" name="nim">
-                    <select name="semester">
-                        <option value="" disabled selected hidden>Semester</option>
-                        <option value="1" class="select-jk">1</option>
-                        <option value="2" class="select-jk">2</option>
-                        <option value="3" class="select-jk">3</option>
-                        <option value="4" class="select-jk">4</option>
-                        <option value="5" class="select-jk">5</option>
-                        <option value="6" class="select-jk">6</option>
-                        <option value="7" class="select-jk">7</option>
-                        <option value="7" class="select-jk">8</option>
-                    </select>
-                    <input type="text" placeholder="IPK" name="ipk">
-                    <input type="text" placeholder="No. Telp" name="noTelp">
-                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
-                    <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control">
-                    </div>
-                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeEdit">
-                        <a href="#mhs">UPDATE</a>
-                    </button>
-                </fieldset>
-            </form>
-        </div>
-        <!-- Edit Data Mahasiswa End -->
-
         <!-- Delete Mahasiswa -->
         <div class="container-sm text-center shadow" id="delete">
             <h3>CONFIRM</h3>
@@ -541,7 +498,7 @@
                                     <td><?= $matkul['sks']; ?></td>
                                     <td>
                                         <span id="btnEditMk">
-                                            <a href="#editMk?id=<?= $matkul['id_matkul'] ?>">
+                                            <a href="edit-mk.php">
                                             <button class="btn btn-sm p-0 m-0" style="width: 12px;">
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
                                             </button>
@@ -596,36 +553,6 @@
         </div>
         <!-- Input data matkul End -->
 
-        <!-- Edit data matkul -->
-        <div class="container-sm" id="editMk">
-            <h3>Edit Mata Kuliah</h3>
-            <button type="reset" class="btn back-btn" id="backEditMk">
-                <a href="#matkul"><i class="bi bi-x-circle-fill"></i></a>
-            </button>
-            <form action="">
-                <fieldset>
-                    <input type="text" placeholder="Kode" name="kode">
-                    <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
-                    <select name="semester">
-                        <option value="" disabled selected hidden>Semester</option>
-                        <option value="1" class="select-jk">1</option>
-                        <option value="2" class="select-jk">2</option>
-                        <option value="3" class="select-jk">3</option>
-                        <option value="4" class="select-jk">4</option>
-                        <option value="5" class="select-jk">5</option>
-                        <option value="6" class="select-jk">6</option>
-                        <option value="7" class="select-jk">7</option>
-                        <option value="7" class="select-jk">8</option>
-                    </select>
-                    <input type="text" placeholder="SKS" name="sks">
-                    <button type="submit" class="btn d-flex justify-content-center ms-auto" id="closeEditMk">
-                        <a href="#matkul">UPDATE</a>
-                    </button>
-                </fieldset>
-            </form>
-        </div>
-        <!-- Edit data matkul End -->
-
         <!-- Delete matkul -->
         <div class="container-sm text-center shadow" id="deleteMk">
             <h3>CONFIRM</h3>
@@ -671,8 +598,9 @@
                                 <td>7</td>
                                 <td>24</td>
                                 <td>
-                                    <button id="btnDetail" class="btn btn-sm" type="menu"><a
-                                            href="#detailKrs">DETAIL</a></button>
+                                    <button id="btnDetail" class="btn btn-sm" type="menu">
+                                        <a href="detail-krs.php">DETAIL</a>
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -684,103 +612,6 @@
         </div>
         <!-- list KRS End -->
 
-        <!-- Detail KRS -->
-        <div class="container-sm" id="detailKrs">
-            <h2>Detail KRS</h2>
-            <div class="container-sm" id="detailMenu">
-                <p>Detail Mahasiswa</p>
-                <form action="">
-                    <fieldset>
-                        <div>
-                            <span>NIM</span>
-                            <p>:</p>
-                            <input type="text" readonly value="NIM" name="nim">
-                        </div>
-                        <div>
-                            <span>Nama</span>
-                            <p>:</p>
-                            <input type="text" readonly value="Nama" name="nama">
-                        </div>
-                        <div>
-                            <span>Semester</span>
-                            <p>:</p>
-                            <input type="text" readonly value="Semester" name="semester">
-                        </div>
-                        <div>
-                            <span>IPK</span>
-                            <p>:</p>
-                            <input type="text" readonly value="IPK" name="ipk">
-                        </div>
-                    </fieldset>
-                </form>
-                <p class="mt-3">Daftar Mata Kuliah Yang Diajukan</p>
-                <div class="table-responsive" id="krsMhs">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Mata Kuliah</th>
-                                <th scope="col">SKS</th>
-                                <th scope="col">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Pemrograman Bergerak</th>
-                                <td>3</td>
-                                <td><i class="bi bi-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Sistem Pakar</th>
-                                <td>3</td>
-                                <td><i class="bi bi-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Riset Operasi</th>
-                                <td>3</td>
-                                <td><i class="bi bi-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Big Data</th>
-                                <td>3</td>
-                                <td><i class="bi bi-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Kecerdasan Buatan</th>
-                                <td>3</td>
-                                <td><i class="bi bi-trash"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="toggleKrs">
-                    <button type="button" class="btn btn-outline-danger btn-sm me-2" id="beforeKrs">
-                        <a href="#krs">BACK</a>
-                    </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm me-2" id="upKrs">
-                        <a href="#krs">UNBLOCK</a>
-                    </button>
-                </div>
-            </div>
-            <footer><img src="image/Logo2.png" alt="logo"></footer>
-        </div>
-
-        <!-- Delete Krs -->
-        <div class="container-sm text-center shadow" id="deleteKrs">
-            <h3>CONFIRM</h3>
-            <span></span>
-            <p>Apakah anda yakin ingin menghapusnya?</p>
-            <span></span>
-            <div class="d-flex ms-auto">
-                <button id="confirmKrs" type="button" class="btn btn-outline-primary btn-sm me-2">
-                    <a href="#krs">Yes</a>
-                </button>
-                <button id="backKrs" type="button" class="btn btn-outline-danger btn-sm">
-                    <a href="#krs">No</a>
-                </button>
-            </div>
-        </div>
-        <!-- Delete Krs End -->
-        <!-- Detail KRS End -->
         <!-- Tab KRS End -->
 
         <!-- Tab About -->
