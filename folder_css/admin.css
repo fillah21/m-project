@@ -147,7 +147,7 @@ body select {
   transition: all ease-in 0.4s;
 }
 
-#editr form .form-control{
+#editr form .form-control {
   position: absolute;
   font-size: .5rem;
   width: 215px;
@@ -155,7 +155,7 @@ body select {
   margin-left: 55px;
 }
 
-#editr form img{
+#editr form img {
   width: 50px;
   height: 50px;
   margin-bottom: 3px;
@@ -497,7 +497,7 @@ form textarea::-ms-input-placeholder {
   object-fit: cover;
 }
 
-.sidebar .profil button{
+.sidebar .profil button {
   border: 1.5px solid #711A1A;
   position: absolute;
   margin-top: 93px;
@@ -506,7 +506,7 @@ form textarea::-ms-input-placeholder {
   height: 25px;
 }
 
-.sidebar.hide .profil button{
+.sidebar.hide .profil button {
   display: none;
 }
 
@@ -1209,7 +1209,7 @@ form textarea::-ms-input-placeholder {
   border-radius: 6px;
 }
 
-#inputMk form button a {
+#inputMk form button {
   text-align: center;
   font-weight: 600;
   font-size: 13px;
