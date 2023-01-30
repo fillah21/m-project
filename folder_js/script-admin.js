@@ -47,24 +47,6 @@ backr.onclick = function () {
   regt.classList.remove('active');
 };
 
-// edit data admin
-const opene = document.getElementById('opene');
-const editr = document.getElementById('editr');
-const closee = document.getElementById('closee');
-const backe = document.getElementById('backe');
-
-opene.onclick = function () {
-  editr.classList.toggle('active');
-};
-
-closee.onclick = function () {
-  editr.classList.remove('active');
-};
-
-backe.onclick = function () {
-  editr.classList.remove('active');
-};
-
 // confirm ubah level
 const lev = document.getElementById('ganlev');
 const ganti = document.getElementById('ganti');

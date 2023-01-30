@@ -65,7 +65,7 @@
             <!--PROFIL-->
             <div class="profil">
                 <img src="profil/<?= $data_diri['foto']; ?>" class="rounded-circle">
-                    <span  id="opedit"><button class="rounded-circle"><i class="bi bi-brush-fill"></i></button></span>
+                    <span  id="opedit"><a href="edit-foto-user.php"><button class="rounded-circle"><i class="bi bi-brush-fill"></i></button></a></span>
                 <h1><?= $data_diri['nama']; ?></h1>
             </div>
             <!--PROFIL SELESAI-->
@@ -118,25 +118,6 @@
             </div>
             <!--DASHBOARD SELESAI-->  
             
-            <!-- Edit Foto Profil -->
-            <div id="editp" class="container-sm">
-                <h3>Edit Foto Profil</h3>
-                <button type="reset" class="btn back-btn" id="closee">
-                    <a href="#home"><i class="bi bi-x-circle-fill"></i></a>
-                </button>
-                <form action="">
-                    <fifieldset>
-                        <img src="profil/aku.jpg">
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile01">
-                        </div>
-                        <button type="submit" class="btn btn-sm" id="backe">
-                            <a href="#home">UPDATE</a>
-                        </button>
-                    </fieldset>
-                </form>
-            </div>
-
             <!--KRS-->
             <div id="smt1" class="container tab-pane">
                 <h3 class="mt-4 text-white">Semester 1</h3>
@@ -368,6 +349,7 @@
                         </div>
                     </div>
                     <div class="box mt-3 d-grid">
+                        <span style="font-size: 11px; font: grey">Note: Pastikan data yang dipilih telah sesuai!</span>
                         <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Validasi</button>
                     </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>

@@ -141,7 +141,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li><a id="opend" class="dropdown-item" href="#kelola">Kelola Data Admin</a></li>
-                            <li><a id="opene" class="dropdown-item" href="#editr">Edit Data Admin</a></li>
+                            <li><a id="opene" class="dropdown-item" href="edit-profil-admin.php">Edit Data Admin</a></li>
                         </ul>
                     </span>
                 <h1><?= $data_diri['nama']; ?></h1>
@@ -190,38 +190,6 @@
 
     <!-- CONTENT -->
     <div class="content tab-content" id="content">
-        <!-- List Edit Data Admin -->
-        <div class="container-sm" id="editr">
-            <h3>Edit Data Admin</h3>
-            <button type="reset" class="btn back-btn" id="closee">
-                <a href="#home"><i class="bi bi-x-circle-fill"></i></a>
-            </button>
-            <form action="">
-                <fifieldset>
-                    <input type="text" placeholder="Username" name="username" required>
-                    <input type="password" placeholder="Password" name="password" required>
-                    <input type="password" placeholder="Konformasi Password" name="password2" required>
-                    <input type="text" placeholder="Nama" name="nama" required>
-                    <select name="jenis kelamin" required>
-                        <option value="" disabled selected hidden>Jenis Kelamin</option>
-                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
-                        <option value="Perempuan" class="select-jk">Perempuan</option>
-                    </select>
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="text" placeholder="No. Telp" name="noTelp" required>
-                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat" required></textarea>
-                    <img src="profil/aku.jpg">
-                    <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-sm" id="backe">
-                        Update
-                    </button>
-                </fieldset>
-            </form>
-        </div>
-        <!-- List Edit Admin End -->
-
         <!-- List Kelola Data Admin -->
         <!-- Data Admin -->
         <div class="container-sm" id="kelola">

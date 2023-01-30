@@ -196,7 +196,7 @@ body{
 }
 
 /* edit foto profil */
-#editp {
+.editp {
     position: absolute;
     width: 250px;
     padding: 10px;
@@ -214,18 +214,18 @@ body{
     border: 2px solid #EA7A7A;
   }
 
-#editp .form-control{
+.editp .form-control{
     font-size: .7rem;
 }
 
-#editp.open {
+.editp.open {
     top: 50%;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
     z-index: 50;
 }
   
-#editp h3 {
+.editp h3 {
     font-family: 'Acme';
     font-style: normal;
     font-weight: 400;
@@ -236,7 +236,7 @@ body{
     margin-bottom: 10px;
 }
   
-#editp form button {
+.editp form button {
     width: 100px;
     background: #D23939;
     border: 1px solid #FFFFFF;
@@ -247,7 +247,7 @@ body{
     color: #FFFFFF;
 }
   
-#editp form button a {
+.editp form button a {
     text-align: center;
     font-weight: 600;
     font-size: 13px;
@@ -255,29 +255,29 @@ body{
     text-decoration: none;
 }
 
-#editp form img{
+.editp form img{
     width: 50px;
     height: 50px;
     margin-bottom: 3px;
 }
 
-#editp .back-btn {
+.editp .back-btn {
     position: absolute;
     left: 90%;
     top: -10%;
     font-size: 28px;
 }
   
-#editp .back-btn a:hover {
+.editp .back-btn a:hover {
     color: #adadad;
 }
   
-#editp .back-btn a {
+.editp .back-btn a {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-#editp .btn-sm{
+.editp .btn-sm{
     margin-top: -10px;
 }
 /*SIDEBAR SELESAI*/

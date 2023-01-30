@@ -222,6 +222,22 @@ body select {
   text-decoration: none;
 }
 
+#editr .back {
+  position: absolute;
+  left: 90%;
+  top: -4.5%;
+  font-size: 28px;
+}
+
+#editr .back a:hover {
+  color: #adadad;
+}
+
+#editr .back a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 /* kelola data admin */
 #kelola {
   position: absolute;
