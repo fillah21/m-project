@@ -13,15 +13,10 @@
 
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
 
-    $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
+    $id_matkul = $_GET['idmatkul'];
 
-    $data_admin = query("SELECT * FROM user WHERE level = 'Admin'");
-
-    $data_matkul = query("SELECT * FROM mata_kuliah");
-
-    $jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
-
-
+    $data_matkul = query("SELECT * FROM mata_kuliah WHERE id_matkul = $id_matkul") [0];
+    
     if ($data_diri['level'] !== "Admin") {
         echo "<script>
                 alert('Hak akses tidak diizinkan');
@@ -30,58 +25,33 @@
         exit;
     }
 
-    // Proses tambah mata kuliah
-    if (isset($_POST["submit_matkul"])) {
-        if (tambah_matkul($_POST) > 0) {
+    // Proses edit matkul
+    if(isset($_POST['submit_mk'])) {
+        if(edit_matkul($_POST) > 0) {
             echo "
                 <script>
-                alert('Mata Kuliah Berhasil Ditambahkan');
+                alert('Data Berhasil Diubah');
                 document.location.href='admin.php';
                 </script>
             ";
         } else {
-            echo "<script>
-                    alert('Mata Kuliah Gagal Ditambahkan!');
-                    document.location.href='admin.php';
-                    </script>";
-        }
-    }
-    // Tambah mata kuliah selesai
-
-    // Proses tambah mahasiswa
-    if (isset($_POST["submit_mahasiswa"])) {
-        if (register($_POST) > 0) {
             echo "
                 <script>
-                alert('Registrasi Berhasil');
+                alert('Data Gagal Diubah');
                 document.location.href='admin.php';
                 </script>
             ";
-        } else {
-            echo "<script>
-                    alert('Registrasi Gagal');
-                    </script>";
         }
     }
-    // Tambah mahasiswa selesai
+    // Proses edit matkul selesai
 
-    // Proses tambah admin
-    if (isset($_POST["submit_admin"])) {
-        if (register_admin($_POST) > 0) {
-            echo "
-                <script>
-                alert('Registrasi Admin Berhasil');
+    if(isset($_POST['back'])) {
+        echo "
+            <script>
                 document.location.href='admin.php';
-                </script>
-            ";
-        } else {
-            echo "<script>
-                    alert('Registrasi Admin Gagal');
-                    </script>";
-        }
+            </script>
+        ";
     }
-    // Tambah admin selesai
-
 
 ?>
 
@@ -116,12 +86,13 @@
         <!-- Edit data matkul -->
         <div class="container-sm tab-pane active" id="editMk">
             <h3>Edit Mata Kuliah</h3>
-            <form action="">
+            <form action="" method="post">
                 <fieldset>
-                    <input type="text" placeholder="Kode" name="kode">
-                    <input type="text" placeholder="Nama Mata Kuliah" name="namaMatkul">
-                    <select name="semester">
-                        <option value="" disabled selected hidden>Semester</option>
+                    <input type="hidden" name="id_matkul" value="<?= $data_matkul['id_matkul']; ?>">
+                    <input type="text" placeholder="Kode" name="kode_matkul" value="<?= $data_matkul['kode_matkul']; ?>">
+                    <input type="text" placeholder="Nama Mata Kuliah" name="nama_matkul" value="<?= $data_matkul['nama_matkul']; ?>">
+                    <select name="semester_matkul">
+                        <option value="<?= $data_matkul['semester_matkul']; ?>" selected hidden><?= $data_matkul['semester_matkul']; ?></option>
                         <option value="1" class="select-jk">1</option>
                         <option value="2" class="select-jk">2</option>
                         <option value="3" class="select-jk">3</option>
@@ -131,11 +102,12 @@
                         <option value="7" class="select-jk">7</option>
                         <option value="7" class="select-jk">8</option>
                     </select>
-                    <input type="text" placeholder="SKS" name="sks">
-                    <button type="submit" class="btn" id="closeEditMk">
-                        <a href="admin.php">UPDATE</a>
+                    <input type="text" placeholder="SKS" name="sks" value="<?= $data_matkul['sks']; ?>">
+                    
+                    <button type="submit" class="btn" name="submit_mk">
+                        <a>UPDATE</a>
                     </button>
-                    <button type="reset" class="btn" id="backEditMk">
+                    <button type="submit" class="btn" name="back">
                         <a href="admin.php">BACK</a>
                     </button>
                 </fieldset>

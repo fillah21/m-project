@@ -466,7 +466,7 @@
                                     <td><?= $matkul['sks']; ?></td>
                                     <td>
                                         <span id="btnEditMk">
-                                            <a href="edit-mk.php">
+                                            <a href="edit-mk.php?idmatkul=<?= $matkul['id_matkul']; ?>">
                                             <button class="btn btn-sm p-0 m-0" style="width: 12px;">
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
                                             </button>

@@ -249,6 +249,29 @@
     // Fungsi Tambah Matkul Selesai
 
 
+    // Fungsi Edit Matkul
+    function edit_matkul($data) {
+        global $conn;
+        $id_matkul = $data['id_matkul'];
+        $kode_matkul = $data['kode_matkul'];
+        $nama_matkul = $data['nama_matkul'];
+        $semester_matkul = $data['semester_matkul'];
+        $sks = $data['sks'];
+
+        $query = "UPDATE mata_kuliah SET 
+                    kode_matkul = '$kode_matkul',
+                    nama_matkul = '$nama_matkul',
+                    semester_matkul = '$semester_matkul',
+                    sks = '$sks'
+                  WHERE id_matkul = '$id_matkul'
+                ";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Edit Matkul Selesai
+
+
     // Fungsi jumlah data
     function jumlah_data($data) {
         global $conn;
