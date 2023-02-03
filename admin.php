@@ -347,7 +347,7 @@
                                     <td><?= $mhs['semester']; ?></td>
                                     <td><?= $mhs['ipk']; ?></td>
                                     <td>
-                                        <span id="btnEdit"><a href="edit-mhs.php"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
+                                        <span id="btnEdit"><a href="edit-mhs.php?idmhs=<?= $mhs['id_user']; ?>"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
                                                 <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
                                             </button></a></span>
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
@@ -472,8 +472,11 @@
                                             </button>
                                             </a>
                                         </span>
+
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
+
                                         <span id="btnDelMk">
+                                            <a href="delete.php?idmatkul=<?= $matkul['id_matkul']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?')">
                                             <button class="btn btn-sm p-0 m-0" style="width: 12px;">
                                                 <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
                                             </button>

@@ -13,14 +13,15 @@
 
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
 
-    $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
+    $id_mhs = $_GET['idmhs'];
 
-    $data_admin = query("SELECT * FROM user WHERE level = 'Admin'");
+    $data_mhs = query("SELECT * FROM user WHERE id_user = $id_mhs") [0];
 
-    $data_matkul = query("SELECT * FROM mata_kuliah");
-
-    $jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
-
+    if($data_mhs['jk'] == "L") {
+        $jk = "Laki-Laki";
+    } else {
+        $jk = "Perempuan";
+    }
 
     if ($data_diri['level'] !== "Admin") {
         echo "<script>
@@ -30,57 +31,24 @@
         exit;
     }
 
-    // Proses tambah mata kuliah
-    if (isset($_POST["submit_matkul"])) {
-        if (tambah_matkul($_POST) > 0) {
+    if(isset($_POST['submit'])) {
+        if(edit_mhs($_POST) > 0) {
             echo "
                 <script>
-                    alert('Mata Kuliah Berhasil Ditambahkan');
-                    document.location.href = 'admin.php';
+                alert('Data Berhasil Diubah');
+                
                 </script>
             ";
         } else {
-            echo "<script>
-                alert('Mata Kuliah Gagal Ditambahkan!');
-                document.location.href = 'admin.php';
-            </script>";
-        }
+            echo "
+                <script>
+                alert('Data Gagal Diubah');
+                
+                </script>
+            ";
+        }  
     }
-    // Tambah mata kuliah selesai
 
-    // Proses tambah mahasiswa
-    if (isset($_POST["submit_mahasiswa"])) {
-        if (register($_POST) > 0) {
-            echo "
-                <script>
-                    alert('Registrasi Berhasil');
-                    document.location.href = 'admin.php';
-                </script>
-            ";
-        } else {
-            echo "<script>
-                alert('Registrasi Gagal');
-            </script>";
-        }
-    }
-    // Tambah mahasiswa selesai
-
-    // Proses tambah admin
-    if (isset($_POST["submit_admin"])) {
-        if (register_admin($_POST) > 0) {
-            echo "
-                <script>
-                    alert('Registrasi Admin Berhasil');
-                    document.location.href = 'admin.php';
-                </script>
-            ";
-        } else {
-            echo "<script>
-                alert('Registrasi Admin Gagal');
-            </script>";
-        }
-    }
-    // Tambah admin selesai
 
 
 ?>
@@ -117,20 +85,25 @@
         <!-- Edit Data Mahasiswa -->
         <div class="container-sm tab-pane active" id="edit">
             <h3>Edit Data Mahasiswa</h3>
-            <form action="">
+            <form action="" method="post" enctype="multipart/form-data">
                 <fieldset>
-                    <input class="usePass" type="text" placeholder="Username" name="username">
-                    <input class="usePass" type="password" placeholder="Password" name="password">
-                    <input type="text" placeholder="Nama" name="nama">
-                    <select name="jenis kelamin">
-                        <option value="" disabled selected hidden>Jenis Kelamin</option>
-                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
-                        <option value="Perempuan" class="select-jk">Perempuan</option>
-                    </select>
-                    <input type="email" placeholder="Email" name="email">
-                    <input type="text" placeholder="NIM" name="nim">
+                    <input type="hidden" name="foto_lama" value="<?= $data_mhs['foto']; ?>">
+                    <input type="hidden" name="username_lama" value="<?= $data_mhs['username']; ?>">
+                    <input type="hidden" name="pwd_lama" value="<?= $data_mhs['pwd']; ?>">
+                    <input type="hidden" name="id_user" value="<?= $data_mhs['id_user']; ?>">
+                    <input class="usePass" type="text" placeholder="Username" name="username" value="<?= $data_mhs['username']; ?>">
+                    <input class="usePass" type="password" placeholder="Password" name="pwd" value="<?= $data_mhs['pwd']; ?>">
+                    <input class="usePass" type="password" placeholder="Konfirmasi Password" name="pwd2" value="<?= $data_mhs['pwd']; ?>">
+                    <input type="text" placeholder="Nama" name="nama" value="<?= $data_mhs['nama']; ?>">
+                    <input type="email" placeholder="Email" name="email" value="<?= $data_mhs['email']; ?>">
+                    <label for="foto" class="mb-1">Foto Profil : </label>
+                    <div class="input-group mb-3 uploadFoto">
+                        <input type="file" class="form-control" name="foto">
+                        <label for="foto" class="mb-1">*kosongkan jika tidak ingin mengganti foto</label>
+                    </div>
+                    <input type="text" placeholder="NIM" name="no_induk" value="<?= $data_mhs['no_induk']; ?>">
                     <select name="semester">
-                        <option value="" disabled selected hidden>Semester</option>
+                        <option value="<?= $data_mhs['semester']; ?>" selected hidden><?= $data_mhs['semester']; ?></option>
                         <option value="1" class="select-jk">1</option>
                         <option value="2" class="select-jk">2</option>
                         <option value="3" class="select-jk">3</option>
@@ -140,16 +113,19 @@
                         <option value="7" class="select-jk">7</option>
                         <option value="7" class="select-jk">8</option>
                     </select>
-                    <input type="text" placeholder="IPK" name="ipk">
-                    <input type="text" placeholder="No. Telp" name="noTelp">
-                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat"></textarea>
-                    <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control">
-                    </div>
-                    <button type="submit" class="btn " id="closeEdit">
-                        <a href="admin.php">UPDATE</a>
+                    <input type="text" placeholder="IPK" name="ipk" value="<?= $data_mhs['ipk']; ?>">
+                    <textarea class="text-white" name="alamat" cols="25" rows="7" placeholder="Alamat"><?= $data_mhs['alamat']; ?></textarea>
+                    <input type="text" placeholder="No. Telp" name="no_hp" value="<?= $data_mhs['no_hp']; ?>">
+                    <select name="jk">
+                        <option value="<?= $data_mhs['jk']; ?>" selected hidden><?= $jk; ?></option>
+                        <option value="Laki-laki" class="select-jk">Laki-laki</option>
+                        <option value="Perempuan" class="select-jk">Perempuan</option>
+                    </select>
+
+                    <button type="submit" class="btn " id="closeEdit" name="submit">
+                        <a>UPDATE</a>
                     </button>
-                    <button type="reset" class="btn " id="backBtnEdit">
+                    <button type="reset" class="btn " id="backBtnEdit" name="back">
                         <a href="admin.php">BACK</a>
                     </button>
                 </fieldset>

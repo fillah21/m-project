@@ -122,8 +122,88 @@
     // Fungsi Register Mahasiswa Selesai
 
 
+    // Fungsi Edit Mahasiswa
+    function edit_mhs($data) {
+        global $conn;
+        $id_user = $_POST['id_user'];
+        $username = strtolower(stripslashes ($_POST["username"]));
+        $usernameLama = strtolower(stripslashes ($_POST["username_lama"]));
+        $pwd_lama = $_POST['pwd_lama'];
+        $foto_lama = $_POST['foto_lama'];
+        $password = mysqli_real_escape_string($conn, $_POST["pwd"]);
+        $password2 = mysqli_real_escape_string($conn, $_POST["pwd2"]);
+        $nama = $_POST['nama'];
+        $email = $_POST['email'];
+        $foto = uploadFoto();
+        if($foto == "") {
+            $foto = $foto_lama;
+        }
+        $no_induk = $_POST['no_induk'];
+        $semester = $_POST['semester'];
+        $ipk = $_POST['ipk'];
+        if($ipk > 4) {
+            $ipk = 4;
+        }
+        $alamat = $_POST['alamat'];
+        $no_hp = $_POST['no_hp'];
+        $jk = $_POST['jk'];
+        $sudah_krs = "Belum";
+        $level = "User";
 
-    // Fungsi Register Mahasiswa
+        $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+
+        if($username !== $usernameLama) {
+            if (mysqli_fetch_assoc($result)) {
+                $link = "edit-mhs.php?idmhs=" . $id_user;
+                echo "<script>
+                        alert('Username Sudah Dipakai!!!');
+                        document.location.href='$link';
+                      </script>";
+                exit;
+            }
+        }
+
+        if($password !== $pwd_lama) {
+            if ($password !== $password2) {
+                $link = "edit-mhs.php?idmhs=" . $id_user;
+                echo "<script>
+                        alert('Password Tidak Sesuai!');
+                        document.location.href='$link';
+                      </script>";
+                return false;
+            }
+
+            $password = password_hash($password2, PASSWORD_DEFAULT);
+        }
+
+        if($foto != $foto_lama && $foto_lama != "default.png") {
+            unlink("profil/$foto_lama");
+        }
+
+        $query = "UPDATE user SET 
+                    username = '$username',
+                    pwd = '$password',
+                    nama = '$nama',
+                    email = '$email',
+                    foto = '$foto',
+                    no_induk = '$no_induk',
+                    semester = '$semester',
+                    ipk = '$ipk',
+                    alamat = '$alamat',
+                    no_hp = '$no_hp',
+                    jk = '$jk',
+                    sudah_krs = '$sudah_krs',
+                    level = '$level'
+                  WHERE id_user = '$id_user'
+                ";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Edit Mahasiswa Selesai
+
+    
+    // Fungsi Register Admin
     function register_admin($data) {
         global $conn;
         $username = strtolower(stripslashes ($data["username"]));
@@ -169,8 +249,7 @@
         
         return mysqli_affected_rows($conn);
     }
-    // Fungsi Register Mahasiswa Selesai
-
+    // Fungsi Register Admin Selesai
 
 
     // Fungsi Enkripsi
@@ -270,6 +349,16 @@
         return mysqli_affected_rows($conn);
     }
     // Fungsi Edit Matkul Selesai
+
+
+    // Fungsi Hapus Matkul
+    function hapus_matkul($id_matkul) {
+        global $conn;
+        mysqli_query($conn, "DELETE FROM mata_kuliah WHERE id_matkul = $id_matkul");
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Hapus Matkul Selesai
 
 
     // Fungsi jumlah data
