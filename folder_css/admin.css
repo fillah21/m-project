@@ -3,21 +3,21 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
   line-height: 1;
-  background-color: #D23939;
+  background-color: #d23939;
 }
 
 body select {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* kelola admin */
@@ -34,20 +34,20 @@ body select {
 .sidebar .profil span a i {
   text-decoration: none;
   list-style-type: none;
-  color: #FFFFFF
+  color: #ffffff;
 }
 
 .sidebar .profil span ul.dropdown-menu {
-  background-color: #711A1A;
-  border: 2px solid #D23939;
+  background-color: #711a1a;
+  border: 2px solid #d23939;
   font-size: 10px;
   min-width: 7rem;
 }
 
 .sidebar .profil span ul.dropdown-menu li a:hover {
-  background: #D23939;
+  background: #d23939;
   border-radius: 4px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* registrasi admin */
@@ -57,12 +57,12 @@ body select {
   padding: 10px;
   left: 50%;
   top: 0;
-  background: #EA7A7A;
+  background: #ea7a7a;
   border-radius: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
@@ -76,34 +76,34 @@ body select {
 }
 
 #regt h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #regt .usePass {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   width: 100%;
   padding: 5px;
 }
 
 #regt form input {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #regt form textarea {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
@@ -112,20 +112,20 @@ body select {
 
 #regt form button {
   width: 100px;
-  background: #D23939;
-  border: 1px solid #FFFFFF;
+  background: #d23939;
+  border: 1px solid #ffffff;
   border-radius: 6px;
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #regt form button a {
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -136,12 +136,12 @@ body select {
   padding: 10px;
   left: 50%;
   top: 0;
-  background: #EA7A7A;
+  background: #ea7a7a;
   border-radius: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
@@ -149,7 +149,7 @@ body select {
 
 #editr form .form-control {
   position: absolute;
-  font-size: .5rem;
+  font-size: 0.5rem;
   width: 215px;
   margin-top: -50px;
   margin-left: 55px;
@@ -169,34 +169,34 @@ body select {
 }
 
 #editr h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #editr .usePass {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   width: 100%;
   padding: 5px;
 }
 
 #editr form input {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #editr form textarea {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
@@ -205,20 +205,20 @@ body select {
 
 #editr form button {
   width: 100px;
-  background: #D23939;
-  border: 1px solid #FFFFFF;
+  background: #d23939;
+  border: 1px solid #ffffff;
   border-radius: 6px;
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #editr form button a {
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -235,7 +235,7 @@ body select {
 
 #editr .back a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* kelola data admin */
@@ -246,13 +246,13 @@ body select {
   padding: 5px;
   left: 50%;
   top: 0;
-  background: #D23939;
-  border: 5px solid #EA7A7A;
+  background: #d23939;
+  border: 5px solid #ea7a7a;
   border-radius: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
@@ -266,18 +266,18 @@ body select {
 }
 
 #kelola h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #kelola p {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 7px;
   margin-bottom: 0;
 }
@@ -290,12 +290,7 @@ body select {
 }
 
 #kelola .btn-sm {
-  font-size: .1rem;
-}
-
-#kelola #i {
-  color: #FFFFFF;
-  font-size: 10px;
+  font-size: 0.1rem;
 }
 
 /* confirm ubah level */
@@ -305,7 +300,7 @@ body select {
   height: 150px;
   left: 50%;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -324,7 +319,7 @@ body select {
 }
 
 #ganlev h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-weight: 800;
   font-size: 20px;
   line-height: 32px;
@@ -333,7 +328,7 @@ body select {
 #ganlev span {
   width: 100%;
   height: 3px;
-  background-color: #711A1A;
+  background-color: #711a1a;
   border-radius: 3px;
   border: 0;
   margin-bottom: 5px;
@@ -345,7 +340,7 @@ body select {
   font-size: 11px;
   line-height: 12px;
   color: #000000;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 #ganlev button {
@@ -364,32 +359,32 @@ body select {
 
 /* untuk chrome */
 form input::-webkit-input-placeholder {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* untuk mozilla */
 form input::-moz-input-placeholder {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* untuk internet explorer */
 form input::-ms-input-placeholder {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* untuk chrome */
 form textarea::-webkit-input-placeholder {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* untuk mozilla */
 form textarea::-moz-input-placeholder {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* untuk internet explorer */
 form textarea::-ms-input-placeholder {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #mhs .search {
@@ -406,9 +401,9 @@ form textarea::-ms-input-placeholder {
 }
 
 #mhs .search button {
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   font-size: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: 10px;
   border-radius: 30%;
 }
@@ -427,9 +422,9 @@ form textarea::-ms-input-placeholder {
 }
 
 #matkul .search button {
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   font-size: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: 10px;
   border-radius: 30%;
 }
@@ -448,22 +443,22 @@ form textarea::-ms-input-placeholder {
 }
 
 #krsm .search button {
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   font-size: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: 10px;
   border-radius: 30%;
 }
 
 .jumlahData {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 15px;
 }
 
 /*SIDEBAR*/
 .sidebar {
   position: absolute;
-  background-color: #711A1A;
+  background-color: #711a1a;
   width: 192px;
   min-height: 100vh;
   padding: 10px;
@@ -501,7 +496,7 @@ form textarea::-ms-input-placeholder {
 .sidebar .profil h1 {
   font-weight: 700;
   font-size: 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: 13px;
 }
 
@@ -514,7 +509,7 @@ form textarea::-ms-input-placeholder {
 }
 
 .sidebar .profil button {
-  border: 1.5px solid #711A1A;
+  border: 1.5px solid #711a1a;
   position: absolute;
   margin-top: 93px;
   margin-left: -35px;
@@ -543,7 +538,7 @@ form textarea::-ms-input-placeholder {
   font-size: 15px;
   font-weight: 700;
   text-align: left;
-  color: #FFFF;
+  color: #ffff;
 }
 
 .sidebar.hide .text {
@@ -560,7 +555,7 @@ form textarea::-ms-input-placeholder {
 
 .content {
   flex-grow: 1;
-  background: #D23939;
+  background: #d23939;
   margin-left: 15px;
 }
 
@@ -581,7 +576,7 @@ form textarea::-ms-input-placeholder {
 }
 
 .sidebar li.nav-link.active {
-  background-color: #D23939;
+  background-color: #d23939;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
@@ -611,7 +606,7 @@ form textarea::-ms-input-placeholder {
 }
 
 .sidebar li a {
-  color: #FFFF;
+  color: #ffff;
 }
 
 /*SIDEBAR End*/
@@ -643,7 +638,7 @@ form textarea::-ms-input-placeholder {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: #FFFF;
+  background-color: #ffff;
 }
 
 #m-label:after,
@@ -670,24 +665,22 @@ form textarea::-ms-input-placeholder {
   top: 5px;
   right: 0;
   left: 0;
-  color: #FFFF;
+  color: #ffff;
   font-size: 8px;
   font-weight: bold;
   text-align: center;
 }
 
-#menu-checkbox:checked+#m-label:before {
+#menu-checkbox:checked + #m-label:before {
   left: -39px;
 }
 
-#menu-checkbox:checked+#m-label:after {
+#menu-checkbox:checked + #m-label:after {
   left: 39px;
 }
 
-#menu-checkbox:checked+#m-label #hamburger:before {
-  animation: moveUpThenDown 0.8s ease 0.2s forwards,
-    shakeUp 0.8s ease 0.2s forwards,
-    shakeDown 0.2s ease 0.8s forwards;
+#menu-checkbox:checked + #m-label #hamburger:before {
+  animation: moveUpThenDown 0.8s ease 0.2s forwards, shakeUp 0.8s ease 0.2s forwards, shakeDown 0.2s ease 0.8s forwards;
 }
 
 @keyframes moveUpThenDown {
@@ -748,7 +741,7 @@ form textarea::-ms-input-placeholder {
 
 /* Dsb Home */
 #home header {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 400;
   font-size: 45px;
   line-height: 50px;
@@ -759,7 +752,7 @@ form textarea::-ms-input-placeholder {
 }
 
 #home header p {
-  font-family: 'Acme', sans-serif;
+  font-family: "Acme", sans-serif;
   width: 100%;
   text-align: center;
 }
@@ -781,8 +774,8 @@ form textarea::-ms-input-placeholder {
 }
 
 #mhs header {
-  color: #FFFFFF;
-  font-family: 'Acme', sans-serif;
+  color: #ffffff;
+  font-family: "Acme", sans-serif;
   font-weight: 400;
   font-size: 45px;
   line-height: 32px;
@@ -803,8 +796,8 @@ form textarea::-ms-input-placeholder {
 }
 
 #listItem .headerMhs th {
-  border-bottom: 3px solid #711A1A;
-  border-right: 1px solid #711A1A;
+  border-bottom: 3px solid #711a1a;
+  border-right: 1px solid #711a1a;
 }
 
 #listItem .headerMhs th:last-child {
@@ -821,16 +814,16 @@ form textarea::-ms-input-placeholder {
 }
 
 .contentTable tr {
-  border-bottom: 1px solid #711A1A;
+  border-bottom: 1px solid #711a1a;
 }
 
 .contentTable tr th {
-  border-right: 1px solid #711A1A;
-  border-bottom: 1px solid #711A1A;
+  border-right: 1px solid #711a1a;
+  border-bottom: 1px solid #711a1a;
 }
 
 .contentTable tr td {
-  border-right: 1px solid #711A1A;
+  border-right: 1px solid #711a1a;
 }
 
 .contentTable tr td:last-child {
@@ -852,12 +845,12 @@ form textarea::-ms-input-placeholder {
   padding: 10px;
   left: 50%;
   top: 0;
-  background: #EA7A7A;
+  background: #ea7a7a;
   border-radius: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
@@ -871,34 +864,34 @@ form textarea::-ms-input-placeholder {
 }
 
 #regis h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #regis .usePass {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   width: 100%;
   padding: 5px;
 }
 
 #regis form input {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #regis form textarea {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
@@ -907,20 +900,20 @@ form textarea::-ms-input-placeholder {
 
 #regis form button {
   width: 100px;
-  background: #D23939;
-  border: 1px solid #FFFFFF;
+  background: #d23939;
+  border: 1px solid #ffffff;
   border-radius: 6px;
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #regis form button a {
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -933,12 +926,12 @@ form textarea::-ms-input-placeholder {
   padding: 10px;
   left: 50%;
   top: 0;
-  background: #EA7A7A;
+  background: #ea7a7a;
   border-radius: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
@@ -952,34 +945,34 @@ form textarea::-ms-input-placeholder {
 }
 
 #edit h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #edit .usePass {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   width: 100%;
   padding: 5px;
 }
 
 #edit form input {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #edit form textarea {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
@@ -988,8 +981,8 @@ form textarea::-ms-input-placeholder {
 
 #edit form button {
   width: 100px;
-  background: #D23939;
-  border: 1px solid #FFFFFF;
+  background: #d23939;
+  border: 1px solid #ffffff;
   border-radius: 6px;
 }
 
@@ -997,7 +990,7 @@ form textarea::-ms-input-placeholder {
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -1010,7 +1003,7 @@ form textarea::-ms-input-placeholder {
   height: 150px;
   left: 50%;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1029,7 +1022,7 @@ form textarea::-ms-input-placeholder {
 }
 
 #delete h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-weight: 800;
   font-size: 20px;
   line-height: 32px;
@@ -1038,7 +1031,7 @@ form textarea::-ms-input-placeholder {
 #delete span {
   width: 100%;
   height: 3px;
-  background-color: #711A1A;
+  background-color: #711a1a;
   border-radius: 3px;
   border: 0;
   margin-bottom: 10px;
@@ -1076,8 +1069,8 @@ form textarea::-ms-input-placeholder {
 }
 
 #matkul header {
-  color: #FFFFFF;
-  font-family: 'Acme', sans-serif;
+  color: #ffffff;
+  font-family: "Acme", sans-serif;
   font-weight: 400;
   font-size: 45px;
   line-height: 32px;
@@ -1098,8 +1091,8 @@ form textarea::-ms-input-placeholder {
 }
 
 #listMatkul .headerMatkul th {
-  border-bottom: 3px solid #711A1A;
-  border-right: 1px solid #711A1A;
+  border-bottom: 3px solid #711a1a;
+  border-right: 1px solid #711a1a;
 }
 
 #listMatkul .headerMatkul th:last-child {
@@ -1116,16 +1109,16 @@ form textarea::-ms-input-placeholder {
 }
 
 .contentTable tr {
-  border-bottom: 1px solid #711A1A;
+  border-bottom: 1px solid #711a1a;
 }
 
 .contentTable tr th {
-  border-right: 1px solid #711A1A;
-  border-bottom: 1px solid #711A1A;
+  border-right: 1px solid #711a1a;
+  border-bottom: 1px solid #711a1a;
 }
 
 .contentTable tr td {
-  border-right: 1px solid #711A1A;
+  border-right: 1px solid #711a1a;
 }
 
 .contentTable tr td:last-child {
@@ -1147,12 +1140,12 @@ form textarea::-ms-input-placeholder {
   padding: 10px;
   left: 50%;
   top: 0;
-  background: #EA7A7A;
+  background: #ea7a7a;
   border-radius: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
@@ -1166,12 +1159,12 @@ form textarea::-ms-input-placeholder {
 }
 
 #inputMk h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -1189,23 +1182,23 @@ form textarea::-ms-input-placeholder {
 
 #inputMk .back-btn a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #inputMk form input {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #inputMk form button {
   margin-top: 10px;
   width: 100px;
-  background: #D23939;
-  border: 1px solid #FFFFFF;
+  background: #d23939;
+  border: 1px solid #ffffff;
   border-radius: 6px;
 }
 
@@ -1213,7 +1206,7 @@ form textarea::-ms-input-placeholder {
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -1226,12 +1219,12 @@ form textarea::-ms-input-placeholder {
   padding: 10px;
   left: 50%;
   top: 0;
-  background: #EA7A7A;
+  background: #ea7a7a;
   border-radius: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
@@ -1245,12 +1238,12 @@ form textarea::-ms-input-placeholder {
 }
 
 #editMk h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -1268,23 +1261,23 @@ form textarea::-ms-input-placeholder {
 
 #editMk .back-btn a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #editMk form input {
-  background: #D23939;
+  background: #d23939;
   border-radius: 8px;
   margin-bottom: 6px;
   padding: 5px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #editMk form button {
   margin-top: 10px;
   width: 100px;
-  background: #D23939;
-  border: 1px solid #FFFFFF;
+  background: #d23939;
+  border: 1px solid #ffffff;
   border-radius: 6px;
 }
 
@@ -1292,7 +1285,7 @@ form textarea::-ms-input-placeholder {
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -1305,7 +1298,7 @@ form textarea::-ms-input-placeholder {
   height: 150px;
   left: 50%;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1324,7 +1317,7 @@ form textarea::-ms-input-placeholder {
 }
 
 #deleteMk h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-weight: 800;
   font-size: 20px;
   line-height: 32px;
@@ -1333,7 +1326,7 @@ form textarea::-ms-input-placeholder {
 #deleteMk span {
   width: 100%;
   height: 3px;
-  background-color: #711A1A;
+  background-color: #711a1a;
   border-radius: 3px;
   border: 0;
   margin-bottom: 10px;
@@ -1378,8 +1371,8 @@ form textarea::-ms-input-placeholder {
 }
 
 #krsm header {
-  color: #FFFFFF;
-  font-family: 'Acme', sans-serif;
+  color: #ffffff;
+  font-family: "Acme", sans-serif;
   font-weight: 400;
   font-size: 45px;
   line-height: 32px;
@@ -1395,8 +1388,8 @@ form textarea::-ms-input-placeholder {
 }
 
 #listKrs .headerKrs th {
-  border-bottom: 3px solid #711A1A;
-  border-right: 1px solid #711A1A;
+  border-bottom: 3px solid #711a1a;
+  border-right: 1px solid #711a1a;
 }
 
 #listKrs .headerKrs th:last-child {
@@ -1413,16 +1406,16 @@ form textarea::-ms-input-placeholder {
 }
 
 .contentTable tr {
-  border-bottom: 1px solid #711A1A;
+  border-bottom: 1px solid #711a1a;
 }
 
 .contentTable tr th {
-  border-right: 1px solid #711A1A;
-  border-bottom: 1px solid #711A1A;
+  border-right: 1px solid #711a1a;
+  border-bottom: 1px solid #711a1a;
 }
 
 .contentTable tr td {
-  border-right: 1px solid #711A1A;
+  border-right: 1px solid #711a1a;
 }
 
 .contentTable tr td:last-child {
@@ -1430,7 +1423,7 @@ form textarea::-ms-input-placeholder {
 }
 
 #btnDetail {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   width: auto;
   padding: 2px 10px 2px 10px;
   margin: 0;
@@ -1439,7 +1432,7 @@ form textarea::-ms-input-placeholder {
 #btnDetail a {
   text-decoration: none;
   font-size: 11px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #krsm footer img {
@@ -1449,7 +1442,7 @@ form textarea::-ms-input-placeholder {
 }
 
 #krsm .jumlahData {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 15px;
 }
 
@@ -1481,11 +1474,11 @@ form textarea::-ms-input-placeholder {
 #detailKrs h2 {
   text-align: center;
   margin-bottom: 20px;
-  font-family: 'Acme', sans-serif;
+  font-family: "Acme", sans-serif;
   font-weight: 400;
   font-size: 30px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #detailMenu {
@@ -1494,7 +1487,7 @@ form textarea::-ms-input-placeholder {
   width: 250px;
   height: 420px;
   border-radius: 10px;
-  background-color: #EA7A7A;
+  background-color: #ea7a7a;
   padding: 10px;
 }
 
@@ -1518,11 +1511,11 @@ form textarea::-ms-input-placeholder {
   margin-left: 20px;
   width: 140px;
   height: 20px;
-  background: #D23939;
+  background: #d23939;
   border-radius: 6px;
   font-size: 11px;
   padding: 4px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #detailMenu form div {
@@ -1540,7 +1533,7 @@ form textarea::-ms-input-placeholder {
 }
 
 #krsMhs table thead {
-  border-bottom: 2px solid #711A1A;
+  border-bottom: 2px solid #711a1a;
   padding: 4px;
   text-align: center;
 }
@@ -1588,7 +1581,7 @@ form textarea::-ms-input-placeholder {
   height: 150px;
   left: 50%;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1607,7 +1600,7 @@ form textarea::-ms-input-placeholder {
 }
 
 .delete-krs h3 {
-  font-family: 'Acme';
+  font-family: "Acme";
   font-weight: 800;
   font-size: 20px;
   line-height: 32px;
@@ -1616,7 +1609,7 @@ form textarea::-ms-input-placeholder {
 .delete-krs span {
   width: 100%;
   height: 3px;
-  background-color: #711A1A;
+  background-color: #711a1a;
   border-radius: 3px;
   border: 0;
   margin-bottom: 10px;
@@ -1654,17 +1647,17 @@ form textarea::-ms-input-placeholder {
 }
 
 #about h2 {
-  font-family: 'Acme', sans-serif;
+  font-family: "Acme", sans-serif;
   font-weight: 400;
   font-size: 30px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #about article {
   width: 250px;
   height: auto;
-  background: #EA7A7A;
+  background: #ea7a7a;
   border-radius: 8px;
   padding: 15px;
   font-weight: 550;
@@ -1679,7 +1672,7 @@ form textarea::-ms-input-placeholder {
 #medsos {
   width: 250px;
   height: auto;
-  background: #EA7A7A;
+  background: #ea7a7a;
   border-radius: 8px;
   padding: 15px;
   color: #000000;
@@ -1754,9 +1747,9 @@ form textarea::-ms-input-placeholder {
   }
 
   #mhs .search button {
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     font-size: 12px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: 10px;
     border-radius: 30%;
   }
@@ -1775,9 +1768,9 @@ form textarea::-ms-input-placeholder {
   }
 
   #matkul .search button {
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     font-size: 12px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: 10px;
     border-radius: 30%;
   }
@@ -1796,26 +1789,26 @@ form textarea::-ms-input-placeholder {
   }
 
   #krsm .search button {
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     font-size: 12px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: 10px;
     border-radius: 30%;
   }
 
   #krsm .jumlahData {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 15px;
   }
 
   .jumlahData {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 15px;
   }
 
   .sidebar {
     position: absolute;
-    background-color: #711A1A;
+    background-color: #711a1a;
     width: 130px;
     min-height: 100vh;
     padding: 10px;
@@ -1846,7 +1839,7 @@ form textarea::-ms-input-placeholder {
   .sidebar .profil h1 {
     font-weight: 700;
     font-size: 8px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: 13px;
   }
 
@@ -1854,7 +1847,7 @@ form textarea::-ms-input-placeholder {
     font-size: 8px;
     font-weight: 700;
     text-align: left;
-    color: #FFFF;
+    color: #ffff;
   }
 
   .sidebar ul li .text {
@@ -1862,7 +1855,7 @@ form textarea::-ms-input-placeholder {
   }
 
   .sidebar li.nav-link.active {
-    background-color: #D23939;
+    background-color: #d23939;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
@@ -1904,7 +1897,7 @@ form textarea::-ms-input-placeholder {
   }
 
   .sidebar.hide li.nav-link.active {
-    background-color: #D23939;
+    background-color: #d23939;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
@@ -2358,9 +2351,9 @@ form textarea::-ms-input-placeholder {
   }
 
   #mhs .search button {
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     font-size: 12px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: 10px;
     border-radius: 30%;
   }
@@ -2379,9 +2372,9 @@ form textarea::-ms-input-placeholder {
   }
 
   #matkul .search button {
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     font-size: 12px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: 10px;
     border-radius: 30%;
   }
@@ -2400,26 +2393,26 @@ form textarea::-ms-input-placeholder {
   }
 
   #krsm .search button {
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     font-size: 12px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: 10px;
     border-radius: 30%;
   }
 
   #krsm .jumlahData {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 15px;
   }
 
   .jumlahData {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 15px;
   }
 
   .sidebar {
     position: absolute;
-    background-color: #711A1A;
+    background-color: #711a1a;
     width: 130px;
     min-height: 100vh;
     padding: 10px;
@@ -2450,7 +2443,7 @@ form textarea::-ms-input-placeholder {
   .sidebar .profil h1 {
     font-weight: 700;
     font-size: 8px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: 13px;
   }
 
@@ -2458,7 +2451,7 @@ form textarea::-ms-input-placeholder {
     font-size: 8px;
     font-weight: 700;
     text-align: left;
-    color: #FFFF;
+    color: #ffff;
   }
 
   .sidebar ul li .text {
@@ -2466,7 +2459,7 @@ form textarea::-ms-input-placeholder {
   }
 
   .sidebar li.nav-link.active {
-    background-color: #D23939;
+    background-color: #d23939;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
@@ -2508,7 +2501,7 @@ form textarea::-ms-input-placeholder {
   }
 
   .sidebar.hide li.nav-link.active {
-    background-color: #D23939;
+    background-color: #d23939;
     border-radius: 8px;
     display: flex;
     flex-direction: row;

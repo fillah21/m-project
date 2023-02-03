@@ -100,7 +100,7 @@
                         <option value="5" class="select-jk">5</option>
                         <option value="6" class="select-jk">6</option>
                         <option value="7" class="select-jk">7</option>
-                        <option value="7" class="select-jk">8</option>
+                        <option value="8" class="select-jk">8</option>
                     </select>
                     <input type="text" placeholder="SKS" name="sks" value="<?= $data_matkul['sks']; ?>" required>
                     

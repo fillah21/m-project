@@ -339,6 +339,22 @@
     // Fungsi Edit Admin Selesai
 
 
+    // Fungsi Turun Level
+    function turun_level($id_admin) {
+        global $conn;
+
+        $query = "UPDATE user SET 
+                    sudah_krs = 'Belum',
+                    level = 'User'
+                  WHERE id_user = '$id_admin'
+                ";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Turun Level Selesai
+
+
     // Fungsi Enkripsi
     function enkripsi($teks) {
         $text = $teks;

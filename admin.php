@@ -201,7 +201,7 @@
                 <i class="bi bi-plus-square-fill me-1"></i>
                 Registrasi Admin
             </button>
-            <form action="">
+            <form action="" method="post">
                 <fifieldset>
                     <div class="row-sm">
                         <div class="col-sm table-responsive">   
@@ -225,9 +225,7 @@
                                             <td><?= $admin['no_hp']; ?></td>
                                             <td>
                                             <span id="ganti">
-                                                <button class="btn btn-sm p-0 m-0">
-                                                    <i id="i" class="bi bi-box-arrow-down"></i>
-                                                </button>
+                                                <a href="turun-admin.php?idadmin=<?= $admin['id_user']; ?>" onclick="return confirm('Apakah anda yakin ingin menurunkan level admin?')"><i class="bi bi-box-arrow-down text-white" style="font-size: 10px;"></i></a>
                                             </span>
                                             </td>
                                         </tr>
@@ -522,7 +520,7 @@
                         <option value="5" class="select-jk">5</option>
                         <option value="6" class="select-jk">6</option>
                         <option value="7" class="select-jk">7</option>
-                        <option value="7" class="select-jk">8</option>
+                        <option value="8" class="select-jk">8</option>
                     </select>
                     <input type="number" placeholder="SKS" name="sks" required>
                     <button type="submit" class="btn d-flex justify-content-center ms-auto" name="submit_matkul">
