@@ -125,28 +125,28 @@
     // Fungsi Edit Mahasiswa
     function edit_mhs($data) {
         global $conn;
-        $id_user = $_POST['id_user'];
-        $username = strtolower(stripslashes ($_POST["username"]));
-        $usernameLama = strtolower(stripslashes ($_POST["username_lama"]));
-        $pwd_lama = $_POST['pwd_lama'];
-        $foto_lama = $_POST['foto_lama'];
-        $password = mysqli_real_escape_string($conn, $_POST["pwd"]);
-        $password2 = mysqli_real_escape_string($conn, $_POST["pwd2"]);
-        $nama = $_POST['nama'];
-        $email = $_POST['email'];
+        $id_user = $data['id_user'];
+        $username = strtolower(stripslashes ($data["username"]));
+        $usernameLama = strtolower(stripslashes ($data["username_lama"]));
+        $pwd_lama = $data['pwd_lama'];
+        $foto_lama = $data['foto_lama'];
+        $password = mysqli_real_escape_string($conn, $data["pwd"]);
+        $password2 = mysqli_real_escape_string($conn, $data["pwd2"]);
+        $nama = $data['nama'];
+        $email = $data['email'];
         $foto = uploadFoto();
         if($foto == "") {
             $foto = $foto_lama;
         }
-        $no_induk = $_POST['no_induk'];
-        $semester = $_POST['semester'];
-        $ipk = $_POST['ipk'];
+        $no_induk = $data['no_induk'];
+        $semester = $data['semester'];
+        $ipk = $data['ipk'];
         if($ipk > 4) {
             $ipk = 4;
         }
-        $alamat = $_POST['alamat'];
-        $no_hp = $_POST['no_hp'];
-        $jk = $_POST['jk'];
+        $alamat = $data['alamat'];
+        $no_hp = $data['no_hp'];
+        $jk = $data['jk'];
         $sudah_krs = "Belum";
         $level = "User";
 
@@ -260,6 +260,83 @@
         return mysqli_affected_rows($conn);
     }
     // Fungsi Register Admin Selesai
+
+
+    // Fungsi Edit Admin
+    function edit_admin($data) {
+        global $conn;
+
+        $id_user = $data['id_user'];
+        $username = strtolower(stripslashes ($data["username"]));
+        $usernameLama = strtolower(stripslashes ($data["username_lama"]));
+        $pwd_lama = $data['pwd_lama'];
+        $foto_lama = $data['foto_lama'];
+        $password = mysqli_real_escape_string($conn, $data["pwd"]);
+        $password2 = mysqli_real_escape_string($conn, $data["pwd2"]);
+        $nama = $data['nama'];
+        $email = $data['email'];
+        $foto = uploadFoto();
+        if($foto == "") {
+            $foto = $foto_lama;
+        }
+        $no_induk = 1234;
+        $semester = 8;
+        $ipk = 4;
+        $alamat = $data['alamat'];
+        $no_hp = $data['no_hp'];
+        $jk = $data['jk'];
+        $sudah_krs = "Tidak";
+        $level = "Admin";
+
+        $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+
+        if($username !== $usernameLama) {
+            if (mysqli_fetch_assoc($result)) {
+                echo "<script>
+                        alert('Username Sudah Dipakai!!!');
+                        document.location.href='edit-profil-admin.php';
+                      </script>";
+                exit;
+            }
+        }
+
+        if($password !== $pwd_lama) {
+            if ($password !== $password2) {
+                echo "<script>
+                        alert('Password Tidak Sesuai!');
+                        document.location.href='edit-profil-admin.php';
+                      </script>";
+                return false;
+            }
+
+            $password = password_hash($password2, PASSWORD_DEFAULT);
+        }
+
+        if($foto != $foto_lama && $foto_lama != "default.png") {
+            unlink("profil/$foto_lama");
+        }
+
+        $query = "UPDATE user SET 
+                    username = '$username',
+                    pwd = '$password',
+                    nama = '$nama',
+                    email = '$email',
+                    foto = '$foto',
+                    no_induk = '$no_induk',
+                    semester = '$semester',
+                    ipk = '$ipk',
+                    alamat = '$alamat',
+                    no_hp = '$no_hp',
+                    jk = '$jk',
+                    sudah_krs = '$sudah_krs',
+                    level = '$level'
+                  WHERE id_user = '$id_user'
+                ";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Edit Admin Selesai
 
 
     // Fungsi Enkripsi

@@ -13,14 +13,6 @@
 
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
 
-    $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
-
-    $data_admin = query("SELECT * FROM user WHERE level = 'Admin'");
-
-    $data_matkul = query("SELECT * FROM mata_kuliah");
-
-    $jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
-
 
     if ($data_diri['level'] !== "Admin") {
         echo "<script>
@@ -30,59 +22,29 @@
         exit;
     }
 
-    // Proses tambah mata kuliah
-    if (isset($_POST["submit_matkul"])) {
-        if (tambah_matkul($_POST) > 0) {
+    if($data_diri['jk'] == "L") {
+        $jk = "Laki-Laki";
+    } else {
+        $jk = "Perempuan";
+    }
+
+    if(isset($_POST['submit'])) {
+        if(edit_admin($_POST) > 0) {
             echo "
                 <script>
-                alert('Mata Kuliah Berhasil Ditambahkan');
+                alert('Data Berhasil Diubah');
                 document.location.href='admin.php';
                 </script>
             ";
         } else {
-            echo "<script>
-                    alert('Mata Kuliah Gagal Ditambahkan!');
-                    document.location.href='admin.php';
-                    </script>";
-        }
-    }
-    // Tambah mata kuliah selesai
-
-    // Proses tambah mahasiswa
-    if (isset($_POST["submit_mahasiswa"])) {
-        if (register($_POST) > 0) {
             echo "
                 <script>
-                alert('Registrasi Berhasil');
+                alert('Data Gagal Diubah');
                 document.location.href='admin.php';
                 </script>
             ";
-        } else {
-            echo "<script>
-                    alert('Registrasi Gagal');
-                    </script>";
-        }
+        }  
     }
-    // Tambah mahasiswa selesai
-
-    // Proses tambah admin
-    if (isset($_POST["submit_admin"])) {
-        if (register_admin($_POST) > 0) {
-            echo "
-                <script>
-                alert('Registrasi Admin Berhasil');
-                document.location.href='admin.php';
-                </script>
-            ";
-        } else {
-            echo "<script>
-                    alert('Registrasi Admin Gagal');
-                    </script>";
-        }
-    }
-    // Tambah admin selesai
-
-
 ?>
 
 
@@ -120,26 +82,32 @@
             <button type="reset" class="btn back">
                 <a href="admin.php"><i class="bi bi-x-circle-fill"></i></a>
             </button>
-            <form action="">
+            <form action="" method="post" enctype="multipart/form-data">
                 <fifieldset>
-                    <input type="text" placeholder="Username" name="username" required>
-                    <input type="password" placeholder="Password" name="password" required>
-                    <input type="password" placeholder="Konformasi Password" name="password2" required>
-                    <input type="text" placeholder="Nama" name="nama" required>
-                    <select name="jenis kelamin" required>
-                        <option value="" disabled selected hidden>Jenis Kelamin</option>
+                    <input type="hidden" name="foto_lama" value="<?= $data_diri['foto']; ?>">
+                    <input type="hidden" name="username_lama" value="<?= $data_diri['username']; ?>">
+                    <input type="hidden" name="pwd_lama" value="<?= $data_diri['pwd']; ?>">
+                    <input type="hidden" name="id_user" value="<?= $data_diri['id_user']; ?>">
+
+                    <input type="text" placeholder="Username" name="username" value="<?= $data_diri['username']; ?>" required>
+                    <input type="password" placeholder="Password" name="pwd" value="<?= $data_diri['pwd']; ?>" required>
+                    <input type="password" placeholder="Konformasi Password" name="pwd2" value="<?= $data_diri['pwd']; ?>" required>
+                    <input type="text" placeholder="Nama" name="nama" value="<?= $data_diri['nama']; ?>" required>
+                    <select name="jk" required>
+                        <option value="<?= $data_diri['jk']; ?>" selected hidden><?= $jk ?></option>
                         <option value="Laki-laki" class="select-jk">Laki-laki</option>
                         <option value="Perempuan" class="select-jk">Perempuan</option>
                     </select>
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="text" placeholder="No. Telp" name="noTelp" required>
-                    <textarea name="alamat" cols="25" rows="7" placeholder="Alamat" required></textarea>
-                    <img src="profil/aku.jpg">
+                    <input type="email" placeholder="Email" name="email" value="<?= $data_diri['email']; ?>" required>
+                    <input type="text" placeholder="No. Telp" name="no_hp" value="<?= $data_diri['no_hp']; ?>" required>
+                    <textarea class="text-white" name="alamat" cols="25" rows="7" placeholder="Alamat" required><?= $data_diri['alamat']; ?></textarea>
+                    <img src="profil/<?= $data_diri['foto']; ?>" class="img-preview">
                     <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control">
+                        <input type="file" class="form-control" id="profil" name="foto" onchange="previewImg()">
+                        <label for="foto" class="mb-1">*kosongkan jika tidak ingin mengganti foto</label>
                     </div>
-                    <button type="submit" class="btn btn-sm">
-                        <a href="admin.php">Update</a>
+                    <button type="submit" class="btn btn-sm" name="submit">
+                        <a>Update</a>
                     </button>
                 </fieldset>
             </form>
@@ -154,6 +122,20 @@
 
     <!-- Js lokal -->
     <script src="folder_js/script-admin.js"></script>
+
+    <script>
+      function previewImg() {
+        const profil = document.querySelector('#profil');
+        const imgPreview = document.querySelector('.img-preview');
+
+        const fileProfil = new FileReader();
+        fileProfil.readAsDataURL(profil.files[0]);
+
+        fileProfil.onload = function(e) {
+          imgPreview.src = e.target.result;
+        }
+      }
+    </script>
 </body>
 
 </html>

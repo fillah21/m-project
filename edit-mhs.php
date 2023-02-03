@@ -36,20 +36,26 @@
             echo "
                 <script>
                 alert('Data Berhasil Diubah');
-                
+                document.location.href='admin.php';
                 </script>
             ";
         } else {
             echo "
                 <script>
                 alert('Data Gagal Diubah');
-                
+                document.location.href='admin.php';
                 </script>
             ";
         }  
     }
 
-
+    if(isset($_POST['back'])) {
+        echo "
+            <script>
+                document.location.href='admin.php';
+            </script>
+        ";
+    }
 
 ?>
 
@@ -91,18 +97,18 @@
                     <input type="hidden" name="username_lama" value="<?= $data_mhs['username']; ?>">
                     <input type="hidden" name="pwd_lama" value="<?= $data_mhs['pwd']; ?>">
                     <input type="hidden" name="id_user" value="<?= $data_mhs['id_user']; ?>">
-                    <input class="usePass" type="text" placeholder="Username" name="username" value="<?= $data_mhs['username']; ?>">
-                    <input class="usePass" type="password" placeholder="Password" name="pwd" value="<?= $data_mhs['pwd']; ?>">
-                    <input class="usePass" type="password" placeholder="Konfirmasi Password" name="pwd2" value="<?= $data_mhs['pwd']; ?>">
-                    <input type="text" placeholder="Nama" name="nama" value="<?= $data_mhs['nama']; ?>">
-                    <input type="email" placeholder="Email" name="email" value="<?= $data_mhs['email']; ?>">
+                    <input class="usePass" type="text" placeholder="Username" name="username" value="<?= $data_mhs['username']; ?>" required>
+                    <input class="usePass" type="password" placeholder="Password" name="pwd" value="<?= $data_mhs['pwd']; ?>" required>
+                    <input class="usePass" type="password" placeholder="Konfirmasi Password" name="pwd2" value="<?= $data_mhs['pwd']; ?>" required>
+                    <input type="text" placeholder="Nama" name="nama" value="<?= $data_mhs['nama']; ?>" required>
+                    <input type="email" placeholder="Email" name="email" value="<?= $data_mhs['email']; ?>" required>
                     <label for="foto" class="mb-1">Foto Profil : </label>
                     <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control" name="foto">
+                        <input type="file" class="form-control" name="foto" required>
                         <label for="foto" class="mb-1">*kosongkan jika tidak ingin mengganti foto</label>
                     </div>
-                    <input type="text" placeholder="NIM" name="no_induk" value="<?= $data_mhs['no_induk']; ?>">
-                    <select name="semester">
+                    <input type="text" placeholder="NIM" name="no_induk" value="<?= $data_mhs['no_induk']; ?>" required>
+                    <select name="semester" required>
                         <option value="<?= $data_mhs['semester']; ?>" selected hidden><?= $data_mhs['semester']; ?></option>
                         <option value="1" class="select-jk">1</option>
                         <option value="2" class="select-jk">2</option>
@@ -113,10 +119,10 @@
                         <option value="7" class="select-jk">7</option>
                         <option value="7" class="select-jk">8</option>
                     </select>
-                    <input type="text" placeholder="IPK" name="ipk" value="<?= $data_mhs['ipk']; ?>">
-                    <textarea class="text-white" name="alamat" cols="25" rows="7" placeholder="Alamat"><?= $data_mhs['alamat']; ?></textarea>
-                    <input type="text" placeholder="No. Telp" name="no_hp" value="<?= $data_mhs['no_hp']; ?>">
-                    <select name="jk">
+                    <input type="text" placeholder="IPK" name="ipk" value="<?= $data_mhs['ipk']; ?>" required>
+                    <textarea class="text-white" name="alamat" cols="25" rows="7" placeholder="Alamat" required><?= $data_mhs['alamat']; ?></textarea>
+                    <input type="text" placeholder="No. Telp" name="no_hp" value="<?= $data_mhs['no_hp']; ?>" required>
+                    <select name="jk" required>
                         <option value="<?= $data_mhs['jk']; ?>" selected hidden><?= $jk; ?></option>
                         <option value="Laki-laki" class="select-jk">Laki-laki</option>
                         <option value="Perempuan" class="select-jk">Perempuan</option>
@@ -125,7 +131,7 @@
                     <button type="submit" class="btn " id="closeEdit" name="submit">
                         <a>UPDATE</a>
                     </button>
-                    <button type="reset" class="btn " id="backBtnEdit" name="back">
+                    <button type="submit" class="btn " id="backBtnEdit" name="back">
                         <a href="admin.php">BACK</a>
                     </button>
                 </fieldset>

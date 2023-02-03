@@ -89,9 +89,9 @@
             <form action="" method="post">
                 <fieldset>
                     <input type="hidden" name="id_matkul" value="<?= $data_matkul['id_matkul']; ?>">
-                    <input type="text" placeholder="Kode" name="kode_matkul" value="<?= $data_matkul['kode_matkul']; ?>">
-                    <input type="text" placeholder="Nama Mata Kuliah" name="nama_matkul" value="<?= $data_matkul['nama_matkul']; ?>">
-                    <select name="semester_matkul">
+                    <input type="text" placeholder="Kode" name="kode_matkul" value="<?= $data_matkul['kode_matkul']; ?>" required>
+                    <input type="text" placeholder="Nama Mata Kuliah" name="nama_matkul" value="<?= $data_matkul['nama_matkul']; ?>" required>
+                    <select name="semester_matkul" required>
                         <option value="<?= $data_matkul['semester_matkul']; ?>" selected hidden><?= $data_matkul['semester_matkul']; ?></option>
                         <option value="1" class="select-jk">1</option>
                         <option value="2" class="select-jk">2</option>
@@ -102,7 +102,7 @@
                         <option value="7" class="select-jk">7</option>
                         <option value="7" class="select-jk">8</option>
                     </select>
-                    <input type="text" placeholder="SKS" name="sks" value="<?= $data_matkul['sks']; ?>">
+                    <input type="text" placeholder="SKS" name="sks" value="<?= $data_matkul['sks']; ?>" required>
                     
                     <button type="submit" class="btn" name="submit_mk">
                         <a>UPDATE</a>
