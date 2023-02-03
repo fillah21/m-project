@@ -202,6 +202,16 @@
     }
     // Fungsi Edit Mahasiswa Selesai
 
+
+    // Fungsi Hapus Mahasiswa
+    function hapus_mhs($id_mhs) {
+        global $conn;
+        mysqli_query($conn, "DELETE FROM user WHERE id_user = $id_mhs");
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Hapus Mahasiswa Selesai
+
     
     // Fungsi Register Admin
     function register_admin($data) {

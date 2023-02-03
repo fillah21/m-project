@@ -130,7 +130,7 @@
 
             <!-- Profil -->
             <div class="profil">
-                <?php if(!$data_diri['foto'] == "") : ?>
+                <?php if($data_diri['foto'] != "") : ?>
                     <img src="profil/<?= $data_diri['foto']; ?>" class="rounded-circle" alt="profi">
                 <?php else : ?>
                     <img src="profil/default.png ?>" class="rounded-circle" alt="profi">
@@ -347,13 +347,22 @@
                                     <td><?= $mhs['semester']; ?></td>
                                     <td><?= $mhs['ipk']; ?></td>
                                     <td>
-                                        <span id="btnEdit"><a href="edit-mhs.php?idmhs=<?= $mhs['id_user']; ?>"><button class="btn btn-sm p-0 ms-1" style="width: 12px;">
-                                                <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
-                                            </button></a></span>
+                                        <span id="btnEdit">
+                                            <a href="edit-mhs.php?idmhs=<?= $mhs['id_user']; ?>">
+                                                <button class="btn btn-sm p-0 ms-1" style="width: 12px;">
+                                                    <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
+                                                </button>
+                                            </a>
+                                        </span>
+
                                         <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-                                        <span id="btnDel"><button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
+
+                                        <span id="btnDel">
+                                            <a href="delete.php?idmhs=<?= $mhs['id_user']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?')">
+                                            <button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
                                                 <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
-                                            </button></span>
+                                            </button>
+                                        </span>
                                     </td>
                                 </tr>
                                 <?php $i++ ?>

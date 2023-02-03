@@ -64,7 +64,11 @@
 
             <!--PROFIL-->
             <div class="profil">
-                <img src="profil/<?= $data_diri['foto']; ?>" class="rounded-circle">
+                <?php if($data_diri['foto'] != "") : ?>
+                    <img src="profil/<?= $data_diri['foto']; ?>" class="rounded-circle" alt="profi">
+                <?php else : ?>
+                    <img src="profil/default.png ?>" class="rounded-circle" alt="profi">
+                <?php endif; ?>
                     <span  id="opedit"><a href="edit-foto-user.php"><button class="rounded-circle"><i class="bi bi-brush-fill"></i></button></a></span>
                 <h1><?= $data_diri['nama']; ?></h1>
             </div>
