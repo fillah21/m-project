@@ -311,62 +311,64 @@
                 Tambah Mahasiswa
             </button>
             <span class="search">
-                <input type="text" name="search" placeholder="Search">
-                <button class="btn"><i class="bi bi-search"></i></button>
+                <input type="text" name="keyword" placeholder="Search" id="keyword_mhs">
+                <button class="btn" type="submit" name="cari_mhs" id="cari_mhs"><i class="bi bi-search"></i></button>
             </span>
             <div class="row-sm">
                 <div class="col-sm table-responsive" id="listItem">
-                    <table class="table text-white">
-                        <thead class="topTable text-center">
-                            <tr class="headerMhs ">
-                                <th scope="col">No</th>
-                                <th scope="col">NIM</th>
-                                <th scope="col">NAMA</th>
-                                <th scope="col">JK</th>
-                                <th scope="col">EMAIL</th>
-                                <th scope="col">No.HP</th>
-                                <th scope="col">ALAMAT</th>
-                                <th scope="col">SMT</th>
-                                <th scope="col">IPK</th>
-                                <th scope="col">AKSI</th>
-                            </tr>
-                        </thead>
-                        <tbody class="contentTable text-dark">
-                            <?php $i = 1; ?>
-                            <?php foreach ($data_mahasiswa as $mhs) : ?>
-                                <tr class=" text-white text-center">
-                                    <td><?= $i; ?></td>
-                                    <th scope="row"><?= $mhs['no_induk']; ?></th>
-                                    <td><?= $mhs['nama']; ?></td>
-                                    <td><?= $mhs['jk']; ?></td>
-                                    <td><?= $mhs['email']; ?></td>
-                                    <td><?= $mhs['no_hp']; ?></td>
-                                    <td><?= $mhs['alamat']; ?></td>
-                                    <td><?= $mhs['semester']; ?></td>
-                                    <td><?= $mhs['ipk']; ?></td>
-                                    <td>
-                                        <span id="btnEdit">
-                                            <a href="edit-mhs.php?idmhs=<?= $mhs['id_user']; ?>">
-                                                <button class="btn btn-sm p-0 ms-1" style="width: 12px;">
-                                                    <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
-                                                </button>
-                                            </a>
-                                        </span>
-
-                                        <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-
-                                        <span id="btnDel">
-                                            <a href="delete.php?idmhs=<?= $mhs['id_user']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?')">
-                                            <button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
-                                                <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
-                                            </button>
-                                        </span>
-                                    </td>
+                    <div id="tabel_mhs">
+                        <table class="table text-white">
+                            <thead class="topTable text-center">
+                                <tr class="headerMhs ">
+                                    <th scope="col">No</th>
+                                    <th scope="col">NIM</th>
+                                    <th scope="col">NAMA</th>
+                                    <th scope="col">JK</th>
+                                    <th scope="col">EMAIL</th>
+                                    <th scope="col">No.HP</th>
+                                    <th scope="col">ALAMAT</th>
+                                    <th scope="col">SMT</th>
+                                    <th scope="col">IPK</th>
+                                    <th scope="col">AKSI</th>
                                 </tr>
-                                <?php $i++ ?>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody class="contentTable text-dark">
+                                <?php $i = 1; ?>
+                                <?php foreach ($data_mahasiswa as $mhs) : ?>
+                                    <tr class=" text-white text-center">
+                                        <td><?= $i; ?></td>
+                                        <th scope="row"><?= $mhs['no_induk']; ?></th>
+                                        <td><?= $mhs['nama']; ?></td>
+                                        <td><?= $mhs['jk']; ?></td>
+                                        <td><?= $mhs['email']; ?></td>
+                                        <td><?= $mhs['no_hp']; ?></td>
+                                        <td><?= $mhs['alamat']; ?></td>
+                                        <td><?= $mhs['semester']; ?></td>
+                                        <td><?= $mhs['ipk']; ?></td>
+                                        <td>
+                                            <span id="btnEdit">
+                                                <a href="edit-mhs.php?idmhs=<?= $mhs['id_user']; ?>">
+                                                    <button class="btn btn-sm p-0 ms-1" style="width: 12px;">
+                                                        <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
+                                                    </button>
+                                                </a>
+                                            </span>
+    
+                                            <span class="text-dark mx-1" style="font-size: 9px;">|</span>
+    
+                                            <span id="btnDel">
+                                                <a href="delete.php?idmhs=<?= $mhs['id_user']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?')">
+                                                <button class="btn btn-sm p-0 m-0 btnDelete" style="width: 12px;">
+                                                    <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
+                                                </button>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <?php $i++ ?>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="jumlahData">Jumlah Data : <?= $jumlah_mahasiswa; ?></div>
@@ -446,54 +448,56 @@
                 Tambah Mata Kuliah
             </button>
             <span class="search">
-                <input type="text" name="search" placeholder="Search">
-                <button class="btn"><i class="bi bi-search"></i></button>
+                <input type="text" name="search" placeholder="Search" id="keyword_matkul">
+                <button class="btn" id="cari_matkul"><i class="bi bi-search"></i></button>
             </span>
             <div class="row-sm">
                 <div class="col-sm table-responsive" id="listMatkul">
-                    <table class="table text-white">
-                        <thead class="topTable text-center">
-                            <tr class="headerMatkul">
-                                <th scope="col">NO</th>
-                                <th scope="col">KODE</th>
-                                <th scope="col">NAMA MATA KULIAH</th>
-                                <th scope="col">SEMESTER</th>
-                                <th scope="col">SKS</th>
-                                <th scope="col">AKSI</th>
-                            </tr>
-                        </thead>
-                        <tbody class="contentTable text-dark">
-                            <?php $j = 1; ?>
-                            <?php foreach ($data_matkul as $matkul) : ?>
-                                <tr class="text-white text-center">
-                                    <td><?= $j; ?></td>
-                                    <th scope="row"><?= $matkul['kode_matkul']; ?></th>
-                                    <td><?= $matkul['nama_matkul']; ?></td>
-                                    <td><?= $matkul['semester_matkul']; ?></td>
-                                    <td><?= $matkul['sks']; ?></td>
-                                    <td>
-                                        <span id="btnEditMk">
-                                            <a href="edit-mk.php?idmatkul=<?= $matkul['id_matkul']; ?>">
-                                            <button class="btn btn-sm p-0 m-0" style="width: 12px;">
-                                                <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
-                                            </button>
-                                            </a>
-                                        </span>
-
-                                        <span class="text-dark mx-1" style="font-size: 9px;">|</span>
-
-                                        <span id="btnDelMk">
-                                            <a href="delete.php?idmatkul=<?= $matkul['id_matkul']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?')">
-                                            <button class="btn btn-sm p-0 m-0" style="width: 12px;">
-                                                <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
-                                            </button>
-                                        </span>
-                                    </td>
+                    <div id="tabel_matkul">
+                        <table class="table text-white">
+                            <thead class="topTable text-center">
+                                <tr class="headerMatkul">
+                                    <th scope="col">NO</th>
+                                    <th scope="col">KODE</th>
+                                    <th scope="col">NAMA MATA KULIAH</th>
+                                    <th scope="col">SEMESTER</th>
+                                    <th scope="col">SKS</th>
+                                    <th scope="col">AKSI</th>
                                 </tr>
-                                <?php $j++; ?>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody class="contentTable text-dark">
+                                <?php $j = 1; ?>
+                                <?php foreach ($data_matkul as $matkul) : ?>
+                                    <tr class="text-white text-center">
+                                        <td><?= $j; ?></td>
+                                        <th scope="row"><?= $matkul['kode_matkul']; ?></th>
+                                        <td><?= $matkul['nama_matkul']; ?></td>
+                                        <td><?= $matkul['semester_matkul']; ?></td>
+                                        <td><?= $matkul['sks']; ?></td>
+                                        <td>
+                                            <span id="btnEditMk">
+                                                <a href="edit-mk.php?idmatkul=<?= $matkul['id_matkul']; ?>">
+                                                <button class="btn btn-sm p-0 m-0" style="width: 12px;">
+                                                    <i class="bi bi-pen-fill" style="font-size: 12px;"></i>
+                                                </button>
+                                                </a>
+                                            </span>
+    
+                                            <span class="text-dark mx-1" style="font-size: 9px;">|</span>
+    
+                                            <span id="btnDelMk">
+                                                <a href="delete.php?idmatkul=<?= $matkul['id_matkul']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?')">
+                                                <button class="btn btn-sm p-0 m-0" style="width: 12px;">
+                                                    <i class="bi bi-trash-fill" style="font-size: 12px;"></i>
+                                                </button>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <?php $j++; ?>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="jumlahData">Jumlah Data</div>
@@ -642,6 +646,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <!-- Js lokal -->
+    <script src="folder_js/jquery-3.6.3.min.js"></script>
+    <script src="folder_js/script.js"></script>
     <script src="folder_js/script-admin.js"></script>
 </body>
 

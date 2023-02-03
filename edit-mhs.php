@@ -104,7 +104,7 @@
                     <input type="email" placeholder="Email" name="email" value="<?= $data_mhs['email']; ?>" required>
                     <label for="foto" class="mb-1">Foto Profil : </label>
                     <div class="input-group mb-3 uploadFoto">
-                        <input type="file" class="form-control" name="foto" required>
+                        <input type="file" class="form-control" name="foto">
                         <label for="foto" class="mb-1">*kosongkan jika tidak ingin mengganti foto</label>
                     </div>
                     <input type="text" placeholder="NIM" name="no_induk" value="<?= $data_mhs['no_induk']; ?>" required>
@@ -131,7 +131,7 @@
                     <button type="submit" class="btn " id="closeEdit" name="submit">
                         <a>UPDATE</a>
                     </button>
-                    <button type="submit" class="btn " id="backBtnEdit" name="back">
+                    <button class="btn" id="backBtnEdit" name="back">
                         <a href="admin.php">BACK</a>
                     </button>
                 </fieldset>
