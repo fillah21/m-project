@@ -488,4 +488,14 @@
         return mysqli_affected_rows($conn);
     }
     // Fungsi Tambah KRS Selesai
+
+
+    // Fungsi Hapus Matkul KRS
+    function hapus_mk_krs($id_krs) {
+        global $conn;
+        mysqli_query($conn, "DELETE FROM krs WHERE id_krs = $id_krs");
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Hapus Matkul KRS Selesai
 ?>

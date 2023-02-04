@@ -159,7 +159,7 @@
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="tambah-krs.php?idmatkul=<?= $smtr['id_matkul']; ?>"> Pilih</a>
+                                                <i class="bi bi-check-square"></i><a href="tambah-krs.php?idmatkul=<?= $smtr['id_matkul']; ?>" onclick="return confirm('Apakah anda yakin ingin memilih mata kuliah ini?')"> Pilih</a>
                                             </button>
                                         </td>
                                     </tr>
@@ -200,7 +200,7 @@
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                                <i class="bi bi-check-square"></i><a href="tambah-krs.php?idmatkul=<?= $smtr['id_matkul']; ?>" onclick="return confirm('Apakah anda yakin ingin memilih mata kuliah ini?')"> Pilih</a>
                                             </button>
                                         </td>
                                     </tr>
@@ -235,7 +235,7 @@
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                                <i class="bi bi-check-square"></i><a href="tambah-krs.php?idmatkul=<?= $smtr['id_matkul']; ?>" onclick="return confirm('Apakah anda yakin ingin memilih mata kuliah ini?')"> Pilih</a>
                                             </button>
                                         </td>
                                     </tr>
@@ -274,7 +274,7 @@
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                                <i class="bi bi-check-square"></i><a href="tambah-krs.php?idmatkul=<?= $smtr['id_matkul']; ?>" onclick="return confirm('Apakah anda yakin ingin memilih mata kuliah ini?')"> Pilih</a>
                                             </button>
                                         </td>
                                     </tr>
@@ -309,7 +309,7 @@
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                                <i class="bi bi-check-square"></i><a href="tambah-krs.php?idmatkul=<?= $smtr['id_matkul']; ?>" onclick="return confirm('Apakah anda yakin ingin memilih mata kuliah ini?')"> Pilih</a>
                                             </button>
                                         </td>
                                     </tr>
@@ -368,13 +368,21 @@
                                 </tr>
                             </thead>
                             <tbody class="align-middle">
+                                <?php 
+                                    $data_krs = query("SELECT * FROM krs WHERE id_user = $deskripsi");
+                                    foreach($data_krs as $krs) :
+                                        $id_matkul = $krs['id_matkul'];
+                                        $detail_matkul = query("SELECT * FROM mata_kuliah WHERE id_matkul = $id_matkul");
+
+                                        foreach($detail_matkul as $matkul) :
+                                ?> 
                                 <tr>
-                                    <td>Pemrograman Bergerak</td>
-                                    <td>3</td>
+                                    <td><?= $matkul['nama_matkul']; ?></td>
+                                    <td><?= $matkul['sks']; ?></td>
                                     <?php if($data_diri['sudah_krs'] == "Belum") : ?>
                                         <td>Belum Validasi</td>
                                         <td>
-                                            <a href="" class="text-dark" style="text-decoration: none; list-style-type: none;">
+                                            <a href="delete-krs.php?idkrs=<?= $krs['id_krs']; ?>" class="text-dark" style="text-decoration: none; list-style-type: none;" onclick="return confirm('Apakah anda yakin hapus mata kuliah ini?')">
                                                 <i class="bi bi-file-earmark-x-fill"></i>delete
                                             </a>
                                         </td>
@@ -382,6 +390,10 @@
                                         <td>Sudah Validasi</td>
                                     <?php endif; ?>
                                 </tr>
+                                <?php 
+                                        endforeach;
+                                    endforeach; 
+                                ?>
                             </tbody>
                         </table>
                         <div class="col-md-6 p-2" style="font-size:12px;">

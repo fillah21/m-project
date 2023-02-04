@@ -13,31 +13,33 @@
 
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
 
-    if ($data_diri['level'] !== "User") {
-        echo "<script>
-                alert('Hak akses tidak diizinkan');
-                document.location.href='logout.php';
-            </script>";
-        exit;
-    }
+    var_dump($data_diri);
 
-    if(isset($_GET['idmatkul'])) {
-        $id_matkul = $_GET['idmatkul'];
+    // if ($data_diri['level'] !== "User") {
+    //     echo "<script>
+    //             alert('Hak akses tidak diizinkan');
+    //             document.location.href='logout.php';
+    //         </script>";
+    //     exit;
+    // }
 
-        if(tambah_krs($deskripsi, $id_matkul) > 0) {
-            echo "
-                <script>
-                    alert('Data Berhasil Ditambahkan');
-                    document.location.href='mahasiswa.php';
-                </script>
-            ";
-        } else {
-            echo "
-                <script>
-                    alert('Data Gagal Ditambahkan');
-                    document.location.href='mahasiswa.php';
-                </script>
-            ";
-        }
-    }
+    // if(isset($_GET['idmatkul'])) {
+    //     $id_matkul = $_GET['idmatkul'];
+
+    //     if(tambah_krs($deskripsi, $id_matkul) > 0) {
+    //         echo "
+    //             <script>
+    //                 alert('Data Berhasil Ditambahkan');
+    //                 document.location.href='mahasiswa.php';
+    //             </script>
+    //         ";
+    //     } else {
+    //         echo "
+    //             <script>
+    //                 alert('Data Gagal Ditambahkan');
+    //                 document.location.href='mahasiswa.php';
+    //             </script>
+    //         ";
+    //     }
+    // }
 ?>
