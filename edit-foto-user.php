@@ -13,14 +13,30 @@
 
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi") [0];
 
-    $jumlah_sks = cek_sks($data_diri['ipk']);
-
     if($data_diri['level'] !== "User") {
         echo "<script>
                 alert('Hak akses tidak diizinkan');
                 document.location.href='logout.php';
               </script>";
         exit;
+    }
+
+    if(isset($_POST['submit'])) {
+        if(edit_foto($_POST) > 0) {
+            echo "
+                <script>
+                    alert('Data Berhasil Diubah');
+                    document.location.href='mahasiswa.php';
+                </script>
+            ";
+        } else {
+            echo "
+                <script>
+                    alert('Data Gagal Diubah');
+                    document.location.href='mahasiswa.php';
+                </script>
+            ";
+        }  
     }
 ?>
 
@@ -54,14 +70,16 @@
                 <button type="reset" class="btn back-btn">
                     <a href="mahasiswa.php"><i class="bi bi-x-circle-fill"></i></a>
                 </button>
-                <form action="">
+                <form action="" method="post" enctype="multipart/form-data">
                     <fifieldset>
-                        <img src="profil/aku.jpg">
+                        <input type="hidden" name="foto_lama" value="<?= $data_diri['foto']; ?>">
+                        <input type="hidden" name="id_user" value="<?= $data_diri['id_user']; ?>">
+                        <img src="profil/<?= $data_diri['foto']; ?>" class="img-preview">
                         <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile01">
+                            <input type="file" class="form-control" id="profil" name="foto" onchange="previewImg()">
                         </div>
-                        <button type="submit" class="btn btn-sm">
-                            <a href="mahasiswa.php">UPDATE</a>
+                        <button type="submit" class="btn btn-sm" name="submit">
+                            UPDATE
                         </button>
                     </fieldset>
                 </form>
@@ -73,5 +91,19 @@
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="folder_js/script-mhs.js"></script>
+
+    <script>
+      function previewImg() {
+        const profil = document.querySelector('#profil');
+        const imgPreview = document.querySelector('.img-preview');
+
+        const fileProfil = new FileReader();
+        fileProfil.readAsDataURL(profil.files[0]);
+
+        fileProfil.onload = function(e) {
+          imgPreview.src = e.target.result;
+        }
+      }
+    </script>
 </body>
 </html>

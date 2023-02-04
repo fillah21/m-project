@@ -212,6 +212,32 @@
     }
     // Fungsi Hapus Mahasiswa Selesai
 
+
+    // Fungsi Edit Foto User
+    function edit_foto($data) {
+        global $conn;
+
+        $id_user = $data['id_user'];
+        $foto_lama = $data['foto_lama'];
+        $foto = uploadFoto();
+        if($foto == "") {
+            $foto = $foto_lama;
+        }
+
+        if($foto != $foto_lama && $foto_lama != "default.png") {
+            unlink("profil/$foto_lama");
+        }
+
+        $query = "UPDATE user SET 
+                    foto = '$foto'
+                  WHERE id_user = '$id_user'
+                ";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Edit Foto User Selesai
+
     
     // Fungsi Register Admin
     function register_admin($data) {
