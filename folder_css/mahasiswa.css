@@ -32,6 +32,7 @@ body{
     width: 90px;
     transition: all ease-out 0.3s;
     position: fixed;
+    min-height: 100vh;
 }
 
 .sidebar .profil img{
@@ -661,6 +662,20 @@ body{
 #validasi td{
     font-size: 13px;
 }
+
+.col-sm{
+    height: 600px;
+    overflow-y: auto;
+}
+
+.table-responsive{
+    overflow-x: auto;
+}
+
+td{
+    font-size: 10px;
+}
+
 /*MAHASISWA-BIODATA*/
 #biodata{
     margin-left: 80px;
@@ -697,8 +712,7 @@ body{
     margin-top: 140px;      
 }
 
-/* Responsive */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 412px) {
     .sidebar{
         position: fixed;
         background-color: #711A1A;
@@ -709,14 +723,15 @@ body{
         flex-direction: column;
         border-radius: 0 9px 9px 0;
         transition: all ease-in 0.3s;
-        position: absolute;
         min-height: 100vh;
     }
     
     .sidebar.hide{
+        position: fixed;
         padding: 5px;
         width: 50px;
         transition: all ease-out 0.3s;
+        min-height: 100vh;
     }
     
     .sidebar .profil img{
@@ -793,12 +808,28 @@ body{
     #smt1 img{
         margin-top: auto;
     }
+    
+    #smt2{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt2 img{
+        margin-top: auto;
+    }
 
     #smt3{
         width: auto;
         margin-left: 50px; 
     }
     #smt3 img{
+        margin-top: auto;
+    }
+
+    #smt4{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt4 img{
         margin-top: auto;
     }
 
@@ -810,6 +841,14 @@ body{
         margin-top: auto;
     }
 
+    #smt6{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt6 img{
+        margin-top: auto;
+    }
+
     #smt7{
         width: auto;
         margin-left: 50px;
@@ -817,7 +856,313 @@ body{
     #smt7 img{
         margin-top: auto;
     }
+    #smt8{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt8 img{
+        margin-top: auto;
+    }
+    #smt9{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt9 img{
+        margin-top: auto;
+    }
+    #validasi{
+        width: auto;
+        margin-left: 50px;
+    }
+    #validasi img{
+        margin-top: auto;
+    }
 
+    #biodata{
+        width: auto;
+        margin-left: 50px;
+    }
+    #biodata img{
+        margin-top: auto;
+    }
+
+/*TOGGLE MENU*/
+#menu-button{
+    top: 34px;
+    width: 13px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+#m-label{
+    position: relative;
+    display: block;
+    height: 10px;
+    cursor: pointer;
+}
+
+#menu-checkbox{
+    display: none;
+}
+
+#hamburger, #m-label:after, #m-label:before{
+    position:absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FFFF;
+}
+
+#m-label:after, #m-label:before{
+    content: "";
+    transition: 0.4s cubic-bezier(0.038, 0.41, 0.83, 0.5) left;
+}
+
+#m-label:before{
+    top: 0;
+}
+
+#m-label:after{
+    top: 4px;
+}
+
+#hamburger{
+    top: 8px;
+}
+
+#hamburger:before{
+    content: "MENU";
+    position: absolute;
+    top: 3px;
+    right: 0;
+    left: 0;
+    color: #FFFF;
+    font-size: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#menu-checkbox:checked + #m-label:before{
+    left: -13px;
+}
+
+#menu-checkbox:checked + #m-label:after{
+    left: 13px;
+}
+
+#menu-checkbox:checked + #m-label #hamburger:before{
+    animation: moveUpThenDown 0.8s ease 0.2s forwards,
+    shakeUp 0.8s ease 0.2s forwards,
+    shakeDown 0.2s ease 0.8s forwards;
+}
+
+@keyframes moveUpThenDown{
+    0%{
+        top: 0;
+    }
+    50%{
+        top: -14px;
+    }
+    100%{
+        top: -8px;
+    }
+}
+
+@keyframes shakeUp{
+    0%{
+        transform: rotateZ(0);
+    }
+    25%{
+        transform: rotateZ(-10deg);
+    }
+    50%{
+        transform: rotateZ(0);
+    }
+    75%{
+        transform: rotateZ(10deg);
+    }
+    100%{
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes shakeDown{
+    0%{
+        transform: rotateZ(0);
+    }
+    80%{
+        transform: rotateZ(3deg);
+    }
+    90%{
+        transform: rotateZ(-3deg);
+    }
+    100%{
+        transform: rotateZ(0);
+    }
+}
+/*TOGGLE MENU SELESAI*/
+}
+
+/* Responsive */
+@media screen and (max-width: 380px) {
+    .sidebar{
+        position: fixed;
+        background-color: #711A1A;
+        width: 130px;
+        padding: 5px;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        border-radius: 0 9px 9px 0;
+        transition: all ease-in 0.3s;
+        min-height: 100vh;
+    }
+    
+    .sidebar.hide{
+        position: fixed;
+        padding: 5px;
+        width: 50px;
+        transition: all ease-out 0.3s;
+        min-height: 100vh;
+    }
+    
+    .sidebar .profil img{
+        width: 70px;
+        margin-left: 23px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        transition: all ease-in 0.3s;
+        object-fit: cover;
+    }
+    
+    .sidebar .nav-link i{
+        font-size: 9px;
+    }
+
+    .sidebar .profil h1{
+        font-weight: 700;
+        font-size: 8px;
+        color: #FFFF;
+        text-align: center;
+    }
+    
+    .sidebar.hide .profil img{
+        width: 30px;
+        margin-left: 3.5px;
+        margin-top: 70px;
+        object-fit: cover;
+    }
+
+    .sidebar .text{
+        font-weight: bold;
+        text-align: left;
+        color: #FFFF;
+        margin: 7px;
+    }
+    
+    .sidebar a .img{
+        width: 70px;
+        float: right;
+        margin-right: 15px;
+        margin-top: 29px;
+    }
+
+    .sidebar li.nav-link #dropdown a{
+        font-size: 7px;
+    }
+    
+    .sidebar li.nav-link #dropdown li:hover{
+        width: 100%;
+        background: #D23939;
+        border-radius: 4px;
+    }
+
+    #home header{
+        margin-left: 50px;
+    }
+    #home img{
+        margin-left: 50px;
+    }
+
+    #about{
+        width: auto;
+        margin-left: 50px;
+    }
+    #about img{
+        margin-top: 30px;
+    }
+
+    #smt1{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt1 img{
+        margin-top: auto;
+    }
+    
+    #smt2{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt2 img{
+        margin-top: auto;
+    }
+
+    #smt3{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt3 img{
+        margin-top: auto;
+    }
+
+    #smt4{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt4 img{
+        margin-top: auto;
+    }
+
+    #smt5{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt5 img{
+        margin-top: auto;
+    }
+
+    #smt6{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt6 img{
+        margin-top: auto;
+    }
+
+    #smt7{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt7 img{
+        margin-top: auto;
+    }
+    #smt8{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt8 img{
+        margin-top: auto;
+    }
+    #smt9{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt9 img{
+        margin-top: auto;
+    }
     #validasi{
         width: auto;
         margin-left: 50px;

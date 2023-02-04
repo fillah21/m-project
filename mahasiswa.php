@@ -143,12 +143,12 @@
             <?php for ($f = 0; $f <= 5; $f++) : ?>
             <div class="container tab-pane" id="smt<?= $f; ?>">
                 <h3 class="mt-4 text-white">Semester <?= $f; ?></h3>
-                    <div class="box mt-3">
+                    <div class="box mt-3 col-sm table-responsive">
                             <h5>Daftar Mata Kuliah Wajib</h5>
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
-                                        <th scope="col">Kode Mata Kuliah</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
                                         <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
@@ -186,10 +186,10 @@
                 <h3 class="mt-4 text-white">Semester 7</h3>
                     <div class="box mt-3">
                             <h5>Daftar Mata Kuliah Wajib</h5>
-                            <table class="table">
+                            <table class="table col-sm table-responsive">
                                 <thead class="table-defult">
                                     <tr>
-                                        <th scope="col">Kode Mata Kuliah</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
                                         <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
@@ -224,7 +224,7 @@
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
-                                        <th scope="col">Kode Mata Kuliah</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
                                         <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
@@ -258,12 +258,12 @@
 
             <div id="smt8" class="container tab-pane">
                 <h3 class="mt-4 text-white">Semester 8</h3>
-                    <div class="box mt-3">
+                    <div class="box mt-3 table-responsive">
                             <h5>Daftar Mata Kuliah Wajib</h5>
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
-                                        <th scope="col">Kode Mata Kuliah</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
                                         <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
@@ -298,7 +298,7 @@
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
-                                        <th scope="col">Kode Mata Kuliah</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
                                         <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
