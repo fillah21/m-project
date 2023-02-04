@@ -22,3 +22,9 @@ CREATE TABLE `mata_kuliah` (
     `semester_matkul` int(11),
     `sks` int(11)
 );
+
+CREATE TABLE `krs` (
+    `id_krs` int(11) primary key auto_increment,
+    foreign key(id_user) references user(id_user) ON DELETE CASCADE ON UPDATE CASCADE,
+    foreign key(id_matkul) references mata_kuliah(id_matkul) ON DELETE CASCADE ON UPDATE CASCADE
+);

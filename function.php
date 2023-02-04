@@ -474,4 +474,18 @@
         return $jumlah_data;
     }
     // Fungsi jumlah data selesai
+
+
+    // Fungsi Tambah KRS
+    function tambah_krs($id_user, $id_matkul) {
+        global $conn;
+
+        $query = "INSERT INTO krs
+                    VALUES 
+                    ('', '$id_user', '$id_matkul')";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Tambah KRS Selesai
 ?>

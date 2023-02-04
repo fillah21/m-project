@@ -15,16 +15,6 @@
 
     $jumlah_sks = cek_sks($data_diri['ipk']);
 
-    // $semester1 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '1'");
-    // $semester2 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '2'");
-    // $semester3 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '3'");
-    // $semester4 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '4'");
-    // $semester5 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '5'");
-    // $semester6 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '6'");
-    // $semester7 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '7'");
-    // $semester8 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '8'");
-    // $semester9 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '9'");
-
     if($data_diri['level'] !== "User") {
         echo "<script>
                 alert('Hak akses tidak diizinkan');
@@ -140,7 +130,7 @@
             <!--DASHBOARD SELESAI-->  
             
             <!--KRS-->
-            <?php for ($f = 0; $f <= 5; $f++) : ?>
+            <?php for ($f = 1; $f <= 6; $f++) : ?>
             <div class="container tab-pane" id="smt<?= $f; ?>">
                 <h3 class="mt-4 text-white">Semester <?= $f; ?></h3>
                     <div class="box mt-3 col-sm table-responsive">
@@ -169,7 +159,7 @@
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                                <i class="bi bi-check-square"></i><a href="tambah-krs.php?idmatkul=<?= $smtr['id_matkul']; ?>"> Pilih</a>
                                             </button>
                                         </td>
                                     </tr>
@@ -241,7 +231,7 @@
                                         <td><?= $smtr['kode_matkul']; ?></td>
                                         <td><?= $smtr['nama_matkul']; ?></td>
                                         
-                                        <td><?= $smtr['semester_matkul']; ?></td>
+                                        <td>Tambahan</td>
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
@@ -315,7 +305,7 @@
                                         <td><?= $smtr['kode_matkul']; ?></td>
                                         <td><?= $smtr['nama_matkul']; ?></td>
                                         
-                                        <td><?= $smtr['semester_matkul']; ?></td>
+                                        <td>Tambahan</td>
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
@@ -358,7 +348,7 @@
                             <div class="col-md-6">
                                 <div class="">
                                     <label for="sks" class="col-sm-4 col-form-label">Jumlah SKS yang bisa diambil</label>
-                                    <span>: 3</span>
+                                    <span>: <?= $jumlah_sks; ?></span>
                                 </div>
                             </div>
                         </div>
