@@ -457,7 +457,7 @@ form textarea::-ms-input-placeholder {
 
 /*SIDEBAR*/
 .sidebar {
-  position: absolute;
+  position: fixed;
   background-color: #711a1a;
   width: 192px;
   min-height: 100vh;
@@ -481,6 +481,7 @@ form textarea::-ms-input-placeholder {
   min-height: 100vh;
   width: 90px;
   transition: all ease-out 0.3s;
+  position: fixed;
 }
 
 .sidebar .profil img {
@@ -1818,6 +1819,7 @@ form textarea::-ms-input-placeholder {
     border-radius: 0 9px 9px 0;
     transition: all ease-in 0.3s;
     z-index: 20;
+    position: fixed;
   }
 
   .sidebar .header a .img {
@@ -1872,6 +1874,7 @@ form textarea::-ms-input-placeholder {
     min-height: 100vh;
     width: 50px;
     transition: all ease-out 0.3s;
+    position: fixed;
   }
 
   .sidebar.hide #menu-button {
@@ -2411,7 +2414,7 @@ form textarea::-ms-input-placeholder {
   }
 
   .sidebar {
-    position: absolute;
+    position: fixed;
     background-color: #711a1a;
     width: 130px;
     min-height: 100vh;
@@ -2476,6 +2479,7 @@ form textarea::-ms-input-placeholder {
     min-height: 100vh;
     width: 50px;
     transition: all ease-out 0.3s;
+    position: fixed;
   }
 
   .sidebar.hide #menu-button {
