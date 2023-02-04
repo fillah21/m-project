@@ -141,14 +141,16 @@
             
             <!--KRS-->
             <?php for ($f = 0; $f <= 5; $f++) : ?>
-            <div id="smt<?= $f; ?>" class="container tab-pane">
+            <div class="container tab-pane" id="smt<?= $f; ?>">
                 <h3 class="mt-4 text-white">Semester <?= $f; ?></h3>
                     <div class="box mt-3">
                             <h5>Daftar Mata Kuliah Wajib</h5>
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
+                                        <th scope="col">Kode Mata Kuliah</th>
                                         <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
@@ -160,7 +162,10 @@
                                         
                                     ?>
                                     <tr>
+                                        <td><?= $smtr['kode_matkul']; ?></td>
                                         <td><?= $smtr['nama_matkul']; ?></td>
+                                        
+                                        <td><?= $smtr['semester_matkul']; ?></td>
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
@@ -184,7 +189,9 @@
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
+                                        <th scope="col">Kode Mata Kuliah</th>
                                         <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
@@ -196,7 +203,10 @@
                                         
                                     ?>
                                     <tr>
+                                        <td><?= $smtr['kode_matkul']; ?></td>
                                         <td><?= $smtr['nama_matkul']; ?></td>
+                                        
+                                        <td><?= $smtr['semester_matkul']; ?></td>
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
@@ -214,7 +224,9 @@
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
+                                        <th scope="col">Kode Mata Kuliah</th>
                                         <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
@@ -226,7 +238,10 @@
                                         
                                     ?>
                                     <tr>
+                                        <td><?= $smtr['kode_matkul']; ?></td>
                                         <td><?= $smtr['nama_matkul']; ?></td>
+                                        
+                                        <td><?= $smtr['semester_matkul']; ?></td>
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
@@ -248,7 +263,9 @@
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
+                                        <th scope="col">Kode Mata Kuliah</th>
                                         <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
@@ -260,7 +277,10 @@
                                         
                                     ?>
                                     <tr>
+                                        <td><?= $smtr['kode_matkul']; ?></td>
                                         <td><?= $smtr['nama_matkul']; ?></td>
+                                        
+                                        <td><?= $smtr['semester_matkul']; ?></td>
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
@@ -278,7 +298,9 @@
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
+                                        <th scope="col">Kode Mata Kuliah</th>
                                         <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
@@ -290,7 +312,10 @@
                                         
                                     ?>
                                     <tr>
+                                        <td><?= $smtr['kode_matkul']; ?></td>
                                         <td><?= $smtr['nama_matkul']; ?></td>
+                                        
+                                        <td><?= $smtr['semester_matkul']; ?></td>
                                         <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">

@@ -18,6 +18,7 @@ body{
     transition: all ease-in 0.3s;
     position: absolute;
     min-height: 100vh;
+    position: fixed;
 }
 
 .sidebar a .img{
@@ -30,6 +31,7 @@ body{
 .sidebar.hide{
     width: 90px;
     transition: all ease-out 0.3s;
+    position: fixed;
 }
 
 .sidebar .profil img{
@@ -480,175 +482,14 @@ body{
     color: #000000;
 }
 
-#pilih3 {
-    position: absolute;
-    width: 270px;
-    height: 150px;
-    left: 50%;
-    top: 0;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 13px;
-    border-radius: 10px;
-    transform: translate(-50%, -50%) scale(0.1);
-    visibility: hidden;
-    transition: all ease-in 0.3s;
-  } 
-#pilih3.open {
-    top: 20%;
-    transform: translate(-50%, -50%) scale(1);
-    visibility: visible;
-    z-index: 50;
-} 
-#pilih3 h3 {
-    font-family: 'Acme';
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 32px;
-}
-#pilih3 span {
-    width: 100%;
-    height: 3px;
-    background-color: #711A1A;
-    border-radius: 3px;
-    border: 0;
-    margin-bottom: 10px;
-} 
-#pilih3 p {
-    width: 100%;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 12px;
-    color: #000000;
-}
-#pilih3 button {
-    width: 65px;
-    margin: 0;
-    padding: 4px;
-    font-weight: 800;
-}
-#pilih3 button a {
-    text-decoration: none;
-    color: #000000;
-}
-
-#pilih5 {
-    position: absolute;
-    width: 270px;
-    height: 150px;
-    left: 50%;
-    top: 0;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 13px;
-    border-radius: 10px;
-    transform: translate(-50%, -50%) scale(0.1);
-    visibility: hidden;
-    transition: all ease-in 0.3s;
-  } 
-#pilih5.open {
-    top: 20%;
-    transform: translate(-50%, -50%) scale(1);
-    visibility: visible;
-    z-index: 50;
-} 
-#pilih5 h3 {
-    font-family: 'Acme';
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 32px;
-}
-#pilih5 span {
-    width: 100%;
-    height: 3px;
-    background-color: #711A1A;
-    border-radius: 3px;
-    border: 0;
-    margin-bottom: 10px;
-} 
-#pilih5 p {
-    width: 100%;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 12px;
-    color: #000000;
-}
-#pilih5 button {
-    width: 65px;
-    margin: 0;
-    padding: 4px;
-    font-weight: 800;
-}
-#pilih5 button a {
-    text-decoration: none;
-    color: #000000;
-}
-
-#pilih7 {
-    position: absolute;
-    width: 270px;
-    height: 150px;
-    left: 50%;
-    top: 0;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 13px;
-    border-radius: 10px;
-    transform: translate(-50%, -50%) scale(0.1);
-    visibility: hidden;
-    transition: all ease-in 0.3s;
-  } 
-#pilih7.open {
-    top: 20%;
-    transform: translate(-50%, -50%) scale(1);
-    visibility: visible;
-    z-index: 50;
-} 
-#pilih7 h3 {
-    font-family: 'Acme';
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 32px;
-}
-#pilih7 span {
-    width: 100%;
-    height: 3px;
-    background-color: #711A1A;
-    border-radius: 3px;
-    border: 0;
-    margin-bottom: 10px;
-} 
-#pilih7 p {
-    width: 100%;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 12px;
-    color: #000000;
-}
-#pilih7 button {
-    width: 65px;
-    margin: 0;
-    padding: 4px;
-    font-weight: 800;
-}
-#pilih7 button a {
-    text-decoration: none;
-    color: #000000;
-}
-
 #smt1{
     margin-left: 80px;
     margin-top: 35px;
 }
 #smt1 img{
     width: 170px;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 70px;
 }
 #smt1 .row{
     font-size: 10px;
@@ -656,7 +497,25 @@ body{
 #smt1 button a{
     text-decoration: none;
     color: #000000;
-    font-size: 9px;
+    font-size: 13px;
+}
+
+#smt2{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt2 img{
+    width: 170px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+#smt2 .row{
+    font-size: 10px;
+}
+#smt2 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
 }
 
 #smt3{
@@ -665,7 +524,8 @@ body{
 }
 #smt3 img{
     width: 170px;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 70px;
 }
 #smt3 .row{
     font-size: 10px;
@@ -673,7 +533,25 @@ body{
 #smt3 button a{
     text-decoration: none;
     color: #000000;
-    font-size: 9px;
+    font-size: 13px;
+}
+
+#smt4{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt4 img{
+    width: 170px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+#smt4 .row{
+    font-size: 10px;
+}
+#smt4 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
 }
 
 #smt5{
@@ -682,7 +560,8 @@ body{
 }
 #smt5 img{
     width: 170px;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 70px;
 }
 #smt5 .row{
     font-size: 10px;
@@ -690,7 +569,61 @@ body{
 #smt5 button a{
     text-decoration: none;
     color: #000000;
-    font-size: 9px;
+    font-size: 13px;
+}
+
+#smt6{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt6 img{
+    width: 170px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+#smt6 .row{
+    font-size: 10px;
+}
+#smt6 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+}
+
+#smt9{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt9 img{
+    width: 170px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+#smt9 .row{
+    font-size: 10px;
+}
+#smt9 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+}
+
+#smt8{
+    margin-left: 80px;
+    margin-top: 35px;
+}
+#smt8 img{
+    width: 170px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+#smt8 .row{
+    font-size: 10px;
+}
+#smt8 button a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
 }
 
 #smt7{
@@ -699,7 +632,8 @@ body{
 }
 #smt7 img{
     width: 170px;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 70px;
 }
 #smt7 .row{
     font-size: 10px;
@@ -707,7 +641,7 @@ body{
 #smt7 button a{
     text-decoration: none;
     color: #000000;
-    font-size: 9px;
+    font-size: 13px;
 }
 
 #validasi{
