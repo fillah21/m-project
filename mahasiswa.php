@@ -15,6 +15,16 @@
 
     $jumlah_sks = cek_sks($data_diri['ipk']);
 
+    // $semester1 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '1'");
+    // $semester2 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '2'");
+    // $semester3 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '3'");
+    // $semester4 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '4'");
+    // $semester5 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '5'");
+    // $semester6 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '6'");
+    // $semester7 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '7'");
+    // $semester8 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '8'");
+    // $semester9 = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '9'");
+
     if($data_diri['level'] !== "User") {
         echo "<script>
                 alert('Hak akses tidak diizinkan');
@@ -86,10 +96,17 @@
                         <i class="icon bi bi-caret-down-fill"></i>
                     </a>
                     <ul id="dropdown">
-                        <li><a id="sem1" data-bs-toggle="tab" href="#smt1">Semester 1</a></li>
-                        <li><a id="sem3" data-bs-toggle="tab" href="#smt3">Semester 3</a></li>
-                        <li><a id="sem5" data-bs-toggle="tab" href="#smt5">Semester 5</a></li>
-                        <li><a id="sem7" data-bs-toggle="tab" href="#smt7">Semester 7</a></li>
+                        <?php if($data_diri['semester'] % 2) : ?>
+                            <li><a id="sem1" data-bs-toggle="tab" href="#smt1">Semester 1</a></li>
+                            <li><a id="sem3" data-bs-toggle="tab" href="#smt3">Semester 3</a></li>
+                            <li><a id="sem5" data-bs-toggle="tab" href="#smt5">Semester 5</a></li>
+                            <li><a id="sem7" data-bs-toggle="tab" href="#smt7">Semester 7</a></li>
+                        <?php else : ?>
+                            <li><a id="sem1" data-bs-toggle="tab" href="#smt2">Semester 2</a></li>
+                            <li><a id="sem3" data-bs-toggle="tab" href="#smt4">Semester 4</a></li>
+                            <li><a id="sem5" data-bs-toggle="tab" href="#smt6">Semester 6</a></li>
+                            <li><a id="sem7" data-bs-toggle="tab" href="#smt8">Semester 8</a></li>
+                        <?php endif; ?>
                         <li><a id="val" data-bs-toggle="tab" href="#validasi">Validasi Ajuan</a></li>
                     </ul>
                 </li>
@@ -123,10 +140,11 @@
             <!--DASHBOARD SELESAI-->  
             
             <!--KRS-->
-            <div id="smt1" class="container tab-pane">
-                <h3 class="mt-4 text-white">Semester 1</h3>
+            <?php for ($f = 0; $f <= 5; $f++) : ?>
+            <div id="smt<?= $f; ?>" class="container tab-pane">
+                <h3 class="mt-4 text-white">Semester <?= $f; ?></h3>
                     <div class="box mt-3">
-                            <h5>Daftar Mata Kuliah Yang Diajukan</h5>
+                            <h5>Daftar Mata Kuliah Wajib</h5>
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
@@ -136,126 +154,33 @@
                                     </tr>
                                 </thead>
                                 <tbody class="align-middle">
+                                    <?php 
+                                        $semester = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '$f'");
+                                        foreach ($semester as $smtr) :
+                                        
+                                    ?>
                                     <tr>
-                                        <td>Pemrograman Bergerak</td>
-                                        <td>3</td>
+                                        <td><?= $smtr['nama_matkul']; ?></td>
+                                        <td><?= $smtr['sks']; ?></td>
                                         <td>
                                             <button id="btnpilih1" class="btn btn-sm" type="menu">
                                                 <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
                                             </button>
                                         </td>
                                     </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
-                        </div>
+                    </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
-
-            <div class="container-sm text-center shadow" id="pilih1">
-                <h3>CONFIRM</h3>
-                <span></span>
-                <p>Apakah anda yakin ingin memilihnya?</p>
-                <span></span>
-                <div class="d-flex ms-auto">
-                    <button id="confirm1" type="button" class="btn btn-outline-primary btn-sm me-2">
-                        <a href="#smt1">Yes</a>
-                    </button>
-                    <button id="back1" type="button" class="btn btn-outline-danger btn-sm">
-                        <a href="#smt1">No</a>
-                    </button>
-                </div>
-            </div>
-
-            <div id="smt3" class="container tab-pane">
-                <h3 class="mt-4 text-white">Semester 3</h3>
-                    <div class="box mt-3">
-                            <h5>Daftar Mata Kuliah Yang Diajukan</h5>
-                            <table class="table">
-                                <thead class="table-defult">
-                                    <tr>
-                                        <th scope="col">Mata Kuliah</th>
-                                        <th scope="col">SKS</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="align-middle">
-                                    <tr>
-                                        <td>Pemrograman Bergerak</td>
-                                        <td>3</td>
-                                        <td>
-                                            <button id="btnpilih3" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="#pilih3"> Pilih</a>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
-            </div>
-
-            <div class="container-sm text-center shadow" id="pilih3">
-                <h3>CONFIRM</h3>
-                <span></span>
-                <p>Apakah anda yakin ingin memilihnya?</p>
-                <span></span>
-                <div class="d-flex ms-auto">
-                    <button id="confirm3" type="button" class="btn btn-outline-primary btn-sm me-2">
-                        <a href="#smt3">Yes</a>
-                    </button>
-                    <button id="back3" type="button" class="btn btn-outline-danger btn-sm">
-                        <a href="#smt3">No</a>
-                    </button>
-                </div>
-            </div>
-
-            <div id="smt5" class="container tab-pane">
-                <h3 class="mt-4 text-white">Semester 5</h3>
-                    <div class="box mt-3">
-                            <h5>Daftar Mata Kuliah Yang Diajukan</h5>
-                            <table class="table">
-                                <thead class="table-defult">
-                                    <tr>
-                                        <th scope="col">Mata Kuliah</th>
-                                        <th scope="col">SKS</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="align-middle">
-                                    <tr>
-                                        <td>Pemrograman Bergerak</td>
-                                        <td>3</td>
-                                        <td>
-                                            <button id="btnpilih5" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="#pilih5"> Pilih</a>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
-            </div>
-
-            <div class="container-sm text-center shadow" id="pilih5">
-                <h3>CONFIRM</h3>
-                <span></span>
-                <p>Apakah anda yakin ingin memilihnya?</p>
-                <span></span>
-                <div class="d-flex ms-auto">
-                    <button id="confirm5" type="button" class="btn btn-outline-primary btn-sm me-2">
-                        <a href="#smt5">Yes</a>
-                    </button>
-                    <button id="back5" type="button" class="btn btn-outline-danger btn-sm">
-                        <a href="#smt5">No</a>
-                    </button>
-                </div>
-            </div>
+            
+            <?php endfor; ?>
 
             <div id="smt7" class="container tab-pane">
                 <h3 class="mt-4 text-white">Semester 7</h3>
                     <div class="box mt-3">
-                            <h5>Daftar Mata Kuliah Yang Diajukan</h5>
+                            <h5>Daftar Mata Kuliah Wajib</h5>
                             <table class="table">
                                 <thead class="table-defult">
                                     <tr>
@@ -265,34 +190,119 @@
                                     </tr>
                                 </thead>
                                 <tbody class="align-middle">
+                                    <?php 
+                                        $semester = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '7'");
+                                        foreach ($semester as $smtr) :
+                                        
+                                    ?>
                                     <tr>
-                                        <td>Pemrograman Bergerak</td>
-                                        <td>3</td>
+                                        <td><?= $smtr['nama_matkul']; ?></td>
+                                        <td><?= $smtr['sks']; ?></td>
                                         <td>
-                                            <button id="btnpilih7" class="btn btn-sm" type="menu">
-                                                <i class="bi bi-check-square"></i><a href="#pilih7"> Pilih</a>
+                                            <button id="btnpilih1" class="btn btn-sm" type="menu">
+                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
                                             </button>
                                         </td>
                                     </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="box mt-3">
+                            <h5>Daftar Mata Kuliah Tambahan</h5>
+                            <table class="table">
+                                <thead class="table-defult">
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="align-middle">
+                                    <?php 
+                                        $semester = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '9'");
+                                        foreach ($semester as $smtr) :
+                                        
+                                    ?>
+                                    <tr>
+                                        <td><?= $smtr['nama_matkul']; ?></td>
+                                        <td><?= $smtr['sks']; ?></td>
+                                        <td>
+                                            <button id="btnpilih1" class="btn btn-sm" type="menu">
+                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
 
-            <div class="container-sm text-center shadow" id="pilih7">
-                <h3>CONFIRM</h3>
-                <span></span>
-                <p>Apakah anda yakin ingin memilihnya?</p>
-                <span></span>
-                <div class="d-flex ms-auto">
-                    <button id="confirm7" type="button" class="btn btn-outline-primary btn-sm me-2">
-                        <a href="#smt7">Yes</a>
-                    </button>
-                    <button id="back7" type="button" class="btn btn-outline-danger btn-sm">
-                        <a href="#smt7">No</a>
-                    </button>
-                </div>
+            <div id="smt8" class="container tab-pane">
+                <h3 class="mt-4 text-white">Semester 8</h3>
+                    <div class="box mt-3">
+                            <h5>Daftar Mata Kuliah Wajib</h5>
+                            <table class="table">
+                                <thead class="table-defult">
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="align-middle">
+                                    <?php 
+                                        $semester = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '8'");
+                                        foreach ($semester as $smtr) :
+                                        
+                                    ?>
+                                    <tr>
+                                        <td><?= $smtr['nama_matkul']; ?></td>
+                                        <td><?= $smtr['sks']; ?></td>
+                                        <td>
+                                            <button id="btnpilih1" class="btn btn-sm" type="menu">
+                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="box mt-3">
+                            <h5>Daftar Mata Kuliah Tambahan</h5>
+                            <table class="table">
+                                <thead class="table-defult">
+                                    <tr>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="align-middle">
+                                    <?php 
+                                        $semester = query("SELECT * FROM mata_kuliah WHERE semester_matkul = '9'");
+                                        foreach ($semester as $smtr) :
+                                        
+                                    ?>
+                                    <tr>
+                                        <td><?= $smtr['nama_matkul']; ?></td>
+                                        <td><?= $smtr['sks']; ?></td>
+                                        <td>
+                                            <button id="btnpilih1" class="btn btn-sm" type="menu">
+                                                <i class="bi bi-check-square"></i><a href="#pilih1"> Pilih</a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
 
             <div id="validasi" class="container tab-pane">
@@ -337,13 +347,25 @@
                                     <th scope="col">Mata Kuliah</th>
                                     <th scope="col">SKS</th>
                                     <th scope="col">Keterangan</th>
+                                    <?php if($data_diri['sudah_krs'] == "Belum") : ?>
+                                        <th scope="col">Aksi</th>
+                                    <?php endif; ?>
                                 </tr>
                             </thead>
                             <tbody class="align-middle">
                                 <tr>
                                     <td>Pemrograman Bergerak</td>
                                     <td>3</td>
-                                    <td><i class="bi bi-file-earmark-x-fill"></i>delete</td>
+                                    <?php if($data_diri['sudah_krs'] == "Belum") : ?>
+                                        <td>Belum Validasi</td>
+                                        <td>
+                                            <a href="" class="text-dark" style="text-decoration: none; list-style-type: none;">
+                                                <i class="bi bi-file-earmark-x-fill"></i>delete
+                                            </a>
+                                        </td>
+                                    <?php else : ?>
+                                        <td>Sudah Validasi</td>
+                                    <?php endif; ?>
                                 </tr>
                             </tbody>
                         </table>
@@ -352,10 +374,12 @@
                             <span>: 3</span>
                         </div>
                     </div>
-                    <div class="box mt-3 d-grid">
-                        <span style="font-size: 11px; font: grey">Note: Pastikan data yang dipilih telah sesuai!</span>
-                        <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Validasi</button>
-                    </div>
+                    <?php if($data_diri['sudah_krs'] == "Belum") : ?>
+                        <div class="box mt-3 d-grid">
+                            <span style="font-size: 11px; font: grey">Note: Pastikan data yang dipilih telah sesuai!</span>
+                            <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Validasi</button>
+                        </div>
+                    <?php endif; ?>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
             </div>
 
