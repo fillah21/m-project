@@ -498,4 +498,19 @@
         return mysqli_affected_rows($conn);
     }
     // Fungsi Hapus Matkul KRS Selesai
+
+
+    // Fungsi Validasi KRS
+    function validasi_krs($id_user) {
+        global $conn;
+
+        $query = "UPDATE user SET 
+                    sudah_krs = 'Sudah'
+                  WHERE id_user = '$id_user'
+                ";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Validasi KRS Selesai
 ?>

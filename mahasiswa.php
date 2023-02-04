@@ -370,13 +370,16 @@
                             <tbody class="align-middle">
                                 <?php 
                                     $data_krs = query("SELECT * FROM krs WHERE id_user = $deskripsi");
+                                    $jumlah = 0;
                                     foreach($data_krs as $krs) :
                                         $id_matkul = $krs['id_matkul'];
                                         $detail_matkul = query("SELECT * FROM mata_kuliah WHERE id_matkul = $id_matkul");
-
                                         foreach($detail_matkul as $matkul) :
                                 ?> 
                                 <tr>
+                                    <?php 
+                                        $jumlah = $jumlah + $matkul['sks'];
+                                    ?>
                                     <td><?= $matkul['nama_matkul']; ?></td>
                                     <td><?= $matkul['sks']; ?></td>
                                     <?php if($data_diri['sudah_krs'] == "Belum") : ?>
@@ -398,13 +401,17 @@
                         </table>
                         <div class="col-md-6 p-2" style="font-size:12px;">
                             <label for="sks-ambil">Jumlah SKS yang telah diambil</label>
-                            <span>: 3</span>
+                            <span>: <?= $jumlah; ?></span>
                         </div>
                     </div>
                     <?php if($data_diri['sudah_krs'] == "Belum") : ?>
                         <div class="box mt-3 d-grid">
                             <span style="font-size: 11px; font: grey">Note: Pastikan data yang dipilih telah sesuai!</span>
-                            <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light">Validasi</button>
+                            <form action="tambah-krs.php?iduser=<?= $deskripsi; ?>" method="post">
+                                <input type="hidden" name="jumlah" value="<?= $jumlah; ?>">
+                                <input type="hidden" name="sks" value="<?= $jumlah_sks; ?>">
+                                <button type="submit" name="submit" class="btn btn-outline-danger btn-danger text-light" onclick="return confirm('Apakah anda yakin ingin validasi KRS?')">Validasi</button>
+                            </form>
                         </div>
                     <?php endif; ?>
                 <footer style="text-align: center;"> <img src="image/Logo2.png" alt="Logo2"></footer>
