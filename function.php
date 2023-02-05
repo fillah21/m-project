@@ -539,4 +539,19 @@
         return mysqli_affected_rows($conn);
     }
     // Fungsi Validasi KRS Selesai
+
+
+    // Fungsi Buka Validasi KRS
+    function validasi_buka($id_user) {
+        global $conn;
+
+        $query = "UPDATE user SET 
+                    sudah_krs = 'Belum'
+                  WHERE id_user = '$id_user'
+                ";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+    // Fungsi Buka Validasi KRS Selesai
 ?>

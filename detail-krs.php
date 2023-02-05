@@ -11,15 +11,11 @@
 
     $deskripsi = deskripsi($_COOKIE['project']);
 
+    $id_mahasiswa = $_GET['idkrs'];
+
     $data_diri = query("SELECT * FROM user WHERE id_user = $deskripsi")[0];
 
-    $data_mahasiswa = query("SELECT * FROM user WHERE level = 'User'");
-
-    $data_admin = query("SELECT * FROM user WHERE level = 'Admin'");
-
-    $data_matkul = query("SELECT * FROM mata_kuliah");
-
-    $jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
+    $data_mahasiswa = query("SELECT * FROM user WHERE id_user = $id_mahasiswa") [0];
 
 
     if ($data_diri['level'] !== "Admin") {
@@ -29,58 +25,6 @@
             </script>";
         exit;
     }
-
-    // Proses tambah mata kuliah
-    if (isset($_POST["submit_matkul"])) {
-        if (tambah_matkul($_POST) > 0) {
-            echo "
-                <script>
-                alert('Mata Kuliah Berhasil Ditambahkan');
-                document.location.href='admin.php';
-                </script>
-            ";
-        } else {
-            echo "<script>
-                    alert('Mata Kuliah Gagal Ditambahkan!');
-                    document.location.href='admin.php';
-                    </script>";
-        }
-    }
-    // Tambah mata kuliah selesai
-
-    // Proses tambah mahasiswa
-    if (isset($_POST["submit_mahasiswa"])) {
-        if (register($_POST) > 0) {
-            echo "
-                <script>
-                alert('Registrasi Berhasil');
-                document.location.href='admin.php';
-                </script>
-            ";
-        } else {
-            echo "<script>
-                    alert('Registrasi Gagal');
-                    </script>";
-        }
-    }
-    // Tambah mahasiswa selesai
-
-    // Proses tambah admin
-    if (isset($_POST["submit_admin"])) {
-        if (register_admin($_POST) > 0) {
-            echo "
-                <script>
-                alert('Registrasi Admin Berhasil');
-                document.location.href='admin.php';
-                </script>
-            ";
-        } else {
-            echo "<script>
-                    alert('Registrasi Admin Gagal');
-                    </script>";
-        }
-    }
-    // Tambah admin selesai
 
 
 ?>
@@ -123,22 +67,22 @@
                         <div>
                             <span>NIM</span>
                             <p>:</p>
-                            <input type="text" readonly value="NIM" name="nim">
+                            <input type="text" readonly value="<?= $data_mahasiswa['no_induk']; ?>" name="nim">
                         </div>
                         <div>
                             <span>Nama</span>
                             <p>:</p>
-                            <input type="text" readonly value="Nama" name="nama">
+                            <input type="text" readonly value="<?= $data_mahasiswa['nama']; ?>" name="nama">
                         </div>
                         <div>
                             <span>Semester</span>
                             <p>:</p>
-                            <input type="text" readonly value="Semester" name="semester">
+                            <input type="text" readonly value="<?= $data_mahasiswa['semester']; ?>" name="semester">
                         </div>
                         <div>
                             <span>IPK</span>
                             <p>:</p>
-                            <input type="text" readonly value="IPK" name="ipk">
+                            <input type="text" readonly value="<?= $data_mahasiswa['ipk']; ?>" name="ipk">
                         </div>
                     </fieldset>
                 </form>
@@ -153,40 +97,38 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                                $data_krs = query("SELECT * FROM krs WHERE id_user = $id_mahasiswa");
+                                $jumlah = 0;
+                                foreach($data_krs as $krs) :
+                                    $id_matkul = $krs['id_matkul'];
+                                    $data_matkul = query("SELECT * FROM mata_kuliah WHERE id_matkul = $id_matkul");
+                                    foreach($data_matkul as $matkul) :
+                                    
+                            ?>
                             <tr>
-                                <th scope="row">Pemrograman Bergerak</th>
-                                <td>3</td>
-                                <td class="btn-delete-krs"><a href="#delete-krs"><i class="bi bi-trash"></i></a></td>
+                                <?php $jumlah = $jumlah + $matkul['sks']; ?>
+                                <th scope="row"><?= $matkul['nama_matkul']; ?></th>
+                                <td><?= $matkul['sks']; ?></td>
+                                <td class="btn-delete-krs">
+                                    <a href="delete.php?idkrs=<?= $krs['id_krs']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus mata kuliah?')"><i class="bi bi-trash"></i></a>
+                                </td>
                             </tr>
-                            <tr>
-                                <th scope="row">Sistem Pakar</th>
-                                <td>3</td>
-                                <td class="btn-delete-krs"><a href="#delete-krs"><i class="bi bi-trash"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Riset Operasi</th>
-                                <td>3</td>
-                                <td class="btn-delete-krs"><a href="#delete-krs"><i class="bi bi-trash"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Big Data</th>
-                                <td>3</td>
-                                <td class="btn-delete-krs"><a href="#delete-krs"><i class="bi bi-trash"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Kecerdasan Buatan</th>
-                                <td>3</td>
-                                <td class="btn-delete-krs"><a href="#delete-krs"><i class="bi bi-trash"></i></a></td>
-                            </tr>
+                            <?php 
+                                    endforeach;
+                                endforeach;
+                            ?>
                         </tbody>
                     </table>
+
+                    <p class="mt-3">Jumlah SKS : <?= $jumlah; ?></p>
                 </div>
                 <div id="toggleKrs">
                     <button type="button" class="btn btn-outline-danger btn-sm me-2" id="beforeKrs">
                         <a href="admin.php">BACK</a>
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm me-2" id="upKrs">
-                        <a href="#">UNBLOCK</a>
+                    <button type="button" class="btn btn-outline-danger btn-sm me-2" id="upKrs" onclick="return confirm('Apakah anda yakin membuka validasi?')">
+                        <a href="delete.php?iduser=<?= $id_mahasiswa; ?>">BUKA VALIDASI</a>
                     </button>
                 </div>
             </div>

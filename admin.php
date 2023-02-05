@@ -19,8 +19,13 @@
 
     $data_matkul = query("SELECT * FROM mata_kuliah");
 
+    $data_validasi = query("SELECT * FROM user WHERE level = 'User' AND sudah_krs = 'Sudah'");
+
     $jumlah_mahasiswa = jumlah_data("SELECT * FROM user WHERE level = 'User'");
 
+    $jumlah_matkul = jumlah_data("SELECT * FROM mata_kuliah");
+
+    $jumlah_krs = jumlah_data("SELECT * FROM user WHERE level = 'User' AND sudah_krs = 'Sudah'");
 
     if ($data_diri['level'] !== "Admin") {
         echo "<script>
@@ -315,8 +320,8 @@
                 <button class="btn" type="submit" name="cari_mhs" id="cari_mhs"><i class="bi bi-search"></i></button>
             </span>
             <div class="row-sm">
-                <div class="col-sm table-responsive" id="listItem">
-                    <div id="tabel_mhs">
+                <div id="tabel_mhs">
+                    <div class="col-sm table-responsive" id="listItem">
                         <table class="table text-white">
                             <thead class="topTable text-center">
                                 <tr class="headerMhs ">
@@ -369,9 +374,10 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="jumlahData">Jumlah Data : <?= $jumlah_mahasiswa; ?></div>
                 </div>
             </div>
-            <div class="jumlahData">Jumlah Data : <?= $jumlah_mahasiswa; ?></div>
+            
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- List Mahasiswa End -->
@@ -452,8 +458,8 @@
                 <button class="btn" id="cari_matkul"><i class="bi bi-search"></i></button>
             </span>
             <div class="row-sm">
-                <div class="col-sm table-responsive" id="listMatkul">
-                    <div id="tabel_matkul">
+                <div id="tabel_matkul">
+                    <div class="col-sm table-responsive" id="listMatkul">
                         <table class="table text-white">
                             <thead class="topTable text-center">
                                 <tr class="headerMatkul">
@@ -498,9 +504,9 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="jumlahData mt-3">Jumlah Data : <?= $jumlah_matkul; ?></div>
                 </div>
             </div>
-            <div class="jumlahData">Jumlah Data</div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- list Mk End -->
@@ -558,38 +564,44 @@
         <div id="krsm" class="container-md tab-pane fade">
             <header class="mb-4">Data KRS</header>
             <span class="search">
-                <input type="text" name="search" placeholder="Search">
-                <button class="btn"><i class="bi bi-search"></i></button>
+                <input type="text" name="search" placeholder="Search" id="keyword_krs">
+                <button class="btn" id="cari_krs"><i class="bi bi-search"></i></button>
             </span>
             <div class="row-sm">
-                <div class="col-sm table-responsive" id="listKrs">
-                    <table class="table text-white">
-                        <thead class="topTable text-center">
-                            <tr class="headerKrs ">
-                                <th scope="col">NIM</th>
-                                <th scope="col">NAMA</th>
-                                <th scope="col">SEMESTER</th>
-                                <th scope="col">SKS</th>
-                                <th scope="col">AKSI</th>
-                            </tr>
-                        </thead>
-                        <tbody class="contentTable text-dark">
-                            <tr class="text-white text-center">
-                                <th scope="row">190511094</th>
-                                <td>Ahmad Nur Cahyadi</td>
-                                <td>7</td>
-                                <td>24</td>
-                                <td>
-                                    <button id="btnDetail" class="btn btn-sm" type="menu">
-                                        <a href="detail-krs.php">DETAIL</a>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div id="tabel_krs">
+                    <div class="col-sm table-responsive" id="listKrs">
+                        <table class="table text-white">
+                            <thead class="topTable text-center">
+                                <tr class="headerKrs ">
+                                    <th scope="col">NO</th>
+                                    <th scope="col">NIM</th>
+                                    <th scope="col">NAMA</th>
+                                    <th scope="col">SEMESTER</th>
+                                    <th scope="col">AKSI</th>
+                                </tr>
+                            </thead>
+                            <tbody class="contentTable text-dark">
+                                <?php $l = 1; ?>
+                                <?php foreach($data_validasi as $valid) : ?>
+                                    <tr class="text-white text-center">
+                                        <td><?= $l; ?></td>
+                                        <th scope="row"><?= $valid['no_induk']; ?></th>
+                                        <td><?= $valid['nama']; ?></td>
+                                        <td><?= $valid['semester']; ?></td>
+                                        <td>
+                                            <button id="btnDetail" class="btn btn-sm" type="menu">
+                                                <a href="detail-krs.php?idkrs=<?= $valid['id_user']; ?>">DETAIL</a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                <?php $l++; ?>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="jumlahData">Jumlah Data : <?= $jumlah_krs; ?></div>
                 </div>
             </div>
-            <div class="jumlahData">Jumlah Data</div>
             <footer><img src="image/Logo2.png" alt="logo"></footer>
         </div>
         <!-- list KRS End -->
@@ -649,6 +661,19 @@
     <script src="folder_js/jquery-3.6.3.min.js"></script>
     <script src="folder_js/script.js"></script>
     <script src="folder_js/script-admin.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //   Hilangkan tombol cari
+            $("#cari_krs").hide();
+
+            //Event ketika keyword ditulis
+            $("#keyword_krs").on("keyup", function () {
+                $("#tabel_krs").load("ajax/tabel-krs.php?keyword=" + $("#keyword_krs").val());
+                console.log("ok");
+            });
+        });
+    </script>
 </body>
 
 </html>

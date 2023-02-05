@@ -64,5 +64,41 @@
                 </script>
             ";
         }
+    } elseif(isset($_GET['idkrs'])) {
+        $id_krs = $_GET['idkrs'];
+
+        if(hapus_mk_krs($id_krs) > 0) {
+            echo "
+                <script>
+                    alert('Data Berhasil Dihapus');
+                    document.location.href='admin.php';
+                </script>
+            ";
+        } else {
+            echo "
+                <script>
+                    alert('Data Gagal Dihapus');
+                    document.location.href='admin.php';
+                </script>
+            ";
+        }
+    } elseif(isset($_GET['iduser'])) {
+        $id_user = $_GET['iduser'];
+
+        if(validasi_buka($id_user) > 0) {
+            echo "
+                <script>
+                    alert('Validasi Berhasil Dibuka');
+                    document.location.href='admin.php';
+                </script>
+            ";
+        } else {
+            echo "
+                <script>
+                    alert('Validasi Gagal Dibuka');
+                    document.location.href='admin.php';
+                </script>
+            ";
+        }
     }
 ?>
