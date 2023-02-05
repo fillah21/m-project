@@ -86,6 +86,23 @@ body select {
   margin-bottom: 10px;
 }
 
+#regt .back-btn {
+  position: absolute;
+  left: 90%;
+  top: -5%;
+  font-size: 28px;
+}
+
+
+#regt .back-btn a:hover {
+  color: #adadad;
+}
+
+#regt .back-btn a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 #regt .usePass {
   background: #d23939;
   border-radius: 8px;
@@ -282,11 +299,20 @@ body select {
   margin-bottom: 0;
 }
 
-#kelola button .back-btn {
+#kelola .back-btn{
   position: absolute;
-  left: 93%;
-  top: -2%;
+  left: 92%;
+  top: -10%;
   font-size: 28px;
+}
+
+#kelola .back-btn a:hover {
+  color: #adadad;
+}
+
+#kelola .back-btn a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 #kelola .btn-sm {
@@ -855,6 +881,23 @@ form textarea::-ms-input-placeholder {
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: all ease-in 0.4s;
+}
+
+
+#regis .back-btn {
+  position: absolute;
+  left: 90%;
+  top: -4%;
+  font-size: 28px;
+}
+
+#regis .back-btn a:hover {
+  color: #adadad;
+}
+
+#regis .back-btn a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 #regis.active {

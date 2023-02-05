@@ -17,7 +17,7 @@ body{
     border-radius: 0 9px 9px 0;
     transition: all ease-in 0.3s;
     position: absolute;
-    min-height: 100vh;
+    min-height: 100%;
     position: fixed;
 }
 
@@ -32,7 +32,7 @@ body{
     width: 90px;
     transition: all ease-out 0.3s;
     position: fixed;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .sidebar .profil img{
@@ -105,6 +105,7 @@ body{
     flex-grow: 1;
     background: #D23939;
     margin-left: 15px;
+    min-height: 130vh;
 }
 
 .sidebar ul li .text{
@@ -199,7 +200,7 @@ body{
 }
 
 /* edit foto profil */
-.editp {
+#editp {
     position: absolute;
     width: 250px;
     padding: 10px;
@@ -217,18 +218,18 @@ body{
     border: 2px solid #EA7A7A;
   }
 
-.editp .form-control{
+#editp .form-control{
     font-size: .7rem;
 }
 
-.editp.open {
+#editp.open {
     top: 50%;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
     z-index: 50;
 }
   
-.editp h3 {
+#editp h3 {
     font-family: 'Acme';
     font-style: normal;
     font-weight: 400;
@@ -239,7 +240,7 @@ body{
     margin-bottom: 10px;
 }
   
-.editp form button {
+#editp form button {
     width: 100px;
     background: #D23939;
     border: 1px solid #FFFFFF;
@@ -250,7 +251,7 @@ body{
     color: #FFFFFF;
 }
   
-.editp form button a {
+#editp form button a {
     text-align: center;
     font-weight: 600;
     font-size: 13px;
@@ -258,29 +259,29 @@ body{
     text-decoration: none;
 }
 
-.editp form img{
+#editp form img{
     width: 50px;
     height: 50px;
     margin-bottom: 3px;
 }
 
-.editp .back-btn {
+#editp .back-btn {
     position: absolute;
     left: 90%;
-    top: -10%;
+    top: -13%;
     font-size: 28px;
 }
   
-.editp .back-btn a:hover {
+#editp .back-btn a:hover {
     color: #adadad;
 }
   
-.editp .back-btn a {
+#editp .back-btn a {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-.editp .btn-sm{
+#editp .btn-sm{
     margin-top: -10px;
 }
 /*SIDEBAR SELESAI*/
@@ -427,6 +428,7 @@ body{
     padding: 10px;
     box-sizing: border-box;
     margin: 10px 0;
+    width: 95%;
 }
 
 #pilih1 {
@@ -662,6 +664,9 @@ body{
 #validasi td{
     font-size: 13px;
 }
+#validasi button{
+    width: 100%;
+}
 
 .col-sm{
     height: 600px;
@@ -723,7 +728,7 @@ td{
         flex-direction: column;
         border-radius: 0 9px 9px 0;
         transition: all ease-in 0.3s;
-        min-height: 100vh;
+        min-height: 100%;
     }
     
     .sidebar.hide{
@@ -731,7 +736,7 @@ td{
         padding: 5px;
         width: 50px;
         transition: all ease-out 0.3s;
-        min-height: 100vh;
+        min-height: 100%;
     }
     
     .sidebar .profil img{
@@ -1016,7 +1021,7 @@ td{
         flex-direction: column;
         border-radius: 0 9px 9px 0;
         transition: all ease-in 0.3s;
-        min-height: 100vh;
+        min-height: 100%;
     }
     
     .sidebar.hide{
@@ -1024,7 +1029,7 @@ td{
         padding: 5px;
         width: 50px;
         transition: all ease-out 0.3s;
-        min-height: 100vh;
+        min-height: 100%;
     }
     
     .sidebar .profil img{
@@ -1037,6 +1042,13 @@ td{
         object-fit: cover;
     }
     
+    .sidebar .profil button{
+        border: 1.5px solid #711A1A;
+        position: absolute;
+        margin-top: 80px;
+        margin-left: -27px;
+    }
+
     .sidebar .nav-link i{
         font-size: 9px;
     }
@@ -1295,4 +1307,186 @@ td{
     }
 }
 /*TOGGLE MENU SELESAI*/
+}
+
+@media screen and (max-width: 412px){
+    .sidebar{
+        position: fixed;
+        background-color: #711A1A;
+        width: 130px;
+        padding: 5px;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        border-radius: 0 9px 9px 0;
+        transition: all ease-in 0.3s;
+        min-height: 100%;
+    }
+    
+    .sidebar.hide{
+        position: fixed;
+        padding: 5px;
+        width: 50px;
+        transition: all ease-out 0.3s;
+        min-height: 100%;
+    }
+    
+    .sidebar .profil img{
+        width: 70px;
+        margin-left: 23px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        transition: all ease-in 0.3s;
+        object-fit: cover;
+    }
+    
+    .sidebar .profil button{
+        border: 1.5px solid #711A1A;
+        position: absolute;
+        margin-top: 80px;
+        margin-left: -27px;
+    }
+
+    .sidebar .nav-link i{
+        font-size: 9px;
+    }
+
+    .sidebar .profil h1{
+        font-weight: 700;
+        font-size: 8px;
+        color: #FFFF;
+        text-align: center;
+    }
+    
+    .sidebar.hide .profil img{
+        width: 30px;
+        margin-left: 3.5px;
+        margin-top: 70px;
+        object-fit: cover;
+    }
+
+    .sidebar .text{
+        font-weight: bold;
+        text-align: left;
+        color: #FFFF;
+        margin: 7px;
+    }
+    
+    .sidebar a .img{
+        width: 70px;
+        float: right;
+        margin-right: 15px;
+        margin-top: 29px;
+    }
+
+    .sidebar li.nav-link #dropdown a{
+        font-size: 7px;
+    }
+    
+    .sidebar li.nav-link #dropdown li:hover{
+        width: 100%;
+        background: #D23939;
+        border-radius: 4px;
+    }
+
+    #home header{
+        margin-left: 50px;
+    }
+    #home img{
+        margin-left: 50px;
+    }
+
+    #about{
+        width: auto;
+        margin-left: 50px;
+    }
+    #about img{
+        margin-top: 30px;
+    }
+
+    #smt1{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt1 img{
+        margin-top: auto;
+    }
+    
+    #smt2{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt2 img{
+        margin-top: auto;
+    }
+
+    #smt3{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt3 img{
+        margin-top: auto;
+    }
+
+    #smt4{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt4 img{
+        margin-top: auto;
+    }
+
+    #smt5{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt5 img{
+        margin-top: auto;
+    }
+
+    #smt6{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt6 img{
+        margin-top: auto;
+    }
+
+    #smt7{
+        width: auto;
+        margin-left: 50px;
+    }
+    #smt7 img{
+        margin-top: auto;
+    }
+    #smt8{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt8 img{
+        margin-top: auto;
+    }
+    #smt9{
+        width: auto;
+        margin-left: 50px; 
+    }
+    #smt9 img{
+        margin-top: auto;
+    }
+    #validasi{
+        width: auto;
+        margin-left: 50px;
+    }
+    #validasi img{
+        margin-top: auto;
+    }
+
+    #biodata{
+        width: auto;
+        margin-left: 50px;
+    }
+    #biodata img{
+        margin-top: auto;
+    }
 }

@@ -81,7 +81,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a class="dd" data-bs-toggle="tab" href="dropdown">
+                    <a class="dd" data-bs-toggle="tab" href="#dropdown">
                         <i class="bi bi-bookmark-star-fill"></i><span class="text"> KRS</span> 
                         <i class="icon bi bi-caret-down-fill"></i>
                     </a>
@@ -92,21 +92,21 @@
                             <li><a id="sem5" data-bs-toggle="tab" href="#smt5">Semester 5</a></li>
                             <li><a id="sem7" data-bs-toggle="tab" href="#smt7">Semester 7</a></li>
                         <?php else : ?>
-                            <li><a id="sem1" data-bs-toggle="tab" href="#smt2">Semester 2</a></li>
-                            <li><a id="sem3" data-bs-toggle="tab" href="#smt4">Semester 4</a></li>
-                            <li><a id="sem5" data-bs-toggle="tab" href="#smt6">Semester 6</a></li>
-                            <li><a id="sem7" data-bs-toggle="tab" href="#smt8">Semester 8</a></li>
+                            <li><a id="sem2" data-bs-toggle="tab" href="#smt2">Semester 2</a></li>
+                            <li><a id="sem4" data-bs-toggle="tab" href="#smt4">Semester 4</a></li>
+                            <li><a id="sem6" data-bs-toggle="tab" href="#smt6">Semester 6</a></li>
+                            <li><a id="sem8" data-bs-toggle="tab" href="#smt8">Semester 8</a></li>
                         <?php endif; ?>
                         <li><a id="val" data-bs-toggle="tab" href="#validasi">Validasi Ajuan</a></li>
                     </ul>
                 </li>
                 <li class="nav-link">
-                    <a href="#biodata" class="d-block" data-bs-toggle="tab"><i class="bi bi-person-lines-fill"></i> 
+                    <a href="#biodata" class="bio d-block" data-bs-toggle="tab"><i class="bi bi-person-lines-fill"></i> 
                         <span class="text"> Biodata</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#about" class="d-block" data-bs-toggle="tab"><i class="bi bi-gear-wide"></i> 
+                    <a href="#about" class="ab d-block" data-bs-toggle="tab"><i class="bi bi-gear-wide"></i> 
                         <span class="text"> About</span>
                     </a>
                 </li>
@@ -360,6 +360,7 @@
                             <thead class="table-defult">
                                 <tr>
                                     <th scope="col">Mata Kuliah</th>
+                                    <th scope="col">Semester</th>
                                     <th scope="col">SKS</th>
                                     <th scope="col">Keterangan</th>
                                     <?php if($data_diri['sudah_krs'] == "Belum") : ?>
@@ -381,6 +382,7 @@
                                         $jumlah = $jumlah + $matkul['sks'];
                                     ?>
                                     <td><?= $matkul['nama_matkul']; ?></td>
+                                    <td><?= $matkul['semester_matkul']; ?></td>
                                     <td><?= $matkul['sks']; ?></td>
                                     <?php if($data_diri['sudah_krs'] == "Belum") : ?>
                                         <td>Belum Validasi</td>
