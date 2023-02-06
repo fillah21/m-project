@@ -319,6 +319,11 @@ body select {
   font-size: 0.1rem;
 }
 
+#kelola form .col-sm{
+  height: 500px;
+  overflow-y: auto;
+}
+
 /* confirm ubah level */
 #ganlev {
   position: absolute;
@@ -1567,11 +1572,6 @@ form textarea::-ms-input-placeholder {
   justify-content: center;
 }
 
-#krsMhs {
-  width: auto;
-  overflow-y: auto;
-}
-
 #krsMhs table {
   font-size: 10px;
 }
@@ -2272,6 +2272,7 @@ form textarea::-ms-input-placeholder {
 
   #krsMhs {
     width: auto;
+    height: auto;
     overflow-y: scroll;
   }
 
@@ -2842,9 +2843,10 @@ form textarea::-ms-input-placeholder {
 
   #detailMenu {
     width: 250px;
-    height: 420px;
+    height: auto;
     border-radius: 10px;
     padding: 10px;
+    overflow-y: auto;
   }
 
   #detailMenu p {
@@ -2877,7 +2879,7 @@ form textarea::-ms-input-placeholder {
 
   #krsMhs {
     width: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #krsMhs table {

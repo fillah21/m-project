@@ -92,6 +92,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Mata Kuliah</th>
+                                <th scope="col">Semester</th>
                                 <th scope="col">SKS</th>
                                 <th scope="col">Aksi</th>
                             </tr>
@@ -109,6 +110,7 @@
                             <tr>
                                 <?php $jumlah = $jumlah + $matkul['sks']; ?>
                                 <th scope="row"><?= $matkul['nama_matkul']; ?></th>
+                                <td><?= $matkul['semester_matkul']; ?></td>
                                 <td><?= $matkul['sks']; ?></td>
                                 <td class="btn-delete-krs">
                                     <a href="delete.php?idkrs=<?= $krs['id_krs']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus mata kuliah?')"><i class="bi bi-trash"></i></a>
