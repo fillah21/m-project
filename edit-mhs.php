@@ -97,17 +97,24 @@
                     <input type="hidden" name="username_lama" value="<?= $data_mhs['username']; ?>">
                     <input type="hidden" name="pwd_lama" value="<?= $data_mhs['pwd']; ?>">
                     <input type="hidden" name="id_user" value="<?= $data_mhs['id_user']; ?>">
+                    <label for="username">Username</label>
                     <input class="usePass" type="text" placeholder="Username" name="username" value="<?= $data_mhs['username']; ?>" required>
+                    <label for="pwd">Password</label>
                     <input class="usePass" type="password" placeholder="Password" name="pwd" value="<?= $data_mhs['pwd']; ?>" required>
+                    <label for="pwd">Konfirmasi Password</label>
                     <input class="usePass" type="password" placeholder="Konfirmasi Password" name="pwd2" value="<?= $data_mhs['pwd']; ?>" required>
+                    <label for="nama">Nama Lengkap</label>
                     <input type="text" placeholder="Nama" name="nama" value="<?= $data_mhs['nama']; ?>" required>
+                    <label for="email">Email</label>
                     <input type="email" placeholder="Email" name="email" value="<?= $data_mhs['email']; ?>" required>
                     <label for="foto" class="mb-1">Foto Profil : </label>
                     <div class="input-group mb-3 uploadFoto">
                         <input type="file" class="form-control" name="foto">
                         <label for="foto" class="mb-1">*kosongkan jika tidak ingin mengganti foto</label>
                     </div>
+                    <label for="nim">NIM</label>
                     <input type="text" placeholder="NIM" name="no_induk" value="<?= $data_mhs['no_induk']; ?>" required>
+                    <label for="semester">Semester</label>
                     <select name="semester" required>
                         <option value="<?= $data_mhs['semester']; ?>" selected hidden><?= $data_mhs['semester']; ?></option>
                         <option value="1" class="select-jk">1</option>
@@ -119,9 +126,13 @@
                         <option value="7" class="select-jk">7</option>
                         <option value="7" class="select-jk">8</option>
                     </select>
+                    <label for="ipk">IPK</label>
                     <input type="text" placeholder="IPK" name="ipk" value="<?= $data_mhs['ipk']; ?>" required>
+                    <label for="alamat">Alamat</label>
                     <textarea class="text-white" name="alamat" cols="25" rows="7" placeholder="Alamat" required><?= $data_mhs['alamat']; ?></textarea>
+                    <label for="nohp">No Telepon</label>
                     <input type="text" placeholder="No. Telp" name="no_hp" value="<?= $data_mhs['no_hp']; ?>" required>
+                    <label for="jk">Jenis Kelamin</label>
                     <select name="jk" required>
                         <option value="<?= $data_mhs['jk']; ?>" selected hidden><?= $jk; ?></option>
                         <option value="Laki-laki" class="select-jk">Laki-laki</option>

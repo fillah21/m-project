@@ -89,17 +89,25 @@
                     <input type="hidden" name="pwd_lama" value="<?= $data_diri['pwd']; ?>">
                     <input type="hidden" name="id_user" value="<?= $data_diri['id_user']; ?>">
 
+                    <label for="username">Username</label>
                     <input type="text" placeholder="Username" name="username" value="<?= $data_diri['username']; ?>" required>
+                    <label for="pwd">Password</label>
                     <input type="password" placeholder="Password" name="pwd" value="<?= $data_diri['pwd']; ?>" required>
+                    <label for="pwd">Konfirmasi Password</label>
                     <input type="password" placeholder="Konformasi Password" name="pwd2" value="<?= $data_diri['pwd']; ?>" required>
+                    <label for="nama">Nama</label>
                     <input type="text" placeholder="Nama" name="nama" value="<?= $data_diri['nama']; ?>" required>
+                    <label for="jk">Jenis Kelamain</label>
                     <select name="jk" required>
                         <option value="<?= $data_diri['jk']; ?>" selected hidden><?= $jk ?></option>
                         <option value="Laki-laki" class="select-jk">Laki-laki</option>
                         <option value="Perempuan" class="select-jk">Perempuan</option>
                     </select>
+                    <label for="email">Email</label>
                     <input type="email" placeholder="Email" name="email" value="<?= $data_diri['email']; ?>" required>
+                    <label for="nohp">No Telepon</label>
                     <input type="text" placeholder="No. Telp" name="no_hp" value="<?= $data_diri['no_hp']; ?>" required>
+                    <label for="alamat">Alamat</label>
                     <textarea class="text-white" name="alamat" cols="25" rows="7" placeholder="Alamat" required><?= $data_diri['alamat']; ?></textarea>
                     <img src="profil/<?= $data_diri['foto']; ?>" class="img-preview">
                     <div class="input-group mb-3 uploadFoto">

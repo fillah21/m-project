@@ -89,8 +89,11 @@
             <form action="" method="post">
                 <fieldset>
                     <input type="hidden" name="id_matkul" value="<?= $data_matkul['id_matkul']; ?>">
+                    <label for="kode">Kode</label>
                     <input type="text" placeholder="Kode" name="kode_matkul" value="<?= $data_matkul['kode_matkul']; ?>" required>
+                    <label for="nama_matkul">Mata Kuliah</label>
                     <input type="text" placeholder="Nama Mata Kuliah" name="nama_matkul" value="<?= $data_matkul['nama_matkul']; ?>" required>
+                    <label for="semester">Semester</label>
                     <select name="semester_matkul" required>
                         <option value="<?= $data_matkul['semester_matkul']; ?>" selected hidden><?= $data_matkul['semester_matkul']; ?></option>
                         <option value="1" class="select-jk">1</option>
@@ -102,6 +105,7 @@
                         <option value="7" class="select-jk">7</option>
                         <option value="8" class="select-jk">8</option>
                     </select>
+                    <label for="sks">SKS</label>
                     <input type="text" placeholder="SKS" name="sks" value="<?= $data_matkul['sks']; ?>" required>
                     
                     <button type="submit" class="btn" name="submit_mk">
