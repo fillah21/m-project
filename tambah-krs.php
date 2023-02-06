@@ -62,6 +62,13 @@
                     document.location.href='mahasiswa.php';
                 </script>
             ";
+        } elseif($jumlah == 0) {
+            echo "
+                <script>
+                    alert('Silahkan Pilih Mata Kuliah Terlebih Dahulu');
+                    document.location.href='mahasiswa.php';
+                </script>
+            ";
         } else {
             if(validasi_krs($id_user) > 0) {
                 echo "
